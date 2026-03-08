@@ -1,0 +1,197 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="en">
+
+<head>
+    <meta charset="utf-8" />
+    <meta content="width=device-width, initial-scale=1.0" name="viewport" />
+    <title>Mobile Portfolio | Digital Experiences</title>
+    <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&amp;display=swap"
+        rel="stylesheet" />
+    <link
+        href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap"
+        rel="stylesheet" />
+    <link
+        href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap"
+        rel="stylesheet" />
+    <script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "primary": "#8c25f4",
+                        "background-light": "#f7f5f8",
+                        "background-dark": "#191022",
+                    },
+                    fontFamily: {
+                        "display": ["Inter", "sans-serif"]
+                    },
+                    borderRadius: {
+                        "DEFAULT": "0.25rem",
+                        "lg": "0.5rem",
+                        "xl": "0.75rem",
+                        "full": "9999px"
+                    },
+                },
+            },
+        }
+    </script>
+    <style>
+        body {
+            min-height: max(884px, 100dvh);
+        }
+    </style>
+</head>
+
+<body
+    class="font-display bg-background-light dark:bg-background-dark text-slate-900 dark:text-slate-100 antialiased overflow-x-hidden">
+    <!-- Main Wrapper -->
+    <div
+        class="relative flex h-auto min-h-screen w-full flex-col bg-background-light dark:bg-background-dark overflow-x-hidden">
+        <!-- Header Navigation -->
+        <header
+            class="flex items-center bg-background-light dark:bg-background-dark p-4 border-b border-slate-200 dark:border-primary/20 sticky top-0 z-50">
+            <div class="flex size-10 shrink-0 items-center justify-center rounded-lg bg-primary/10 text-primary">
+                <span class="material-symbols-outlined">terminal</span>
+            </div>
+            <h2
+                class="text-slate-900 dark:text-slate-100 text-lg font-bold leading-tight tracking-tight flex-1 text-center">
+                Portfolio</h2>
+            <div class="flex w-10 items-center justify-end">
+                <button
+                    class="flex size-10 items-center justify-center rounded-lg hover:bg-slate-200 dark:hover:bg-primary/20 transition-colors">
+                    <span class="material-symbols-outlined">person</span>
+                </button>
+            </div>
+        </header>
+        <!-- Hero Section -->
+        <main class="@container flex-1">
+            <div
+                class="flex flex-col gap-8 px-4 py-12 @[480px]:py-20 @[864px]:flex-row @[864px]:items-center @[864px]:px-12">
+                <!-- Hero Image Container -->
+                <div
+                    class="relative w-full aspect-square @[480px]:aspect-video @[864px]:w-1/2 overflow-hidden rounded-xl bg-primary/5 group">
+                    <div
+                        class="absolute inset-0 bg-gradient-to-tr from-primary/40 to-transparent mix-blend-overlay z-10">
+                    </div>
+                    <img alt="High-tech workspace with neon lighting"
+                        class="h-full w-full object-cover transition-transform duration-700 group-hover:scale-105"
+                        data-alt="Modern workspace with colorful neon lighting setup"
+                        src="https://lh3.googleusercontent.com/aida-public/AB6AXuAabtkkOZL3q_QEc-S2M2diNlm3a0cHmk_5UL_mE-h4ubNhWPod4jKBKibJW1H6WYgsx8m34t0W05pWSMvFseF3Tp1P8ilWdVfZV1dlYFtZE72rJyY0zX7MUtTAai-X3xF-K_A8miFyL9uVqBnlkVj_w-Zh_ZQOL-lKB1Y8oytZkRgybGMbh8OKABsT40XJUzfmVXEX8_M_7P9oK8vkf2SPW9pvGhJWZiRMRdaTjv-PYiCtjhTSXgHOTpQ3wgqEWxVJ1c-YU_m5qJQ" />
+                    <!-- Floating Badge -->
+                    <div
+                        class="absolute bottom-4 left-4 z-20 bg-background-dark/80 backdrop-blur-md border border-primary/30 p-3 rounded-lg flex items-center gap-3">
+                        <div class="flex -space-x-2">
+                            <div class="size-6 rounded-full bg-primary border border-background-dark"></div>
+                            <div class="size-6 rounded-full bg-blue-500 border border-background-dark"></div>
+                        </div>
+                        <span class="text-xs font-semibold text-white">50+ Projects Completed</span>
+                    </div>
+                </div>
+                <!-- Hero Content -->
+                <div class="flex flex-col gap-6 @[480px]:gap-8 @[864px]:w-1/2">
+                    <div class="flex flex-col gap-3">
+                        <span class="text-primary font-bold tracking-widest text-xs uppercase px-1">Digital Designer
+                            &amp; Dev</span>
+                        <h1
+                            class="text-slate-900 dark:text-slate-100 text-4xl font-black leading-tight tracking-[-0.033em] @[480px]:text-6xl">
+                            Building Digital <span class="text-primary">Experiences</span> That Matter
+                        </h1>
+                        <p
+                            class="text-slate-600 dark:text-slate-400 text-base font-normal leading-relaxed @[480px]:text-lg max-w-xl">
+                            Hi, I'm a UI/UX Designer and Frontend Architect focused on creating sleek, professional, and
+                            impactful digital products that users love.
+                        </p>
+                    </div>
+                    <!-- Call to Actions -->
+                    <div class="flex flex-wrap gap-4">
+                        <button
+                            class="flex min-w-[140px] items-center justify-center gap-2 rounded-lg h-12 px-6 bg-primary text-white text-base font-bold transition-all hover:bg-primary/90 active:scale-95 shadow-lg shadow-primary/25">
+                            <span class="material-symbols-outlined text-[20px]">grid_view</span>
+                            <span>View My Work</span>
+                        </button>
+                        <button
+                            class="flex min-w-[140px] items-center justify-center gap-2 rounded-lg h-12 px-6 bg-slate-200 dark:bg-primary/10 text-slate-900 dark:text-slate-100 text-base font-bold border border-transparent dark:border-primary/20 hover:bg-slate-300 dark:hover:bg-primary/20 transition-all active:scale-95">
+                            <span class="material-symbols-outlined text-[20px]">mail</span>
+                            <span>Contact Me</span>
+                        </button>
+                    </div>
+                    <!-- Tech Stack / Skills -->
+                    <div class="flex flex-wrap gap-6 pt-4 items-center">
+                        <p class="text-xs font-bold text-slate-400 dark:text-slate-500 uppercase tracking-widest">Expert
+                            in</p>
+                        <div class="flex gap-4 grayscale opacity-60">
+                            <span class="material-symbols-outlined" title="Figma">draw</span>
+                            <span class="material-symbols-outlined" title="Code">code</span>
+                            <span class="material-symbols-outlined" title="Design">brush</span>
+                            <span class="material-symbols-outlined" title="Strategy">insights</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- Featured Section -->
+            <section class="px-4 pb-12">
+                <div class="flex items-center justify-between pb-6">
+                    <h2 class="text-slate-900 dark:text-slate-100 text-[22px] font-bold leading-tight tracking-tight">
+                        Featured Work</h2>
+                    <a class="text-primary text-sm font-semibold hover:underline" href="#">See All</a>
+                </div>
+                <div class="grid grid-cols-1 @[480px]:grid-cols-2 gap-4">
+                    <div class="relative group aspect-[4/3] rounded-xl overflow-hidden cursor-pointer">
+                        <div
+                            class="absolute inset-0 bg-gradient-to-t from-background-dark/90 via-background-dark/20 to-transparent z-10">
+                        </div>
+                        <img alt="Mobile banking UI design mockup"
+                            class="h-full w-full object-cover transition-transform duration-500 group-hover:scale-110"
+                            data-alt="Minimalist banking application interface design"
+                            src="https://lh3.googleusercontent.com/aida-public/AB6AXuAUY0MVeBrpzIh1_w5PzkxBRgJTy2okL64x_j2NOGxH5o-nLzj6w-CfovUNSEqSr4KnLWs-68eDEI1R-0mbeqXmjKBoqh5LFOeotcaH3q9jHEL2mR_1t-FvLvU0lCdW1ygLNVP62hhC4JuMwXlc6X2_FohQcjtBijOuGmec_YeaiUbcwOeQxvm06SJJEdjXXrrAmSNuxZvzM-tIyi3VxqCEQDWiDkhSCnQZgChPNqO2KCJw_7-Y1Kr470pzgz5EUfv-KcWq78Ar7Sg" />
+                        <div class="absolute bottom-4 left-4 z-20">
+                            <p class="text-white text-lg font-bold">Fintech App Redesign</p>
+                            <p class="text-slate-300 text-xs">Product Design • 2024</p>
+                        </div>
+                    </div>
+                    <div class="relative group aspect-[4/3] rounded-xl overflow-hidden cursor-pointer">
+                        <div
+                            class="absolute inset-0 bg-gradient-to-t from-background-dark/90 via-background-dark/20 to-transparent z-10">
+                        </div>
+                        <img alt="E-commerce platform interface on laptop"
+                            class="h-full w-full object-cover transition-transform duration-500 group-hover:scale-110"
+                            data-alt="Modern fashion e-commerce website layout"
+                            src="https://lh3.googleusercontent.com/aida-public/AB6AXuCj7qhSfgaTtuofFmmhE3uM08kwQ8UGrr18IXFTzbyzPNP-XTNrNON2JI-52wpSZNXzQesfbs8Skk-bvsCkd4afZFFr_Ia31bAlLTRdT_DfowkcJNJFUCULAIwdRUPvRv0iIWKI2S76Lv_COpd4rfbpXueRws5dLg4rCQnfh_HVbyhPUKfItMqg-AfhBO-bVfQSLzj0xW3CFegZrNnzEfmmP2ml3B2q_yxJ9ZCS79ar7Vmt2ECcg0PXQTt6RREmMhjouBlvi-3FqrU" />
+                        <div class="absolute bottom-4 left-4 z-20">
+                            <p class="text-white text-lg font-bold">Luxury Shop Platform</p>
+                            <p class="text-slate-300 text-xs">Web Development • 2023</p>
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </main>
+        <!-- Bottom Navigation Bar -->
+        <nav
+            class="sticky bottom-0 z-50 flex border-t border-slate-200 dark:border-primary/20 bg-white/80 dark:bg-background-dark/80 backdrop-blur-xl px-4 pb-6 pt-2">
+            <a class="flex flex-1 flex-col items-center justify-center gap-1 text-primary" href="#">
+                <span class="material-symbols-outlined text-[24px]">home</span>
+                <p class="text-[10px] font-bold uppercase tracking-wider">Home</p>
+            </a>
+            <a class="flex flex-1 flex-col items-center justify-center gap-1 text-slate-500 dark:text-slate-400"
+                href="#">
+                <span class="material-symbols-outlined text-[24px]">work</span>
+                <p class="text-[10px] font-medium uppercase tracking-wider">Work</p>
+            </a>
+            <a class="flex flex-1 flex-col items-center justify-center gap-1 text-slate-500 dark:text-slate-400"
+                href="#">
+                <span class="material-symbols-outlined text-[24px]">person</span>
+                <p class="text-[10px] font-medium uppercase tracking-wider">About</p>
+            </a>
+            <a class="flex flex-1 flex-col items-center justify-center gap-1 text-slate-500 dark:text-slate-400"
+                href="#">
+                <span class="material-symbols-outlined text-[24px]">alternate_email</span>
+                <p class="text-[10px] font-medium uppercase tracking-wider">Contact</p>
+            </a>
+        </nav>
+    </div>
+</body>
+
+</html>

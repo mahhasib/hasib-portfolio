@@ -1,0 +1,219 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="en">
+
+<head>
+    <meta charset="utf-8" />
+    <meta content="width=device-width, initial-scale=1.0" name="viewport" />
+    <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&amp;display=swap"
+        rel="stylesheet" />
+    <link
+        href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap"
+        rel="stylesheet" />
+    <link
+        href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap"
+        rel="stylesheet" />
+    <script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "primary": "#8c25f4",
+                        "background-light": "#f7f5f8",
+                        "background-dark": "#191022",
+                    },
+                    fontFamily: {
+                        "display": ["Inter"]
+                    },
+                    borderRadius: { "DEFAULT": "0.25rem", "lg": "0.5rem", "xl": "0.75rem", "full": "9999px" },
+                },
+            },
+        }
+    </script>
+    <title>Portfolio - Work</title>
+    <style>
+        body {
+            min-height: max(884px, 100dvh);
+        }
+    </style>
+</head>
+
+<body
+    class="bg-background-light dark:bg-background-dark font-display text-slate-900 dark:text-slate-100 min-h-screen flex flex-col">
+    <!-- Header -->
+    <header
+        class="sticky top-0 z-50 flex items-center bg-background-light/80 dark:bg-background-dark/80 backdrop-blur-md p-4 justify-between border-b border-slate-200 dark:border-primary/20">
+        <div class="flex size-10 shrink-0 items-center justify-center rounded-lg bg-primary/10">
+            <span class="material-symbols-outlined text-primary">menu</span>
+        </div>
+        <h2
+            class="text-slate-900 dark:text-slate-100 text-lg font-bold leading-tight tracking-tight flex-1 text-center">
+            Portfolio</h2>
+        <div class="flex w-10 items-center justify-end">
+            <button class="flex size-10 items-center justify-center rounded-full bg-primary/10 text-primary">
+                <span class="material-symbols-outlined">person</span>
+            </button>
+        </div>
+    </header>
+    <main class="flex-1 pb-24">
+        <!-- Section Title -->
+        <div class="px-4 pt-6 pb-2">
+            <h1 class="text-3xl font-bold tracking-tight text-slate-900 dark:text-slate-100">My Work</h1>
+            <p class="text-slate-500 dark:text-slate-400 mt-1">Explore my latest design and development projects.</p>
+        </div>
+        <!-- Filter Chips -->
+        <div class="flex gap-2 p-4 overflow-x-auto no-scrollbar">
+            <button
+                class="flex h-9 shrink-0 items-center justify-center gap-x-2 rounded-full bg-primary px-5 text-white shadow-lg shadow-primary/20">
+                <span class="text-sm font-semibold">All Projects</span>
+            </button>
+            <button
+                class="flex h-9 shrink-0 items-center justify-center gap-x-2 rounded-full bg-slate-200 dark:bg-primary/10 px-5 text-slate-700 dark:text-slate-300 border border-transparent hover:border-primary/30 transition-colors">
+                <span class="text-sm font-medium">UI/UX</span>
+            </button>
+            <button
+                class="flex h-9 shrink-0 items-center justify-center gap-x-2 rounded-full bg-slate-200 dark:bg-primary/10 px-5 text-slate-700 dark:text-slate-300 border border-transparent hover:border-primary/30 transition-colors">
+                <span class="text-sm font-medium">Web Design</span>
+            </button>
+            <button
+                class="flex h-9 shrink-0 items-center justify-center gap-x-2 rounded-full bg-slate-200 dark:bg-primary/10 px-5 text-slate-700 dark:text-slate-300 border border-transparent hover:border-primary/30 transition-colors">
+                <span class="text-sm font-medium">Branding</span>
+            </button>
+        </div>
+        <!-- Project Grid -->
+        <div class="grid grid-cols-1 gap-6 p-4 @container">
+            <!-- Project Card 1 -->
+            <div
+                class="group flex flex-col overflow-hidden rounded-xl bg-white dark:bg-primary/5 border border-slate-200 dark:border-primary/10 transition-all hover:shadow-xl hover:shadow-primary/5">
+                <div class="relative w-full aspect-video bg-slate-200 dark:bg-slate-800 overflow-hidden">
+                    <div class="absolute inset-0 bg-gradient-to-br from-primary/20 to-transparent z-10"></div>
+                    <img alt="Project preview"
+                        class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"
+                        data-alt="Clean data visualization dashboard on a tablet"
+                        src="https://lh3.googleusercontent.com/aida-public/AB6AXuAME-BChped0LlC8bK31AywPokM8x7Zn33uxxr0ngMrqKHCVAtcED_L75IyC4t-w5ifjzneuvH61GB4gebi3Scqe13m784cGGMMg9IBuvHwZWyVEd6f8Lpi-BJErlPUuudD9eHxXte7WKG5aNwoa9F3gbsFDTBv03aCSYwuD3PU4OCZGZbbYBVo9zUW8A05G0BiXlMOunCtCPGPnsHwe-RkiLPzsQoQKMVNXeHJW7bvD106OzojZKjGWS3tSohrJolGeWKmUV4dOs4" />
+                </div>
+                <div class="flex flex-col gap-3 p-5">
+                    <div class="flex items-start justify-between">
+                        <div class="space-y-1">
+                            <h3 class="text-xl font-bold text-slate-900 dark:text-slate-100">Modern Dashboard</h3>
+                            <div class="flex flex-wrap gap-2">
+                                <span
+                                    class="px-2 py-0.5 text-[10px] font-bold uppercase tracking-wider rounded bg-primary/20 text-primary">UI/UX
+                                    Design</span>
+                            </div>
+                        </div>
+                    </div>
+                    <p class="text-slate-600 dark:text-slate-400 text-sm leading-relaxed">
+                        A comprehensive SaaS dashboard for enterprise data visualization and user management.
+                    </p>
+                    <button
+                        class="flex w-full items-center justify-center gap-2 rounded-lg bg-primary h-11 px-4 text-white font-semibold transition-all hover:bg-primary/90 active:scale-[0.98]">
+                        <span>View Project</span>
+                        <span class="material-symbols-outlined text-sm">arrow_forward</span>
+                    </button>
+                </div>
+            </div>
+            <!-- Project Card 2 -->
+            <div
+                class="group flex flex-col overflow-hidden rounded-xl bg-white dark:bg-primary/5 border border-slate-200 dark:border-primary/10 transition-all hover:shadow-xl hover:shadow-primary/5">
+                <div class="relative w-full aspect-video bg-slate-200 dark:bg-slate-800 overflow-hidden">
+                    <div class="absolute inset-0 bg-gradient-to-br from-indigo-500/20 to-transparent z-10"></div>
+                    <img alt="Project preview"
+                        class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"
+                        data-alt="E-commerce website mobile interface mockup"
+                        src="https://lh3.googleusercontent.com/aida-public/AB6AXuAUu4M5DTF3VnDMGjFEqnJv-AtfixrGtofZgTTVNBEKkpLTvpp31R540sKFGPyzT5l3A_C9zCwybtNXleq3z0RHbNlcVmqWve9tIoyt4sSUbbxt0sAPlTKa1GF-L8qsoJaUwWLOAvBxmt0DANv2gtOXyMqAVOUs_oEtZ7ZzIMbUDAdZw-00DhKG0AUl0QpN06qemKjtjzndoVqum563061ElmDhdjRUrWfSw2ZeuRz44hB-8vb5QP_nydi_XfX7hZqoOFhDyItQMEw" />
+                </div>
+                <div class="flex flex-col gap-3 p-5">
+                    <div class="flex items-start justify-between">
+                        <div class="space-y-1">
+                            <h3 class="text-xl font-bold text-slate-900 dark:text-slate-100">Eco-Shop Mobile</h3>
+                            <div class="flex flex-wrap gap-2">
+                                <span
+                                    class="px-2 py-0.5 text-[10px] font-bold uppercase tracking-wider rounded bg-primary/20 text-primary">Web
+                                    Design</span>
+                            </div>
+                        </div>
+                    </div>
+                    <p class="text-slate-600 dark:text-slate-400 text-sm leading-relaxed">
+                        A sustainable fashion marketplace focusing on mobile-first user experiences and fast checkout.
+                    </p>
+                    <button
+                        class="flex w-full items-center justify-center gap-2 rounded-lg bg-primary h-11 px-4 text-white font-semibold transition-all hover:bg-primary/90 active:scale-[0.98]">
+                        <span>View Project</span>
+                        <span class="material-symbols-outlined text-sm">arrow_forward</span>
+                    </button>
+                </div>
+            </div>
+            <!-- Project Card 3 -->
+            <div
+                class="group flex flex-col overflow-hidden rounded-xl bg-white dark:bg-primary/5 border border-slate-200 dark:border-primary/10 transition-all hover:shadow-xl hover:shadow-primary/5">
+                <div class="relative w-full aspect-video bg-slate-200 dark:bg-slate-800 overflow-hidden">
+                    <div class="absolute inset-0 bg-gradient-to-br from-purple-500/20 to-transparent z-10"></div>
+                    <img alt="Project preview"
+                        class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"
+                        data-alt="Abstract minimalist branding and logo design"
+                        src="https://lh3.googleusercontent.com/aida-public/AB6AXuBuZ7tg400TVVRvbRa347W1z3dGO0ig6lolhIUT_tjYBMyeZYDy-4Y0JhtYbWyTt7wEN7dfRmcTmQ7BsGUxufskIrMP_8hMUyRyDTpxB8IoYLguN0f-jwwWGMOtqJNlwSilR79rYzQZ2k90XR8IN-78O5mtJgk6Zd6Rr2DRh5aBX3eu5PfNodZ5c1FEC9a4JHZXG8SZ5F8HZzhxJTNXVdMLE_vh8RWF50sV_UllezUF6RYnvA6Joebq-bagiGvnBKNPR_964PYFWLA" />
+                </div>
+                <div class="flex flex-col gap-3 p-5">
+                    <div class="flex items-start justify-between">
+                        <div class="space-y-1">
+                            <h3 class="text-xl font-bold text-slate-900 dark:text-slate-100">Lumina Branding</h3>
+                            <div class="flex flex-wrap gap-2">
+                                <span
+                                    class="px-2 py-0.5 text-[10px] font-bold uppercase tracking-wider rounded bg-primary/20 text-primary">Branding</span>
+                            </div>
+                        </div>
+                    </div>
+                    <p class="text-slate-600 dark:text-slate-400 text-sm leading-relaxed">
+                        Visual identity and brand guidelines for a next-gen lighting technology startup.
+                    </p>
+                    <button
+                        class="flex w-full items-center justify-center gap-2 rounded-lg bg-primary h-11 px-4 text-white font-semibold transition-all hover:bg-primary/90 active:scale-[0.98]">
+                        <span>View Project</span>
+                        <span class="material-symbols-outlined text-sm">arrow_forward</span>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </main>
+    <!-- Bottom Navigation Bar -->
+    <nav
+        class="fixed bottom-0 left-0 right-0 z-50 bg-white/90 dark:bg-background-dark/90 backdrop-blur-lg border-t border-slate-200 dark:border-primary/20 pb-safe">
+        <div class="flex items-center justify-around h-20 px-4">
+            <a class="flex flex-col items-center justify-center gap-1 text-slate-400 dark:text-slate-500" href="#">
+                <span class="material-symbols-outlined">home</span>
+                <span class="text-[10px] font-medium uppercase tracking-wider">Home</span>
+            </a>
+            <a class="flex flex-col items-center justify-center gap-1 text-primary" href="#">
+                <span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1">work</span>
+                <span class="text-[10px] font-bold uppercase tracking-wider">Work</span>
+            </a>
+            <a class="flex flex-col items-center justify-center gap-1 text-slate-400 dark:text-slate-500" href="#">
+                <span class="material-symbols-outlined">person</span>
+                <span class="text-[10px] font-medium uppercase tracking-wider">About</span>
+            </a>
+            <a class="flex flex-col items-center justify-center gap-1 text-slate-400 dark:text-slate-500" href="#">
+                <span class="material-symbols-outlined">mail</span>
+                <span class="text-[10px] font-medium uppercase tracking-wider">Contact</span>
+            </a>
+        </div>
+    </nav>
+    <style>
+        .no-scrollbar::-webkit-scrollbar {
+            display: none;
+        }
+
+        .no-scrollbar {
+            -ms-overflow-style: none;
+            scrollbar-width: none;
+        }
+
+        .pb-safe {
+            padding-bottom: env(safe-area-inset-bottom);
+        }
+    </style>
+</body>
+
+</html>

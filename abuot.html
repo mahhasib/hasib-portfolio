@@ -1,0 +1,686 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="en">
+
+<head>
+    <meta charset="utf-8" />
+    <meta content="width=device-width, initial-scale=1.0" name="viewport" />
+    <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&amp;display=swap"
+        rel="stylesheet" />
+    <link
+        href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap"
+        rel="stylesheet" />
+    <link
+        href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap"
+        rel="stylesheet" />
+    <script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "primary": "#8c25f4",
+                        "background-light": "#f7f5f8",
+                        "background-dark": "#120b1e",
+                        "neutral-dark": "#1a1023",
+                        "border-dark": "#362249"
+                    },
+                    fontFamily: {
+                        "display": ["Inter"]
+                    },
+                    borderRadius: { "DEFAULT": "0.25rem", "lg": "0.5rem", "xl": "0.75rem", "full": "9999px" },
+                },
+            },
+        }
+    </script>
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+        }
+
+        .glass-card {
+            background: rgba(140, 37, 244, 0.05);
+            border: 1px solid rgba(140, 37, 244, 0.1);
+            backdrop-filter: blur(8px);
+        }
+    </style>
+    <style>
+        body {
+            min-height: max(884px, 100dvh);
+        }
+
+        /* ===== ANIMATION SYSTEM ===== */
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(40px);
+            }
+
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        @keyframes fadeInDown {
+            from {
+                opacity: 0;
+                transform: translateY(-40px);
+            }
+
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        @keyframes fadeInLeft {
+            from {
+                opacity: 0;
+                transform: translateX(-50px);
+            }
+
+            to {
+                opacity: 1;
+                transform: translateX(0);
+            }
+        }
+
+        @keyframes fadeInRight {
+            from {
+                opacity: 0;
+                transform: translateX(50px);
+            }
+
+            to {
+                opacity: 1;
+                transform: translateX(0);
+            }
+        }
+
+        @keyframes scaleIn {
+            from {
+                opacity: 0;
+                transform: scale(0.85);
+            }
+
+            to {
+                opacity: 1;
+                transform: scale(1);
+            }
+        }
+
+        @keyframes float {
+
+            0%,
+            100% {
+                transform: translateY(0px);
+            }
+
+            50% {
+                transform: translateY(-12px);
+            }
+        }
+
+        @keyframes pulseGlow {
+
+            0%,
+            100% {
+                box-shadow: 0 0 20px rgba(140, 37, 244, 0.15);
+            }
+
+            50% {
+                box-shadow: 0 0 40px rgba(140, 37, 244, 0.35);
+            }
+        }
+
+        @keyframes slideInScale {
+            from {
+                opacity: 0;
+                transform: scale(0.6) translateY(30px);
+            }
+
+            to {
+                opacity: 1;
+                transform: scale(1) translateY(0);
+            }
+        }
+
+        @keyframes timelineDraw {
+            from {
+                height: 0;
+            }
+
+            to {
+                height: 100%;
+            }
+        }
+
+        [data-anim] {
+            opacity: 0;
+            transition: none;
+        }
+
+        [data-anim].anim-visible {
+            animation-fill-mode: both;
+            animation-timing-function: cubic-bezier(0.22, 1, 0.36, 1);
+        }
+
+        [data-anim="fade-up"].anim-visible {
+            animation-name: fadeInUp;
+        }
+
+        [data-anim="fade-down"].anim-visible {
+            animation-name: fadeInDown;
+        }
+
+        [data-anim="fade-left"].anim-visible {
+            animation-name: fadeInLeft;
+        }
+
+        [data-anim="fade-right"].anim-visible {
+            animation-name: fadeInRight;
+        }
+
+        [data-anim="scale-in"].anim-visible {
+            animation-name: scaleIn;
+        }
+
+        [data-anim="slide-scale"].anim-visible {
+            animation-name: slideInScale;
+        }
+
+        .float-anim {
+            animation: float 4s ease-in-out infinite;
+        }
+
+        .pulse-glow {
+            animation: pulseGlow 3s ease-in-out infinite;
+        }
+
+        header {
+            animation: fadeInDown 0.8s cubic-bezier(0.22, 1, 0.36, 1) both;
+        }
+
+        .tilt-card {
+            transition: transform 0.4s cubic-bezier(0.22, 1, 0.36, 1);
+        }
+
+        .tilt-card:hover {
+            transform: translateY(-8px);
+        }
+
+        .nav-link-anim {
+            position: relative;
+        }
+
+        .nav-link-anim::after {
+            content: '';
+            position: absolute;
+            bottom: -4px;
+            left: 0;
+            width: 0;
+            height: 2px;
+            background: #8c25f4;
+            transition: width 0.35s cubic-bezier(0.22, 1, 0.36, 1);
+        }
+
+        .nav-link-anim:hover::after {
+            width: 100%;
+        }
+
+        .hobby-card {
+            transition: transform 0.5s cubic-bezier(0.22, 1, 0.36, 1);
+        }
+
+        .hobby-card:hover {
+            transform: scale(1.05);
+        }
+    </style>
+</head>
+
+<body
+    class="bg-background-light dark:bg-background-dark text-slate-900 dark:text-slate-100 font-display min-h-screen flex flex-col">
+    <!-- Navigation Header 
+    <header class="sticky top-0 z-50 w-full border-b border-primary/10 bg-background-dark/80 backdrop-blur-md">
+        <div class="mx-auto flex h-16 max-w-7xl items-center justify-between px-4 sm:px-6 lg:px-8">
+            <div class="flex items-center gap-4">
+                <span class="material-symbols-outlined text-primary text-3xl">filter_tilt_shift</span>
+                <h2 class="text-xl font-bold tracking-tight text-slate-100" href="./index.html">MAH. HaSib</h2>
+            </div>
+            <nav class="hidden md:flex items-center gap-8">
+                <a class="text-sm font-medium hover:text-primary transition-colors nav-link-anim"
+                    href="https://mahhasib.vercel.app/">Home</a>
+                <a class="text-sm font-medium hover:text-primary transition-colors nav-link-anim" href="#work">Work</a>
+                <a class="text-sm font-medium hover:text-primary transition-colors nav-link-anim"
+                    href="#services">Services</a>
+                <a class="text-sm font-medium hover:text-primary transition-colors nav-link-anim"
+                    href="#about">About</a>
+                <a class="text-sm font-medium hover:text-primary transition-colors nav-link-anim" href="#blog">Blog</a>
+            </nav>
+            <div class="flex items-center gap-4">
+                <button class="hidden sm:block text-primary text-sm font-bold tracking-wide uppercase">Hire Me</button>
+                <button
+                    class="bg-primary text-white px-5 py-2 rounded-lg text-sm font-bold hover:bg-primary/90 transition-all">Get
+                    Started</button>
+            </div>
+        </div>
+    </header>-->
+    <!-- Header / TopAppBar -->
+    <header class="sticky top-0 z-50 w-full border-b border-primary/10 bg-background-dark/80 backdrop-blur-md">
+        <div class="mx-auto flex h-16 max-w-7xl items-center justify-between px-4 sm:px-6 lg:px-8">
+            <div class="flex items-center gap-4">
+                <a href="./index.html" class="flex items-center gap-4 no-underline">
+                    <span class="material-symbols-outlined text-primary text-3xl">filter_tilt_shift</span>
+                    <h2 class="text-xl font-bold tracking-tight text-slate-100">MAH. HaSib</h2>
+                </a>
+                <!-- Navigation History Buttons (Desktop/Tablet Only) -->
+                <div class="hidden md:flex items-center gap-2 ml-4 border-l border-white/10 pl-4">
+                    <button onclick="window.history.back()"
+                        class="w-8 h-8 flex items-center justify-center rounded-full bg-white/5 hover:bg-white/10 text-slate-300 transition-colors"
+                        title="Go Back">
+                        <span class="material-symbols-outlined text-sm">arrow_back</span>
+                    </button>
+                    <button onclick="window.history.forward()"
+                        class="w-8 h-8 flex items-center justify-center rounded-full bg-white/5 hover:bg-white/10 text-slate-300 transition-colors"
+                        title="Go Forward">
+                        <span class="material-symbols-outlined text-sm">arrow_forward</span>
+                    </button>
+                </div>
+            </div>
+            <nav class="hidden md:flex items-center gap-8">
+                <a class="text-sm font-medium hover:text-primary transition-colors nav-link-anim" href="#home">Home</a>
+                <a class="text-sm font-medium hover:text-primary transition-colors nav-link-anim" href="#work">Work</a>
+                <a class="text-sm font-medium hover:text-primary transition-colors nav-link-anim"
+                    href="#services">Services</a>
+                <a class="text-sm font-medium hover:text-primary transition-colors nav-link-anim"
+                    href="#about">About</a>
+                <a class="text-sm font-medium hover:text-primary transition-colors nav-link-anim" href="#blog">Blog</a>
+            </nav>
+            <div class="flex items-center gap-4">
+                <a href="mailto:mah.hasib015@gmail.com"
+                    class="hidden sm:block text-primary text-sm font-bold tracking-wide uppercase no-underline">Hire
+                    Me</a>
+                <a href="./contactfrom.html"
+                    class="bg-primary text-white px-5 py-2 rounded-lg text-sm font-bold hover:bg-primary/90 transition-all no-underline">Get
+                    Started</a>
+            </div>
+        </div>
+    </header>
+    <main class="bg-mesh">
+        <main class="flex-1 max-w-5xl mx-auto w-full px-4 py-12 space-y-24">
+            <!-- Hero Section: Who I Am -->
+            <section class="flex flex-col md:flex-row items-center gap-12 text-center md:text-left">
+                <div class="relative group rounded-full" data-anim="scale-in" data-delay="200">
+                    <div
+                        class="absolute -inset-1 bg-gradient-to-r from-primary to-purple-400 rounded-full blur opacity-25 group-hover:opacity-50 transition duration-1000">
+                    </div>
+                    <div class="relative bg-center bg-no-repeat aspect-square bg-cover rounded-full size-48 md:size-64 border-4 border-neutral-dark shadow-2xl"
+                        data-alt="Professional headshot of a creative designer named Alex"
+                        style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuCTWwBqrXn4fR4LtTUZoZMbPMzcMUodpYNgNS181PzLqO_nmfeOm2dZVjXMqS1K7LARG71V5eTfstwWIttv3qffNYaXkiikViFG5QtxfCMDJGJlOnHNiO5PGr7jVfEm4N7WBgb2RutApq_K6M4sSgDmy6mmA0cuKzY1DXzYnRC7GLmZRKxLeWWhpcNfSJSLwqxfWx5ha7W9z3EhmQ41-wrWGxXwTPIHO8AhmTFrGY-kawnaDovQszVcAnQ6wCr7rezdL8XOEVqYVhs");'>
+                    </div>
+                </div>
+                <div class="flex-1 space-y-6" data-anim="fade-right" data-delay="400">
+                    <div class="space-y-2">
+                        <span class="text-primary font-bold tracking-widest text-xs uppercase">Creative Designer</span>
+                        <h1 class="text-4xl md:text-6xl font-bold leading-tight">Who I Am.</h1>
+                    </div>
+                    <p class="text-slate-400 text-lg max-w-2xl leading-relaxed">
+                        I'm Alex, a Visual Storyteller based in San Francisco. I transform complex ideas into intuitive
+                        digital experiences that people love to use.
+                    </p>
+                    <div class="flex flex-wrap gap-4 justify-center md:justify-start" data-anim="fade-up" data-delay="500">
+                        <a href="./cv.html"
+                            class="px-8 py-3 bg-primary text-white font-bold rounded-xl hover:scale-105 transition-transform inline-flex items-center gap-2 no-underline shadow-lg shadow-primary/20">
+                            <span class="material-symbols-outlined text-lg">download</span>
+                            Get CV</a>
+                        <a href="./contactfrom.html"
+                            class="px-8 py-3 bg-slate-800 text-white font-bold rounded-xl border border-slate-700 hover:bg-slate-700 transition-colors inline-flex items-center no-underline">
+                            Contact Me</a>
+                    </div>
+                    <div class="flex gap-4 justify-center md:justify-start" data-anim="fade-up" data-delay="600">
+                        <div class="flex items-center gap-2 text-sm text-slate-400">
+                            <span class="material-symbols-outlined text-primary">location_on</span>
+                            San Francisco, CA
+                        </div>
+                        <div class="flex items-center gap-2 text-sm text-slate-400">
+                            <span class="material-symbols-outlined text-primary">work</span>
+                            8+ Years Experience
+                        </div>
+                    </div>
+                </div>
+            </section>
+            <!-- Biography Section -->
+            <section class="grid md:grid-cols-2 gap-12 items-center">
+                <div class="space-y-6 order-2 md:order-1" data-anim="fade-left" data-delay="200">
+                    <h2 class="text-3xl font-bold">My Journey</h2>
+                    <div class="space-y-4 text-slate-400 leading-relaxed">
+                        <p>
+                            With over 8 years of experience in digital design, I blend aesthetics with functionality to
+                            create memorable user experiences. My approach is rooted in empathy and driven by data,
+                            ensuring
+                            every pixel serves a purpose.
+                        </p>
+                        <p>
+                            I started my career as a freelance illustrator, which taught me the power of visual
+                            communication. Transitioning into UI/UX allowed me to apply that creative spark to solve
+                            real-world problems for global brands and startups alike.
+                        </p>
+                    </div>
+                    <div class="flex gap-6" data-anim="fade-up" data-delay="500">
+                        <div class="flex flex-col">
+                            <span class="text-3xl font-bold text-white" data-counter="50" data-suffix="+">0</span>
+                            <span class="text-xs text-slate-500 uppercase tracking-tighter">Projects Completed</span>
+                        </div>
+                        <div class="flex flex-col">
+                            <span class="text-3xl font-bold text-white" data-counter="12" data-suffix="">0</span>
+                            <span class="text-xs text-slate-500 uppercase tracking-tighter">Design Awards</span>
+                        </div>
+                        <div class="flex flex-col">
+                            <span class="text-3xl font-bold text-white" data-counter="100" data-suffix="%">0</span>
+                            <span class="text-xs text-slate-500 uppercase tracking-tighter">Happy Clients</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="bg-neutral-dark border border-border-dark rounded-xl p-2 order-1 md:order-2"
+                    data-anim="fade-right" data-delay="300">
+                    <div class="aspect-video rounded-lg overflow-hidden relative"
+                        data-alt="Modern workspace with design tools and large monitors"
+                        style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuDGC5Thz4Qkn6bxA2fz282j-_PgsoRS8E7mPMISDB69DjZWnEs5sN0dk-vBxFE8X_iMzNrDHRloge37o0_x_lq4Ucres3xVOhV1V2jP8f9ifcDjfJFxZfPAz_bv3t8u5drCxNYf8Ji43QKASiKreoU1uFUsm75zmI23qC5yxepdEDO0zQB7nQZUUl95IcbFVENa50UYoEA4yCfHi_mAodiocZXNZWiVKOXEf9zrxQ5HyIHFhkyn0ur360laTRJkrWiaf7e27ry3Lzo'); background-size: cover;">
+                        <div class="absolute inset-0 bg-primary/20 mix-blend-multiply"></div>
+                    </div>
+                </div>
+            </section>
+            <!-- Timeline: Experience & Education -->
+            <section class="space-y-12">
+                <div class="text-center" data-anim="fade-up" data-delay="100">
+                    <h2 class="text-3xl font-bold">Career Timeline</h2>
+                    <p class="text-slate-500 mt-2">The milestones that shaped my professional growth</p>
+                </div>
+                <div
+                    class="relative max-w-3xl mx-auto before:absolute before:inset-y-0 before:left-8 md:before:left-1/2 before:w-[2px] before:bg-border-dark">
+                    <!-- Timeline Item 1 -->
+                    <div
+                        class="relative flex items-center justify-between mb-12 md:justify-normal md:odd:flex-row-reverse group">
+                        <div
+                            class="flex items-center justify-center w-6 h-6 rounded-full bg-primary border-4 border-background-dark absolute left-5 md:left-1/2 md:-translate-x-1/2 z-10">
+                        </div>
+                        <div class="w-full md:w-[45%] ml-16 md:ml-0 glass-card p-6 rounded-xl border border-border-dark tilt-card"
+                            data-anim="fade-left" data-delay="200">
+                            <span class="text-primary text-sm font-bold">2021 — Present</span>
+                            <h3 class="text-xl font-bold mt-1">Lead Product Designer</h3>
+                            <p class="text-slate-400 text-sm mt-1">Nexus Tech Solutions</p>
+                            <p class="text-slate-500 mt-4 text-sm leading-relaxed">Leading the design system initiative
+                                and
+                                overseeing mobile app experiences for 2M+ users.</p>
+                        </div>
+                    </div>
+                    <!-- Timeline Item 2 -->
+                    <div
+                        class="relative flex items-center justify-between mb-12 md:justify-normal md:odd:flex-row-reverse group">
+                        <div
+                            class="flex items-center justify-center w-6 h-6 rounded-full bg-primary border-4 border-background-dark absolute left-5 md:left-1/2 md:-translate-x-1/2 z-10">
+                        </div>
+                        <div class="w-full md:w-[45%] ml-16 md:ml-0 glass-card p-6 rounded-xl border border-border-dark tilt-card"
+                            data-anim="fade-right" data-delay="400">
+                            <span class="text-primary text-sm font-bold">2018 — 2021</span>
+                            <h3 class="text-xl font-bold mt-1">Senior UI/UX Designer</h3>
+                            <p class="text-slate-400 text-sm mt-1">Creative Pulse Agency</p>
+                            <p class="text-slate-500 mt-4 text-sm leading-relaxed">Delivered high-fidelity prototypes
+                                and
+                                interface designs for Fortune 500 clients.</p>
+                        </div>
+                    </div>
+                    <!-- Timeline Item 3 -->
+                    <div
+                        class="relative flex items-center justify-between mb-12 md:justify-normal md:odd:flex-row-reverse group">
+                        <div
+                            class="flex items-center justify-center w-6 h-6 rounded-full bg-primary border-4 border-background-dark absolute left-5 md:left-1/2 md:-translate-x-1/2 z-10">
+                        </div>
+                        <div class="w-full md:w-[45%] ml-16 md:ml-0 glass-card p-6 rounded-xl border border-border-dark tilt-card"
+                            data-anim="fade-left" data-delay="600">
+                            <span class="text-primary text-sm font-bold">2014 — 2018</span>
+                            <h3 class="text-xl font-bold mt-1">BFA in Visual Design</h3>
+                            <p class="text-slate-400 text-sm mt-1">California Institute of the Arts</p>
+                            <p class="text-slate-500 mt-4 text-sm leading-relaxed">Specialized in typography, brand
+                                identity, and interactive media design.</p>
+                        </div>
+                    </div>
+                </div>
+            </section>
+            <!-- Core Values Grid -->
+            <section class="space-y-12">
+                <div class="text-center" data-anim="fade-up" data-delay="100">
+                    <h2 class="text-3xl font-bold">Design Philosophy</h2>
+                    <p class="text-slate-500 mt-2">The principles that guide my creative process</p>
+                </div>
+                <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+                    <div class="p-8 bg-neutral-dark border border-border-dark rounded-xl space-y-4 hover:border-primary/50 transition-colors tilt-card"
+                        data-anim="fade-up" data-delay="200">
+                        <div class="size-12 rounded-lg bg-primary/10 flex items-center justify-center">
+                            <span class="material-symbols-outlined text-primary">psychology</span>
+                        </div>
+                        <h3 class="text-xl font-bold">Human-Centric</h3>
+                        <p class="text-slate-500 text-sm leading-relaxed">Design should be invisible. I focus on
+                            creating
+                            interfaces that feel natural and intuitive for the user.</p>
+                    </div>
+                    <div class="p-8 bg-neutral-dark border border-border-dark rounded-xl space-y-4 hover:border-primary/50 transition-colors tilt-card"
+                        data-anim="fade-up" data-delay="400">
+                        <div class="size-12 rounded-lg bg-primary/10 flex items-center justify-center">
+                            <span class="material-symbols-outlined text-primary">architecture</span>
+                        </div>
+                        <h3 class="text-xl font-bold">Structured Design</h3>
+                        <p class="text-slate-500 text-sm leading-relaxed">I believe in strong foundations. Design
+                            systems
+                            and grids are the skeleton of a great digital product.</p>
+                    </div>
+                    <div class="p-8 bg-neutral-dark border border-border-dark rounded-xl space-y-4 hover:border-primary/50 transition-colors tilt-card"
+                        data-anim="fade-up" data-delay="600">
+                        <div class="size-12 rounded-lg bg-primary/10 flex items-center justify-center">
+                            <span class="material-symbols-outlined text-primary">brush</span>
+                        </div>
+                        <h3 class="text-xl font-bold">Visual Impact</h3>
+                        <p class="text-slate-500 text-sm leading-relaxed">Functionality is key, but beauty matters. I
+                            strive
+                            to make every project visually stunning and memorable.</p>
+                    </div>
+                </div>
+            </section>
+            <!-- Hobbies / Personal Section -->
+            <section class="space-y-12">
+                <div class="text-center" data-anim="fade-up" data-delay="100">
+                    <h2 class="text-3xl font-bold">Beyond the Canvas</h2>
+                    <p class="text-slate-500 mt-2">What keeps me inspired outside of work</p>
+                </div>
+                <div class="grid grid-cols-2 md:grid-cols-4 gap-4">
+                    <div class="group relative aspect-square rounded-xl overflow-hidden hobby-card"
+                        data-anim="slide-scale" data-delay="200">
+                        <div class="absolute inset-0 bg-cover bg-center" data-alt="Close up of a film camera lens"
+                            style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuDTf-3T7G_U8eFrCWNyKxbCcbh4vYKHWX-b_-oSMU4derym-rM_yPS1477KgI3ZrBO70z8pBYAr6BLSjiJD4ZiYg21ctoYMcpwMd3DksCM9miS7l40RdFYzNq9kUV14LJNgwn2UkAivJuK3EUamQLy090ClVQRZRQiVYNgqfx1q1fmGqGfjmoE5jnQSzN2BhOEHtrICTlagrusVVFYFllucIkuO7WxYYNZYkCzq1mKqECB83q2xZaoG2Aunjs0apSlJqox2gXN9LVQ');">
+                        </div>
+                        <div
+                            class="absolute inset-0 bg-background-dark/60 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center p-4 text-center">
+                            <span class="text-sm font-bold">Analog Photography</span>
+                        </div>
+                    </div>
+                    <div class="group relative aspect-square rounded-xl overflow-hidden hobby-card"
+                        data-anim="slide-scale" data-delay="350">
+                        <div class="absolute inset-0 bg-cover bg-center" data-alt="Chef plating a gourmet dish"
+                            style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuB3yuVZXQBDEyeTQWPikgem-Qc7K7rSGAl4p7B3Vla2ayV1CI_WY4ZjP36yIBu6wyvMdnII7cK6L8b7LXoGkrClaHu-C60E0Tet7nmOKva7pwYqV1rKnxepfYrAJdwCycCnbgEqlsx529N_DC8WPx3sjigoh1VZWWUImPflFEhMHFlch_X2lajtMLFvyDyYojpOZSLAOurD7CXP4XKV_NVXt8rMnaH82WJPDbYk-BZWRJGjMSiNfXdYwYYklbwYPVp0Hsh9KvgXn0k');">
+                        </div>
+                        <div
+                            class="absolute inset-0 bg-background-dark/60 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center p-4 text-center">
+                            <span class="text-sm font-bold">Gastronomy</span>
+                        </div>
+                    </div>
+                    <div class="group relative aspect-square rounded-xl overflow-hidden hobby-card"
+                        data-anim="slide-scale" data-delay="500">
+                        <div class="absolute inset-0 bg-cover bg-center" data-alt="Hiker standing on a mountain peak"
+                            style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuBQBnKtYo2S2DqcsqLdMFsGnRnghlHtb-OQ9g_0uXmMFvSal-C7-nd6R8vTFcPxhSjhTamHig6j-BBgJGqjxJR-56tRxvIA1cmiwBXRMHwYYpIjP5UI6YyF4dUfaa02YnkzcOt5ddqzbmbs3oAumo6-dKXv4_PfLqFoHna389tdyAdgNi5360dWYamBx9I0PDFUNlDCTqnPuosqkjivD13CSRt6iX3a0polpmCSTrwODCzBH734v5WkLUX5fbirLTjVFBbWwzuz6so');">
+                        </div>
+                        <div
+                            class="absolute inset-0 bg-background-dark/60 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center p-4 text-center">
+                            <span class="text-sm font-bold">Mountain Trekking</span>
+                        </div>
+                    </div>
+                    <div class="group relative aspect-square rounded-xl overflow-hidden hobby-card"
+                        data-anim="slide-scale" data-delay="650">
+                        <div class="absolute inset-0 bg-cover bg-center" data-alt="Synthesizer keys in a music studio"
+                            style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuACUglXzEKpEDZehSGnGSzf22U5jEW9o9MAYGqAoWlT2ljNfmsBpwBM8Nv1C9rwQ-ljT-VLaoOi4SHX2ALwwi8kyNzrDstZrDU9A8nK_hIIszPSovMbdVTUI3sbaZxg0ebIaa5VXLhrFXiWsY_tk5Fe6hDuuCNsBAyXE3FAXWUXTdaIONC-ZIPPR_j2RQSLyvhQtXY0OwV96Em6JrhHKyy6LQYe5I4VuOBBO1S5Y-HUwroyOA1DQ9DyjYkSehWIQva2su6pa1OgAX4');">
+                        </div>
+                        <div
+                            class="absolute inset-0 bg-background-dark/60 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center p-4 text-center">
+                            <span class="text-sm font-bold">Electronic Music</span>
+                        </div>
+                    </div>
+                </div>
+            </section>
+            <!-- CTA Section -->
+            <section class="relative rounded-2xl overflow-hidden py-20 px-8 text-center bg-primary" data-anim="scale-in"
+                data-delay="200">
+                <div class="absolute top-0 right-0 -mr-16 -mt-16 size-64 bg-white/10 rounded-full blur-3xl"></div>
+                <div class="absolute bottom-0 left-0 -ml-16 -mb-16 size-64 bg-black/20 rounded-full blur-3xl"></div>
+                <div class="relative z-10 space-y-8">
+                    <h2 class="text-3xl md:text-5xl font-bold text-white">Let's build something <br />extraordinary
+                        together.</h2>
+                    <div class="flex flex-col sm:flex-row gap-4 justify-center">
+                        <button
+                            class="bg-white text-primary px-8 py-4 rounded-xl font-bold text-lg hover:bg-slate-100 transition-all shadow-xl">
+                            Get in Touch
+                        </button>
+                        <button
+                            class="bg-primary border-2 border-white/30 text-white px-8 py-4 rounded-xl font-bold text-lg hover:bg-white/10 transition-all">
+                            View Resume
+                        </button>
+                    </div>
+                </div>
+            </section>
+        </main>
+        <!-- Footer -->
+        <footer class="mt-auto border-t border-border-dark bg-neutral-dark px-4 py-12">
+            <div class="max-w-5xl mx-auto grid md:grid-cols-4 gap-12">
+                <div class="col-span-2 space-y-6">
+                    <div class="flex items-center gap-2">
+                        <div class="size-8 bg-primary rounded-lg flex items-center justify-center">
+                            <span class="material-symbols-outlined text-white text-xl">blur_on</span>
+                        </div>
+                        <span class="font-bold text-lg tracking-tight">ALEX.DESIGN</span>
+                    </div>
+                    <p class="text-slate-500 max-w-sm">Designing interfaces that bridge the gap between human needs and
+                        digital solutions.</p>
+                    <div class="flex gap-4">
+                        <a class="text-slate-500 hover:text-primary transition-colors" href="#"><span
+                                class="material-symbols-outlined">public</span></a>
+                        <a class="text-slate-500 hover:text-primary transition-colors" href="#"><span
+                                class="material-symbols-outlined">alternate_email</span></a>
+                        <a class="text-slate-500 hover:text-primary transition-colors" href="#"><span
+                                class="material-symbols-outlined">share</span></a>
+                    </div>
+                </div>
+                <div class="space-y-4">
+                    <h4 class="font-bold">Sitemap</h4>
+                    <ul class="text-slate-500 space-y-2 text-sm">
+                        <li><a class="hover:text-primary" href="#">Home</a></li>
+                        <li><a class="hover:text-primary" href="#">Projects</a></li>
+                        <li><a class="hover:text-primary" href="#">About</a></li>
+                        <li><a class="hover:text-primary" href="#">Contact</a></li>
+                    </ul>
+                </div>
+                <div class="space-y-4">
+                    <h4 class="font-bold">Contact</h4>
+                    <ul class="text-slate-500 space-y-2 text-sm">
+                        <li class="flex items-center gap-2"><span class="material-symbols-outlined text-xs">mail</span>
+                            hello@alex.design</li>
+                        <li class="flex items-center gap-2"><span class="material-symbols-outlined text-xs">call</span>
+                            +1
+                            (555) 000-0000</li>
+                        <li class="flex items-center gap-2"><span
+                                class="material-symbols-outlined text-xs">location_on</span> San Francisco, CA</li>
+                    </ul>
+                </div>
+            </div>
+            <div class="max-w-5xl mx-auto mt-12 pt-8 border-t border-border-dark text-center text-slate-600 text-xs">
+                © 2024 Alex Design Portfolio. All rights reserved.
+            </div>
+        </footer>
+        <!-- Bottom Mobile Nav -->
+        <div
+            class="md:hidden fixed bottom-0 left-0 right-0 z-50 flex border-t border-border-dark bg-background-dark/90 backdrop-blur-lg px-4 pb-3 pt-2">
+            <a class="flex flex-1 flex-col items-center justify-end gap-1 text-slate-500" href="#">
+                <span class="material-symbols-outlined text-2xl">home</span>
+                <p class="text-[10px] font-medium">Home</p>
+            </a>
+            <a class="flex flex-1 flex-col items-center justify-end gap-1 text-slate-500" href="#">
+                <span class="material-symbols-outlined text-2xl">grid_view</span>
+                <p class="text-[10px] font-medium">Work</p>
+            </a>
+            <a class="flex flex-1 flex-col items-center justify-end gap-1 text-primary" href="#">
+                <span class="material-symbols-outlined text-2xl">person</span>
+                <p class="text-[10px] font-medium">About</p>
+            </a>
+            <a class="flex flex-1 flex-col items-center justify-end gap-1 text-slate-500" href="#">
+                <span class="material-symbols-outlined text-2xl">mail</span>
+                <p class="text-[10px] font-medium">Contact</p>
+            </a>
+        </div>
+        <!-- Animation Engine -->
+        <script>
+            document.addEventListener('DOMContentLoaded', () => {
+                // Scroll Reveal
+                const animEls = document.querySelectorAll('[data-anim]');
+                const observer = new IntersectionObserver((entries) => {
+                    entries.forEach(entry => {
+                        if (entry.isIntersecting) {
+                            const el = entry.target;
+                            const delay = el.dataset.delay || 0;
+                            const duration = el.dataset.duration || '0.8s';
+                            setTimeout(() => {
+                                el.style.animationDuration = duration;
+                                el.classList.add('anim-visible');
+                            }, parseInt(delay));
+                            observer.unobserve(el);
+                        }
+                    });
+                }, { threshold: 0.15, rootMargin: '0px 0px -40px 0px' });
+                animEls.forEach(el => observer.observe(el));
+
+                // Counter Animation
+                const counterEls = document.querySelectorAll('[data-counter]');
+                const counterObserver = new IntersectionObserver((entries) => {
+                    entries.forEach(entry => {
+                        if (entry.isIntersecting) {
+                            const el = entry.target;
+                            const target = parseInt(el.dataset.counter);
+                            const suffix = el.dataset.suffix || '';
+                            const duration = 2000;
+                            const start = performance.now();
+                            const animate = (now) => {
+                                const progress = Math.min((now - start) / duration, 1);
+                                const eased = 1 - Math.pow(1 - progress, 3);
+                                el.textContent = Math.floor(eased * target) + suffix;
+                                if (progress < 1) requestAnimationFrame(animate);
+                            };
+                            requestAnimationFrame(animate);
+                            counterObserver.unobserve(el);
+                        }
+                    });
+                }, { threshold: 0.5 });
+                counterEls.forEach(el => counterObserver.observe(el));
+
+                // Smooth Scroll
+                document.querySelectorAll('a[href^="#"]').forEach(a => {
+                    a.addEventListener('click', e => {
+                        const target = document.querySelector(a.getAttribute('href'));
+                        if (target) {
+                            e.preventDefault();
+                            target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+                        }
+                    });
+                });
+            });
+        </script>
+</body>
+
+</html>

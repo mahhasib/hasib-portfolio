@@ -1,0 +1,255 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="en">
+
+<head>
+    <meta charset="utf-8" />
+    <meta content="width=device-width, initial-scale=1.0" name="viewport" />
+    <title>Contact - Design Portfolio</title>
+    <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&amp;display=swap"
+        rel="stylesheet" />
+    <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght@100..700,0..1&amp;display=swap"
+        rel="stylesheet" />
+    <link
+        href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap"
+        rel="stylesheet" />
+    <script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "primary": "#8c25f4",
+                        "background-light": "#f7f5f8",
+                        "background-dark": "#191022",
+                    },
+                    fontFamily: {
+                        "display": ["Inter"]
+                    },
+                    borderRadius: { "DEFAULT": "0.25rem", "lg": "0.5rem", "xl": "0.75rem", "full": "9999px" },
+                },
+            },
+        }
+    </script>
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+        }
+
+        .custom-gradient {
+            background: linear-gradient(135deg, rgba(140, 37, 244, 0.15) 0%, rgba(25, 16, 34, 0) 100%);
+        }
+    </style>
+    <style>
+        body {
+            min-height: max(884px, 100dvh);
+        }
+    </style>
+</head>
+
+<body class="bg-background-light dark:bg-background-dark text-slate-900 dark:text-slate-100 min-h-screen flex flex-col">
+    <header
+        class="flex items-center bg-background-light dark:bg-background-dark p-4 sticky top-0 z-10 border-b border-slate-200 dark:border-primary/20">
+    </header>
+    <main class="flex-1 max-w-4xl mx-auto w-full px-4 py-8">
+        <h2
+            class="text-4xl font-extrabold text-center mb-12 text-slate-900 dark:text-slate-100 uppercase tracking-tight">
+            Contact Me</h2>
+        <div class="mb-10">
+            <h1
+                class="text-slate-900 dark:text-slate-100 tracking-tight text-4xl font-bold leading-tight mb-4 text-center">
+                Let's
+                build something incredible.</h1>
+            <p class="text-slate-600 dark:text-slate-400 text-lg leading-relaxed max-w-2xl mx-auto text-center">
+                Whether you have a specific project in mind or just want to chat about design, I'm always open to new
+                opportunities.
+            </p>
+        </div>
+        <div class="grid grid-cols-1 lg:grid-cols-5 gap-12">
+            <div class="lg:col-span-3">
+                <form id="contactForm" class="space-y-6">
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                        <div class="flex flex-col gap-2">
+                            <label
+                                class="text-slate-900 dark:text-slate-200 text-sm font-semibold uppercase tracking-wider">Full
+                                Name</label>
+                            <input name="name"
+                                class="form-input w-full rounded-xl border border-slate-200 dark:border-primary/30 bg-white dark:bg-primary/5 focus:border-primary focus:ring-1 focus:ring-primary text-slate-900 dark:text-white h-14 px-4 placeholder:text-slate-400 dark:placeholder:text-slate-500"
+                                placeholder="John Doe" type="text" required />
+                        </div>
+                        <div class="flex flex-col gap-2">
+                            <label
+                                class="text-slate-900 dark:text-slate-200 text-sm font-semibold uppercase tracking-wider">Email
+                                Address</label>
+                            <input name="email"
+                                class="form-input w-full rounded-xl border border-slate-200 dark:border-primary/30 bg-white dark:bg-primary/5 focus:border-primary focus:ring-1 focus:ring-primary text-slate-900 dark:text-white h-14 px-4 placeholder:text-slate-400 dark:placeholder:text-slate-500"
+                                placeholder="hello@example.com" type="email" required />
+                        </div>
+                    </div>
+                    <div class="flex flex-col gap-2">
+                        <label
+                            class="text-slate-900 dark:text-slate-200 text-sm font-semibold uppercase tracking-wider">Subject</label>
+                        <input name="subject"
+                            class="form-input w-full rounded-xl border border-slate-200 dark:border-primary/30 bg-white dark:bg-primary/5 focus:border-primary focus:ring-1 focus:ring-primary text-slate-900 dark:text-white h-14 px-4 placeholder:text-slate-400 dark:placeholder:text-slate-500"
+                            placeholder="Project Inquiry" type="text" required />
+                    </div>
+                    <div class="flex flex-col gap-2">
+                        <label
+                            class="text-slate-900 dark:text-slate-200 text-sm font-semibold uppercase tracking-wider">Message</label>
+                        <textarea name="message"
+                            class="form-textarea w-full rounded-xl border border-slate-200 dark:border-primary/30 bg-white dark:bg-primary/5 focus:border-primary focus:ring-1 focus:ring-primary text-slate-900 dark:text-white p-4 placeholder:text-slate-400 dark:placeholder:text-slate-500 resize-none"
+                            placeholder="Tell me about your project..." rows="5" required></textarea>
+                    </div>
+                    <button
+                        class="w-full bg-primary hover:bg-primary/90 text-white font-bold py-4 rounded-xl shadow-lg shadow-primary/20 transition-all active:scale-[0.98] flex items-center justify-center gap-2"
+                        type="submit">
+                        <span>Send Message</span>
+                        <span class="material-symbols-outlined text-xl">send</span>
+                    </button>
+                </form>
+            </div>
+            <div class="lg:col-span-2 flex flex-col gap-8">
+                <div
+                    class="p-6 rounded-2xl bg-white dark:bg-primary/5 border border-slate-200 dark:border-primary/20 custom-gradient">
+                    <h3 class="text-xl font-bold mb-6">Info</h3>
+                    <div class="space-y-6">
+                        <div class="flex items-start gap-4">
+                            <div class="size-10 rounded-full bg-primary/10 flex items-center justify-center shrink-0">
+                                <span class="material-symbols-outlined text-primary">mail</span>
+                            </div>
+                            <div>
+                                <p class="text-slate-500 dark:text-slate-400 text-sm">Email me at</p>
+                                <p class="font-medium text-slate-900 dark:text-white">mah.hasib015@gmail.com</p>
+                            </div>
+                        </div>
+                        <div class="flex items-start gap-4">
+                            <div class="size-10 rounded-full bg-primary/10 flex items-center justify-center shrink-0">
+                                <span class="material-symbols-outlined text-primary">location_on</span>
+                            </div>
+                            <div>
+                                <p class="text-slate-500 dark:text-slate-400 text-sm">Live in</p>
+                                <p class="font-medium text-slate-900 dark:text-white">Siddhirganj, Narayanganj, Dhaka
+                                </p>
+                            </div>
+                        </div>
+                        <div class="flex items-start gap-4">
+                            <div class="size-10 rounded-full bg-primary/10 flex items-center justify-center shrink-0">
+                                <span class="material-symbols-outlined text-primary">home</span>
+                            </div>
+                            <div>
+                                <p class="text-slate-500 dark:text-slate-400 text-sm">Home Town</p>
+                                <p class="font-medium text-slate-900 dark:text-white">Swandwip, Chottogram, Bangladesh
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="p-6 rounded-2xl bg-white dark:bg-primary/5 border border-slate-200 dark:border-primary/20">
+                    <h3 class="text-lg font-bold mb-4">My Social Media Handle</h3>
+                    <div class="flex gap-3">
+                        <!-- Facebook -->
+                        <a class="size-12 rounded-xl bg-slate-100 dark:bg-primary/10 flex items-center justify-center text-slate-700 dark:text-slate-300 hover:bg-primary hover:text-white transition-all"
+                            href="https://www.facebook.com/altafhossainhasib.hasib" target="_blank"
+                            rel="noopener noreferrer" title="Facebook">
+                            <svg class="size-5 fill-current" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                                <path
+                                    d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.469h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z" />
+                            </svg>
+                        </a>
+                        <!-- Instagram -->
+                        <a class="size-12 rounded-xl bg-slate-100 dark:bg-primary/10 flex items-center justify-center text-slate-700 dark:text-slate-300 hover:bg-primary hover:text-white transition-all"
+                            href="https://www.instagram.com/mah.hasib/" target="_blank" rel="noopener noreferrer"
+                            title="Instagram">
+                            <svg class="size-5 fill-current" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                                <path
+                                    d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.584.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z" />
+                            </svg>
+                        </a>
+                        <!-- LinkedIn -->
+                        <a class="size-12 rounded-xl bg-slate-100 dark:bg-primary/10 flex items-center justify-center text-slate-700 dark:text-slate-300 hover:bg-primary hover:text-white transition-all"
+                            href="https://www.linkedin.com/in/mahhasib?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app"
+                            target="_blank" rel="noopener noreferrer" title="LinkedIn">
+                            <svg class="size-5 fill-current" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                                <path
+                                    d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451c.979 0 1.778-.773 1.778-1.729V1.729C24 .774 23.204 0 22.225 0z" />
+                            </svg>
+                        </a>
+                        <!-- WhatsApp -->
+                        <a class="size-12 rounded-xl bg-slate-100 dark:bg-primary/10 flex items-center justify-center text-slate-700 dark:text-slate-300 hover:bg-primary hover:text-white transition-all"
+                            href="https://wa.me/+8801570228111" target="_blank" rel="noopener noreferrer"
+                            title="WhatsApp">
+                            <svg class="size-5 fill-current" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                                <path
+                                    d="M.057 24l1.687-6.163c-1.041-1.804-1.588-3.849-1.587-5.946.003-6.556 5.338-11.891 11.893-11.891 3.181.001 6.167 1.24 8.413 3.488 2.245 2.248 3.481 5.236 3.48 8.414-.003 6.557-5.338 11.892-11.893 11.892-1.99-.001-3.951-.5-5.688-1.448l-6.305 1.654zm6.597-3.807c1.676.995 3.276 1.591 5.392 1.592 5.448 0 9.886-4.434 9.889-9.885.002-5.462-4.415-9.89-9.881-9.892-5.452 0-9.887 4.434-9.889 9.884 0 2.225.569 3.807 1.694 5.75l-.993 3.62 3.79-.989zm11.387-5.493c-.31-.156-1.834-.905-2.112-1.006-.279-.101-.481-.151-.683.151-.202.302-.782 1.006-.958 1.207-.176.201-.353.227-.663.071-.31-.156-1.311-.483-2.497-1.541-.922-.822-1.544-1.837-1.724-2.139-.181-.302-.018-.466.136-.62.14-.14.31-.363.466-.544.156-.181.208-.31.31-.517.104-.207.052-.389-.026-.544-.078-.155-.683-1.644-.936-2.261-.248-.6-.503-.518-.683-.527l-.583-.009c-.201 0-.53.075-.808.378-.277.303-1.061 1.037-1.061 2.532 0 1.496 1.087 2.943 1.238 3.146.151.201 2.14 3.268 5.183 4.578.724.311 1.29.496 1.732.635.727.231 1.39.2 1.912.122.584-.087 1.834-.751 2.091-1.477.257-.726.257-1.348.181-1.477-.076-.131-.278-.206-.588-.362z" />
+                            </svg>
+                        </a>
+                        <!-- Threads -->
+                        <a class="size-12 rounded-xl bg-slate-100 dark:bg-primary/10 flex items-center justify-center text-slate-700 dark:text-slate-300 hover:bg-primary hover:text-white transition-all"
+                            href="https://www.threads.net/@mah.hasib" target="_blank" rel="noopener noreferrer"
+                            title="Threads">
+                            <svg class="size-6 fill-current" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                                <path
+                                    d="M19.153 12.112c.03-.284.053-.565.053-.865 0-3.375-2.073-5.344-5.323-5.344-2.887 0-5.352 2.146-5.352 5.56 0 3.328 2.306 5.54 5.38 5.54 1.488 0 2.766-.453 3.559-.974l.432 1.39c-1.026.643-2.583 1.107-4.102 1.107-4.085 0-7.14-2.73-7.14-6.906 0-4.3 3.14-7.143 7.217-7.143 4.544 0 7.211 2.809 7.211 6.551 0 .61-.059 1.14-.14 1.631-.4 2.227-2.31 4.793-5.385 4.793-1.408 0-2.355-.747-2.355-1.921 0-1.002.502-1.921 1.096-2.924l.57-1.012c.381-.663.57-1.229.57-1.815 0-1.125-.865-2.012-2.196-2.012-1.637 0-2.673 1.258-2.673 3.125 0 1.956 1.145 3.328 2.84 3.328.775 0 1.408-.344 1.848-.871.328.636.969 1.031 1.766 1.031 2.381 0 5.176-3.719 5.176-8.552 0-3.83-2.607-6.287-6.26-6.287-4.223 0-7.854 3.033-7.854 7.637 0 4.869 3.633 7.545 8.169 7.545 2.175 0 4.098-.544 5.068-.973l.416 1.404c-1.137.51-3.237 1.096-5.631 1.096-4.997 0-9.613-3.08-9.613-8.89 0-5.809 4.382-9.157 9.421-9.157 4.77 0 7.781 3.251 7.781 7.78 0 11.235-5.381 11.235-5.381 11.235" />
+                            </svg>
+                        </a>
+                        <!-- Telegram -->
+                        <a class="size-12 rounded-xl bg-slate-100 dark:bg-primary/10 flex items-center justify-center text-slate-700 dark:text-slate-300 hover:bg-primary hover:text-white transition-all"
+                            href="https://t.me/mahhasib" target="_blank" rel="noopener noreferrer" title="Telegram">
+                            <svg class="size-6 fill-current" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                                <path
+                                    d="M16.172 11L6.69995 7.00001C6.19995 6.80001 5.69995 7.20001 5.8 7.80001L8.29995 20.3C8.4 20.8 8.8 21.1 9.3 21.1C9.4 21.1 9.5 21.1 9.7 21C11 20.5 13.9 19.3 14.6 19C15.1 18.8 15.6 18.2 15.5 17.6C15.5 17.1 15.1 16.5 14.8 16.3C13.8 15.6 12.1 14.4 11.2 13.7L16.4 12V11H16.172Z" />
+                                <path
+                                    d="M12 24C18.6274 24 24 18.6274 24 12C24 5.37258 18.6274 0 12 0C5.37258 0 0 5.37258 0 12C0 18.6274 5.37258 24 12 24ZM12 22C6.47715 22 2 17.5228 2 12C2 6.47715 6.47715 2 12 2C17.5228 2 22 6.47715 22 12C22 17.5228 17.5228 22 12 22Z" />
+                            </svg>
+                        </a>
+                    </div>
+                </div>
+                <!--<div class="overflow-hidden rounded-2xl border border-slate-200 dark:border-primary/20 h-48 relative">
+                    <img alt="Map location" class="w-full h-full object-cover grayscale brightness-50 contrast-125"
+                        data-alt="Modern dark stylized map of San Francisco" data-location="San Francisco"
+                        src="https://lh3.googleusercontent.com/aida-public/AB6AXuBsGTSMstKB_ik2PK_W7Q6uMA8KoBaK0Gqg6SnpLmEPcX9BNJv-3OqGuiPNr7Nz6tYL3sWas_K1c-1uVJ_eYllKuAbDzfKxifuaSkGzWdkUWQroaMTp7fwyYlFJd1le9T6pTa-0nRdM1VDt1_AXdkPWvr2n_qWUcSdzizfnGVaGk_9t-FJNNvxkcosiUWdCW6roVi8Ncf-hon_6a3z0UHbBT8cawzLnHbNOkX0hD7ELoN_gnLYVjRjS_3qPzTAzn-GvOdC1HPm2K2M" />
+                    <div class="absolute inset-0 bg-primary/20 mix-blend-multiply"></div>
+                </div>-->
+            </div>
+        </div>
+    </main>
+    <footer
+        class="mt-auto border-t border-slate-200 dark:border-primary/20 bg-white dark:bg-background-dark/80 backdrop-blur-md">
+        <nav class="max-w-md mx-auto flex justify-around p-3">
+            <a class="flex flex-col items-center gap-1 text-slate-400 hover:text-primary transition-colors" href="#">
+                <span class="material-symbols-outlined">grid_view</span>
+                <span class="text-[10px] font-medium uppercase tracking-tighter">Portfolio</span>
+            </a>
+            <a class="flex flex-col items-center gap-1 text-slate-400 hover:text-primary transition-colors" href="#">
+                <span class="material-symbols-outlined">person</span>
+                <span class="text-[10px] font-medium uppercase tracking-tighter">Profile</span>
+            </a>
+            <a class="flex flex-col items-center gap-1 text-slate-400 hover:text-primary transition-colors" href="#">
+                <span class="material-symbols-outlined">palette</span>
+                <span class="text-[10px] font-medium uppercase tracking-tighter">Services</span>
+            </a>
+            <a class="flex flex-col items-center gap-1 text-primary" href="#">
+                <span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1">mail</span>
+                <span class="text-[10px] font-bold uppercase tracking-tighter">Contact</span>
+            </a>
+        </nav>
+    </footer>
+
+    <script>
+        document.getElementById('contactForm').addEventListener('submit', function (e) {
+            e.preventDefault();
+
+            const name = encodeURIComponent(document.getElementsByName('name')[0].value);
+            const email = encodeURIComponent(document.getElementsByName('email')[0].value);
+            const subject = encodeURIComponent(document.getElementsByName('subject')[0].value);
+            const message = encodeURIComponent(document.getElementsByName('message')[0].value);
+
+            const mailtoLink = `mailto:mah.hasib015@gmail.com?subject=${subject}&body=Name: ${decodeURIComponent(name)}%0AEmail: ${decodeURIComponent(email)}%0A%0A${decodeURIComponent(message)}`;
+
+            window.location.href = mailtoLink;
+        });
+    </script>
+</body>
+
+</html>

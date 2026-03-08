@@ -1,0 +1,321 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="en">
+
+<head>
+    <meta charset="utf-8" />
+    <meta content="width=device-width, initial-scale=1.0" name="viewport" />
+    <title>Pricing Plans - Portfolio</title>
+    <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&amp;display=swap"
+        rel="stylesheet" />
+    <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght@100..700,0..1&amp;display=swap"
+        rel="stylesheet" />
+    <link
+        href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap"
+        rel="stylesheet" />
+    <script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "primary": "#8c25f4",
+                        "background-light": "#f7f5f8",
+                        "background-dark": "#191022",
+                    },
+                    fontFamily: {
+                        "display": ["Inter"]
+                    },
+                    borderRadius: {
+                        "DEFAULT": "0.25rem",
+                        "lg": "0.5rem",
+                        "xl": "0.75rem",
+                        "full": "9999px"
+                    },
+                },
+            },
+        }
+    </script>
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+        }
+
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+    </style>
+    <style>
+        body {
+            min-height: max(884px, 100dvh);
+        }
+
+        /* ===== ANIMATION SYSTEM ===== */
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(40px);
+            }
+
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        @keyframes fadeInDown {
+            from {
+                opacity: 0;
+                transform: translateY(-30px);
+            }
+
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        @keyframes scaleIn {
+            from {
+                opacity: 0;
+                transform: scale(0.85);
+            }
+
+            to {
+                opacity: 1;
+                transform: scale(1);
+            }
+        }
+
+        /* Scroll reveal base */
+        [data-anim] {
+            opacity: 0;
+            transition: none;
+        }
+
+        [data-anim].anim-visible {
+            animation-fill-mode: both;
+            animation-timing-function: cubic-bezier(0.22, 1, 0.36, 1);
+        }
+
+        [data-anim="fade-up"].anim-visible {
+            animation-name: fadeInUp;
+        }
+
+        [data-anim="fade-down"].anim-visible {
+            animation-name: fadeInDown;
+        }
+
+        [data-anim="scale-in"].anim-visible {
+            animation-name: scaleIn;
+        }
+
+        /* Header entrance */
+        header {
+            animation: fadeInDown 0.8s cubic-bezier(0.22, 1, 0.36, 1) both;
+        }
+
+        /* Card hover lift */
+        .pricing-card {
+            transition: transform 0.4s cubic-bezier(0.22, 1, 0.36, 1);
+        }
+
+        .pricing-card:hover {
+            transform: translateY(-8px);
+        }
+    </style>
+</head>
+
+<body class="bg-background-light dark:bg-background-dark text-slate-900 dark:text-slate-100 min-h-screen flex flex-col">
+    <header
+        class="flex items-center bg-background-light dark:bg-background-dark p-4 sticky top-0 z-10 border-b border-primary/10">
+        <div class="text-primary flex size-10 shrink-0 items-center justify-center cursor-pointer">
+            <span class="material-symbols-outlined">arrow_back</span>
+        </div>
+        <h2
+            class="text-slate-900 dark:text-slate-100 text-lg font-bold leading-tight tracking-tight flex-1 text-center pr-10">
+            Pricing Plans</h2>
+    </header>
+    <main class="flex-1 overflow-y-auto px-4 py-8">
+        <div class="max-w-4xl mx-auto">
+            <div class="text-center mb-10" data-anim="fade-up" data-delay="100">
+                <h1
+                    class="text-slate-900 dark:text-slate-100 text-3xl font-extrabold leading-tight tracking-tight mb-3">
+                    Choose Your Plan</h1>
+                <p class="text-slate-600 dark:text-slate-400 text-base font-normal leading-relaxed">
+                    Simple, transparent pricing for your creative projects. Whether you're just starting or need a
+                    professional solution.
+                </p>
+            </div>
+            <div class="flex flex-col gap-6">
+                <!-- Basic Plan -->
+                <div class="flex flex-col gap-5 rounded-lg border border-primary/20 bg-white dark:bg-primary/5 p-6 shadow-sm pricing-card"
+                    data-anim="fade-up" data-delay="200">
+                    <div class="flex flex-col gap-2">
+                        <div class="flex items-center justify-between">
+                            <h3 class="text-slate-900 dark:text-slate-100 text-lg font-bold">Basic</h3>
+                            <span
+                                class="text-[10px] uppercase tracking-widest font-bold text-slate-500 dark:text-slate-400">Essential</span>
+                        </div>
+                        <p class="flex items-baseline gap-1">
+                            <span class="text-slate-900 dark:text-white text-4xl font-black tracking-tighter">$29</span>
+                            <span class="text-slate-500 dark:text-slate-400 text-base font-medium">/project</span>
+                        </p>
+                    </div>
+                    <a href="./contactfrom.html"
+                        class="w-full bg-primary/10 hover:bg-primary/20 dark:bg-primary/20 dark:hover:bg-primary/30 text-primary py-3 rounded-lg text-sm font-bold transition-colors text-center no-underline">
+                        Get Started
+                    </a>
+                    <div class="space-y-3 pt-2">
+                        <div class="flex items-center gap-3 text-sm text-slate-700 dark:text-slate-300">
+                            <span class="material-symbols-outlined text-primary text-xl">check_circle</span>
+                            1 Custom Landing Page
+                        </div>
+                        <div class="flex items-center gap-3 text-sm text-slate-700 dark:text-slate-300">
+                            <span class="material-symbols-outlined text-primary text-xl">check_circle</span>
+                            Basic SEO Optimization
+                        </div>
+                        <div class="flex items-center gap-3 text-sm text-slate-700 dark:text-slate-300">
+                            <span class="material-symbols-outlined text-primary text-xl">check_circle</span>
+                            Mobile Responsive Design
+                        </div>
+                        <div class="flex items-center gap-3 text-sm text-slate-700 dark:text-slate-300">
+                            <span class="material-symbols-outlined text-primary text-xl">check_circle</span>
+                            3 Days Email Support
+                        </div>
+                    </div>
+                </div>
+                <!-- Standard Plan (Most Popular) -->
+                <div class="relative flex flex-col gap-5 rounded-lg border-2 border-primary bg-white dark:bg-primary/10 p-6 shadow-xl pricing-card"
+                    data-anim="scale-in" data-delay="400">
+                    <div
+                        class="absolute -top-3 left-1/2 -translate-x-1/2 bg-primary text-white text-[10px] font-bold py-1 px-4 rounded-full uppercase tracking-widest">
+                        Most Popular
+                    </div>
+                    <div class="flex flex-col gap-2">
+                        <div class="flex items-center justify-between pt-2">
+                            <h3 class="text-slate-900 dark:text-slate-100 text-lg font-bold">Standard</h3>
+                            <span class="text-[10px] uppercase tracking-widest font-bold text-primary">Pro Choice</span>
+                        </div>
+                        <p class="flex items-baseline gap-1">
+                            <span class="text-slate-900 dark:text-white text-4xl font-black tracking-tighter">$99</span>
+                            <span class="text-slate-500 dark:text-slate-400 text-base font-medium">/mo</span>
+                        </p>
+                    </div>
+                    <button
+                        class="w-full bg-primary hover:bg-primary/90 text-white py-3 rounded-lg text-sm font-bold shadow-lg shadow-primary/20 transition-all">
+                        Order Now
+                    </button>
+                    <div class="space-y-3 pt-2">
+                        <div class="flex items-center gap-3 text-sm text-slate-700 dark:text-slate-300">
+                            <span class="material-symbols-outlined text-primary text-xl">check_circle</span>
+                            Up to 5 Pages Portfolio
+                        </div>
+                        <div class="flex items-center gap-3 text-sm text-slate-700 dark:text-slate-300">
+                            <span class="material-symbols-outlined text-primary text-xl">check_circle</span>
+                            Advanced Animations
+                        </div>
+                        <div class="flex items-center gap-3 text-sm text-slate-700 dark:text-slate-300">
+                            <span class="material-symbols-outlined text-primary text-xl">check_circle</span>
+                            CMS Integration (Blog)
+                        </div>
+                        <div class="flex items-center gap-3 text-sm text-slate-700 dark:text-slate-300">
+                            <span class="material-symbols-outlined text-primary text-xl">check_circle</span>
+                            Priority Support (24h)
+                        </div>
+                        <div class="flex items-center gap-3 text-sm text-slate-700 dark:text-slate-300">
+                            <span class="material-symbols-outlined text-primary text-xl">check_circle</span>
+                            Domain Setup Assistance
+                        </div>
+                    </div>
+                </div>
+                <!-- Premium Plan -->
+                <div class="flex flex-col gap-5 rounded-lg border border-primary/20 bg-white dark:bg-primary/5 p-6 shadow-sm pricing-card"
+                    data-anim="fade-up" data-delay="600">
+                    <div class="flex flex-col gap-2">
+                        <div class="flex items-center justify-between">
+                            <h3 class="text-slate-900 dark:text-slate-100 text-lg font-bold">Premium</h3>
+                            <span
+                                class="text-[10px] uppercase tracking-widest font-bold text-slate-500 dark:text-slate-400">Enterprise</span>
+                        </div>
+                        <p class="flex items-baseline gap-1">
+                            <span
+                                class="text-slate-900 dark:text-white text-4xl font-black tracking-tighter">$199</span>
+                            <span class="text-slate-500 dark:text-slate-400 text-base font-medium">/mo</span>
+                        </p>
+                    </div>
+                    <button
+                        class="w-full bg-primary/10 hover:bg-primary/20 dark:bg-primary/20 dark:hover:bg-primary/30 text-primary py-3 rounded-lg text-sm font-bold transition-colors">
+                        Order Now
+                    </button>
+                    <div class="space-y-3 pt-2">
+                        <div class="flex items-center gap-3 text-sm text-slate-700 dark:text-slate-300">
+                            <span class="material-symbols-outlined text-primary text-xl">check_circle</span>
+                            Unlimited Pages
+                        </div>
+                        <div class="flex items-center gap-3 text-sm text-slate-700 dark:text-slate-300">
+                            <span class="material-symbols-outlined text-primary text-xl">check_circle</span>
+                            E-commerce Capabilities
+                        </div>
+                        <div class="flex items-center gap-3 text-sm text-slate-700 dark:text-slate-300">
+                            <span class="material-symbols-outlined text-primary text-xl">check_circle</span>
+                            Custom Interaction Design
+                        </div>
+                        <div class="flex items-center gap-3 text-sm text-slate-700 dark:text-slate-300">
+                            <span class="material-symbols-outlined text-primary text-xl">check_circle</span>
+                            24/7 VIP Support
+                        </div>
+                        <div class="flex items-center gap-3 text-sm text-slate-700 dark:text-slate-300">
+                            <span class="material-symbols-outlined text-primary text-xl">check_circle</span>
+                            Monthly Maintenance
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+    <footer class="mt-auto border-t border-primary/10 bg-white/50 dark:bg-background-dark backdrop-blur-md">
+        <div class="flex gap-2 px-4 pb-4 pt-2">
+            <a class="flex flex-1 flex-col items-center justify-end gap-1 text-slate-400" href="#">
+                <span class="material-symbols-outlined">home</span>
+                <p class="text-[10px] font-medium">Home</p>
+            </a>
+            <a class="flex flex-1 flex-col items-center justify-end gap-1 text-slate-400" href="#">
+                <span class="material-symbols-outlined">work</span>
+                <p class="text-[10px] font-medium">Portfolio</p>
+            </a>
+            <a class="flex flex-1 flex-col items-center justify-end gap-1 text-primary" href="#">
+                <span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">payments</span>
+                <p class="text-[10px] font-bold">Pricing</p>
+            </a>
+            <a class="flex flex-1 flex-col items-center justify-end gap-1 text-slate-400" href="#">
+                <span class="material-symbols-outlined">mail</span>
+                <p class="text-[10px] font-medium">Contact</p>
+            </a>
+        </div>
+    </footer>
+    <!-- Animation Engine -->
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const animEls = document.querySelectorAll('[data-anim]');
+            const observer = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        const el = entry.target;
+                        const delay = el.dataset.delay || 0;
+                        const duration = el.dataset.duration || '0.8s';
+                        setTimeout(() => {
+                            el.style.animationDuration = duration;
+                            el.classList.add('anim-visible');
+                        }, parseInt(delay));
+                        observer.unobserve(el);
+                    }
+                });
+            }, { threshold: 0.15, rootMargin: '0px 0px -40px 0px' });
+            animEls.forEach(el => observer.observe(el));
+        });
+    </script>
+</body>
+
+</html>

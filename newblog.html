@@ -1,0 +1,277 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="en">
+
+<head>
+    <meta charset="utf-8" />
+    <meta content="width=device-width, initial-scale=1.0" name="viewport" />
+    <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&amp;display=swap"
+        rel="stylesheet" />
+    <link
+        href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap"
+        rel="stylesheet" />
+    <link
+        href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap"
+        rel="stylesheet" />
+    <script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "primary": "#8c25f4",
+                        "background-light": "#f7f5f8",
+                        "background-dark": "#191022",
+                    },
+                    fontFamily: {
+                        "display": ["Inter"]
+                    },
+                    borderRadius: { "DEFAULT": "0.25rem", "lg": "0.5rem", "xl": "0.75rem", "full": "9999px" },
+                },
+            },
+        }
+    </script>
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+        }
+
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+    </style>
+    <style>
+        body {
+            min-height: max(884px, 100dvh);
+        }
+    </style>
+</head>
+
+<body class="bg-background-light dark:bg-background-dark text-slate-900 dark:text-slate-100 antialiased">
+    <!-- Header / Navigation -->
+    <header
+        class="sticky top-0 z-50 w-full border-b border-primary/10 bg-background-light/80 dark:bg-background-dark/80 backdrop-blur-md">
+        <div class="container mx-auto flex items-center justify-between p-4">
+            <div class="flex items-center gap-2">
+                <span class="material-symbols-outlined text-primary text-3xl">terminal</span>
+                <h2 class="text-xl font-bold tracking-tight">Portfolio</h2>
+            </div>
+            <nav class="hidden md:flex items-center gap-8 text-sm font-medium">
+                <a class="hover:text-primary transition-colors" href="#">Home</a>
+                <a class="hover:text-primary transition-colors" href="#">Work</a>
+                <a class="text-primary underline underline-offset-4" href="#">Blog</a>
+                <a class="hover:text-primary transition-colors" href="#">Contact</a>
+            </nav>
+            <div class="flex items-center gap-4">
+                <button class="flex items-center justify-center rounded-full p-2 hover:bg-primary/10 transition-colors">
+                    <span class="material-symbols-outlined">search</span>
+                </button>
+                <button class="flex items-center justify-center rounded-full bg-primary text-white p-2">
+                    <span class="material-symbols-outlined">person</span>
+                </button>
+            </div>
+        </div>
+    </header>
+    <main class="container mx-auto px-4 py-8 max-w-5xl">
+        <!-- Page Title & Categories -->
+        <div class="mb-10">
+            <h1 class="text-4xl font-bold mb-6 tracking-tight">Latest Articles</h1>
+            <div class="flex gap-3 overflow-x-auto pb-2 scrollbar-hide">
+                <button
+                    class="flex h-10 shrink-0 items-center justify-center rounded-full bg-primary px-6 text-sm font-semibold text-white">
+                    All Posts
+                </button>
+                <button
+                    class="flex h-10 shrink-0 items-center justify-center rounded-full bg-primary/10 px-6 text-sm font-medium hover:bg-primary/20 transition-colors">
+                    Design
+                </button>
+                <button
+                    class="flex h-10 shrink-0 items-center justify-center rounded-full bg-primary/10 px-6 text-sm font-medium hover:bg-primary/20 transition-colors">
+                    Dev
+                </button>
+                <button
+                    class="flex h-10 shrink-0 items-center justify-center rounded-full bg-primary/10 px-6 text-sm font-medium hover:bg-primary/20 transition-colors">
+                    AI
+                </button>
+                <button
+                    class="flex h-10 shrink-0 items-center justify-center rounded-full bg-primary/10 px-6 text-sm font-medium hover:bg-primary/20 transition-colors">
+                    Career
+                </button>
+            </div>
+        </div>
+        <!-- Featured Post (Large Card) -->
+        <div
+            class="group relative mb-12 overflow-hidden rounded-xl bg-slate-100 dark:bg-primary/5 border border-primary/10 transition-all hover:border-primary/30">
+            <div class="grid grid-cols-1 lg:grid-cols-2">
+                <div class="h-64 lg:h-auto bg-cover bg-center"
+                    data-alt="Abstract neural network and digital particles representing AI"
+                    style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuCHdjsrEdrViZjdggbPX0M6l8zeChHuzlP_CDuj8m2DZrdfcDVnJ7N-1FoyzXI1G4ybUYX-qUCX5aY4A2spp5SKXrbN6oQ-rQS8ZmHFrNjyRKewO2o95jwfxpkuel7c3vDTM-aZ9EVIHKejkJIRThXppKSdTDs45rOvsvDsP3GAbrARvaAMG1QwGtXfZN5N2yksp5s2uEuZ1_IwJDkIbYTdK36rvAmEf8MXYfo9B19XrgIKldBqu3kRe3moz0stOr-iJByJjBq61s4')">
+                </div>
+                <div class="p-8 flex flex-col justify-center">
+                    <span class="text-primary text-sm font-bold uppercase tracking-widest mb-2">Featured Post •
+                        AI</span>
+                    <h2 class="text-3xl font-bold mb-4 group-hover:text-primary transition-colors">The Future of AI in
+                        Modern UI Design</h2>
+                    <p class="text-slate-600 dark:text-slate-400 mb-6 line-clamp-3">
+                        Exploring how generative AI is reshaping the way we build interfaces and user experiences. From
+                        automated wireframes to dynamic personalization, the landscape is changing faster than ever.
+                    </p>
+                    <div class="flex items-center justify-between mt-auto">
+                        <div class="flex items-center gap-2 text-sm text-slate-500">
+                            <span class="material-symbols-outlined text-sm">calendar_today</span>
+                            <span>Oct 24, 2023</span>
+                            <span class="mx-1">•</span>
+                            <span>8 min read</span>
+                        </div>
+                        <a class="flex items-center gap-1 font-bold text-primary group-hover:translate-x-1 transition-transform"
+                            href="#">
+                            Read Article <span class="material-symbols-outlined">arrow_forward</span>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- Grid of Articles -->
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+            <!-- Article 1 -->
+            <article
+                class="flex flex-col rounded-xl overflow-hidden bg-slate-100 dark:bg-primary/5 border border-primary/10 hover:border-primary/30 transition-all">
+                <div class="h-48 w-full bg-cover bg-center"
+                    data-alt="Vintage retro gaming computers and glowing screens"
+                    style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuDArNkzb6y2Ta-p2bT1Pf6B_Nws1tGfTJpI0JU5dW8MNH0NLuOxQAEYDA0FL2Mum-4U5qJACGdNR75H_9HAtiy9VTA41EBqPErtKJkcLf9p2qPiMVVT-mwtfeW5JdNuUbkD5B5Ij-Yd1lMdxSeMJt2J-VyQvenLFHa6KbHHz2Zr83c9Q_hLqZIhTItXhaIPtcUm-aKTXxZWR1r5NA8C_9VHmUrDMfIbrgt-wxfdpbiOlycPVATugNDaFeBvEyJACPCEw72hMhO1Shk')">
+                </div>
+                <div class="p-6 flex flex-col flex-1">
+                    <div class="flex items-center gap-2 mb-3">
+                        <span
+                            class="px-2 py-0.5 rounded bg-primary/20 text-primary text-xs font-bold uppercase tracking-tight">Dev</span>
+                        <span class="text-xs text-slate-500">Oct 18, 2023</span>
+                    </div>
+                    <h3 class="text-xl font-bold mb-3 hover:text-primary transition-colors">Scaling React Applications
+                        in 2024</h3>
+                    <p class="text-slate-600 dark:text-slate-400 text-sm mb-6 flex-1">
+                        Best practices for managing state, performance optimization, and architectural patterns for
+                        large-scale frontend projects.
+                    </p>
+                    <a class="mt-auto inline-flex items-center gap-1 text-sm font-bold text-primary" href="#">
+                        Read More <span class="material-symbols-outlined text-sm">open_in_new</span>
+                    </a>
+                </div>
+            </article>
+            <!-- Article 2 -->
+            <article
+                class="flex flex-col rounded-xl overflow-hidden bg-slate-100 dark:bg-primary/5 border border-primary/10 hover:border-primary/30 transition-all">
+                <div class="h-48 w-full bg-cover bg-center"
+                    data-alt="Modern minimalist workspace with aesthetic lighting"
+                    style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuCY6k09Uy9CHje-iFfsaemXh7SyBwVx-TbQr_SGLxJXShZuM1JzRKMEsrbtEm0JXYA57PVgf5NmER2pmwk6zO8JtgrD5Onxj74FkekP9jrsJsIuWvBAPomJq7AJUwvIFHZlxpH5EqkPwXZmiFT1bdCgmqoeMwoCbS6sPM_svnsbS23ZbSywUGKIKDdtn3Zc8spOiSBTp8Df0GvzDgEh9Q9CcwurTr-o3Gy04wl3c-WPZPMWv0o7okCnDaFvyxqwzTeoSngdGF5nS7k')">
+                </div>
+                <div class="p-6 flex flex-col flex-1">
+                    <div class="flex items-center gap-2 mb-3">
+                        <span
+                            class="px-2 py-0.5 rounded bg-primary/20 text-primary text-xs font-bold uppercase tracking-tight">Design</span>
+                        <span class="text-xs text-slate-500">Oct 12, 2023</span>
+                    </div>
+                    <h3 class="text-xl font-bold mb-3 hover:text-primary transition-colors">The Rise of Dark Mode
+                        Aesthetics</h3>
+                    <p class="text-slate-600 dark:text-slate-400 text-sm mb-6 flex-1">
+                        Why dark themes are more than just a trend and how to design them for accessibility and visual
+                        comfort.
+                    </p>
+                    <a class="mt-auto inline-flex items-center gap-1 text-sm font-bold text-primary" href="#">
+                        Read More <span class="material-symbols-outlined text-sm">open_in_new</span>
+                    </a>
+                </div>
+            </article>
+            <!-- Article 3 -->
+            <article
+                class="flex flex-col rounded-xl overflow-hidden bg-slate-100 dark:bg-primary/5 border border-primary/10 hover:border-primary/30 transition-all">
+                <div class="h-48 w-full bg-cover bg-center"
+                    data-alt="Close up of a circuit board with purple glowing elements"
+                    style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuDaux-HS5Cbx9sIOk9dgJWxdMM11d9Bl8VYQKCMHeYSsB4mYK1Zs9OqbZ9GGC-n2tLzPip_oEkLGjhE_eQOipL6MkwXUMXu5elT7-9p-E3heqOymWmjftFEdAjGWXg0j8rvwEQOBEX_SnQqQ6BIxjNTe257Oit3LYVgc2k3n8y5rx5jBbkg1hXyjZMFs__AC2TiQaFLbIzbREHcqJ8wOnA1Zvvof-iigNOXDLRUyINQOOSuFinsVBJLW84Y6F2i8sqjXKQKrhKf3Qs')">
+                </div>
+                <div class="p-6 flex flex-col flex-1">
+                    <div class="flex items-center gap-2 mb-3">
+                        <span
+                            class="px-2 py-0.5 rounded bg-primary/20 text-primary text-xs font-bold uppercase tracking-tight">AI</span>
+                        <span class="text-xs text-slate-500">Oct 05, 2023</span>
+                    </div>
+                    <h3 class="text-xl font-bold mb-3 hover:text-primary transition-colors">Vector Databases Explained
+                    </h3>
+                    <p class="text-slate-600 dark:text-slate-400 text-sm mb-6 flex-1">
+                        A beginner-friendly guide to understanding how vector databases power the next generation of AI
+                        search engines.
+                    </p>
+                    <a class="mt-auto inline-flex items-center gap-1 text-sm font-bold text-primary" href="#">
+                        Read More <span class="material-symbols-outlined text-sm">open_in_new</span>
+                    </a>
+                </div>
+            </article>
+            <!-- Article 4 -->
+            <article
+                class="flex flex-col rounded-xl overflow-hidden bg-slate-100 dark:bg-primary/5 border border-primary/10 hover:border-primary/30 transition-all">
+                <div class="h-48 w-full bg-cover bg-center" data-alt="Laptop screen showing clean source code on a desk"
+                    style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuCoYG_BFj5siY8877aAIBcNig5c8rI2V_ATchSlT5poLR96RLSMxFPvMZMKQczEO8D9ppPE02W7--c5gQcqu9diRcqgHcViW0S-jQor1b-ZZTOOkyrocvQlPXcr0ovu8K0rrLynMBV7DQJlPuQOT70TEc-03TVcrh3fd1Gf0I0-yz83Sc3rd_jA9AupFJMdO61JIOSJ7_Xnsa2M4Jt9c-ukY63T4aYXA7kXdvPKxzvmWdNx-89EMU7Y8rgrIVC2Ve2awbtHLD9AJcg')">
+                </div>
+                <div class="p-6 flex flex-col flex-1">
+                    <div class="flex items-center gap-2 mb-3">
+                        <span
+                            class="px-2 py-0.5 rounded bg-primary/20 text-primary text-xs font-bold uppercase tracking-tight">Dev</span>
+                        <span class="text-xs text-slate-500">Sep 28, 2023</span>
+                    </div>
+                    <h3 class="text-xl font-bold mb-3 hover:text-primary transition-colors">Mastering TypeScript Utility
+                        Types</h3>
+                    <p class="text-slate-600 dark:text-slate-400 text-sm mb-6 flex-1">
+                        Unlock the full potential of TypeScript with advanced utility types like Pick, Omit, and Record.
+                    </p>
+                    <a class="mt-auto inline-flex items-center gap-1 text-sm font-bold text-primary" href="#">
+                        Read More <span class="material-symbols-outlined text-sm">open_in_new</span>
+                    </a>
+                </div>
+            </article>
+        </div>
+        <!-- Pagination -->
+        <div class="mt-16 flex items-center justify-center gap-2">
+            <button
+                class="flex size-10 items-center justify-center rounded-lg border border-primary/20 hover:bg-primary/10 transition-colors">
+                <span class="material-symbols-outlined">chevron_left</span>
+            </button>
+            <button
+                class="flex size-10 items-center justify-center rounded-lg bg-primary text-white font-bold">1</button>
+            <button
+                class="flex size-10 items-center justify-center rounded-lg border border-primary/20 hover:bg-primary/10 transition-colors font-medium">2</button>
+            <button
+                class="flex size-10 items-center justify-center rounded-lg border border-primary/20 hover:bg-primary/10 transition-colors font-medium">3</button>
+            <span class="px-2">...</span>
+            <button
+                class="flex size-10 items-center justify-center rounded-lg border border-primary/20 hover:bg-primary/10 transition-colors font-medium">12</button>
+            <button
+                class="flex size-10 items-center justify-center rounded-lg border border-primary/20 hover:bg-primary/10 transition-colors">
+                <span class="material-symbols-outlined">chevron_right</span>
+            </button>
+        </div>
+    </main>
+    <!-- Bottom Nav (Mobile Only) -->
+    <div
+        class="md:hidden fixed bottom-0 left-0 right-0 z-50 border-t border-primary/20 bg-background-light dark:bg-background-dark/95 backdrop-blur-md px-4 pb-4 pt-2">
+        <div class="flex gap-2 justify-around max-w-md mx-auto">
+            <a class="flex flex-1 flex-col items-center justify-center gap-1 text-slate-500" href="#">
+                <span class="material-symbols-outlined">home</span>
+                <p class="text-[10px] font-medium uppercase tracking-tighter">Home</p>
+            </a>
+            <a class="flex flex-1 flex-col items-center justify-center gap-1 text-slate-500" href="#">
+                <span class="material-symbols-outlined">work</span>
+                <p class="text-[10px] font-medium uppercase tracking-tighter">Work</p>
+            </a>
+            <a class="flex flex-1 flex-col items-center justify-center gap-1 text-primary" href="#">
+                <span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">article</span>
+                <p class="text-[10px] font-medium uppercase tracking-tighter">Blog</p>
+            </a>
+            <a class="flex flex-1 flex-col items-center justify-center gap-1 text-slate-500" href="#">
+                <span class="material-symbols-outlined">mail</span>
+                <p class="text-[10px] font-medium uppercase tracking-tighter">Contact</p>
+            </a>
+        </div>
+    </div>
+</body>
+
+</html>

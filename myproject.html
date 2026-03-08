@@ -1,0 +1,370 @@
+<html class="dark" lang="en">
+
+<head>
+    <meta charset="utf-8" />
+    <meta content="width=device-width, initial-scale=1.0" name="viewport" />
+    <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&amp;display=swap"
+        rel="stylesheet" />
+    <link
+        href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap"
+        rel="stylesheet" />
+    <link
+        href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap"
+        rel="stylesheet" />
+    <script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "primary": "#8c25f4",
+                        "background-light": "#f7f5f8",
+                        "background-dark": "#191022",
+                    },
+                    fontFamily: {
+                        "display": ["Inter", "sans-serif"]
+                    },
+                    borderRadius: {
+                        "DEFAULT": "0.25rem",
+                        "lg": "0.5rem",
+                        "xl": "0.75rem",
+                        "full": "9999px"
+                    },
+                },
+            },
+        }
+    </script>
+    <style>
+        body {
+            min-height: max(884px, 100dvh);
+        }
+    </style>
+</head>
+
+<body
+    class="bg-background-light dark:bg-background-dark font-display text-slate-900 dark:text-slate-100 min-h-screen flex flex-col">
+    <!-- Header / Navigation Bar -->
+    <header
+        class="sticky top-0 z-50 w-full border-b border-primary/10 bg-background-light/80 dark:bg-background-dark/80 backdrop-blur-md">
+        <div class="container mx-auto flex h-16 items-center justify-between px-4">
+            <div class="flex items-center gap-2">
+                <div class="bg-primary rounded-lg p-1.5 flex items-center justify-center">
+                    <span class="material-symbols-outlined text-white text-xl">deployed_code</span>
+                </div>
+                <span class="text-lg font-bold tracking-tight">Portfolio</span>
+            </div>
+            <nav class="hidden md:flex items-center gap-8">
+                <a class="text-sm font-medium hover:text-primary transition-colors" href="#">Home</a>
+                <a class="text-sm font-medium hover:text-primary transition-colors" href="#">About</a>
+                <a class="text-sm font-medium text-primary underline underline-offset-4" href="#">Projects</a>
+                <a class="text-sm font-medium hover:text-primary transition-colors" href="#">Contact</a>
+            </nav>
+            <div class="flex items-center gap-4">
+                <button class="flex items-center justify-center rounded-full p-2 hover:bg-primary/10">
+                    <span class="material-symbols-outlined">search</span>
+                </button>
+                <a href="mailto:mah.hasib015@gmail.com"
+                    class="bg-primary hover:bg-primary/90 text-white px-4 py-2 rounded-lg text-sm font-medium transition-all no-underline">
+                    Hire Me
+                </a>
+            </div>
+        </div>
+    </header>
+    <main class="flex-1 container mx-auto px-4 py-8">
+        <!-- Page Title & Intro -->
+        <div class="mb-10">
+            <h1 class="text-3xl md:text-4xl font-bold mb-4">Selected Works</h1>
+            <p class="text-slate-600 dark:text-slate-400 max-w-2xl leading-relaxed">
+                A showcase of my recent design projects, focusing on digital experiences, brand identity, and solving
+                complex user problems through clean UI/UX design.
+            </p>
+        </div>
+        <!-- Filter System -->
+        <div class="flex flex-wrap gap-3 mb-10 overflow-x-auto pb-2 scrollbar-hide">
+            <button
+                class="flex h-10 shrink-0 items-center justify-center gap-x-2 rounded-lg bg-primary text-white px-5 transition-all">
+                <span class="text-sm font-medium">All Projects</span>
+            </button>
+            <button
+                class="flex h-10 shrink-0 items-center justify-center gap-x-2 rounded-lg bg-primary/10 hover:bg-primary/20 text-slate-900 dark:text-slate-100 px-5 transition-all">
+                <span class="text-sm font-medium">Web Apps</span>
+                <span class="material-symbols-outlined text-sm">laptop_mac</span>
+            </button>
+            <button
+                class="flex h-10 shrink-0 items-center justify-center gap-x-2 rounded-lg bg-primary/10 hover:bg-primary/20 text-slate-900 dark:text-slate-100 px-5 transition-all">
+                <span class="text-sm font-medium">Mobile UI</span>
+                <span class="material-symbols-outlined text-sm">smartphone</span>
+            </button>
+            <button
+                class="flex h-10 shrink-0 items-center justify-center gap-x-2 rounded-lg bg-primary/10 hover:bg-primary/20 text-slate-900 dark:text-slate-100 px-5 transition-all">
+                <span class="text-sm font-medium">Branding</span>
+                <span class="material-symbols-outlined text-sm">palette</span>
+            </button>
+            <button
+                class="flex h-10 shrink-0 items-center justify-center gap-x-2 rounded-lg bg-primary/10 hover:bg-primary/20 text-slate-900 dark:text-slate-100 px-5 transition-all">
+                <span class="text-sm font-medium">Dashboard</span>
+                <span class="material-symbols-outlined text-sm">dashboard</span>
+            </button>
+        </div>
+        <!-- Project Grid -->
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-2 gap-8 mb-16">
+            <!-- Project Card 1 -->
+            <div
+                class="group flex flex-col rounded-xl overflow-hidden bg-white dark:bg-primary/5 border border-slate-200 dark:border-primary/10 transition-all hover:shadow-2xl hover:shadow-primary/5 hover:-translate-y-1">
+                <div class="relative aspect-video overflow-hidden">
+                    <div class="absolute inset-0 bg-cover bg-center transition-transform duration-500 group-hover:scale-105"
+                        data-alt="Minimalist eco-friendly e-commerce website interface mockup"
+                        style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuCeqPSTa-7HfzIEcFknGPdU75yXaPLtd8sqdGRK-iQUHZiPwkycK9j1ttGkem1wee4Or7ddPFBEbW7UQ7P8PzdWIU3CZONmivvnzHArw3dUMAyM-aeyLQ0tyLfgGGGX8Fbb2yEJtJWE3gisVs3lzBYD2PnZ9s8N1SlelzdcBeqFZjJD_Q9R4p9iI4B5hFDzyl_gDjGt_aDqU22VykxdHD3rFNU0-AtsMUGtHyvrBs_7M7CSmOwFOZwOW_rry4Y9-9PwVf0yC-e3VFQ');">
+                    </div>
+                    <div
+                        class="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent opacity-0 group-hover:opacity-100 transition-opacity flex items-end p-6">
+                        <span class="text-white font-medium flex items-center gap-2">View Case Study <span
+                                class="material-symbols-outlined">arrow_forward</span></span>
+                    </div>
+                </div>
+                <div class="p-6 flex flex-col flex-1">
+                    <div class="flex gap-2 mb-3">
+                        <span
+                            class="px-2 py-1 rounded text-[10px] font-bold uppercase tracking-wider bg-primary/20 text-primary">Web
+                            Design</span>
+                        <span
+                            class="px-2 py-1 rounded text-[10px] font-bold uppercase tracking-wider bg-primary/20 text-primary">Sustainability</span>
+                    </div>
+                    <h3 class="text-xl font-bold mb-2 group-hover:text-primary transition-colors">Eco-Friendly
+                        E-commerce</h3>
+                    <p class="text-slate-600 dark:text-slate-400 text-sm mb-6 flex-1">
+                        Redesigning the sustainable shopping experience to reduce bounce rates and improve accessibility
+                        for conscious consumers.
+                    </p>
+                    <div class="flex items-center justify-between">
+                        <div class="flex gap-2">
+                            <span
+                                class="px-3 py-1 bg-slate-100 dark:bg-primary/20 rounded-full text-xs font-medium">Figma</span>
+                            <span
+                                class="px-3 py-1 bg-slate-100 dark:bg-primary/20 rounded-full text-xs font-medium">React</span>
+                            <span
+                                class="px-3 py-1 bg-slate-100 dark:bg-primary/20 rounded-full text-xs font-medium">UI/UX</span>
+                        </div>
+                        <button class="p-2 rounded-full bg-primary text-white hover:scale-110 transition-transform">
+                            <span class="material-symbols-outlined">chevron_right</span>
+                        </button>
+                    </div>
+                </div>
+            </div>
+            <!-- Project Card 2 -->
+            <div
+                class="group flex flex-col rounded-xl overflow-hidden bg-white dark:bg-primary/5 border border-slate-200 dark:border-primary/10 transition-all hover:shadow-2xl hover:shadow-primary/5 hover:-translate-y-1">
+                <div class="relative aspect-video overflow-hidden">
+                    <div class="absolute inset-0 bg-cover bg-center transition-transform duration-500 group-hover:scale-105"
+                        data-alt="Fitness tracking mobile app user interface design"
+                        style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuAU12qbEiPdAwGYOTpZW-0F7AUUC7smHkGCx3Yezeu0kdX6QYi4em-BxarMNOM3X8Yjtp6roEVDjumwZmlf3pDzjKTJcUeeKXXRzbVygB00WJR99D-gqNINzizT60XFcal2I2qYur0Zkg0B6I63Tvwa7WE671blnb3m6R1NrPHsI6326FuSgxTOqgxJy6b1Lx0HMCdKGlz2zCSW6-rFg2rIMPlIkJAdkwLQ2gQ4eZvUZf0wOhcnYAT__OzGBHcLd7ibbl4PrfIgGuE');">
+                    </div>
+                    <div
+                        class="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent opacity-0 group-hover:opacity-100 transition-opacity flex items-end p-6">
+                        <span class="text-white font-medium flex items-center gap-2">View Case Study <span
+                                class="material-symbols-outlined">arrow_forward</span></span>
+                    </div>
+                </div>
+                <div class="p-6 flex flex-col flex-1">
+                    <div class="flex gap-2 mb-3">
+                        <span
+                            class="px-2 py-1 rounded text-[10px] font-bold uppercase tracking-wider bg-primary/20 text-primary">Mobile
+                            App</span>
+                        <span
+                            class="px-2 py-1 rounded text-[10px] font-bold uppercase tracking-wider bg-primary/20 text-primary">Health</span>
+                    </div>
+                    <h3 class="text-xl font-bold mb-2 group-hover:text-primary transition-colors">Fitness Tracking App
+                    </h3>
+                    <p class="text-slate-600 dark:text-slate-400 text-sm mb-6 flex-1">
+                        A personalized fitness assistant that uses AI to curate workouts. Focused on gamification to
+                        improve user retention.
+                    </p>
+                    <div class="flex items-center justify-between">
+                        <div class="flex gap-2">
+                            <span
+                                class="px-3 py-1 bg-slate-100 dark:bg-primary/20 rounded-full text-xs font-medium">SwiftUI</span>
+                            <span
+                                class="px-3 py-1 bg-slate-100 dark:bg-primary/20 rounded-full text-xs font-medium">Figma</span>
+                            <span
+                                class="px-3 py-1 bg-slate-100 dark:bg-primary/20 rounded-full text-xs font-medium">Prototyping</span>
+                        </div>
+                        <button class="p-2 rounded-full bg-primary text-white hover:scale-110 transition-transform">
+                            <span class="material-symbols-outlined">chevron_right</span>
+                        </button>
+                    </div>
+                </div>
+            </div>
+            <!-- Project Card 3 -->
+            <div
+                class="group flex flex-col rounded-xl overflow-hidden bg-white dark:bg-primary/5 border border-slate-200 dark:border-primary/10 transition-all hover:shadow-2xl hover:shadow-primary/5 hover:-translate-y-1">
+                <div class="relative aspect-video overflow-hidden">
+                    <div class="absolute inset-0 bg-cover bg-center transition-transform duration-500 group-hover:scale-105"
+                        data-alt="Modern analytics dashboard interface with dark theme"
+                        style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuDirk1vxBqbTIia8UfKaPg8xRtJNosIOxAvobP4UynTHmCQ6Rbcqqj3n1DU9XPxqMDIqFnYi0yL-_ANHQefY1O3h7BvQzPQyylnkOf0Pv32F731pQxCr-T050JnlSRU6aZc1-dLLCOXLF_Ss9Q1iXVRUGyAPNC0CUdFSiSal_ZBHMbcrM38GzHPx0AOFFCNX52jS2GvBKDZblB0XlZ6pRBuw885xOpGf6hn43EkbL-h_MamQqn3k7unsnUHT4hmMticvvCKQkZu1BM');">
+                    </div>
+                    <div
+                        class="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent opacity-0 group-hover:opacity-100 transition-opacity flex items-end p-6">
+                        <span class="text-white font-medium flex items-center gap-2">View Case Study <span
+                                class="material-symbols-outlined">arrow_forward</span></span>
+                    </div>
+                </div>
+                <div class="p-6 flex flex-col flex-1">
+                    <div class="flex gap-2 mb-3">
+                        <span
+                            class="px-2 py-1 rounded text-[10px] font-bold uppercase tracking-wider bg-primary/20 text-primary">SaaS</span>
+                        <span
+                            class="px-2 py-1 rounded text-[10px] font-bold uppercase tracking-wider bg-primary/20 text-primary">Analytics</span>
+                    </div>
+                    <h3 class="text-xl font-bold mb-2 group-hover:text-primary transition-colors">Quantum Analytics
+                        Dashboard</h3>
+                    <p class="text-slate-600 dark:text-slate-400 text-sm mb-6 flex-1">
+                        Developing a complex data visualization tool for marketing agencies to track ROI across multiple
+                        social channels.
+                    </p>
+                    <div class="flex items-center justify-between">
+                        <div class="flex gap-2">
+                            <span
+                                class="px-3 py-1 bg-slate-100 dark:bg-primary/20 rounded-full text-xs font-medium">Next.js</span>
+                            <span
+                                class="px-3 py-1 bg-slate-100 dark:bg-primary/20 rounded-full text-xs font-medium">Tailwind</span>
+                            <span
+                                class="px-3 py-1 bg-slate-100 dark:bg-primary/20 rounded-full text-xs font-medium">D3.js</span>
+                        </div>
+                        <button class="p-2 rounded-full bg-primary text-white hover:scale-110 transition-transform">
+                            <span class="material-symbols-outlined">chevron_right</span>
+                        </button>
+                    </div>
+                </div>
+            </div>
+            <!-- Project Card 4 -->
+            <div
+                class="group flex flex-col rounded-xl overflow-hidden bg-white dark:bg-primary/5 border border-slate-200 dark:border-primary/10 transition-all hover:shadow-2xl hover:shadow-primary/5 hover:-translate-y-1">
+                <div class="relative aspect-video overflow-hidden">
+                    <div class="absolute inset-0 bg-cover bg-center transition-transform duration-500 group-hover:scale-105"
+                        data-alt="Brand identity guidelines for a modern fintech company"
+                        style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuD07zTCSLr5ofwoRzu1eF6hAdii3GHbjutBxiW4dy2cx1ShFjxLr7P-Nlw8w1yfazzobpOSYG4yfBwUr4QIRnTs9U_cdqdszdjKJG4i-ZSGuAPYBSdMgthMSgjX5EFW4FuoPlxkgGIoXMdxdrri_JnzIGqYAkyAIxROuuh5rw6YWzsQCB0cYzM3fRLK5tNwvf6IdDuZgsYnuOrYeORPzuutCfjORpDIShvnA04dIzA0Pf2zGRbqi-kb_Qpr4qJ9jH57BHTUUDeIwsI');">
+                    </div>
+                    <div
+                        class="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent opacity-0 group-hover:opacity-100 transition-opacity flex items-end p-6">
+                        <span class="text-white font-medium flex items-center gap-2">View Case Study <span
+                                class="material-symbols-outlined">arrow_forward</span></span>
+                    </div>
+                </div>
+                <div class="p-6 flex flex-col flex-1">
+                    <div class="flex gap-2 mb-3">
+                        <span
+                            class="px-2 py-1 rounded text-[10px] font-bold uppercase tracking-wider bg-primary/20 text-primary">Branding</span>
+                        <span
+                            class="px-2 py-1 rounded text-[10px] font-bold uppercase tracking-wider bg-primary/20 text-primary">Fintech</span>
+                    </div>
+                    <h3 class="text-xl font-bold mb-2 group-hover:text-primary transition-colors">NeoBank Identity
+                        System</h3>
+                    <p class="text-slate-600 dark:text-slate-400 text-sm mb-6 flex-1">
+                        Crafting a comprehensive brand system for a digital-first bank, including logo design, color
+                        palette, and mobile-first assets.
+                    </p>
+                    <div class="flex items-center justify-between">
+                        <div class="flex gap-2">
+                            <span
+                                class="px-3 py-1 bg-slate-100 dark:bg-primary/20 rounded-full text-xs font-medium">Illustrator</span>
+                            <span
+                                class="px-3 py-1 bg-slate-100 dark:bg-primary/20 rounded-full text-xs font-medium">Photoshop</span>
+                            <span
+                                class="px-3 py-1 bg-slate-100 dark:bg-primary/20 rounded-full text-xs font-medium">Brand
+                                Strategy</span>
+                        </div>
+                        <button class="p-2 rounded-full bg-primary text-white hover:scale-110 transition-transform">
+                            <span class="material-symbols-outlined">chevron_right</span>
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- Load More Button -->
+        <div class="flex justify-center mb-20">
+            <button
+                class="border border-primary text-primary hover:bg-primary hover:text-white transition-all px-8 py-3 rounded-lg font-bold flex items-center gap-2">
+                Load More Projects <span class="material-symbols-outlined">expand_more</span>
+            </button>
+        </div>
+    </main>
+    <!-- Footer -->
+    <footer class="bg-slate-100 dark:bg-background-dark border-t border-primary/10 py-12">
+        <div class="container mx-auto px-4">
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-12 mb-12">
+                <div class="col-span-1">
+                    <div class="flex items-center gap-2 mb-6">
+                        <div class="bg-primary rounded-lg p-1.5 flex items-center justify-center">
+                            <span class="material-symbols-outlined text-white text-xl">deployed_code</span>
+                        </div>
+                        <span class="text-xl font-bold tracking-tight">Portfolio</span>
+                    </div>
+                    <p class="text-slate-600 dark:text-slate-400 mb-6 leading-relaxed">
+                        Creative designer focused on building beautiful, functional digital experiences that bridge the
+                        gap between users and technology.
+                    </p>
+                    <div class="flex gap-4">
+                        <a class="w-10 h-10 rounded-full bg-primary/10 flex items-center justify-center hover:bg-primary hover:text-white transition-all"
+                            href="#">
+                            <span class="material-symbols-outlined">public</span>
+                        </a>
+                        <a class="w-10 h-10 rounded-full bg-primary/10 flex items-center justify-center hover:bg-primary hover:text-white transition-all"
+                            href="#">
+                            <span class="material-symbols-outlined">alternate_email</span>
+                        </a>
+                        <a class="w-10 h-10 rounded-full bg-primary/10 flex items-center justify-center hover:bg-primary hover:text-white transition-all"
+                            href="#">
+                            <span class="material-symbols-outlined">thumb_up</span>
+                        </a>
+                    </div>
+                </div>
+                <div class="col-span-1">
+                    <h4 class="text-lg font-bold mb-6">Navigation</h4>
+                    <ul class="space-y-4 text-slate-600 dark:text-slate-400">
+                        <li><a class="hover:text-primary transition-colors" href="#">Home</a></li>
+                        <li><a class="hover:text-primary transition-colors" href="#">About</a></li>
+                        <li><a class="hover:text-primary transition-colors" href="#">Projects</a></li>
+                        <li><a class="hover:text-primary transition-colors" href="#">Contact</a></li>
+                    </ul>
+                </div>
+                <div class="col-span-1">
+                    <h4 class="text-lg font-bold mb-6">Get In Touch</h4>
+                    <p class="text-slate-600 dark:text-slate-400 mb-4">Have a project in mind? Let's build something
+                        amazing together.</p>
+                    <a class="text-primary font-bold text-lg hover:underline underline-offset-4"
+                        href="mailto:hello@example.com">hello@portfolio.design</a>
+                </div>
+            </div>
+            <div class="pt-8 border-t border-primary/5 flex flex-col md:flex-row justify-between items-center gap-4">
+                <p class="text-sm text-slate-500">© 2024 Portfolio Design. All rights reserved.</p>
+                <div class="flex gap-8 text-sm text-slate-500">
+                    <a class="hover:text-primary transition-colors" href="#">Privacy Policy</a>
+                    <a class="hover:text-primary transition-colors" href="#">Terms of Service</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+    <!-- Bottom Navigation (Mobile Only) -->
+    <div
+        class="md:hidden sticky bottom-0 z-50 flex border-t border-primary/20 bg-background-light dark:bg-background-dark px-4 pb-3 pt-2">
+        <a class="flex flex-1 flex-col items-center justify-end gap-1 text-slate-500 dark:text-slate-400" href="#">
+            <span class="material-symbols-outlined">home</span>
+            <p class="text-[10px] font-medium leading-normal tracking-[0.015em]">Home</p>
+        </a>
+        <a class="flex flex-1 flex-col items-center justify-end gap-1 text-slate-500 dark:text-slate-400" href="#">
+            <span class="material-symbols-outlined">person</span>
+            <p class="text-[10px] font-medium leading-normal tracking-[0.015em]">About</p>
+        </a>
+        <a class="flex flex-1 flex-col items-center justify-end gap-1 text-primary" href="#">
+            <span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">folder</span>
+            <p class="text-[10px] font-medium leading-normal tracking-[0.015em]">Projects</p>
+        </a>
+        <a class="flex flex-1 flex-col items-center justify-end gap-1 text-slate-500 dark:text-slate-400" href="#">
+            <span class="material-symbols-outlined">mail</span>
+            <p class="text-[10px] font-medium leading-normal tracking-[0.015em]">Contact</p>
+        </a>
+    </div>
+</body>
+
+</html>

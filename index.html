@@ -1,0 +1,1549 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="en">
+
+<head>
+    <meta charset="utf-8" />
+    <meta content="width=device-width, initial-scale=1.0" name="viewport" />
+    <title>High-End Design Portfolio</title>
+    <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@100..900&amp;display=swap" rel="stylesheet" />
+    <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght@100..700,0..1&amp;display=swap"
+        rel="stylesheet" />
+    <link
+        href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap"
+        rel="stylesheet" />
+
+    <script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "primary": "#8c25f4",
+                        "background-light": "#f7f5f8",
+                        "background-dark": "#191022",
+                    },
+                    fontFamily: {
+                        "display": ["Inter"]
+                    },
+                    borderRadius: { "DEFAULT": "0.25rem", "lg": "0.5rem", "xl": "0.75rem", "full": "9999px" },
+                },
+            },
+        }
+    </script>
+
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+        }
+
+        .bg-mesh {
+            background-color: #191022;
+            background-image:
+                radial-gradient(at 0% 0%, rgba(140, 37, 244, 0.15) 0px, transparent 50%),
+                radial-gradient(at 100% 100%, rgba(140, 37, 244, 0.1) 0px, transparent 50%);
+        }
+    </style>
+
+    <style>
+        body {
+            min-height: max(884px, 100dvh);
+        }
+
+        /* ===== ANIMATION SYSTEM ===== */
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(40px);
+            }
+
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        @keyframes fadeInDown {
+            from {
+                opacity: 0;
+                transform: translateY(-40px);
+            }
+
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        @keyframes fadeInLeft {
+            from {
+                opacity: 0;
+                transform: translateX(-50px);
+            }
+
+            to {
+                opacity: 1;
+                transform: translateX(0);
+            }
+        }
+
+        @keyframes fadeInRight {
+            from {
+                opacity: 0;
+                transform: translateX(50px);
+            }
+
+            to {
+                opacity: 1;
+                transform: translateX(0);
+            }
+        }
+
+        @keyframes scaleIn {
+            from {
+                opacity: 0;
+                transform: scale(0.85);
+            }
+
+            to {
+                opacity: 1;
+                transform: scale(1);
+            }
+        }
+
+        @keyframes float {
+
+            0%,
+            100% {
+                transform: translateY(0px);
+            }
+
+            50% {
+                transform: translateY(-12px);
+            }
+        }
+
+        @keyframes pulseGlow {
+
+            0%,
+            100% {
+                box-shadow: 0 0 20px rgba(140, 37, 244, 0.15);
+            }
+
+            50% {
+                box-shadow: 0 0 40px rgba(140, 37, 244, 0.35);
+            }
+        }
+
+        @keyframes shimmer {
+            0% {
+                background-position: -200% 0;
+            }
+
+            100% {
+                background-position: 200% 0;
+            }
+        }
+
+        @keyframes typeWriter {
+            from {
+                width: 0;
+            }
+
+            to {
+                width: 100%;
+            }
+        }
+
+        @keyframes blinkCaret {
+            50% {
+                border-color: transparent;
+            }
+        }
+
+        @keyframes rotateIn {
+            from {
+                opacity: 0;
+                transform: rotate(-8deg) scale(0.9);
+            }
+
+            to {
+                opacity: 1;
+                transform: rotate(0) scale(1);
+            }
+        }
+
+        @keyframes slideInScale {
+            from {
+                opacity: 0;
+                transform: scale(0.6) translateY(30px);
+            }
+
+            to {
+                opacity: 1;
+                transform: scale(1) translateY(0);
+            }
+        }
+
+        /* Scroll reveal base */
+        [data-anim] {
+            opacity: 0;
+            transition: none;
+        }
+
+        [data-anim].anim-visible {
+            animation-fill-mode: both;
+            animation-timing-function: cubic-bezier(0.22, 1, 0.36, 1);
+        }
+
+        [data-anim="fade-up"].anim-visible {
+            animation-name: fadeInUp;
+        }
+
+        [data-anim="fade-down"].anim-visible {
+            animation-name: fadeInDown;
+        }
+
+        [data-anim="fade-left"].anim-visible {
+            animation-name: fadeInLeft;
+        }
+
+        [data-anim="fade-right"].anim-visible {
+            animation-name: fadeInRight;
+        }
+
+        [data-anim="scale-in"].anim-visible {
+            animation-name: scaleIn;
+        }
+
+        [data-anim="rotate-in"].anim-visible {
+            animation-name: rotateIn;
+        }
+
+        [data-anim="slide-scale"].anim-visible {
+            animation-name: slideInScale;
+        }
+
+        .float-anim {
+            animation: float 4s ease-in-out infinite;
+        }
+
+        .pulse-glow {
+            animation: pulseGlow 3s ease-in-out infinite;
+        }
+
+        /* Header entrance */
+        header {
+            animation: fadeInDown 0.8s cubic-bezier(0.22, 1, 0.36, 1) both;
+        }
+
+        /* Smooth counter */
+        .counter-value {
+            transition: all 0.3s;
+        }
+
+        /* Button ripple */
+        .btn-ripple {
+            position: relative;
+            overflow: hidden;
+        }
+
+        .btn-ripple::after {
+            content: '';
+            position: absolute;
+            width: 300%;
+            height: 300%;
+            top: 50%;
+            left: 50%;
+            background: radial-gradient(circle, rgba(255, 255, 255, 0.25) 0%, transparent 60%);
+            transform: translate(-50%, -50%) scale(0);
+            border-radius: 50%;
+            transition: transform 0.5s, opacity 0.5s;
+            opacity: 0;
+            pointer-events: none;
+        }
+
+        .btn-ripple:hover::after {
+            transform: translate(-50%, -50%) scale(1);
+            opacity: 1;
+        }
+
+        /* Card tilt on hover */
+        .tilt-card {
+            transition: transform 0.4s cubic-bezier(0.22, 1, 0.36, 1);
+        }
+
+        .tilt-card:hover {
+            transform: translateY(-8px);
+        }
+
+        /* Underline grow on nav links */
+        .nav-link-anim {
+            position: relative;
+        }
+
+        .nav-link-anim::after {
+            content: '';
+            position: absolute;
+            bottom: -4px;
+            left: 0;
+            width: 0;
+            height: 2px;
+            background: #8c25f4;
+            transition: width 0.35s cubic-bezier(0.22, 1, 0.36, 1);
+        }
+
+        .nav-link-anim:hover::after {
+            width: 100%;
+        }
+
+        /* ===== PERIODIC LOGO GLOW ===== */
+        @keyframes logoGlow {
+
+            0%,
+            90%,
+            100% {
+                box-shadow: 0 0 0 rgba(140, 37, 244, 0);
+                background-color: rgba(140, 37, 244, 0.1);
+            }
+
+            92% {
+                box-shadow: 0 10px 25px -5px rgba(140, 37, 244, 0.6);
+                background-color: rgba(140, 37, 244, 0.25);
+            }
+
+            98% {
+                box-shadow: 0 0 0 rgba(140, 37, 244, 0);
+                background-color: rgba(140, 37, 244, 0.1);
+            }
+        }
+
+        .periodic-glow-logo {
+            animation: logoGlow 30s infinite;
+        }
+    </style>
+</head>
+
+<body
+    class="bg-background-light dark:bg-background-dark text-slate-900 dark:text-slate-100 antialiased overflow-x-hidden">
+    <!-- Header / TopAppBar -->
+    <header class="sticky top-0 z-50 w-full border-b border-primary/10 bg-background-dark/80 backdrop-blur-md">
+        <div class="mx-auto flex h-16 max-w-7xl items-center justify-between px-4 sm:px-6 lg:px-8">
+            <div class="flex items-center gap-4">
+                <a href="./index.html" class="flex items-center gap-4 no-underline">
+                    <div
+                        class="w-10 h-10 rounded-lg flex items-center justify-center border border-primary/20 bg-primary/10 periodic-glow-logo relative overflow-hidden group">
+                        <span
+                            class="text-primary text-2xl font-bold leading-none select-none relative z-10 group-hover:scale-110 transition-transform">أ</span>
+                        <div
+                            class="absolute inset-0 bg-gradient-to-t from-primary/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity">
+                        </div>
+                    </div>
+                    <h2 class="text-xl font-bold tracking-tight text-slate-100">MAH. HaSib</h2>
+                </a>
+                <!-- Navigation History Buttons (Desktop/Tablet Only) -->
+                <div class="hidden md:flex items-center gap-2 ml-4 border-l border-white/10 pl-4">
+                    <button onclick="window.history.back()"
+                        class="w-8 h-8 flex items-center justify-center rounded-full bg-white/5 hover:bg-white/10 text-slate-300 transition-colors"
+                        title="Go Back">
+                        <span class="material-symbols-outlined text-sm">arrow_back</span>
+                    </button>
+                    <button onclick="window.history.forward()"
+                        class="w-8 h-8 flex items-center justify-center rounded-full bg-white/5 hover:bg-white/10 text-slate-300 transition-colors"
+                        title="Go Forward">
+                        <span class="material-symbols-outlined text-sm">arrow_forward</span>
+                    </button>
+                </div>
+            </div>
+            <nav class="hidden md:flex items-center gap-8">
+                <a class="text-sm font-medium hover:text-primary transition-colors nav-link-anim" href="#home">Home</a>
+                <a class="text-sm font-medium hover:text-primary transition-colors nav-link-anim" href="#work">Work</a>
+                <a class="text-sm font-medium hover:text-primary transition-colors nav-link-anim"
+                    href="#services">Services</a>
+                <a class="text-sm font-medium hover:text-primary transition-colors nav-link-anim"
+                    href="#about">About</a>
+                <a class="text-sm font-medium hover:text-primary transition-colors nav-link-anim" href="#blog">Blog</a>
+            </nav>
+            <div class="flex items-center gap-4">
+                <a href="mailto:mah.hasib015@gmail.com"
+                    class="hidden sm:block text-primary text-sm font-bold tracking-wide uppercase no-underline">Hire
+                    Me</a>
+                <a href="./contactfrom.html"
+                    class="bg-primary text-white px-5 py-2 rounded-lg text-sm font-bold hover:bg-primary/90 transition-all no-underline">Get
+                    Started</a>
+            </div>
+        </div>
+    </header>
+    <main class="bg-mesh">
+        <!-- Hero Section -->
+        <section class="relative px-4 py-20 lg:py-32 overflow-hidden">
+            <div class="mx-auto max-w-7xl">
+                <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+                    <div class="flex flex-col gap-8" data-anim="fade-left" data-delay="200">
+                        <div
+                            class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-primary/10 border border-primary/20 w-fit">
+                            <span class="relative flex h-2 w-2">
+                                <span
+                                    class="animate-ping absolute inline-flex h-full w-full rounded-full bg-primary opacity-75"></span>
+                                <span class="relative inline-flex rounded-full h-2 w-2 bg-primary"></span>
+                            </span>
+                            <span class="text-xs font-bold text-primary tracking-widest uppercase">Available for
+                                projects</span>
+                        </div>
+                        <h1 class="text-5xl md:text-7xl font-black leading-tight tracking-tight text-slate-100"
+                            data-anim="fade-up" data-delay="400">
+                            Design Beyond <span class="text-primary">Boundaries</span>
+                        </h1>
+                        <p class="text-lg md:text-xl text-slate-400 max-w-xl leading-relaxed">
+                            I create high-end digital experiences for forward-thinking brands. Let's build something
+                            exceptional together that resonates with your audience.
+                        </p>
+                        <div class="flex flex-wrap gap-4" data-anim="fade-up" data-delay="700">
+                            <a href="./mywork.html"
+                                class="px-8 py-4 bg-primary text-white font-bold rounded-xl hover:scale-105 transition-transform inline-flex items-center no-underline">View
+                                Work</a>
+                            <a href="./cv.html"
+                                class="px-8 py-4 bg-white/10 text-white font-bold rounded-xl border border-white/20 hover:bg-white/20 transition-all inline-flex items-center gap-2 no-underline">
+                                <span class="material-symbols-outlined text-lg">download</span>
+                                Get CV</a>
+                            <a href="tel:+8801570228111"
+                                class="px-8 py-4 bg-slate-800 text-white font-bold rounded-xl border border-slate-700 hover:bg-slate-700 transition-colors inline-flex items-center gap-2 no-underline">
+                                <span class="material-symbols-outlined text-lg">call</span>
+                                Contact Me</a>
+                        </div>
+                    </div>
+                    <div class="relative group" data-anim="fade-right" data-delay="500">
+                        <div
+                            class="absolute -inset-1 bg-gradient-to-r from-primary to-purple-600 rounded-2xl blur opacity-25 group-hover:opacity-40 transition duration-1000">
+                        </div>
+                        <div class="relative aspect-square w-full bg-slate-800 rounded-2xl overflow-hidden shadow-2xl border border-white/5"
+                            data-alt="Modern abstract 3D geometric shape with purple glow"
+                            style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuA4AGiHlE6ZU2ZsC7OCpKnbm8G0SX7q7Ainc8kbwCnj0fPdcSjcMBn6Rr03qtnIYZYgCc_LBQJA-aLnRhBbqj9bQz26KmESFpZ2f8q7f01A6RSGND0lC_sqixqQZJ_l7Ehs4MmqwBZhHMs84_T5NL5O83ZcqBaeTChytdsoRt-W2RF58bw-Rz0AS0r71nZgkyJkEq4e099sHOZnyVdPJK6eFr2iKIKkb0DLw6tEOHVVK8dTfjM_vK6khz2ic6i274UXc7-kCrxd5XA'); background-size: cover; background-position: center;">
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <!-- About Me Section -->
+        <section class="py-24 border-y border-white/5 bg-slate-900/30" id="about">
+            <div class="mx-auto max-w-7xl px-4">
+                <div class="flex flex-col md:flex-row gap-16 items-center">
+                    <div class="w-48 h-48 md:w-64 md:h-64 shrink-0 rounded-full border-4 border-primary/20 p-2"
+                        data-anim="scale-in" data-delay="200">
+                        <div class="w-full h-full rounded-full bg-slate-800 bg-cover bg-center shadow-2xl"
+                            data-alt="Professional portrait of a male designer smiling"
+                            style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuAQ_gDe2TJYINXViX1n2xBSOrM6webV4i3O70dGkHK_OiAwliBHHPGLPwH5YGGr5U-2o5sQC5LHVLiEZz-LsPO8cQ9ctHmtttP9RlO5T9HzioQi6mUCEoGZHRWfrRRdCBJ9w86sHGZz2py_3jSOVDrNwnlq4Zni-a4uSLxIxpxllw28gb_8HEELCyDmPJXxkAJPDbHLMmy-xLYyP9YYxuk7JJcis_zs0aBVeunc6B967NxqmGLP1zl0gVJIRYPLXrOBMPtHm0rxRuw');">
+                        </div>
+                    </div>
+                    <div class="flex-1 space-y-6" data-anim="fade-right" data-delay="400">
+                        <h2 class="text-3xl font-bold text-slate-100">A Senior UI/UX Designer dedicated to excellence.
+                        </h2>
+                        <p class="text-lg text-slate-400 leading-relaxed">
+                            With over 8 years of experience, I specialize in crafting user-centric digital products that
+                            solve complex problems through elegant design. Based in San Francisco, I've worked with
+                            startups and Fortune 500 companies to elevate their digital presence.
+                        </p>
+                        <div class="pt-2">
+                            <a class="inline-flex items-center gap-2 text-primary font-bold hover:underline transition-all"
+                                href="./abuot.html">
+                                About More <span class="material-symbols-outlined text-sm">arrow_forward</span>
+                            </a>
+                        </div>
+                        <div class="grid grid-cols-2 md:grid-cols-4 gap-6 pt-6">
+                            <div class="p-6 bg-slate-800/50 rounded-2xl border border-white/5 hover:border-primary/30 transition-colors"
+                                data-anim="fade-up" data-delay="300">
+                                <p class="text-sm text-slate-500 font-medium">Projects Done</p>
+                                <p class="text-3xl font-bold text-primary" data-counter="150" data-suffix="+">0</p>
+                            </div>
+                            <div class="p-6 bg-slate-800/50 rounded-2xl border border-white/5 hover:border-primary/30 transition-colors"
+                                data-anim="fade-up" data-delay="450">
+                                <p class="text-sm text-slate-500 font-medium">Happy Clients</p>
+                                <p class="text-3xl font-bold text-primary" data-counter="85" data-suffix="+">0</p>
+                            </div>
+                            <div class="p-6 bg-slate-800/50 rounded-2xl border border-white/5 hover:border-primary/30 transition-colors"
+                                data-anim="fade-up" data-delay="600">
+                                <p class="text-sm text-slate-500 font-medium">Years Exp.</p>
+                                <p class="text-3xl font-bold text-primary" data-counter="8" data-suffix="">0</p>
+                            </div>
+                            <div class="p-6 bg-slate-800/50 rounded-2xl border border-white/5 hover:border-primary/30 transition-colors"
+                                data-anim="fade-up" data-delay="750">
+                                <p class="text-sm text-slate-500 font-medium">Awards Won</p>
+                                <p class="text-3xl font-bold text-primary" data-counter="12" data-suffix="">0</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <!-- Services Section -->
+        <section class="py-24" id="services">
+            <div class="mx-auto max-w-7xl px-4">
+                <div class="text-center mb-16 space-y-4" data-anim="fade-up" data-delay="100">
+                    <h2 class="text-4xl font-bold text-slate-100">My Expert Services</h2>
+                    <p class="text-slate-400 max-w-2xl mx-auto">Specialized in creating high-impact digital solutions
+                        tailored to your business goals.</p>
+                </div>
+                <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                    <div class="group p-8 bg-slate-900 border border-white/5 rounded-2xl hover:bg-primary/5 hover:border-primary/20 transition-all tilt-card"
+                        data-anim="fade-up" data-delay="200">
+                        <div
+                            class="w-14 h-14 bg-primary/10 rounded-xl flex items-center justify-center text-primary mb-6 group-hover:bg-primary group-hover:text-white transition-colors">
+                            <span class="material-symbols-outlined text-3xl">token</span>
+                        </div>
+                        <h3 class="text-xl font-bold mb-4 text-slate-100">UI/UX Design</h3>
+                        <p class="text-slate-400 leading-relaxed mb-6">Creating intuitive, delightful, and functional
+                            interfaces for web and mobile platforms.</p>
+                        <ul class="space-y-3 text-sm text-slate-300">
+                            <li class="flex items-center gap-2"><span
+                                    class="material-symbols-outlined text-primary text-lg">check_circle</span> User
+                                Research</li>
+                            <li class="flex items-center gap-2"><span
+                                    class="material-symbols-outlined text-primary text-lg">check_circle</span>
+                                Wireframing &amp; Prototyping</li>
+                            <li class="flex items-center gap-2"><span
+                                    class="material-symbols-outlined text-primary text-lg">check_circle</span> Visual
+                                Design</li>
+                        </ul>
+                    </div>
+                    <div class="group p-8 bg-slate-900 border border-white/5 rounded-2xl hover:bg-primary/5 hover:border-primary/20 transition-all tilt-card"
+                        data-anim="fade-up" data-delay="400">
+                        <div
+                            class="w-14 h-14 bg-primary/10 rounded-xl flex items-center justify-center text-primary mb-6 group-hover:bg-primary group-hover:text-white transition-colors">
+                            <span class="material-symbols-outlined text-3xl">developer_mode</span>
+                        </div>
+                        <h3 class="text-xl font-bold mb-4 text-slate-100">Web Development</h3>
+                        <p class="text-slate-400 leading-relaxed mb-6">Building fast, responsive, and SEO-optimized
+                            websites using modern tech stacks.</p>
+                        <ul class="space-y-3 text-sm text-slate-300">
+                            <li class="flex items-center gap-2"><span
+                                    class="material-symbols-outlined text-primary text-lg">check_circle</span> Front-end
+                                Development</li>
+                            <li class="flex items-center gap-2"><span
+                                    class="material-symbols-outlined text-primary text-lg">check_circle</span>
+                                Responsive Layouts</li>
+                            <li class="flex items-center gap-2"><span
+                                    class="material-symbols-outlined text-primary text-lg">check_circle</span>
+                                Performance Tuning</li>
+                        </ul>
+                    </div>
+                    <div class="group p-8 bg-slate-900 border border-white/5 rounded-2xl hover:bg-primary/5 hover:border-primary/20 transition-all tilt-card"
+                        data-anim="fade-up" data-delay="600">
+                        <div
+                            class="w-14 h-14 bg-primary/10 rounded-xl flex items-center justify-center text-primary mb-6 group-hover:bg-primary group-hover:text-white transition-colors">
+                            <span class="material-symbols-outlined text-3xl">auto_fix_high</span>
+                        </div>
+                        <h3 class="text-xl font-bold mb-4 text-slate-100">Brand Identity</h3>
+                        <p class="text-slate-400 leading-relaxed mb-6">Defining the visual soul of your company through
+                            cohesive and memorable branding.</p>
+                        <ul class="space-y-3 text-sm text-slate-300">
+                            <li class="flex items-center gap-2"><span
+                                    class="material-symbols-outlined text-primary text-lg">check_circle</span> Logo
+                                Design</li>
+                            <li class="flex items-center gap-2"><span
+                                    class="material-symbols-outlined text-primary text-lg">check_circle</span> Brand
+                                Style Guides</li>
+                            <li class="flex items-center gap-2"><span
+                                    class="material-symbols-outlined text-primary text-lg">check_circle</span> Marketing
+                                Collateral</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <!-- Working Process -->
+        <section class="py-24 bg-slate-900/50">
+            <div class="mx-auto max-w-7xl px-4 text-center">
+                <h2 class="text-4xl font-bold text-slate-100 mb-16" data-anim="fade-up" data-delay="100">My Working
+                    Process</h2>
+                <div class="relative grid grid-cols-1 md:grid-cols-4 gap-12">
+                    <div
+                        class="absolute top-1/2 left-0 w-full h-0.5 bg-primary/10 hidden md:block -translate-y-1/2 -z-10">
+                    </div>
+                    <div class="flex flex-col items-center gap-4" data-anim="slide-scale" data-delay="200">
+                        <div
+                            class="w-16 h-16 rounded-full bg-primary text-white flex items-center justify-center font-bold text-xl shadow-lg shadow-primary/30">
+                            01</div>
+                        <h4 class="font-bold text-slate-100">Discovery</h4>
+                        <p class="text-sm text-slate-400">Understanding your vision and objectives.</p>
+                    </div>
+                    <div class="flex flex-col items-center gap-4" data-anim="slide-scale" data-delay="400">
+                        <div
+                            class="w-16 h-16 rounded-full bg-slate-800 text-primary border-2 border-primary flex items-center justify-center font-bold text-xl">
+                            02</div>
+                        <h4 class="font-bold text-slate-100">Strategy</h4>
+                        <p class="text-sm text-slate-400">Planning the architecture and user flows.</p>
+                    </div>
+                    <div class="flex flex-col items-center gap-4" data-anim="slide-scale" data-delay="600">
+                        <div
+                            class="w-16 h-16 rounded-full bg-slate-800 text-primary border-2 border-primary flex items-center justify-center font-bold text-xl">
+                            03</div>
+                        <h4 class="font-bold text-slate-100">Execution</h4>
+                        <p class="text-sm text-slate-400">Bringing the design to life with precision.</p>
+                    </div>
+                    <div class="flex flex-col items-center gap-4" data-anim="slide-scale" data-delay="800">
+                        <div
+                            class="w-16 h-16 rounded-full bg-slate-800 text-primary border-2 border-primary flex items-center justify-center font-bold text-xl">
+                            04</div>
+                        <h4 class="font-bold text-slate-100">Delivery</h4>
+                        <p class="text-sm text-slate-400">Testing, refinement, and final launch.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <!-- Portfolio Showcase -->
+        <section class="py-24" id="work">
+            <div class="mx-auto max-w-7xl px-4">
+                <div class="flex flex-col md:flex-row md:items-end justify-between mb-12 gap-8">
+                    <div class="space-y-4" data-anim="fade-left" data-delay="100">
+                        <h2 class="text-4xl font-bold text-slate-100">Latest Creations</h2>
+                        <p class="text-slate-400">A collection of projects that define my creative journey.</p>
+                    </div>
+                    <div class="flex flex-wrap gap-2">
+                        <button class="px-6 py-2 bg-primary text-white rounded-full text-sm font-bold">All Work</button>
+                        <button
+                            class="px-6 py-2 bg-slate-800 text-slate-400 hover:text-white rounded-full text-sm font-bold transition-colors">Mobile</button>
+                        <button
+                            class="px-6 py-2 bg-slate-800 text-slate-400 hover:text-white rounded-full text-sm font-bold transition-colors">Web</button>
+                        <button
+                            class="px-6 py-2 bg-slate-800 text-slate-400 hover:text-white rounded-full text-sm font-bold transition-colors">Branding</button>
+                    </div>
+                </div>
+                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                    <!-- Project Card -->
+                    <div class="group relative overflow-hidden rounded-2xl bg-slate-900 border border-white/5 tilt-card"
+                        data-anim="fade-up" data-delay="200">
+                        <div class="aspect-[4/3] w-full bg-slate-800 bg-cover bg-center transition-transform duration-500 group-hover:scale-110"
+                            data-alt="UI design of a financial dashboard with dark mode"
+                            style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuAr4Fb10lOhq9-15QxdrKbAsKQGgsykjX2s-HPpYTgaqb4DSeMSlSy2t2JBN0T_64_3XyKuVr5IYwxQjRY0lJhSw7oiKEhDSeD999jOFvBd7yawr3U6AYnz19pQ59iCCbZVACpZcl61habDqS7XDSu2lkoEYynL_OnUQDI3z-EP7GsM9NFwd-RSjFeiD0gZ9SAnLBZPiVVTuBXHfqOVuYr6Lc6nHbsKwdy5DBoeVyvub_fLqx6Z_5Yy8Af6CkFtcFqWdHHO0daypMg');">
+                        </div>
+                        <div
+                            class="absolute inset-0 bg-gradient-to-t from-background-dark via-background-dark/20 to-transparent opacity-90">
+                        </div>
+                        <div class="absolute bottom-0 left-0 p-8 w-full">
+                            <p class="text-primary text-xs font-bold uppercase tracking-widest mb-2">Fintech App</p>
+                            <h3 class="text-xl font-bold text-white mb-2">CryptoWealth Dashboard</h3>
+                            <button
+                                class="flex items-center gap-2 text-sm font-bold text-slate-300 hover:text-primary transition-colors">
+                                View Case Study <span class="material-symbols-outlined text-sm">arrow_forward</span>
+                            </button>
+                        </div>
+                    </div>
+                    <!-- Project Card 2 -->
+                    <div class="group relative overflow-hidden rounded-2xl bg-slate-900 border border-white/5 tilt-card"
+                        data-anim="fade-up" data-delay="400">
+                        <div class="aspect-[4/3] w-full bg-slate-800 bg-cover bg-center transition-transform duration-500 group-hover:scale-110"
+                            data-alt="Mobile app design for a modern health tracker"
+                            style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuA72OBWrm7Jxpu55DFS-99g2E3p89T5ySC-SmXKzxiGYP39w77F-6I7J5YDm2lZJX2RgGm5NG0-IZcDgIsiFzJuaPWG1DC1V00lgANJ7rrMxezqKizV_DLcKZzK7L57osLhFboSLYySRYMlQo2HOqlzBzcn-hx_nwbHVfe3dS9c1shg15xewCZtY9lhi36SLT2ffUbnj9ERDIZNyWt9aOEej3uRnR0AbgYoEYLnw5VzEZfVxFFxg5KDsyTIDfgY_UqTK9_Hh1ReYOM');">
+                        </div>
+                        <div
+                            class="absolute inset-0 bg-gradient-to-t from-background-dark via-background-dark/20 to-transparent opacity-90">
+                        </div>
+                        <div class="absolute bottom-0 left-0 p-8 w-full">
+                            <p class="text-primary text-xs font-bold uppercase tracking-widest mb-2">Healthcare</p>
+                            <h3 class="text-xl font-bold text-white mb-2">VitaFlow Fitness Mobile</h3>
+                            <button
+                                class="flex items-center gap-2 text-sm font-bold text-slate-300 hover:text-primary transition-colors">
+                                View Case Study <span class="material-symbols-outlined text-sm">arrow_forward</span>
+                            </button>
+                        </div>
+                    </div>
+                    <!-- Project Card 3 -->
+                    <div class="group relative overflow-hidden rounded-2xl bg-slate-900 border border-white/5 tilt-card"
+                        data-anim="fade-up" data-delay="600">
+                        <div class="aspect-[4/3] w-full bg-slate-800 bg-cover bg-center transition-transform duration-500 group-hover:scale-110"
+                            data-alt="Web design for a creative marketing agency"
+                            style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuCATCGvJ7b-SC3U969NsP8Sq1Ga93L94v0_r5rphoBcz8cCv9w8wp2MQvG69qgJS44DAFuuvjghnwCgVUjZO0r0tFSnwPjGVlrvfZ_A-6C9AwN5tVe-jdq0Po2nAmUVzzS7Pm37MjppOzB5IKL5LW5zaqSNqoBgYRmFf4oFAjJv3duemfGDslgjYs8hVh8Ar36T0WewnevTRUULAmgpAfNeE4TJ4-HWkFudlEg4DVaQGZ_aaqsEwDDeyDMW5bFgsGHT7xGbACd-AeA');">
+                        </div>
+                        <div
+                            class="absolute inset-0 bg-gradient-to-t from-background-dark via-background-dark/20 to-transparent opacity-90">
+                        </div>
+                        <div class="absolute bottom-0 left-0 p-8 w-full">
+                            <p class="text-primary text-xs font-bold uppercase tracking-widest mb-2">E-Commerce</p>
+                            <h3 class="text-xl font-bold text-white mb-2">LuxeRetail Brand Identity</h3>
+                            <button
+                                class="flex items-center gap-2 text-sm font-bold text-slate-300 hover:text-primary transition-colors">
+                                View Case Study <span class="material-symbols-outlined text-sm">arrow_forward</span>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <!-- Awards Section -->
+        <section class="py-24 bg-slate-900/50">
+            <div class="mx-auto max-w-7xl px-4">
+                <div class="flex flex-col lg:flex-row gap-16">
+                    <div class="lg:w-1/3 space-y-6" data-anim="fade-left" data-delay="100">
+                        <h2 class="text-3xl font-bold text-slate-100">Awards &amp; Recognition</h2>
+                        <p class="text-slate-400 leading-relaxed">Honored to be recognized for excellence in design and
+                            digital innovation by industry leaders.</p>
+                        <div class="w-full h-1 bg-primary/20 rounded-full overflow-hidden">
+                            <div class="w-2/3 h-full bg-primary"></div>
+                        </div>
+                    </div>
+                    <div class="lg:w-2/3 grid grid-cols-1 sm:grid-cols-2 gap-8">
+                        <div class="flex items-start gap-4 p-6 bg-slate-800 rounded-xl border border-white/5">
+                            <span class="material-symbols-outlined text-primary text-4xl">emoji_events</span>
+                            <div>
+                                <h4 class="font-bold text-white">Awwwards SOTD</h4>
+                                <p class="text-sm text-slate-400">Site of the Day for 'Nebula' 2023</p>
+                            </div>
+                        </div>
+                        <div class="flex items-start gap-4 p-6 bg-slate-800 rounded-xl border border-white/5">
+                            <span class="material-symbols-outlined text-primary text-4xl">verified</span>
+                            <div>
+                                <h4 class="font-bold text-white">CSS Design Awards</h4>
+                                <p class="text-sm text-slate-400">Best UI/UX Design - 2022</p>
+                            </div>
+                        </div>
+                        <div class="flex items-start gap-4 p-6 bg-slate-800 rounded-xl border border-white/5">
+                            <span class="material-symbols-outlined text-primary text-4xl">workspace_premium</span>
+                            <div>
+                                <h4 class="font-bold text-white">FWA Winner</h4>
+                                <p class="text-sm text-slate-400">Project of the Month - Nov 2022</p>
+                            </div>
+                        </div>
+                        <div class="flex items-start gap-4 p-6 bg-slate-800 rounded-xl border border-white/5">
+                            <span class="material-symbols-outlined text-primary text-4xl">stars</span>
+                            <div>
+                                <h4 class="font-bold text-white">Behance Featured</h4>
+                                <p class="text-sm text-slate-400">Curated in Interaction Design</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <!-- Testimonials -->
+        <section class="py-24">
+            <div class="mx-auto max-w-7xl px-4 text-center">
+                <h2 class="text-4xl font-bold text-slate-100 mb-16" data-anim="fade-up" data-delay="100">What Clients
+                    Say</h2>
+                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                    <div class="p-8 bg-slate-900 border border-white/5 rounded-2xl relative tilt-card"
+                        data-anim="fade-up" data-delay="200">
+                        <span
+                            class="material-symbols-outlined text-primary/20 text-6xl absolute top-6 right-6">format_quote</span>
+                        <div class="flex gap-1 text-primary mb-4">
+                            <span class="material-symbols-outlined fill-1">star</span>
+                            <span class="material-symbols-outlined fill-1">star</span>
+                            <span class="material-symbols-outlined fill-1">star</span>
+                            <span class="material-symbols-outlined fill-1">star</span>
+                            <span class="material-symbols-outlined fill-1">star</span>
+                        </div>
+                        <p class="text-slate-300 italic mb-8 relative z-10">"Working with this designer was a
+                            game-changer for our startup. The attention to detail and user-centric approach is
+                            unparalleled."</p>
+                        <div class="flex items-center gap-4">
+                            <div class="w-12 h-12 rounded-full bg-slate-800" data-alt="Headshot of Sarah Jenkins"
+                                style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuB1AZvpTsbDlYamrzx2VvEZrzTDVKwZjcFve3ZGvTtmTq4WjJkUwU9oXZB_V_h29EHgJLi1ihBq9uv9h8C7HrdVG43KvX2r0UfxusBUr31mtb_UMM6IumPpxAyII56wP3gZzSY4KtaNN2VSrE2iDu56Q4399ASFlEgV6QTc5aVAAZQ8NXZHktgHPU_gS1npZCUZpkBuQzr2q0nSFmljMqw4XznZauyk0ZtL6R1V-XbfHVvNaUDBb7LuFK5ITH7_02r46m0T6n3oijk'); background-size: cover;">
+                            </div>
+                            <div class="text-left">
+                                <h4 class="font-bold text-white">Sarah Jenkins</h4>
+                                <p class="text-xs text-slate-500 uppercase font-bold">CEO, TechSpark</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="p-8 bg-slate-900 border border-white/5 rounded-2xl relative tilt-card"
+                        data-anim="fade-up" data-delay="400">
+                        <span
+                            class="material-symbols-outlined text-primary/20 text-6xl absolute top-6 right-6">format_quote</span>
+                        <div class="flex gap-1 text-primary mb-4">
+                            <span class="material-symbols-outlined fill-1">star</span>
+                            <span class="material-symbols-outlined fill-1">star</span>
+                            <span class="material-symbols-outlined fill-1">star</span>
+                            <span class="material-symbols-outlined fill-1">star</span>
+                            <span class="material-symbols-outlined fill-1">star</span>
+                        </div>
+                        <p class="text-slate-300 italic mb-8 relative z-10">"The UI design transformed our complex
+                            software into an intuitive tool that our users love. Highly recommended for any high-end
+                            project."</p>
+                        <div class="flex items-center gap-4">
+                            <div class="w-12 h-12 rounded-full bg-slate-800" data-alt="Headshot of David Miller"
+                                style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuB4qYadrU5axIhG7lKyiOkpuskOz-nYsCw09wplj6qiOqM9JCRMz3rJgDTN9sWBobzN3pi_mb-pInFCjwddWEtgQ_4CxcLroWR5cbIH30BKbtbyqtD0urt-Ke_yc71QUscMr1L8uK1TuVZe7IWSsQsqbqCUN55f3eRbb2auaQ6iMecJBbCugMSKBMnrS_-ARGkIuXTxmcpvtshm3kPQnaynvcnmrE7SHgf8HaN4MXWUjhba4QrKuXGDXyc12QL0oFBCSaWVisNjuSw'); background-size: cover;">
+                            </div>
+                            <div class="text-left">
+                                <h4 class="font-bold text-white">David Miller</h4>
+                                <p class="text-xs text-slate-500 uppercase font-bold">Product Manager, Innovate</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="p-8 bg-slate-900 border border-white/5 rounded-2xl relative tilt-card"
+                        data-anim="fade-up" data-delay="600">
+                        <span
+                            class="material-symbols-outlined text-primary/20 text-6xl absolute top-6 right-6">format_quote</span>
+                        <div class="flex gap-1 text-primary mb-4">
+                            <span class="material-symbols-outlined fill-1">star</span>
+                            <span class="material-symbols-outlined fill-1">star</span>
+                            <span class="material-symbols-outlined fill-1">star</span>
+                            <span class="material-symbols-outlined fill-1">star</span>
+                            <span class="material-symbols-outlined fill-1">star</span>
+                        </div>
+                        <p class="text-slate-300 italic mb-8 relative z-10">"Absolute professional. The branding work
+                            delivered was far beyond our expectations. A true artist with a business mind."</p>
+                        <div class="flex items-center gap-4">
+                            <div class="w-12 h-12 rounded-full bg-slate-800" data-alt="Headshot of Elena Rodriguez"
+                                style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuCc-HsDZy8ELJG0k8hbU9ek3_PU_YanwYjx0ZehKoIsvmz5LpMc3uRw-UmIA7V1TzAMVN12bC7WuN_BW38ZQhFnl9midcPSTtESN2DC1VrFaDOJ1ersQBi8-mE7mGIHZiaOj-jPG4BCbn1F7HL7SEONBL7Lj0LRbU4EcV8ZyZdYmroTBXLlubnAs-mbuYFcO4pXX2K0eMW2BBvdnqv9oyA-bGqVjk5qRZgMgWCCOYrNFzGqqOw8agzdw3B6aBvQnV2BsYUz8qvwQhs'); background-size: cover;">
+                            </div>
+                            <div class="text-left">
+                                <h4 class="font-bold text-white">Elena Rodriguez</h4>
+                                <p class="text-xs text-slate-500 uppercase font-bold">Marketing Director, GlobalX</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <!-- Hero Branding Section -->
+        <section class="py-20 px-4 text-center">
+            <div class="max-w-3xl mx-auto">
+                <span
+                    class="inline-block px-4 py-1.5 mb-6 text-xs font-bold uppercase tracking-widest text-primary bg-primary/10 rounded-full border border-primary/20"
+                    data-anim="fade-down" data-delay="200">
+                    My Network
+                </span>
+                <h2 class="text-4xl md:text-5xl font-bold leading-tight mb-6" data-anim="fade-up" data-delay="400">
+                    Brands I've Worked With
+                </h2>
+                <p class="text-slate-600 dark:text-slate-400 text-lg max-w-2xl mx-auto" data-anim="fade-up"
+                    data-delay="600">
+                    Collaborating with global industry leaders and disruptive startups to build high-impact digital
+                    experiences.
+                </p>
+            </div>
+            <!-- Logos Grid -->
+            <div class="max-w-6xl mx-auto mt-16">
+                <div class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4 md:gap-8">
+                    <!-- Brand Item 1 -->
+                    <div class="group flex flex-col items-center justify-center p-8 bg-primary/5 dark:bg-primary/10 rounded-xl border border-primary/10 hover:border-primary/40 transition-all cursor-pointer brand-card"
+                        data-anim="slide-scale" data-delay="200">
+                        <img alt="Partner Brand 1 Logo" class="h-10 logo-grayscale mb-4"
+                            data-alt="Corporate minimalist logo for tech company"
+                            src="https://lh3.googleusercontent.com/aida-public/AB6AXuADt8ArZyDUa_0rovNrpzwtHnOJM_oVg813WPClneCDuNycHK1ARjDt9xiVtnfoJukq2Xhk3fZmuf6wOWd6JWOejMZW8CsQlA0vyWKjX3ZU4G_BfSWjmHKQJebLX5y_atQ_q-CMGpI4H8LZ4ODacTs9ubheHtTprpElpxVDtZSKUKYAK0Mjcb4YwPdHLt5nVPeTXyhH-QENGeoeFG51ge62kZ2rqUfgWnySypcWj-F31MIrlLuSWXxWK-z7fz0XzSfK0DcRb4ysBK4" />
+                        <span
+                            class="text-xs font-bold uppercase tracking-widest text-slate-500 group-hover:text-primary transition-colors">TechFlow
+                            Solutions</span>
+                    </div>
+                    <!-- Brand Item 2 -->
+                    <div class="group flex flex-col items-center justify-center p-8 bg-primary/5 dark:bg-primary/10 rounded-xl border border-primary/10 hover:border-primary/40 transition-all cursor-pointer brand-card"
+                        data-anim="slide-scale" data-delay="300">
+                        <img alt="Partner Brand 2 Logo" class="h-10 logo-grayscale mb-4"
+                            data-alt="Abstract geometric brand mark for startup"
+                            src="https://lh3.googleusercontent.com/aida-public/AB6AXuBFCj98dwqMmqJJrrMdiM8PLkHVuTntm6xVnK-eQFPfeTi9VwYh7Weoux8dwkH98wIn5MorutOGPp_Ajb85pIh6X46HZTHIF_4zfgcRCyie1npSdd786TcGcJxkzOk-zWNmApEOcmfkczM-TKX6Lbd_SISgvXLx-kDafmKMNiAWbQXoFOvAA-_71hCBOvVYumCExEyyFFvPQBCOhKKNHUboYHPzYWzUvqREsxBsp1lqdIwWcSPAYPTPsQu0QXpUqcEoKZ2l4dHwRZM" />
+                        <span
+                            class="text-xs font-bold uppercase tracking-widest text-slate-500 group-hover:text-primary transition-colors">Innovate
+                            AI</span>
+                    </div>
+                    <!-- Brand Item 3 -->
+                    <div class="group flex flex-col items-center justify-center p-8 bg-primary/5 dark:bg-primary/10 rounded-xl border border-primary/10 hover:border-primary/40 transition-all cursor-pointer brand-card"
+                        data-anim="slide-scale" data-delay="400">
+                        <img alt="Partner Brand 3 Logo" class="h-10 logo-grayscale mb-4"
+                            data-alt="Modern wordmark logo for fintech brand"
+                            src="https://lh3.googleusercontent.com/aida-public/AB6AXuDu3-DZDFODYwsKJa3iXZkg-zIXs9pUkOHqOdZLGon0lqE46s4CkCIgfMAzH4gIoYWOO3VG0rfHE-0mSvwTR9ZPAIsPTJOVrh0tNiHnmYNqXcv2J8q2Qho2X3lTuhewuck2ctxd26OR-mhH7qrVujA0wHp8EXcx7heyVkAKakaHRBzhiWX886kbz-cKQb8zoonxaW4hr4Ad5neU0hYqsHN18ZO20yJRCp6BGpHiZSRsxlUI2Hn8aJ2jvJX3060itp5sVg3b4xw6p34" />
+                        <span
+                            class="text-xs font-bold uppercase tracking-widest text-slate-500 group-hover:text-primary transition-colors">Nexus
+                            Fintech</span>
+                    </div>
+                    <!-- Brand Item 4 -->
+                    <div class="group flex flex-col items-center justify-center p-8 bg-primary/5 dark:bg-primary/10 rounded-xl border border-primary/10 hover:border-primary/40 transition-all cursor-pointer brand-card"
+                        data-anim="slide-scale" data-delay="500">
+                        <img alt="Partner Brand 4 Logo" class="h-10 logo-grayscale mb-4"
+                            data-alt="Sleek circular logo for design agency"
+                            src="https://lh3.googleusercontent.com/aida-public/AB6AXuC6O2TGC4UWbMh1t-RfVZRDMYsm_hcd31N2R0EbbaoeuRqzKxDjrZn4jV7iligCP7kh2tG8dy31_N1DwCDtwsVtPCDVR_Mc8-alxpUYkzYpVhjmP81CkZaXnTr3HKO-Bu9tM6szUyrYwWFC_C8T6uVnCjuziYCoPTCZV2poHxyeeB_0fjkGT0AC5FKpMdcqDYpQLU22VgQDdsF0hBxLwCEhtqFSGdaNslIl4HF5P81mF73v7ouLVD65KjwU_iH4vYuTapcUK-GPqK8" />
+                        <span
+                            class="text-xs font-bold uppercase tracking-widest text-slate-500 group-hover:text-primary transition-colors">Studio
+                            Prime</span>
+                    </div>
+                    <!-- Brand Item 5 -->
+                    <div class="group flex flex-col items-center justify-center p-8 bg-primary/5 dark:bg-primary/10 rounded-xl border border-primary/10 hover:border-primary/40 transition-all cursor-pointer brand-card"
+                        data-anim="slide-scale" data-delay="600">
+                        <img alt="Partner Brand 5 Logo" class="h-10 logo-grayscale mb-4"
+                            data-alt="Minimalist script logo for luxury brand"
+                            src="https://lh3.googleusercontent.com/aida-public/AB6AXuCWhnU1KfReFcoBy2Q2DesP43WxM8rPv3NqMpZN5GZfaVUiZMBFV3H1bl8Kquxal5h9ZtSoQ1II9ww4ZXNnMX-w53Dispap8ETUGLDjs_OpfD4ZXqB8HubZKMZm5Gax0wTIfKBuC6bXnwzC28PFv04-V5NIEMETeNKWFCerowtFNez2PC2bLlIjhaF-GWuL_rmsHKbbWxkdSLN370VzuaR_6FFvyrQjwVR64JEdR3-Y0EQqqSMX0cr67kvRMHmDYbs4u71HLbd5bxo" />
+                        <span
+                            class="text-xs font-bold uppercase tracking-widest text-slate-500 group-hover:text-primary transition-colors">Vogue
+                            & Co.</span>
+                    </div>
+                    <!-- Brand Item 6 -->
+                    <div class="group flex flex-col items-center justify-center p-8 bg-primary/5 dark:bg-primary/10 rounded-xl border border-primary/10 hover:border-primary/40 transition-all cursor-pointer brand-card"
+                        data-anim="slide-scale" data-delay="700">
+                        <img alt="Partner Brand 6 Logo" class="h-10 logo-grayscale mb-4"
+                            data-alt="Bold blocky logo for software company"
+                            src="https://lh3.googleusercontent.com/aida-public/AB6AXuAVYM71uPf3GO1qpqNvIsNgF2smriYsnroMfcJ2bJmYv5gFjDRO1u2u3hGMPiyvJQwPrPahFINyHv0pbD22tJpGbMHl4sfgrOSL9AkHZKSKLwBZamEGUFBugjtlwiPEp7_-6OUXYOvlVXVcZ-dKXlfhxA8BRjCLpTNsEsb7gqJcrR-J8Wl1Lt_xSPaiVHYH4HR6SelZAgr0kce_ypdkeC5yJFzY8hF-Zl72smTnRjl8BbErrr-3x5FY-b84ONw7TkiaWwYKCIWmzdo" />
+                        <span
+                            class="text-xs font-bold uppercase tracking-widest text-slate-500 group-hover:text-primary transition-colors">Core
+                            Systems</span>
+                    </div>
+                    <!-- Brand Item 7 -->
+                    <div class="group flex flex-col items-center justify-center p-8 bg-primary/5 dark:bg-primary/10 rounded-xl border border-primary/10 hover:border-primary/40 transition-all cursor-pointer brand-card"
+                        data-anim="slide-scale" data-delay="800">
+                        <img alt="Partner Brand 7 Logo" class="h-10 logo-grayscale mb-4"
+                            data-alt="Elegant thin line logo for lifestyle brand"
+                            src="https://lh3.googleusercontent.com/aida-public/AB6AXuBwIqMByIE4pvubSe1afgSfJxtKzJWGmamPbqUFukyocfeclR_dwe8Rn4KrNqd7_Gk9qDfB-xyrBGGvJL3xZXoPpNVO_6NjRz50gnxwptX4gAbpVrhUm4i6iuUL_vDE40GZ4ptyjfL3kBcfo45N5YFJCs5DikGeWMyt5HA2BIKVQXIpji8YmPrJPwCim3WdtnF2lGoAOqSGwQpfXHCLtWnQ0Z7YAF1n3yKnWWCiqYQQ3mKsCUR5cgTYwDhJ7O6LXhv0Xux-EQPCNDA" />
+                        <span
+                            class="text-xs font-bold uppercase tracking-widest text-slate-500 group-hover:text-primary transition-colors">Lifestyle
+                            Lab</span>
+                    </div>
+                    <!-- Brand Item 8 -->
+                    <div class="group flex flex-col items-center justify-center p-8 bg-primary/5 dark:bg-primary/10 rounded-xl border border-primary/10 hover:border-primary/40 transition-all cursor-pointer brand-card"
+                        data-anim="slide-scale" data-delay="900">
+                        <img alt="Partner Brand 8 Logo" class="h-10 logo-grayscale mb-4"
+                            data-alt="Futuristic tech logo with sharp edges"
+                            src="https://lh3.googleusercontent.com/aida-public/AB6AXuBzkIFyKkJCndWcgGaLUoeTu56HpaIJTZK6joAyEcYFIYjvPsm3_AoXYGlP_aopR9-AfMkv81QQwx2k-3CddlV_vZhS--pL5qxg2B7vNtXTBxqIGyKxoDaB3Mkjr_7PlD9fJ0obsdYWUNJyqkic6C5vzmDL35_5By6gKHNqMynMKaCSPK3TeBRPvuWbbgYu1yMDKyPtXy5ZmvxhRb3kUkf2uvnV2X5xrEkE0MG9EeosjWNGgqwYUMxak1_LBZawscQFqGKogaLGArE" />
+                        <span
+                            class="text-xs font-bold uppercase tracking-widest text-slate-500 group-hover:text-primary transition-colors">Vertex
+                            Horizons</span>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <!-- Stats Section -->
+        <section class="py-12 bg-primary/5 dark:bg-primary/10">
+            <div class="max-w-7xl mx-auto px-4 grid grid-cols-2 lg:grid-cols-4 gap-8 text-center">
+                <div class="stat-card" data-anim="fade-up" data-delay="200">
+                    <p class="text-3xl font-bold text-primary" data-counter="50" data-suffix="+">0</p>
+                    <p class="text-sm text-slate-500 uppercase tracking-widest mt-1">Happy Clients</p>
+                </div>
+                <div class="stat-card" data-anim="fade-up" data-delay="350">
+                    <p class="text-3xl font-bold text-primary" data-counter="120" data-suffix="+">0</p>
+                    <p class="text-sm text-slate-500 uppercase tracking-widest mt-1">Projects Delivered</p>
+                </div>
+                <div class="stat-card" data-anim="fade-up" data-delay="500">
+                    <p class="text-3xl font-bold text-primary" data-counter="12" data-suffix="">0</p>
+                    <p class="text-sm text-slate-500 uppercase tracking-widest mt-1">Awards Won</p>
+                </div>
+                <div class="stat-card" data-anim="fade-up" data-delay="650">
+                    <p class="text-3xl font-bold text-primary" data-counter="98" data-suffix="%">0</p>
+                    <p class="text-sm text-slate-500 uppercase tracking-widest mt-1">Satisfaction Rate</p>
+                </div>
+            </div>
+        </section>
+    </main>
+    <!-- Stats Section 
+        <section class="py-12 bg-primary/5 dark:bg-primary/10">
+            <div class="max-w-7xl mx-auto px-4 grid grid-cols-2 lg:grid-cols-4 gap-8 text-center">
+                <div class="stat-card" data-anim="fade-up" data-delay="200">
+                    <p class="text-3xl font-bold text-primary" data-counter="50" data-suffix="+">0</p>
+                    <p class="text-sm text-slate-500 uppercase tracking-widest mt-1">Happy Clients</p>
+                </div>
+                <div class="stat-card" data-anim="fade-up" data-delay="350">
+                    <p class="text-3xl font-bold text-primary" data-counter="120" data-suffix="+">0</p>
+                    <p class="text-sm text-slate-500 uppercase tracking-widest mt-1">Projects Delivered</p>
+                </div>
+                <div class="stat-card" data-anim="fade-up" data-delay="500">
+                    <p class="text-3xl font-bold text-primary" data-counter="12" data-suffix="">0</p>
+                    <p class="text-sm text-slate-500 uppercase tracking-widest mt-1">Awards Won</p>
+                </div>
+                <div class="stat-card" data-anim="fade-up" data-delay="650">
+                    <p class="text-3xl font-bold text-primary" data-counter="98" data-suffix="%">0</p>
+                    <p class="text-sm text-slate-500 uppercase tracking-widest mt-1">Satisfaction Rate</p>
+                </div>s
+            </div>
+        </section>-->
+    </main>
+    <!-- Pricing Tables -->
+    <section class="py-24" id="pricing">
+        <div class="mx-auto max-w-7xl px-4">
+            <div class="text-center mb-16 space-y-4" data-anim="fade-up" data-delay="100">
+                <h2 class="text-4xl font-bold text-slate-100">Transparent Pricing</h2>
+                <p class="text-slate-400">Choose the perfect plan for your business needs.</p>
+            </div>
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                <!-- Pricing Card 1 -->
+                <div class="p-8 bg-slate-900 border border-white/5 rounded-2xl flex flex-col tilt-card"
+                    data-anim="fade-up" data-delay="200">
+                    <h3 class="text-xl font-bold mb-2">Startup</h3>
+                    <div class="flex items-baseline gap-1 mb-6">
+                        <span class="text-4xl font-black text-white">$2,500</span>
+                        <span class="text-slate-500">/project</span>
+                    </div>
+                    <p class="text-sm text-slate-400 mb-8">Perfect for small projects and landing pages.</p>
+                    <ul class="space-y-4 mb-10 flex-1">
+                        <li class="flex items-center gap-3 text-slate-300"><span
+                                class="material-symbols-outlined text-primary">check</span> 5 Pages Design</li>
+                        <li class="flex items-center gap-3 text-slate-300"><span
+                                class="material-symbols-outlined text-primary">check</span> Custom Graphics</li>
+                        <li class="flex items-center gap-3 text-slate-300"><span
+                                class="material-symbols-outlined text-primary">check</span> Responsive Design</li>
+                        <li class="flex items-center gap-3 text-slate-500 line-through"><span
+                                class="material-symbols-outlined">close</span> SEO Optimization</li>
+                    </ul>
+                    <a href="./contactfrom.html"
+                        class="w-full py-3 border border-primary text-primary font-bold rounded-xl hover:bg-primary hover:text-white transition-all text-center no-underline">Contact
+                        Us</a>
+                </div>
+                <!-- Pricing Card 2 (Premium) -->
+                <div class="p-8 bg-slate-900 border-2 border-primary rounded-2xl flex flex-col relative scale-105 shadow-2xl shadow-primary/10 tilt-card"
+                    data-anim="scale-in" data-delay="400">
+                    <div
+                        class="absolute -top-4 left-1/2 -translate-x-1/2 bg-primary text-white px-4 py-1 rounded-full text-xs font-bold uppercase tracking-widest">
+                        Most Popular</div>
+                    <h3 class="text-xl font-bold mb-2">Business</h3>
+                    <div class="flex items-baseline gap-1 mb-6">
+                        <span class="text-4xl font-black text-white">$4,900</span>
+                        <span class="text-slate-500">/project</span>
+                    </div>
+                    <p class="text-sm text-slate-400 mb-8">Ideal for growing businesses and full web apps.</p>
+                    <ul class="space-y-4 mb-10 flex-1">
+                        <li class="flex items-center gap-3 text-slate-300"><span
+                                class="material-symbols-outlined text-primary">check</span> 15 Pages Design</li>
+                        <li class="flex items-center gap-3 text-slate-300"><span
+                                class="material-symbols-outlined text-primary">check</span> User Research</li>
+                        <li class="flex items-center gap-3 text-slate-300"><span
+                                class="material-symbols-outlined text-primary">check</span> Prototype</li>
+                        <li class="flex items-center gap-3 text-slate-300"><span
+                                class="material-symbols-outlined text-primary">check</span> SEO Optimization</li>
+                    </ul>
+                    <a href="./contactfrom.html"
+                        class="w-full py-4 bg-primary text-white font-bold rounded-xl hover:bg-primary/90 transition-all text-center no-underline">Contact
+                        Us</a>
+                </div>
+                <!-- Pricing Card 3 -->
+                <div class="p-8 bg-slate-900 border border-white/5 rounded-2xl flex flex-col tilt-card"
+                    data-anim="fade-up" data-delay="600">
+                    <h3 class="text-xl font-bold mb-2">Enterprise</h3>
+                    <div class="flex items-baseline gap-1 mb-6">
+                        <span class="text-4xl font-black text-white">$9,500</span>
+                        <span class="text-slate-500">/project</span>
+                    </div>
+                    <p class="text-sm text-slate-400 mb-8">Full-service digital transformation and branding.</p>
+                    <ul class="space-y-4 mb-10 flex-1">
+                        <li class="flex items-center gap-3 text-slate-300"><span
+                                class="material-symbols-outlined text-primary">check</span> Unlimited Pages</li>
+                        <li class="flex items-center gap-3 text-slate-300"><span
+                                class="material-symbols-outlined text-primary">check</span> Design System</li>
+                        <li class="flex items-center gap-3 text-slate-300"><span
+                                class="material-symbols-outlined text-primary">check</span> Brand Identity</li>
+                        <li class="flex items-center gap-3 text-slate-300"><span
+                                class="material-symbols-outlined text-primary">check</span> Priority Support</li>
+                    </ul>
+                    <a href="./contactfrom.html"
+                        class="w-full py-3 border border-primary text-primary font-bold rounded-xl hover:bg-primary hover:text-white transition-all text-center no-underline">Contact
+                        Us</a>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- FAQ Section -->
+    <section class="py-24 bg-slate-900/30">
+        <div class="mx-auto max-w-3xl px-4">
+            <h2 class="text-4xl font-bold text-center text-slate-100 mb-16" data-anim="fade-up" data-delay="100">
+                Frequently Asked Questions</h2>
+            <div class="space-y-4">
+                <div class="group border-b border-white/5 pb-4" data-anim="fade-up" data-delay="200">
+                    <button
+                        class="w-full flex items-center justify-between text-left py-4 hover:text-primary transition-colors">
+                        <span class="text-lg font-bold text-white">How long does a typical project take?</span>
+                        <span class="material-symbols-outlined">expand_more</span>
+                    </button>
+                    <div class="hidden group-focus-within:block py-2 text-slate-400 leading-relaxed">
+                        A typical UI/UX project takes between 4 to 8 weeks, depending on the scope and complexity of
+                        the requirements.
+                    </div>
+                </div>
+                <div class="group border-b border-white/5 pb-4" data-anim="fade-up" data-delay="300">
+                    <button
+                        class="w-full flex items-center justify-between text-left py-4 hover:text-primary transition-colors">
+                        <span class="text-lg font-bold text-white">Do you offer development services too?</span>
+                        <span class="material-symbols-outlined">expand_more</span>
+                    </button>
+                    <div class="hidden group-focus-within:block py-2 text-slate-400 leading-relaxed">
+                        Yes, I partner with experienced developers to provide full-cycle development services for
+                        web and mobile projects.
+                    </div>
+                </div>
+                <div class="group border-b border-white/5 pb-4" data-anim="fade-up" data-delay="400">
+                    <button
+                        class="w-full flex items-center justify-between text-left py-4 hover:text-primary transition-colors">
+                        <span class="text-lg font-bold text-white">What is your design process?</span>
+                        <span class="material-symbols-outlined">expand_more</span>
+                    </button>
+                    <div class="hidden group-focus-within:block py-2 text-slate-400 leading-relaxed">
+                        My process follows four key stages: Discovery, Strategy, Execution, and Delivery. We iterate
+                        based on your feedback.
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- Blog Section -->
+    <section class="py-24" id="blog">
+        <div class="mx-auto max-w-7xl px-4">
+            <div class="flex items-end justify-between mb-12">
+                <div class="space-y-4" data-anim="fade-up" data-delay="100">
+                    <h2 class="text-4xl font-bold text-slate-100">Insights &amp; Articles</h2>
+                    <p class="text-slate-400">Thoughts on design, tech, and productivity.</p>
+                </div>
+                <button class="hidden md:flex items-center gap-2 font-bold text-primary hover:underline">
+                    View All Posts <span class="material-symbols-outlined">arrow_outward</span>
+                </button>
+            </div>
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <!-- Blog Card -->
+                <div class="group rounded-2xl overflow-hidden bg-slate-900 border border-white/5" data-anim="fade-up"
+                    data-delay="200">
+                    <div class="aspect-video w-full bg-slate-800 bg-cover bg-center"
+                        data-alt="Modern workspace with laptop and coffee"
+                        style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuC2Sd2_MyN8C9pNzkutun0rKQWikxEoG8Y7hyKKSZ99tuWJtUCoU7iUUdrYByIos_Wu6sOBH6wxS-lethWap_xrCCEWIkFAdvVQr6W65IFBHjfld-PMn6BKLEzr1sqpbX_X43XqiRXV9wACwgDcYz9c_sYWi09PMcUFBtZF-1VvKA-TsslJw_nsAxn7N6jHuFXJL6JTGPcp0eFoIYAbG4By_KiMUxj9lNuAg-o1vBQN6-8SCEO9J7nuo6Pmo3iLJp0CuAU1TQR-ZnE');">
+                    </div>
+                    <div class="p-6 space-y-4">
+                        <div class="flex items-center gap-3 text-xs text-slate-500 uppercase font-bold tracking-widest">
+                            <span class="text-primary">Design</span>
+                            <span>•</span>
+                            <span>5 min read</span>
+                        </div>
+                        <h3
+                            class="text-xl font-bold text-white group-hover:text-primary transition-colors line-clamp-2">
+                            The Future of Minimalist UI in 2024</h3>
+                        <p class="text-slate-400 text-sm line-clamp-3">Exploring how simplicity continues to drive
+                            conversion rates and user satisfaction in modern web apps.</p>
+                        <a class="inline-flex items-center gap-2 text-sm font-bold text-primary group-hover:underline"
+                            href="#">Read More <span class="material-symbols-outlined text-xs">arrow_forward</span></a>
+                    </div>
+                </div>
+                <!-- Blog Card 2 -->
+                <div class="group rounded-2xl overflow-hidden bg-slate-900 border border-white/5" data-anim="fade-up"
+                    data-delay="300">
+                    <div class="aspect-video w-full bg-slate-800 bg-cover bg-center"
+                        data-alt="Team collaborating on a whiteboard"
+                        style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuBsNoav_ea8n6gCm_1mh4deqP1iw0ALxVW-2D3gxTPYNPFU19TSPTm9a2iKtiyGEeMSmMN5syIxhtQKk_yd9t3fRzT79yr-vfk9QOtD47AEKk-7eOmnkJREG4f_35Jbj0ZKmMDFNgTMMHZw5-BZrjQMpm0STVqsnefaWmJ6YgaaQccXP0LrfoEXWurNZs3hoJmji4EsOLrbIFpVA53pNfXNAZdOV6g9DzHu9YmOhze5b6lgNpFDW8qHllovqbq4wRd9a1CcwRsfDrU');">
+                    </div>
+                    <div class="p-6 space-y-4">
+                        <div class="flex items-center gap-3 text-xs text-slate-500 uppercase font-bold tracking-widest">
+                            <span class="text-primary">Productivity</span>
+                            <span>•</span>
+                            <span>8 min read</span>
+                        </div>
+                        <h3
+                            class="text-xl font-bold text-white group-hover:text-primary transition-colors line-clamp-2">
+                            Mastering Design Systems for Scale</h3>
+                        <p class="text-slate-400 text-sm line-clamp-3">How to build a robust component library that
+                            empowers your development team to build faster.</p>
+                        <a class="inline-flex items-center gap-2 text-sm font-bold text-primary group-hover:underline"
+                            href="#">Read More <span class="material-symbols-outlined text-xs">arrow_forward</span></a>
+                    </div>
+                </div>
+                <!-- Blog Card 3 -->
+                <div class="group rounded-2xl overflow-hidden bg-slate-900 border border-white/5" data-anim="fade-up"
+                    data-delay="400">
+                    <div class="aspect-video w-full bg-slate-800 bg-cover bg-center"
+                        data-alt="Close up of a computer screen with code"
+                        style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuDzWN8v0TT7kFsG3xtN3jTPWWuHurKbTJnK4c5YsQQoELil52RaZ3qlgeXE4xNUjKFc21KsT733DBky5pr9cBX4bjFsCm6dNDXwkb3jIr1LOS7aWT2CpRS_Cm96sYn8sZtOE0ypNa2ZbOi9uxDwxA-JW9OhwSEa-DAfeu2CsEyKwGXY84-Gyw6nIeVCihnL_IiuJX7YXhLORIa-50MSBBGnLCGwUEaAWeyJCIjzvcskvVjipa0bCgVBLFwX62MMeKlFPOYgpVW4wMU');">
+                    </div>
+                    <div class="p-6 space-y-4">
+                        <div class="flex items-center gap-3 text-xs text-slate-500 uppercase font-bold tracking-widest">
+                            <span class="text-primary">Tech</span>
+                            <span>•</span>
+                            <span>12 min read</span>
+                        </div>
+                        <h3
+                            class="text-xl font-bold text-white group-hover:text-primary transition-colors line-clamp-2">
+                            AI Tools Every Designer Should Use</h3>
+                        <p class="text-slate-400 text-sm line-clamp-3">Integrating AI into your workflow without
+                            losing the human touch in your creative projects.</p>
+                        <a class="inline-flex items-center gap-2 text-sm font-bold text-primary group-hover:underline"
+                            href="#">Read More <span class="material-symbols-outlined text-xs">arrow_forward</span></a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- Contact Form 
+    <section class="py-24 border-t border-white/5" id="contact">
+        <div class="mx-auto max-w-7xl px-4">
+            <div class="bg-slate-900 rounded-3xl overflow-hidden border border-white/10 flex flex-col lg:flex-row"
+                data-anim="scale-in" data-delay="200">
+                <div class="lg:w-2/5 bg-primary p-12 text-white flex flex-col justify-between">
+                    <div class="space-y-6">
+                        <h2 class="text-4xl font-bold leading-tight">Let's work <br />on something <br />great.</h2>
+                        <p class="text-white/80 text-lg">Have a project in mind? I'd love to hear about it. Send a
+                            message and I'll get back to you within 24 hours.</p>
+                    </div>
+                    <div class="space-y-6 pt-12">
+                        <div class="flex items-center gap-4">
+                            <span class="material-symbols-outlined">mail</span>
+                            <span class="font-bold">hello@designerportfolio.com</span>
+                        </div>
+                        <div class="flex items-center gap-4">
+                            <span class="material-symbols-outlined">location_on</span>
+                            <span class="font-bold" data-location="San Francisco">San Francisco, CA</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="lg:w-3/5 p-12 bg-slate-900">
+                    <form class="grid grid-cols-1 sm:grid-cols-2 gap-6">
+                        <div class="space-y-2">
+                            <label class="text-sm font-bold text-slate-300">Name</label>
+                            <input
+                                class="w-full bg-slate-800 border-white/10 rounded-xl px-4 py-3 text-white focus:ring-primary focus:border-primary"
+                                placeholder="Your Name" type="text" />
+                        </div>
+                        <div class="space-y-2">
+                            <label class="text-sm font-bold text-slate-300">Email</label>
+                            <input
+                                class="w-full bg-slate-800 border-white/10 rounded-xl px-4 py-3 text-white focus:ring-primary focus:border-primary"
+                                placeholder="Email Address" type="email" />
+                        </div>
+                        <div class="sm:col-span-2 space-y-2">
+                            <label class="text-sm font-bold text-slate-300">Subject</label>
+                            <select
+                                class="w-full bg-slate-800 border-white/10 rounded-xl px-4 py-3 text-white focus:ring-primary focus:border-primary">
+                                <option>New Project Inquiry</option>
+                                <option>Collaboration</option>
+                                <option>Consultation</option>
+                                <option>Other</option>
+                            </select>
+                        </div>
+                        <div class="sm:col-span-2 space-y-2">
+                            <label class="text-sm font-bold text-slate-300">Message</label>
+                            <textarea
+                                class="w-full bg-slate-800 border-white/10 rounded-xl px-4 py-3 text-white focus:ring-primary focus:border-primary"
+                                placeholder="Tell me about your project..." rows="5"></textarea>
+                        </div>
+                        <div class="sm:col-span-2">
+                            <button
+                                class="w-full py-4 bg-primary text-white font-bold rounded-xl hover:bg-primary/90 transition-all shadow-lg shadow-primary/20"
+                                type="submit">Send Message</button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+    </main>-->
+
+    <!-- Footer Section -->
+    <footer class="relative w-full bg-slate-100 dark:bg-background-dark border-t border-primary/10">
+        <!-- CTA / Newsletter Section Integration -->
+        <div class="max-w-7xl mx-auto px-6 pt-16 pb-12">
+            <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 items-start">
+                <!-- Brand and About Column -->
+                <div class="lg:col-span-4 flex flex-col gap-6" data-anim="fade-up" data-delay="100">
+                    <div class="flex items-center gap-2">
+                        <div class="w-10 h-10 bg-primary rounded-lg flex items-center justify-center">
+                            <span class="text-white text-2xl font-bold leading-none select-none">أ</span>
+                        </div>
+                        <span class="text-2xl font-bold tracking-tight text-slate-900 dark:text-white">MAH. HaSib</span>
+                    </div>
+                    <p class="text-slate-600 dark:text-slate-400 leading-relaxed">
+                        A professional portfolio showcasing modern and elegant design solutions with a focus on user
+                        experience and visual storytelling. Let's build something extraordinary together.
+                    </p>
+                    <div class="flex gap-4">
+                        <button
+                            class="w-10 h-10 rounded-full bg-primary/10 hover:bg-primary/20 flex items-center justify-center text-primary transition-colors relative group"
+                            onclick="copyToClipboard(this, 'https://mahhasib.vercel.app/')" title="Copy Link">
+                            <span class="material-symbols-outlined text-[20px]">share</span>
+                            <span
+                                class="absolute -top-8 left-1/2 -translate-x-1/2 bg-slate-800 text-white text-[10px] px-2 py-1 rounded opacity-0 group-active:opacity-100 transition-opacity pointer-events-none">Copied!</span>
+                        </button>
+                        <!--<a class="w-10 h-10 rounded-full bg-primary/10 hover:bg-primary/20 flex items-center justify-center text-primary transition-colors"
+                            href="#">
+                            <span class="material-symbols-outlined text-[20px]">terminal</span>
+                        </a>
+                        <a class="w-10 h-10 rounded-full bg-primary/10 hover:bg-primary/20 flex items-center justify-center text-primary transition-colors"
+                            href="#">
+                            <span class="material-symbols-outlined text-[20px]">brush</span>
+                        </a>-->
+                    </div>
+                </div>
+                <!-- Quick Links Column -->
+                <div class="lg:col-span-2 flex flex-col gap-6" data-anim="fade-up" data-delay="200">
+                    <h3 class="text-sm font-bold uppercase tracking-widest text-primary">Quick Links</h3>
+                    <ul class="flex flex-col gap-4">
+                        <li><a class="text-slate-600 dark:text-slate-400 hover:text-primary dark:hover:text-primary transition-colors"
+                                href="#">Home</a></li>
+                        <li><a class="text-slate-600 dark:text-slate-400 hover:text-primary dark:hover:text-primary transition-colors"
+                                href="./mywork.html">Work</a></li>
+                        <li><a class="text-slate-600 dark:text-slate-400 hover:text-primary dark:hover:text-primary transition-colors"
+                                href="./abuot.html">About</a></li>
+                        <li><a class="text-slate-600 dark:text-slate-400 hover:text-primary dark:hover:text-primary transition-colors"
+                                href="./contactfrom.html">Contact</a></li>
+                    </ul>
+                </div>
+                <div class="lg:col-span-2 flex flex-col gap-6" data-anim="fade-up" data-delay="300">
+                    <h3 class="text-sm font-bold uppercase tracking-widest text-primary">Resources</h3>
+                    <ul class="flex flex-col gap-4">
+                        <li><a class="text-slate-600 dark:text-slate-400 hover:text-primary dark:hover:text-primary transition-colors"
+                                href="./blog.html">Design Blog</a></li>
+                        <li><a class="text-slate-600 dark:text-slate-400 hover:text-primary dark:hover:text-primary transition-colors"
+                                href="./skills&tools.html">Tools</a></li>
+                        <li><a class="text-slate-600 dark:text-slate-400 hover:text-primary dark:hover:text-primary transition-colors"
+                                href="./barandsworked.html">Brands Collabration</a></li>
+                        <li><a class="text-slate-600 dark:text-slate-400 hover:text-primary dark:hover:text-primary transition-colors"
+                                href="./cv.html">CV</a></li>
+                    </ul>
+                </div>
+                <div class="lg:col-span-2 flex flex-col gap-6" data-anim="fade-up" data-delay="400">
+                    <h3 class="text-sm font-bold uppercase tracking-widest text-primary">Resources</h3>
+                    <ul class="flex flex-col gap-4">
+                        <li><a class="text-slate-600 dark:text-slate-400 hover:text-primary dark:hover:text-primary transition-colors"
+                                href="./statistics.html">Statistics</a></li>
+                        <li><a class="text-slate-600 dark:text-slate-400 hover:text-primary dark:hover:text-primary transition-colors"
+                                href="./hero.html">Hero</a></li>
+                        <li><a class="text-slate-600 dark:text-slate-400 hover:text-primary dark:hover:text-primary transition-colors"
+                                href="./awards.html">Awards</a></li>
+                        <li><a class="text-slate-600 dark:text-slate-400 hover:text-primary dark:hover:text-primary transition-colors"
+                                href="./faq.html">FAQ</a></li>
+                    </ul>
+                </div>
+                <div class="lg:col-span-2 flex flex-col gap-6" data-anim="fade-up" data-delay="500">
+                    <h3 class="text-sm font-bold uppercase tracking-widest text-primary">Contact</h3>
+                    <ul class="flex flex-col gap-4">
+                        <li class="flex items-center gap-3 text-slate-600 dark:text-slate-400">
+                            <span class="material-symbols-outlined text-sm text-primary">mail</span>
+                            <a class="hover:text-primary transition-colors no-underline"
+                                href="mailto:mah.hasib015@gmail.com">mah.hasib015@gmail.com</a>
+                        </li>
+                        <li class="flex items-center gap-3 text-slate-600 dark:text-slate-400">
+                            <span class="material-symbols-outlined text-sm text-primary">call</span>
+                            <a class="hover:text-primary transition-colors no-underline"
+                                href="tel:+8801570228111">+8801570228111</a>
+                        </li>
+                        <li class="flex items-center gap-3 text-slate-600 dark:text-slate-400">
+                            <span class="material-symbols-outlined text-sm text-primary">location_on</span>
+                            <span>Siddhirganj, Narayanganj, Dhaka</span>
+                        </li>
+                    </ul>
+                </div>
+
+                <!-- Newsletter & Research Section -->
+                <div class="lg:col-span-12 grid grid-cols-1 md:grid-cols-2 gap-8">
+                    <!-- For new deals -->
+                    <div class="bg-primary/5 dark:bg-primary/10 p-8 rounded-2xl border border-primary/20 flex flex-col justify-between"
+                        data-anim="scale-in" data-delay="600">
+                        <div>
+                            <h3 class="text-xl font-bold text-slate-900 dark:text-white mb-2">For new deals</h3>
+                            <p class="text-slate-600 dark:text-slate-400 mb-6">Get the latest updates on my design work
+                                and
+                                articles directly in your inbox.</p>
+                        </div>
+                        <div class="flex flex-col sm:flex-row gap-3">
+                            <div class="flex-1">
+                                <label class="sr-only">Email address</label>
+                                <input
+                                    class="w-full h-12 px-4 rounded-lg bg-white dark:bg-slate-800 border-slate-200 dark:border-slate-700 text-slate-900 dark:text-white focus:ring-2 focus:ring-primary focus:border-transparent outline-none transition-all"
+                                    placeholder="Enter your email" type="email" />
+                            </div>
+                            <a href="mailto:mah.hasib015@gmail.com?subject=Enquiry%20from%20Portfolio%20(New%20Deals)"
+                                class="h-12 px-8 bg-primary hover:bg-primary/90 text-white font-bold rounded-lg transition-all flex items-center justify-center gap-2 no-underline">
+                                <span>Let's Meet</span>
+                                <span class="material-symbols-outlined text-sm">send</span>
+                            </a>
+                        </div>
+                    </div>
+                    <!-- Center for Research -->
+                    <div class="bg-primary/5 dark:bg-primary/10 p-8 rounded-2xl border border-primary/20 flex flex-col justify-between"
+                        data-anim="scale-in" data-delay="700">
+                        <div>
+                            <h3 class="text-xl font-bold text-slate-900 dark:text-white mb-2">Center for Research</h3>
+                            <p class="text-slate-600 dark:text-slate-400 mb-6">Exploring the intersection of design,
+                                technology, and user psychology to build the next generation of digital experiences.</p>
+                        </div>
+                        <a href="./centerforreseach.html"
+                            class="h-12 w-fit px-8 border border-primary text-primary hover:bg-primary hover:text-white font-bold rounded-lg transition-all flex items-center justify-center gap-2 no-underline">
+                            <span>Explore Lab</span>
+                            <span class="material-symbols-outlined text-sm">science</span>
+                        </a>
+                    </div>
+                </div>
+            </div>
+            <!-- Social Media & Icons Bar -->
+            <div class="mt-16 pt-8 border-t border-primary/10 relative overflow-hidden" data-anim="fade-up"
+                data-delay="800">
+                <div
+                    class="flex flex-col md:flex-row items-center justify-between gap-6 relative z-10 text-center md:text-left">
+                    <div class="flex gap-2 order-2 md:order-1">
+                        <a href="https://www.linkedin.com/in/mahhasib?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app"
+                            target="_blank" rel="noopener noreferrer"
+                            class="flex flex-col items-center gap-2 px-3 py-2 rounded-xl hover:bg-primary/5 transition-colors no-underline">
+                            <div
+                                class="w-10 h-10 rounded-full bg-slate-200 dark:bg-slate-800 flex items-center justify-center">
+                                <span class="material-symbols-outlined text-primary">link</span>
+                            </div>
+                            <p class="text-xs font-medium text-slate-500">LinkedIn</p>
+                        </a>
+                        <a href="https://github.com/mahhasib" target="_blank" rel="noopener noreferrer"
+                            class="flex flex-col items-center gap-2 px-3 py-2 rounded-xl hover:bg-primary/5 transition-colors no-underline">
+                            <div
+                                class="w-10 h-10 rounded-full bg-slate-200 dark:bg-slate-800 flex items-center justify-center">
+                                <span class="material-symbols-outlined text-primary">code</span>
+                            </div>
+                            <p class="text-xs font-medium text-slate-500">GitHub</p>
+                        </a>
+                        <!--<a href="#"
+                            class="flex flex-col items-center gap-2 px-3 py-2 rounded-xl hover:bg-primary/5 transition-colors no-underline">
+                            <div
+                                class="w-10 h-10 rounded-full bg-slate-200 dark:bg-slate-800 flex items-center justify-center">
+                                <span class="material-symbols-outlined text-primary">palette</span>
+                            </div>
+                            <p class="text-xs font-medium text-slate-500">Dribbble</p>
+                        </a>-->
+                    </div>
+                    <div class="flex flex-col items-center md:items-end gap-1 order-3">
+                        <div class="flex gap-8">
+                            <a class="hover:text-slate-300" href="./policy.html">Privacy Policy</a>
+                            <a class="hover:text-slate-300" href="./myservice.html">Terms of Service</a>
+                        </div>
+                        <p class="text-sm text-slate-500 dark:text-slate-400" data-anim="fade-up" data-delay="100">
+                            © 2026 MAH. HaSib. All rights reserved.
+                        </p>
+                        <p class="text-xs text-slate-400 dark:text-slate-500 flex items-center justify-center md:justify-end gap-1"
+                            data-anim="fade-up" data-delay="300">
+                            Thank you very much<span
+                                class="material-symbols-outlined text-[14px] text-red-500 fill-current">favorite</span>
+                            For viewing my Portfolio
+                        </p>
+                    </div>
+                    <!-- Responsive Watermark Clock -->
+                    <div
+                        class="order-1 md:oder-2 flex items-center justify-center pointer-events-none opacity-[0.5] dark:opacity-[0.7] select-none">
+                        <span id="footer-watermark"
+                            class="text-[10px] md:text-xs font-bold whitespace-nowrap tracking-widest uppercase text-primary"></span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+    <!-- Bottom Mobile Nav 
+    <div
+        class="md:hidden fixed bottom-0 left-0 right-0 z-50 flex border-t border-border-dark bg-background-dark/90 backdrop-blur-lg px-4 pb-3 pt-2">
+        <a class="flex flex-1 flex-col items-center justify-end gap-1 text-slate-500" href="#">
+            <span class="material-symbols-outlined text-2xl">home</span>
+            <p class="text-[10px] font-medium">Home</p>
+        </a>
+        <a class="flex flex-1 flex-col items-center justify-end gap-1 text-slate-500" href="#">
+            <span class="material-symbols-outlined text-2xl">grid_view</span>
+            <p class="text-[10px] font-medium">Work</p>
+        </a>
+        <a class="flex flex-1 flex-col items-center justify-end gap-1 text-primary" href="#">
+            <span class="material-symbols-outlined text-2xl">person</span>
+            <p class="text-[10px] font-medium">About</p>
+        </a>
+        <a class="flex flex-1 flex-col items-center justify-end gap-1 text-slate-500" href="#">
+            <span class="material-symbols-outlined text-2xl">mail</span>
+            <p class="text-[10px] font-medium">Contact</p>
+        </a>
+    </div>-->
+    <!-- Animation Engine -->
+    <script>
+        // ===== Scroll Reveal with Intersection Observer =====
+        document.addEventListener('DOMContentLoaded', () => {
+            const animEls = document.querySelectorAll('[data-anim]');
+            const observer = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        const el = entry.target;
+                        const delay = el.dataset.delay || 0;
+                        const duration = el.dataset.duration || '0.8s';
+                        setTimeout(() => {
+                            el.style.animationDuration = duration;
+                            el.classList.add('anim-visible');
+                        }, parseInt(delay));
+                        observer.unobserve(el);
+                    }
+                });
+            }, { threshold: 0.15, rootMargin: '0px 0px -40px 0px' });
+            animEls.forEach(el => observer.observe(el));
+
+            // ===== Counter Animation for Stats =====
+            const counterEls = document.querySelectorAll('[data-counter]');
+            const counterObserver = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        const el = entry.target;
+                        const target = parseInt(el.dataset.counter);
+                        const suffix = el.dataset.suffix || '';
+                        const duration = 2000;
+                        const start = performance.now();
+                        const animate = (now) => {
+                            const progress = Math.min((now - start) / duration, 1);
+                            const eased = 1 - Math.pow(1 - progress, 3);
+                            el.textContent = Math.floor(eased * target) + suffix;
+                            if (progress < 1) requestAnimationFrame(animate);
+                        };
+                        requestAnimationFrame(animate);
+                        counterObserver.unobserve(el);
+                    }
+                });
+            }, { threshold: 0.5 });
+            counterEls.forEach(el => counterObserver.observe(el));
+
+            // ===== Smooth Scroll for Anchor Links =====
+            document.querySelectorAll('a[href^="#"]').forEach(a => {
+                a.addEventListener('click', e => {
+                    const href = a.getAttribute('href');
+                    if (href === '#') return;
+                    const target = document.querySelector(href);
+                    if (target) {
+                        e.preventDefault();
+                        target.scrollIntoView({ behavior: 'smooth' });
+                    }
+                });
+            });
+        });
+
+        // ===== Copy to Clipboard Function =====
+        function copyToClipboard(btn, text) {
+            navigator.clipboard.writeText(text).then(() => {
+                const icon = btn.querySelector('.material-symbols-outlined');
+                const originalIcon = icon.textContent;
+                icon.textContent = 'check';
+                btn.classList.add('bg-green-500/10', 'text-green-500');
+                btn.classList.remove('text-primary');
+
+                setTimeout(() => {
+                    icon.textContent = originalIcon;
+                    btn.classList.remove('bg-green-500/10', 'text-green-500');
+                    btn.classList.add('text-primary');
+                }, 2000);
+            });
+        }
+
+        // ===== Footer Watermark Clock =====
+        function updateWatermarkClock() {
+            const watermark = document.getElementById('footer-watermark');
+            if (watermark) {
+                const now = new Date();
+                const isMobile = window.innerWidth < 768;
+
+                const options = {
+                    day: '2-digit',
+                    month: isMobile ? 'short' : 'long',
+                    year: 'numeric',
+                    hour: '2-digit',
+                    minute: '2-digit',
+                    second: isMobile ? undefined : '2-digit',
+                    hour12: true
+                };
+
+                let formatted = now.toLocaleDateString('en-GB', options);
+                if (!isMobile) {
+                    formatted = formatted.replace(',', ' |');
+                } else {
+                    // For mobile, just a simple space
+                    formatted = formatted.replace(',', '');
+                }
+                watermark.textContent = formatted;
+            }
+        }
+        updateWatermarkClock();
+        setInterval(updateWatermarkClock, 1000);
+        window.addEventListener('resize', updateWatermarkClock);
+
+        // ===== Parallax on Hero Image =====
+        const heroImg = document.querySelector('.float-anim');
+        if (heroImg) {
+            window.addEventListener('scroll', () => {
+                const scrollY = window.scrollY;
+                if (scrollY < 800) {
+                    heroImg.style.transform = `translateY(${scrollY * 0.04}px)`;
+                }
+            }, { passive: true });
+        }
+    </script>
+</body>
+
+
+</html>

@@ -1,0 +1,293 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="en">
+
+<head>
+    <meta charset="utf-8" />
+    <meta content="width=device-width, initial-scale=1.0" name="viewport" />
+    <title>ALEX.DESIGN | Creative Designer &amp; Storyteller</title>
+    <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700;900&amp;display=swap"
+        rel="stylesheet" />
+    <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght@100..700,0..1&amp;display=swap"
+        rel="stylesheet" />
+    <link
+        href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap"
+        rel="stylesheet" />
+    <script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "primary": "#8c25f4",
+                        "background-light": "#f7f5f8",
+                        "background-dark": "#0f051d",
+                        "surface-dark": "#1a1023",
+                        "accent-purple": "#ad90cb"
+                    },
+                    fontFamily: {
+                        "display": ["Inter", "sans-serif"]
+                    },
+                    borderRadius: {
+                        "DEFAULT": "0.25rem",
+                        "lg": "0.5rem",
+                        "xl": "0.75rem",
+                        "full": "9999px"
+                    },
+                },
+            },
+        }
+    </script>
+    <style>
+        body {
+            min-height: max(884px, 100dvh);
+        }
+    </style>
+</head>
+
+<body class="bg-background-light dark:bg-background-dark font-display text-slate-900 dark:text-slate-100 antialiased">
+    <!-- Top Navigation Bar -->
+    <header
+        class="sticky top-0 z-50 bg-background-light/80 dark:bg-background-dark/80 backdrop-blur-md border-b border-primary/10">
+        <div class="max-w-7xl mx-auto flex items-center justify-between p-4 h-16">
+            <div class="flex items-center gap-2">
+                <span class="material-symbols-outlined text-primary text-3xl">terminal</span>
+                <h2 class="text-xl font-black tracking-tight uppercase">ALEX.DESIGN</h2>
+            </div>
+            <div class="flex items-center gap-6">
+                <nav class="hidden md:flex items-center gap-8">
+                    <a class="text-sm font-medium hover:text-primary transition-colors"
+                        href="./myproject.html">Projects</a>
+                    <a class="text-sm font-medium hover:text-primary transition-colors"
+                        href="./myservice.html">Services</a>
+                    <a class="text-sm font-medium hover:text-primary transition-colors" href="./abuot.html">About</a>
+                </nav>
+                <button
+                    class="bg-primary hover:bg-primary/90 text-white px-5 py-2 rounded-lg text-sm font-bold transition-all shadow-lg shadow-primary/20">
+                    Hire Me
+                </button>
+            </div>
+        </div>
+    </header>
+    <main>
+        <!-- Hero Section -->
+        <section class="relative overflow-hidden pt-12 pb-20 px-4">
+            <div class="max-w-7xl mx-auto @container">
+                <div class="flex flex-col gap-10 @[864px]:flex-row @[864px]:items-center">
+                    <div class="flex-1 flex flex-col gap-8">
+                        <div
+                            class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-primary/10 border border-primary/20 w-fit">
+                            <span class="w-2 h-2 rounded-full bg-primary animate-pulse"></span>
+                            <span class="text-xs font-bold text-primary uppercase tracking-wider">Available for new
+                                projects</span>
+                        </div>
+                        <div class="flex flex-col gap-4">
+                            <h1 class="text-5xl @[480px]:text-7xl font-black leading-[1.1] tracking-tight">
+                                Creative <span class="text-primary">Designer</span> &amp; Storyteller
+                            </h1>
+                            <p
+                                class="text-lg @[480px]:text-xl text-slate-600 dark:text-accent-purple max-w-2xl leading-relaxed">
+                                I craft digital experiences that blend artistic vision with functional design.
+                                Specializing in high-impact UI/UX and visual identities that bring your ideas to life.
+                            </p>
+                        </div>
+                        <div class="flex flex-wrap gap-4">
+                            <button
+                                class="bg-primary hover:bg-primary/90 text-white px-8 py-4 rounded-xl font-bold flex items-center gap-2 transition-all shadow-xl shadow-primary/25">
+                                View My Work
+                                <span class="material-symbols-outlined">arrow_forward</span>
+                            </button>
+                            <button
+                                class="bg-slate-200 dark:bg-surface-dark hover:bg-slate-300 dark:hover:bg-primary/10 text-slate-900 dark:text-white px-8 py-4 rounded-xl font-bold border border-transparent dark:border-primary/20 transition-all">
+                                Let's Talk
+                            </button>
+                        </div>
+                    </div>
+                    <div class="flex-1 relative">
+                        <div
+                            class="w-full aspect-square bg-gradient-to-tr from-primary/20 to-transparent rounded-full absolute -top-10 -right-10 blur-3xl opacity-50">
+                        </div>
+                        <div class="relative z-10 w-full aspect-[4/5] bg-center bg-cover rounded-3xl shadow-2xl border border-primary/10 overflow-hidden"
+                            data-alt="Professional portrait of a creative designer in a modern studio"
+                            style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuBUCeuYTS5WEECd9k09tifch4yglI28T5_RWqvUeVaKIwkNATlIGHzqCmmqsYkXf8l-gYuCoiMsdUhaPnY6RZ3i4BVeVRIQyPvZXDGmP1x7fDA8DAWxZXVvKsCVfuYVInk-f0PLZ3HbpvzaxMHzM_qWpOlCK1BiQ3gVL1xWlIjnZqRP_Fm0iAxRcTLXOOCgMx_QcyfuToFUsntzi_dlTO582OeZ7ZyQA-W1CAMaEbpFUBfMAoSwx09NS2vAvsI4CsNpFz4zEOwdb84')">
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <!-- Featured Projects -->
+        <section class="py-20 bg-slate-50 dark:bg-surface-dark/30">
+            <div class="max-w-7xl mx-auto px-4">
+                <div class="flex items-end justify-between mb-12">
+                    <div class="flex flex-col gap-2">
+                        <h2 class="text-3xl font-bold tracking-tight">Featured Projects</h2>
+                        <p class="text-slate-500 dark:text-accent-purple">Selected works that showcase design excellence
+                        </p>
+                    </div>
+                    <a class="text-primary font-bold flex items-center gap-1 hover:underline" href="#">
+                        View all projects
+                        <span class="material-symbols-outlined text-sm">open_in_new</span>
+                    </a>
+                </div>
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+                    <!-- Project Card 1 -->
+                    <div
+                        class="group flex flex-col bg-white dark:bg-surface-dark rounded-2xl overflow-hidden border border-slate-200 dark:border-primary/10 transition-all hover:shadow-2xl hover:shadow-primary/10">
+                        <div class="aspect-video bg-center bg-cover transition-transform duration-500 group-hover:scale-105"
+                            data-alt="Modern e-commerce dashboard interface design"
+                            style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuB7l2L9jCouvNQL2Vr9riDTLD6kh6ATjnxnadovHpYmAqp2WHzk4bIQSqfG2PSQJGp7zQorqa6Mk9Z4z4bqg6w7Uv0JKxiz-49eXCaXCcdlBdY4xOLQwscPeZd6mQVLzmyX9OFvC1fqwP_y9u0RVsASiigvQLnvi5bJ4lp6pwfsoXJjBnVjaNGJ7gRDo1kvnOfpBtzJWCStpVI5L9Yf8WpQOliHxRmpEnVwp7SXWMOYiYjynITg5Dw2AsjmOBYPKmyuF8W7s3RP-UA')">
+                        </div>
+                        <div class="p-6 flex flex-col gap-4">
+                            <div class="flex flex-col gap-1">
+                                <p class="text-primary text-xs font-bold uppercase tracking-widest">UI/UX • SaaS</p>
+                                <h3 class="text-xl font-bold">Lumina Dashboard</h3>
+                            </div>
+                            <p class="text-slate-600 dark:text-slate-400 text-sm">A comprehensive data visualization
+                                platform for enterprise-level retail analytics.</p>
+                            <button class="w-fit text-primary font-bold flex items-center gap-2 mt-2">
+                                Case Study <span class="material-symbols-outlined text-base">arrow_forward</span>
+                            </button>
+                        </div>
+                    </div>
+                    <!-- Project Card 2 -->
+                    <div
+                        class="group flex flex-col bg-white dark:bg-surface-dark rounded-2xl overflow-hidden border border-slate-200 dark:border-primary/10 transition-all hover:shadow-2xl hover:shadow-primary/10">
+                        <div class="aspect-video bg-center bg-cover transition-transform duration-500 group-hover:scale-105"
+                            data-alt="Mobile banking app UI with sleek purple theme"
+                            style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuANR3jpZOKVD8XFOTW2dkswbVHzCZPZLDvIWOvRVvgr7hYFij2o5bGVKmlfNTSqYqefNEP1Khfh0KMfm5jsi1-FEsP1jALvsa8x69IWml-_tk7fd9kveKVWJWJ39gN3Md94pImCTvTJ7XXLYaDtm5cZtazJ3t-51AYp7-CiFB1yTeQKjT3UXMNSslmtLakomYaCCSifk4PiIyCQ4VkFeLg6TX9tlzctVZ2e7lEAmxEYfIVdsvx979xRhRMlAPd0rdQoEnGE7E9oTZk')">
+                        </div>
+                        <div class="p-6 flex flex-col gap-4">
+                            <div class="flex flex-col gap-1">
+                                <p class="text-primary text-xs font-bold uppercase tracking-widest">Mobile • Fintech</p>
+                                <h3 class="text-xl font-bold">Nova Pay App</h3>
+                            </div>
+                            <p class="text-slate-600 dark:text-slate-400 text-sm">Streamlining personal finance with an
+                                intuitive mobile experience and smart budgets.</p>
+                            <button class="w-fit text-primary font-bold flex items-center gap-2 mt-2">
+                                Case Study <span class="material-symbols-outlined text-base">arrow_forward</span>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <!-- Services Section -->
+        <section class="py-20 px-4">
+            <div class="max-w-7xl mx-auto">
+                <div class="text-center max-w-2xl mx-auto mb-16">
+                    <h2 class="text-3xl font-bold mb-4">Expertise &amp; Services</h2>
+                    <p class="text-slate-600 dark:text-accent-purple">Specialized solutions tailored to elevate your
+                        digital presence and user engagement.</p>
+                </div>
+                <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
+                    <div
+                        class="p-8 rounded-2xl bg-white dark:bg-surface-dark border border-slate-200 dark:border-primary/10 flex flex-col gap-4 group hover:bg-primary transition-colors">
+                        <div
+                            class="w-12 h-12 rounded-xl bg-primary/10 dark:bg-primary/20 flex items-center justify-center text-primary group-hover:bg-white group-hover:text-primary transition-colors">
+                            <span class="material-symbols-outlined">draw</span>
+                        </div>
+                        <h3 class="text-xl font-bold group-hover:text-white">Visual Design</h3>
+                        <p class="text-slate-600 dark:text-slate-400 group-hover:text-white/80">Crafting unique visual
+                            identities and brand guidelines that resonate with your audience.</p>
+                    </div>
+                    <div
+                        class="p-8 rounded-2xl bg-white dark:bg-surface-dark border border-slate-200 dark:border-primary/10 flex flex-col gap-4 group hover:bg-primary transition-colors">
+                        <div
+                            class="w-12 h-12 rounded-xl bg-primary/10 dark:bg-primary/20 flex items-center justify-center text-primary group-hover:bg-white group-hover:text-primary transition-colors">
+                            <span class="material-symbols-outlined">devices</span>
+                        </div>
+                        <h3 class="text-xl font-bold group-hover:text-white">UI/UX Design</h3>
+                        <p class="text-slate-600 dark:text-slate-400 group-hover:text-white/80">Designing seamless user
+                            journeys and beautiful interfaces for web and mobile platforms.</p>
+                    </div>
+                    <div
+                        class="p-8 rounded-2xl bg-white dark:bg-surface-dark border border-slate-200 dark:border-primary/10 flex flex-col gap-4 group hover:bg-primary transition-colors">
+                        <div
+                            class="w-12 h-12 rounded-xl bg-primary/10 dark:bg-primary/20 flex items-center justify-center text-primary group-hover:bg-white group-hover:text-primary transition-colors">
+                            <span class="material-symbols-outlined">rocket_launch</span>
+                        </div>
+                        <h3 class="text-xl font-bold group-hover:text-white">Product Strategy</h3>
+                        <p class="text-slate-600 dark:text-slate-400 group-hover:text-white/80">Bridging the gap between
+                            business goals and user needs through research-driven strategy.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <!-- CTA Section / Let's Work Together -->
+        <section class="py-20 px-4">
+            <div
+                class="max-w-7xl mx-auto rounded-[2rem] bg-gradient-to-br from-primary via-primary/80 to-background-dark p-8 md:p-16 text-center relative overflow-hidden">
+                <div class="relative z-10 flex flex-col items-center gap-8">
+                    <h2 class="text-4xl md:text-6xl font-black text-white leading-tight">Let's build
+                        something<br />extraordinary.</h2>
+                    <p class="text-white/80 text-lg max-w-xl">Whether you have a fully-fledged idea or just a spark, I'm
+                        here to help you turn it into a digital reality.</p>
+                    <div class="flex flex-col items-center gap-4">
+                        <a class="text-2xl md:text-3xl font-bold text-white hover:underline transition-all underline-offset-8"
+                            href="mailto:hello@alex.design">hello@alex.design</a>
+                        <div class="flex gap-6 mt-4">
+                            <a class="text-white/70 hover:text-white transition-colors flex items-center gap-2"
+                                href="#">
+                                <span class="material-symbols-outlined">link</span> LinkedIn
+                            </a>
+                            <a class="text-white/70 hover:text-white transition-colors flex items-center gap-2"
+                                href="#">
+                                <span class="material-symbols-outlined">link</span> Dribbble
+                            </a>
+                            <a class="text-white/70 hover:text-white transition-colors flex items-center gap-2"
+                                href="#">
+                                <span class="material-symbols-outlined">link</span> Twitter
+                            </a>
+                        </div>
+                    </div>
+                </div>
+                <!-- Abstract Background Ornament -->
+                <div class="absolute top-0 right-0 w-96 h-96 bg-white/5 rounded-full blur-3xl -mr-48 -mt-48"></div>
+                <div
+                    class="absolute bottom-0 left-0 w-64 h-64 bg-background-dark/20 rounded-full blur-3xl -ml-32 -mb-32">
+                </div>
+            </div>
+        </section>
+    </main>
+    <!-- Bottom Navigation Bar -->
+    <footer class="sticky bottom-0 z-50 w-full md:hidden">
+        <div
+            class="flex gap-2 border-t border-primary/10 bg-background-dark/95 backdrop-blur-lg px-4 pb-4 pt-2 shadow-[0_-8px_24px_rgba(0,0,0,0.5)]">
+            <a class="flex flex-1 flex-col items-center justify-end gap-1 text-primary" href="#">
+                <div class="flex h-8 items-center justify-center">
+                    <span class="material-symbols-outlined text-[24px]"
+                        style="font-variation-settings: 'FILL' 1">home</span>
+                </div>
+                <p class="text-[10px] font-bold leading-normal tracking-wide uppercase">Home</p>
+            </a>
+            <a class="flex flex-1 flex-col items-center justify-end gap-1 text-accent-purple/60 hover:text-primary transition-colors"
+                href="#">
+                <div class="flex h-8 items-center justify-center">
+                    <span class="material-symbols-outlined text-[24px]">grid_view</span>
+                </div>
+                <p class="text-[10px] font-medium leading-normal tracking-wide uppercase">Work</p>
+            </a>
+            <a class="flex flex-1 flex-col items-center justify-end gap-1 text-accent-purple/60 hover:text-primary transition-colors"
+                href="#">
+                <div class="flex h-8 items-center justify-center">
+                    <span class="material-symbols-outlined text-[24px]">person</span>
+                </div>
+                <p class="text-[10px] font-medium leading-normal tracking-wide uppercase">About</p>
+            </a>
+            <a class="flex flex-1 flex-col items-center justify-end gap-1 text-accent-purple/60 hover:text-primary transition-colors"
+                href="#">
+                <div class="flex h-8 items-center justify-center">
+                    <span class="material-symbols-outlined text-[24px]">mail</span>
+                </div>
+                <p class="text-[10px] font-medium leading-normal tracking-wide uppercase">Contact</p>
+            </a>
+        </div>
+    </footer>
+    <!-- Desktop Footer Placeholder -->
+    <div class="hidden md:block py-10 text-center border-t border-primary/5">
+        <p class="text-accent-purple/50 text-xs tracking-widest uppercase">© 2024 ALEX.DESIGN • All Rights Reserved</p>
+    </div>
+</body>
+
+</html>

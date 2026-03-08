@@ -1,0 +1,469 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="en">
+
+<head>
+    <meta charset="utf-8" />
+    <meta content="width=device-width, initial-scale=1.0" name="viewport" />
+    <title>Portfolio Blog</title>
+    <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&amp;display=swap"
+        rel="stylesheet" />
+    <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght@100..700,0..1&amp;display=swap"
+        rel="stylesheet" />
+    <link
+        href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap"
+        rel="stylesheet" />
+    <script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "primary": "#8c25f4",
+                        "background-light": "#f7f5f8",
+                        "background-dark": "#191022",
+                    },
+                    fontFamily: {
+                        "display": ["Inter"]
+                    },
+                    borderRadius: { "DEFAULT": "0.25rem", "lg": "0.5rem", "xl": "0.75rem", "full": "9999px" },
+                },
+            },
+        }
+    </script>
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+        }
+
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+    </style>
+    <style>
+        body {
+            min-height: max(884px, 100dvh);
+        }
+
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(40px);
+            }
+
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        @keyframes fadeInDown {
+            from {
+                opacity: 0;
+                transform: translateY(-40px);
+            }
+
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        @keyframes fadeInLeft {
+            from {
+                opacity: 0;
+                transform: translateX(-50px);
+            }
+
+            to {
+                opacity: 1;
+                transform: translateX(0);
+            }
+        }
+
+        @keyframes fadeInRight {
+            from {
+                opacity: 0;
+                transform: translateX(50px);
+            }
+
+            to {
+                opacity: 1;
+                transform: translateX(0);
+            }
+        }
+
+        @keyframes scaleIn {
+            from {
+                opacity: 0;
+                transform: scale(0.85);
+            }
+
+            to {
+                opacity: 1;
+                transform: scale(1);
+            }
+        }
+
+        @keyframes slideInScale {
+            from {
+                opacity: 0;
+                transform: scale(0.6) translateY(30px);
+            }
+
+            to {
+                opacity: 1;
+                transform: scale(1) translateY(0);
+            }
+        }
+
+        [data-anim] {
+            opacity: 0;
+            transition: none;
+        }
+
+        [data-anim].anim-visible {
+            animation-fill-mode: both;
+            animation-timing-function: cubic-bezier(0.22, 1, 0.36, 1);
+        }
+
+        [data-anim="fade-up"].anim-visible {
+            animation-name: fadeInUp;
+        }
+
+        [data-anim="fade-down"].anim-visible {
+            animation-name: fadeInDown;
+        }
+
+        [data-anim="fade-left"].anim-visible {
+            animation-name: fadeInLeft;
+        }
+
+        [data-anim="fade-right"].anim-visible {
+            animation-name: fadeInRight;
+        }
+
+        [data-anim="scale-in"].anim-visible {
+            animation-name: scaleIn;
+        }
+
+        [data-anim="slide-scale"].anim-visible {
+            animation-name: slideInScale;
+        }
+
+        header {
+            animation: fadeInDown 0.8s cubic-bezier(0.22, 1, 0.36, 1) both;
+        }
+
+        .blog-card {
+            transition: transform 0.4s cubic-bezier(0.22, 1, 0.36, 1);
+        }
+
+        .blog-card:hover {
+            transform: translateY(-10px);
+        }
+
+        .nav-link-anim {
+            position: relative;
+        }
+
+        .nav-link-anim::after {
+            content: '';
+            position: absolute;
+            bottom: -4px;
+            left: 0;
+            width: 0;
+            height: 2px;
+            background: #8c25f4;
+            transition: width 0.35s cubic-bezier(0.22, 1, 0.36, 1);
+        }
+
+        .nav-link-anim:hover::after {
+            width: 100%;
+        }
+    </style>
+</head>
+
+<body
+    class="bg-background-light dark:bg-background-dark text-slate-900 dark:text-slate-100 font-display transition-colors duration-300">
+    <div class="relative flex min-h-screen flex-col overflow-x-hidden">
+        <!-- Header / Navigation Bar -->
+        <header
+            class="sticky top-0 z-50 border-b border-primary/10 bg-background-light/80 dark:bg-background-dark/80 backdrop-blur-md px-4 py-3">
+            <div class="mx-auto flex max-w-7xl items-center justify-between">
+                <div class="flex items-center gap-2">
+                    <div class="flex h-10 w-10 items-center justify-center rounded-lg bg-primary text-white">
+                        <span class="material-symbols-outlined">terminal</span>
+                    </div>
+                    <h2 class="text-xl font-bold tracking-tight text-slate-900 dark:text-slate-100">Portfolio</h2>
+                </div>
+                <nav class="hidden md:flex items-center gap-8">
+                    <a class="text-sm font-medium hover:text-primary transition-colors nav-link-anim" href="#">Home</a>
+                    <a class="text-sm font-medium hover:text-primary transition-colors text-primary nav-link-anim"
+                        href="#">Blog</a>
+                    <a class="text-sm font-medium hover:text-primary transition-colors nav-link-anim"
+                        href="#">Projects</a>
+                    <a class="text-sm font-medium hover:text-primary transition-colors nav-link-anim" href="#">About</a>
+                </nav>
+                <div class="flex items-center gap-4">
+                    <button
+                        class="flex h-10 w-10 items-center justify-center rounded-full hover:bg-primary/10 transition-colors">
+                        <span class="material-symbols-outlined">search</span>
+                    </button>
+                    <button class="flex h-10 w-10 items-center justify-center rounded-full bg-primary text-white">
+                        <span class="material-symbols-outlined text-[20px]">person</span>
+                    </button>
+                </div>
+            </div>
+        </header>
+        <!-- Hero Section -->
+        <section class="px-4 pt-12 pb-8">
+            <div class="mx-auto max-w-7xl">
+                <div class="inline-flex items-center gap-2 rounded-full bg-primary/10 px-3 py-1 text-xs font-semibold uppercase tracking-wider text-primary mb-4"
+                    data-anim="fade-down" data-delay="200">
+                    <span class="material-symbols-outlined text-xs">edit_note</span>
+                    Insights &amp; Updates
+                </div>
+                <h1 class="text-4xl font-extrabold tracking-tight text-slate-900 dark:text-slate-100 sm:text-5xl lg:text-6xl"
+                    data-anim="fade-up" data-delay="400">
+                    The <span class="text-primary">Blog</span>
+                </h1>
+                <p class="mt-4 max-w-2xl text-lg text-slate-600 dark:text-slate-400" data-anim="fade-up"
+                    data-delay="600">
+                    Exploring the intersection of design, code, and artificial intelligence. Thoughts on the future of
+                    building for the web.
+                </p>
+            </div>
+        </section>
+        <!-- Blog Grid Section -->
+        <main class="flex-1 px-4 py-8">
+            <div class="mx-auto max-w-7xl">
+                <div class="grid grid-cols-1 gap-8 md:grid-cols-2 lg:grid-cols-3">
+                    <!-- Blog Card 1 -->
+                    <article
+                        class="group flex flex-col overflow-hidden rounded-xl border border-primary/10 bg-white dark:bg-primary/5 transition-all hover:border-primary/30 hover:shadow-2xl hover:shadow-primary/5 blog-card"
+                        data-anim="fade-up" data-delay="200">
+                        <div class="relative aspect-video overflow-hidden">
+                            <div class="absolute inset-0 bg-cover bg-center transition-transform duration-500 group-hover:scale-105"
+                                data-alt="Digital workspace with neon purple lighting"
+                                style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuCtd4McK1wzHAdVKvZZBH6XbfNqocpWRsuwWZleN1I0nvOLL4_rAk7sWCUQdi2veFvRMCrgH0Au-7FDmCUvT2aRJGbjpFGaPhuMHYtMoLF2ZKxqjY8ATk0Y5x_-d0rGwzknicenxY_f25Oe94M-ED3dOdVRn0-4UpFPMZt9Bf--7IEhcSli9HmQGKgFUbGivGPDpyL3HAThDc2xzP7WMUG0C4LuUXigd-bnxmGYOCDe1dHjyLnSSlZNeqwjmjfqdkd2eETyEOhAHqM')">
+                            </div>
+                            <div class="absolute top-4 left-4">
+                                <span
+                                    class="rounded-lg bg-primary/90 px-3 py-1 text-xs font-bold text-white backdrop-blur-sm">Design</span>
+                            </div>
+                        </div>
+                        <div class="flex flex-1 flex-col p-6">
+                            <div
+                                class="mb-3 flex items-center gap-2 text-xs font-medium text-slate-500 dark:text-slate-400">
+                                <span class="material-symbols-outlined text-sm">calendar_today</span>
+                                <span>Jan 12, 2024</span>
+                                <span class="mx-1">•</span>
+                                <span class="material-symbols-outlined text-sm">schedule</span>
+                                <span>5 min read</span>
+                            </div>
+                            <h3
+                                class="mb-3 text-xl font-bold leading-tight text-slate-900 dark:text-slate-100 group-hover:text-primary transition-colors">
+                                The Future of Web Design in the Age of AI
+                            </h3>
+                            <p class="mb-6 flex-1 text-sm leading-relaxed text-slate-600 dark:text-slate-400">
+                                Discover how generative AI is transforming our creative workflows and what it means for
+                                the next generation of digital interfaces.
+                            </p>
+                            <a class="inline-flex items-center gap-2 text-sm font-bold text-primary hover:underline"
+                                href="#">
+                                Read More
+                                <span class="material-symbols-outlined text-sm">arrow_forward</span>
+                            </a>
+                        </div>
+                    </article>
+                    <!-- Blog Card 2 -->
+                    <article
+                        class="group flex flex-col overflow-hidden rounded-xl border border-primary/10 bg-white dark:bg-primary/5 transition-all hover:border-primary/30 hover:shadow-2xl hover:shadow-primary/5 blog-card"
+                        data-anim="fade-up" data-delay="400">
+                        <div class="relative aspect-video overflow-hidden">
+                            <div class="absolute inset-0 bg-cover bg-center transition-transform duration-500 group-hover:scale-105"
+                                data-alt="High tech computer hardware components"
+                                style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuBoZwaSAyB9wjLJCSHw6oEWXyBRNbewAgar8ZutugrrzO1B6gOnZ6x59bP5VuzcvYFrheUhUKzySjURn6zcTMcLMIdKr9ipXRuTP8mGLh-vARVN67jtzJz5zW37ThBnj9BSZySDemhAAafabCoA2z7vCmY67n3JTYPEJKz4jlV2adXxT3suok5xCdZsiCOfcG27t2fHNQyNZAn7Dqv5leUHdpVfCEkfsNhh7anoTvrM5Qsh7mZ1e5nQ_2TLZs24CUCpFv2Qg11NHcs')">
+                            </div>
+                            <div class="absolute top-4 left-4">
+                                <span
+                                    class="rounded-lg bg-primary/90 px-3 py-1 text-xs font-bold text-white backdrop-blur-sm">Development</span>
+                            </div>
+                        </div>
+                        <div class="flex flex-1 flex-col p-6">
+                            <div
+                                class="mb-3 flex items-center gap-2 text-xs font-medium text-slate-500 dark:text-slate-400">
+                                <span class="material-symbols-outlined text-sm">calendar_today</span>
+                                <span>Jan 08, 2024</span>
+                                <span class="mx-1">•</span>
+                                <span class="material-symbols-outlined text-sm">schedule</span>
+                                <span>8 min read</span>
+                            </div>
+                            <h3
+                                class="mb-3 text-xl font-bold leading-tight text-slate-900 dark:text-slate-100 group-hover:text-primary transition-colors">
+                                Mastering Performance with Modern Frameworks
+                            </h3>
+                            <p class="mb-6 flex-1 text-sm leading-relaxed text-slate-600 dark:text-slate-400">
+                                A deep dive into the optimization techniques that keep modern web applications fast,
+                                responsive, and accessible for everyone.
+                            </p>
+                            <a class="inline-flex items-center gap-2 text-sm font-bold text-primary hover:underline"
+                                href="#">
+                                Read More
+                                <span class="material-symbols-outlined text-sm">arrow_forward</span>
+                            </a>
+                        </div>
+                    </article>
+                    <!-- Blog Card 3 -->
+                    <article
+                        class="group flex flex-col overflow-hidden rounded-xl border border-primary/10 bg-white dark:bg-primary/5 transition-all hover:border-primary/30 hover:shadow-2xl hover:shadow-primary/5 blog-card"
+                        data-anim="fade-up" data-delay="600">
+                        <div class="relative aspect-video overflow-hidden">
+                            <div class="absolute inset-0 bg-cover bg-center transition-transform duration-500 group-hover:scale-105"
+                                data-alt="Abstract colorful light painting swirls"
+                                style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuDgs-kWENKG97c6K0m-pZpBMD5c1Y4kf1p8ODHctCeJZqItcC6f9hx9GKLc__Kq8m_Hnoz-NxPOrDqkIrH0bES6L2Nq1bvSQIZZFARgxWwwLcWILqFVpwjDhYwzL6OuVPU6ezeeI3xYjxcXMAiazUm8cPb7VxqvXrEAVfsWUjm620AfxN3wkHlC3G_HVNN3W3M4CvhRkEAFYubnpLun7tJbh3OnDVkNuqXwTqLDWd85p10uqYWHJspAArwa8Encu9-UL3uyam1_dwU')">
+                            </div>
+                            <div class="absolute top-4 left-4">
+                                <span
+                                    class="rounded-lg bg-primary/90 px-3 py-1 text-xs font-bold text-white backdrop-blur-sm">Creativity</span>
+                            </div>
+                        </div>
+                        <div class="flex flex-1 flex-col p-6">
+                            <div
+                                class="mb-3 flex items-center gap-2 text-xs font-medium text-slate-500 dark:text-slate-400">
+                                <span class="material-symbols-outlined text-sm">calendar_today</span>
+                                <span>Jan 02, 2024</span>
+                                <span class="mx-1">•</span>
+                                <span class="material-symbols-outlined text-sm">schedule</span>
+                                <span>4 min read</span>
+                            </div>
+                            <h3
+                                class="mb-3 text-xl font-bold leading-tight text-slate-900 dark:text-slate-100 group-hover:text-primary transition-colors">
+                                Balancing Minimalism and Bold Aesthetics
+                            </h3>
+                            <p class="mb-6 flex-1 text-sm leading-relaxed text-slate-600 dark:text-slate-400">
+                                Finding the sweet spot between clean white space and vibrant color palettes in
+                                contemporary user experience design.
+                            </p>
+                            <a class="inline-flex items-center gap-2 text-sm font-bold text-primary hover:underline"
+                                href="#">
+                                Read More
+                                <span class="material-symbols-outlined text-sm">arrow_forward</span>
+                            </a>
+                        </div>
+                    </article>
+                </div>
+                <!-- View All Button -->
+                <div class="mt-12 flex justify-center" data-anim="scale-in" data-delay="300">
+                    <button
+                        class="flex h-12 min-w-[180px] items-center justify-center gap-2 rounded-lg bg-primary px-8 text-base font-bold text-white shadow-lg shadow-primary/25 transition-transform hover:scale-105 active:scale-95">
+                        <span>View All Posts</span>
+                        <span class="material-symbols-outlined">grid_view</span>
+                    </button>
+                </div>
+            </div>
+        </main>
+        <!-- Newsletter Section -->
+        <section class="mx-auto w-full max-w-7xl px-4 py-16">
+            <div class="rounded-2xl bg-gradient-to-br from-primary/20 via-background-dark to-primary/5 p-8 md:p-12 border border-primary/20"
+                data-anim="scale-in" data-delay="200">
+                <div class="grid items-center gap-8 lg:grid-cols-2">
+                    <div>
+                        <h2 class="text-3xl font-bold tracking-tight text-slate-900 dark:text-slate-100">Subscribe to my
+                            newsletter</h2>
+                        <p class="mt-4 text-slate-600 dark:text-slate-400">
+                            Get the latest articles, tutorials, and design resources delivered directly to your inbox.
+                            No spam, ever.
+                        </p>
+                    </div>
+                    <form class="flex w-full max-w-md flex-col gap-3 sm:flex-row lg:ml-auto">
+                        <input
+                            class="flex-1 rounded-lg border-primary/20 bg-white/5 px-4 py-3 text-sm focus:border-primary focus:ring-1 focus:ring-primary dark:text-white"
+                            placeholder="Enter your email" required="" type="email" />
+                        <button class="rounded-lg bg-primary px-6 py-3 text-sm font-bold text-white hover:bg-primary/90"
+                            type="submit">
+                            Join Now
+                        </button>
+                    </form>
+                </div>
+            </div>
+        </section>
+        <!-- Footer Bottom Bar (Navigation Component Style) -->
+        <footer class="mt-auto border-t border-primary/10 bg-white/5 dark:bg-primary/5">
+            <div class="mx-auto flex max-w-7xl flex-col items-center justify-between gap-4 px-4 py-8 md:flex-row">
+                <p class="text-sm text-slate-500 dark:text-slate-400">© 2024 Portfolio Blog. Designed with precision.
+                </p>
+                <div class="flex gap-6">
+                    <a class="text-slate-500 hover:text-primary transition-colors" href="#"><span
+                            class="material-symbols-outlined">brand_awareness</span></a>
+                    <a class="text-slate-500 hover:text-primary transition-colors" href="#"><span
+                            class="material-symbols-outlined">alternate_email</span></a>
+                    <a class="text-slate-500 hover:text-primary transition-colors" href="#"><span
+                            class="material-symbols-outlined">rss_feed</span></a>
+                </div>
+            </div>
+            <!-- Bottom Navigation for Mobile -->
+            <div class="flex border-t border-primary/10 bg-white/5 dark:bg-primary/5 px-4 pb-6 pt-3 md:hidden">
+                <a class="flex flex-1 flex-col items-center justify-end gap-1 text-slate-400" href="#">
+                    <div class="flex h-8 items-center justify-center">
+                        <span class="material-symbols-outlined">house</span>
+                    </div>
+                    <p class="text-[10px] font-medium uppercase tracking-wider">Home</p>
+                </a>
+                <a class="flex flex-1 flex-col items-center justify-end gap-1 text-slate-400" href="#">
+                    <div class="flex h-8 items-center justify-center">
+                        <span class="material-symbols-outlined">folder_open</span>
+                    </div>
+                    <p class="text-[10px] font-medium uppercase tracking-wider">Projects</p>
+                </a>
+                <a class="flex flex-1 flex-col items-center justify-end gap-1 text-primary" href="#">
+                    <div class="flex h-8 items-center justify-center">
+                        <span class="material-symbols-outlined font-fill">article</span>
+                    </div>
+                    <p class="text-[10px] font-medium uppercase tracking-wider">Blog</p>
+                </a>
+                <a class="flex flex-1 flex-col items-center justify-end gap-1 text-slate-400" href="#">
+                    <div class="flex h-8 items-center justify-center">
+                        <span class="material-symbols-outlined">mail</span>
+                    </div>
+                    <p class="text-[10px] font-medium uppercase tracking-wider">Contact</p>
+                </a>
+            </div>
+        </footer>
+    </div>
+    <!-- Animation Engine -->
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const animEls = document.querySelectorAll('[data-anim]');
+            const observer = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        const el = entry.target;
+                        const delay = el.dataset.delay || 0;
+                        const duration = el.dataset.duration || '0.8s';
+                        setTimeout(() => {
+                            el.style.animationDuration = duration;
+                            el.classList.add('anim-visible');
+                        }, parseInt(delay));
+                        observer.unobserve(el);
+                    }
+                });
+            }, { threshold: 0.15, rootMargin: '0px 0px -40px 0px' });
+            animEls.forEach(el => observer.observe(el));
+
+            document.querySelectorAll('a[href^="#"]').forEach(a => {
+                a.addEventListener('click', e => {
+                    const target = document.querySelector(a.getAttribute('href'));
+                    if (target) {
+                        e.preventDefault();
+                        target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+                    }
+                });
+            });
+        });
+    </script>
+</body>
+
+</html>

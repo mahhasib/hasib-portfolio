@@ -1,0 +1,346 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="en">
+
+<head>
+    <meta charset="utf-8" />
+    <meta content="width=device-width, initial-scale=1.0" name="viewport" />
+    <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&amp;display=swap"
+        rel="stylesheet" />
+    <link
+        href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap"
+        rel="stylesheet" />
+    <link
+        href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap"
+        rel="stylesheet" />
+    <script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "primary": "#8c25f4",
+                        "background-light": "#f7f5f8",
+                        "background-dark": "#191022",
+                    },
+                    fontFamily: {
+                        "display": ["Inter"]
+                    },
+                    borderRadius: { "DEFAULT": "0.25rem", "lg": "0.5rem", "xl": "0.75rem", "full": "9999px" },
+                },
+            },
+        }
+    </script>
+    <style>
+        body {
+            min-height: max(884px, 100dvh);
+        }
+
+        /* ===== ANIMATION SYSTEM ===== */
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(40px);
+            }
+
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        @keyframes fadeInDown {
+            from {
+                opacity: 0;
+                transform: translateY(-30px);
+            }
+
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        @keyframes fadeInLeft {
+            from {
+                opacity: 0;
+                transform: translateX(-40px);
+            }
+
+            to {
+                opacity: 1;
+                transform: translateX(0);
+            }
+        }
+
+        @keyframes fadeInRight {
+            from {
+                opacity: 0;
+                transform: translateX(40px);
+            }
+
+            to {
+                opacity: 1;
+                transform: translateX(0);
+            }
+        }
+
+        @keyframes scaleIn {
+            from {
+                opacity: 0;
+                transform: scale(0.85);
+            }
+
+            to {
+                opacity: 1;
+                transform: scale(1);
+            }
+        }
+
+        /* Scroll reveal base */
+        [data-anim] {
+            opacity: 0;
+            transition: none;
+        }
+
+        [data-anim].anim-visible {
+            animation-fill-mode: both;
+            animation-timing-function: cubic-bezier(0.22, 1, 0.36, 1);
+        }
+
+        [data-anim="fade-up"].anim-visible {
+            animation-name: fadeInUp;
+        }
+
+        [data-anim="fade-down"].anim-visible {
+            animation-name: fadeInDown;
+        }
+
+        [data-anim="fade-left"].anim-visible {
+            animation-name: fadeInLeft;
+        }
+
+        [data-anim="fade-right"].anim-visible {
+            animation-name: fadeInRight;
+        }
+
+        [data-anim="scale-in"].anim-visible {
+            animation-name: scaleIn;
+        }
+
+        /* Header entrance */
+        nav {
+            animation: fadeInDown 0.8s cubic-bezier(0.22, 1, 0.36, 1) both;
+        }
+    </style>
+</head>
+
+<body class="bg-background-light dark:bg-background-dark font-display text-slate-900 dark:text-slate-100 min-h-screen">
+    <!-- Top Navigation Bar -->
+    <nav
+        class="sticky top-0 z-50 bg-background-light/80 dark:bg-background-dark/80 backdrop-blur-md border-b border-primary/10">
+        <div class="max-w-5xl mx-auto px-4 h-16 flex items-center justify-between">
+            <div class="flex items-center gap-4">
+                <a class="text-slate-900 dark:text-slate-100 hover:text-primary transition-colors" href="#">
+                    <span class="material-symbols-outlined">arrow_back</span>
+                </a>
+                <span class="font-bold tracking-tight text-lg">Portfolio</span>
+            </div>
+            <div class="hidden md:flex gap-6 text-sm font-medium">
+                <a class="hover:text-primary transition-colors" href="#">Work</a>
+                <a class="hover:text-primary transition-colors" href="#">About</a>
+                <a class="hover:text-primary transition-colors" href="#">Contact</a>
+            </div>
+        </div>
+    </nav>
+    <main class="max-w-4xl mx-auto px-4 py-12">
+        <!-- Header Section -->
+        <header class="mb-12" data-anim="scale-in" data-delay="100">
+            <div class="relative w-full aspect-[21/9] overflow-hidden rounded-xl mb-8 bg-gradient-to-br from-primary/20 to-background-dark border border-primary/20 flex items-end p-8"
+                data-alt="Abstract purple and black gradient geometric shapes">
+                <div class="relative z-10">
+                    <div
+                        class="mb-2 inline-block px-3 py-1 rounded-full bg-primary/20 text-primary text-xs font-bold uppercase tracking-wider">
+                        Legal</div>
+                    <h1 class="text-4xl md:text-5xl font-bold text-slate-900 dark:text-white">Privacy Policy</h1>
+                    <p class="mt-4 text-slate-600 dark:text-slate-400 max-w-xl">
+                        Last updated: October 24, 2023. This policy explains how I handle your data when you interact
+                        with my professional design portfolio.
+                    </p>
+                </div>
+                <div class="absolute inset-0 opacity-30 pointer-events-none">
+                    <div class="absolute top-0 right-0 w-64 h-64 bg-primary/30 blur-[100px] rounded-full"></div>
+                </div>
+            </div>
+        </header>
+        <!-- Content Sections -->
+        <div class="space-y-12">
+            <!-- 1. Introduction -->
+            <section data-anim="fade-up" data-delay="200">
+                <div class="flex items-center gap-3 mb-4">
+                    <span class="material-symbols-outlined text-primary">info</span>
+                    <h2 class="text-2xl font-bold text-slate-900 dark:text-slate-100">1. Introduction</h2>
+                </div>
+                <div class="space-y-4 text-slate-600 dark:text-slate-400 leading-relaxed">
+                    <p>
+                        Welcome to my professional portfolio. I value your privacy and am committed to protecting your
+                        personal data. This Privacy Policy describes how your personal information is collected, used,
+                        and shared when you visit my site or reach out for inquiries.
+                    </p>
+                    <p>
+                        By using this website, you agree to the collection and use of information in accordance with
+                        this policy. I ensure that all data processing is conducted in compliance with relevant data
+                        protection laws.
+                    </p>
+                </div>
+            </section>
+            <!-- 2. Information Collection -->
+            <section data-anim="fade-up" data-delay="300">
+                <div class="flex items-center gap-3 mb-4">
+                    <span class="material-symbols-outlined text-primary">database</span>
+                    <h2 class="text-2xl font-bold text-slate-900 dark:text-slate-100">2. Information Collection</h2>
+                </div>
+                <div class="space-y-4 text-slate-600 dark:text-slate-400 leading-relaxed">
+                    <p>
+                        I may collect several different types of information for various purposes to provide and improve
+                        my service to you:
+                    </p>
+                    <ul class="list-disc ml-6 space-y-2">
+                        <li><strong class="text-slate-900 dark:text-slate-200">Personal Data:</strong> While using my
+                            contact form, you may be asked to provide certain personally identifiable information, such
+                            as your name and email address.</li>
+                        <li><strong class="text-slate-900 dark:text-slate-200">Usage Data:</strong> We may also collect
+                            information on how the Service is accessed and used. This includes your IP address, browser
+                            type, and page visit duration.</li>
+                    </ul>
+                </div>
+            </section>
+            <!-- 3. How We Use Information -->
+            <section data-anim="fade-up" data-delay="400">
+                <div class="flex items-center gap-3 mb-4">
+                    <span class="material-symbols-outlined text-primary">vitals</span>
+                    <h2 class="text-2xl font-bold text-slate-900 dark:text-slate-100">3. How We Use Information</h2>
+                </div>
+                <div class="space-y-4 text-slate-600 dark:text-slate-400 leading-relaxed">
+                    <p>
+                        The data collected is used for various purposes:
+                    </p>
+                    <div class="grid md:grid-cols-2 gap-4 mt-4">
+                        <div class="p-4 rounded-lg bg-primary/5 border border-primary/10">
+                            <h4 class="font-bold text-slate-900 dark:text-slate-100 mb-2">Communication</h4>
+                            <p class="text-sm">To respond to your inquiries, provide project quotes, and discuss
+                                potential design collaborations.</p>
+                        </div>
+                        <div class="p-4 rounded-lg bg-primary/5 border border-primary/10">
+                            <h4 class="font-bold text-slate-900 dark:text-slate-100 mb-2">Analytics</h4>
+                            <p class="text-sm">To monitor the usage of the site and identify areas for improvement in
+                                the user experience.</p>
+                        </div>
+                    </div>
+                </div>
+            </section>
+            <!-- 4. Data Security -->
+            <section data-anim="fade-up" data-delay="500">
+                <div class="flex items-center gap-3 mb-4">
+                    <span class="material-symbols-outlined text-primary">security</span>
+                    <h2 class="text-2xl font-bold text-slate-900 dark:text-slate-100">4. Data Security</h2>
+                </div>
+                <div
+                    class="p-6 rounded-xl bg-slate-100 dark:bg-primary/10 border border-slate-200 dark:border-primary/20">
+                    <p class="text-slate-600 dark:text-slate-400 leading-relaxed">
+                        The security of your data is important to me, but remember that no method of transmission over
+                        the Internet or method of electronic storage is 100% secure. While I strive to use commercially
+                        acceptable means to protect your Personal Data, I cannot guarantee its absolute security. I
+                        implement industry-standard encryption for all data submitted via contact forms.
+                    </p>
+                </div>
+            </section>
+            <!-- 5. Cookies Policy -->
+            <section data-anim="fade-up" data-delay="600">
+                <div class="flex items-center gap-3 mb-4">
+                    <span class="material-symbols-outlined text-primary">cookie</span>
+                    <h2 class="text-2xl font-bold text-slate-900 dark:text-slate-100">5. Cookies Policy</h2>
+                </div>
+                <div class="space-y-4 text-slate-600 dark:text-slate-400 leading-relaxed">
+                    <p>
+                        I use cookies and similar tracking technologies to track the activity on my portfolio and hold
+                        certain information. Cookies are files with small amount of data which may include an anonymous
+                        unique identifier.
+                    </p>
+                    <p>
+                        You can instruct your browser to refuse all cookies or to indicate when a cookie is being sent.
+                        However, if you do not accept cookies, you may not be able to use some portions of our Service.
+                    </p>
+                </div>
+            </section>
+            <!-- 6. Contact Information -->
+            <section class="pb-20" data-anim="fade-up" data-delay="700">
+                <div class="flex items-center gap-3 mb-4">
+                    <span class="material-symbols-outlined text-primary">mail</span>
+                    <h2 class="text-2xl font-bold text-slate-900 dark:text-slate-100">6. Contact Information</h2>
+                </div>
+                <div class="bg-primary/20 rounded-2xl p-8 border border-primary/30">
+                    <p class="text-slate-900 dark:text-slate-100 mb-6">
+                        If you have any questions about this Privacy Policy, please contact me through any of the
+                        channels below:
+                    </p>
+                    <div class="flex flex-col sm:flex-row gap-6">
+                        <div class="flex items-center gap-3">
+                            <div class="w-10 h-10 rounded-full bg-primary flex items-center justify-center">
+                                <span class="material-symbols-outlined text-white text-sm">alternate_email</span>
+                            </div>
+                            <div>
+                                <p class="text-xs text-primary font-bold uppercase">Email</p>
+                                <p class="text-slate-900 dark:text-white font-medium">hello@designer.com</p>
+                            </div>
+                        </div>
+                        <div class="flex items-center gap-3">
+                            <div class="w-10 h-10 rounded-full bg-primary flex items-center justify-center">
+                                <span class="material-symbols-outlined text-white text-sm">location_on</span>
+                            </div>
+                            <div>
+                                <p class="text-xs text-primary font-bold uppercase">Location</p>
+                                <p class="text-slate-900 dark:text-white font-medium">San Francisco, CA</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </div>
+    </main>
+    <!-- Simple Footer -->
+    <footer class="bg-slate-100 dark:bg-background-dark/50 py-8 border-t border-primary/10">
+        <div class="max-w-5xl mx-auto px-4 flex flex-col md:flex-row justify-between items-center gap-4">
+            <p class="text-slate-500 text-sm">© 2023 Designer Portfolio. All rights reserved.</p>
+            <div class="flex gap-6 text-sm">
+                <a class="text-slate-500 hover:text-primary transition-colors" href="#">Privacy Policy</a>
+                <a class="text-slate-500 hover:text-primary transition-colors" href="#">Terms of Service</a>
+                <a class="text-slate-500 hover:text-primary transition-colors" href="#">Cookies</a>
+            </div>
+        </div>
+    </footer>
+    <!-- Animation Engine -->
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const animEls = document.querySelectorAll('[data-anim]');
+            const observer = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        const el = entry.target;
+                        const delay = el.dataset.delay || 0;
+                        const duration = el.dataset.duration || '0.8s';
+                        setTimeout(() => {
+                            el.style.animationDuration = duration;
+                            el.classList.add('anim-visible');
+                        }, parseInt(delay));
+                        observer.unobserve(el);
+                    }
+                });
+            }, { threshold: 0.15, rootMargin: '0px 0px -40px 0px' });
+            animEls.forEach(el => observer.observe(el));
+        });
+    </script>
+</body>
+
+</html>

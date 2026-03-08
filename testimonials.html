@@ -1,0 +1,278 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="en">
+
+<head>
+    <meta charset="utf-8" />
+    <meta content="width=device-width, initial-scale=1.0" name="viewport" />
+    <title>Testimonials - Creative Portfolio</title>
+    <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&amp;display=swap"
+        rel="stylesheet" />
+    <link
+        href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap"
+        rel="stylesheet" />
+    <link
+        href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap"
+        rel="stylesheet" />
+    <script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "primary": "#8c25f4",
+                        "background-light": "#f7f5f8",
+                        "background-dark": "#191022",
+                    },
+                    fontFamily: {
+                        "display": ["Inter"]
+                    },
+                    borderRadius: { "DEFAULT": "0.25rem", "lg": "0.5rem", "xl": "0.75rem", "full": "9999px" },
+                },
+            },
+        }
+    </script>
+    <style>
+        body {
+            min-height: max(884px, 100dvh);
+        }
+
+        /* ===== ANIMATION SYSTEM ===== */
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(40px);
+            }
+
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        @keyframes fadeInDown {
+            from {
+                opacity: 0;
+                transform: translateY(-30px);
+            }
+
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        @keyframes scaleIn {
+            from {
+                opacity: 0;
+                transform: scale(0.85);
+            }
+
+            to {
+                opacity: 1;
+                transform: scale(1);
+            }
+        }
+
+        /* Scroll reveal base */
+        [data-anim] {
+            opacity: 0;
+            transition: none;
+        }
+
+        [data-anim].anim-visible {
+            animation-fill-mode: both;
+            animation-timing-function: cubic-bezier(0.22, 1, 0.36, 1);
+        }
+
+        [data-anim="fade-up"].anim-visible {
+            animation-name: fadeInUp;
+        }
+
+        [data-anim="fade-down"].anim-visible {
+            animation-name: fadeInDown;
+        }
+
+        [data-anim="scale-in"].anim-visible {
+            animation-name: scaleIn;
+        }
+
+        /* Testimonial card hover */
+        .testimonial-card {
+            transition: transform 0.4s cubic-bezier(0.22, 1, 0.36, 1), box-shadow 0.4s ease;
+        }
+
+        .testimonial-card:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 12px 30px rgba(140, 37, 244, 0.12);
+        }
+    </style>
+</head>
+
+<body class="bg-background-light dark:bg-background-dark font-display antialiased text-slate-900 dark:text-slate-100">
+    <section class="py-20 px-4 md:px-8 max-w-7xl mx-auto">
+        <div class="flex flex-col items-center text-center mb-16">
+            <span class="text-primary font-semibold tracking-wider uppercase text-sm mb-3" data-anim="fade-down"
+                data-delay="100">Testimonials</span>
+            <h2 class="text-4xl md:text-5xl font-bold tracking-tight text-slate-900 dark:text-white mb-6"
+                data-anim="fade-up" data-delay="200">
+                What Clients Say
+            </h2>
+            <p class="text-slate-600 dark:text-slate-400 max-w-2xl text-lg" data-anim="fade-up" data-delay="300">
+                We've helped hundreds of businesses scale their digital presence. Here's how our partners describe their
+                experience working with us.
+            </p>
+        </div>
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+            <!-- Testimonial Card 1 -->
+            <div class="bg-white dark:bg-primary/5 border border-slate-200 dark:border-primary/20 rounded-xl p-8 flex flex-col justify-between hover:border-primary/50 transition-colors duration-300 testimonial-card"
+                data-anim="fade-up" data-delay="400">
+                <div class="flex flex-col gap-4">
+                    <div class="flex gap-1 text-primary">
+                        <span class="material-symbols-outlined fill-1"
+                            style="font-variation-settings: 'FILL' 1">star</span>
+                        <span class="material-symbols-outlined fill-1"
+                            style="font-variation-settings: 'FILL' 1">star</span>
+                        <span class="material-symbols-outlined fill-1"
+                            style="font-variation-settings: 'FILL' 1">star</span>
+                        <span class="material-symbols-outlined fill-1"
+                            style="font-variation-settings: 'FILL' 1">star</span>
+                        <span class="material-symbols-outlined fill-1"
+                            style="font-variation-settings: 'FILL' 1">star</span>
+                    </div>
+                    <p class="text-slate-700 dark:text-slate-300 text-lg leading-relaxed italic">
+                        "Working with this team was a game-changer for our project. The attention to detail is unmatched
+                        and the final delivery exceeded our expectations."
+                    </p>
+                </div>
+                <div class="mt-8 flex items-center gap-4">
+                    <div class="h-12 w-12 rounded-full bg-center bg-cover border-2 border-primary/30"
+                        data-alt="Portrait of a smiling executive man"
+                        style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuDOnfVZx-7EBbrbFPZvwZU9oN-iXH9F0UDhS3ixsXi7Z3QwgBXCmg7i4oVIn5Zv30C9zAMRa4-euVZ6djtKugDSqSeaUFJWN4h5GERoyGXmYnsIGupzoPB5f3dU34Ehrz8lO-aBrdJia8xhJDwb7sq60L3Dg0yhaPLadIKP95t2AOjMR8HHv4Q3jdtW2L549ZE0F2X4-Ei3bTphrreg1ecYuQDjU3Jil7INgFLi99M_kGdzxY8qERWHM58hLIGpJU4nya8sX5qGGQA")'>
+                    </div>
+                    <div>
+                        <p class="font-bold text-slate-900 dark:text-white">Alex Rivera</p>
+                        <p class="text-primary text-sm font-medium">CEO, TechFlow</p>
+                    </div>
+                </div>
+            </div>
+            <!-- Testimonial Card 2 -->
+            <div class="bg-white dark:bg-primary/5 border border-slate-200 dark:border-primary/20 rounded-xl p-8 flex flex-col justify-between hover:border-primary/50 transition-colors duration-300 testimonial-card"
+                data-anim="fade-up" data-delay="550">
+                <div class="flex flex-col gap-4">
+                    <div class="flex gap-1 text-primary">
+                        <span class="material-symbols-outlined fill-1"
+                            style="font-variation-settings: 'FILL' 1">star</span>
+                        <span class="material-symbols-outlined fill-1"
+                            style="font-variation-settings: 'FILL' 1">star</span>
+                        <span class="material-symbols-outlined fill-1"
+                            style="font-variation-settings: 'FILL' 1">star</span>
+                        <span class="material-symbols-outlined fill-1"
+                            style="font-variation-settings: 'FILL' 1">star</span>
+                        <span class="material-symbols-outlined fill-1"
+                            style="font-variation-settings: 'FILL' 1">star</span>
+                    </div>
+                    <p class="text-slate-700 dark:text-slate-300 text-lg leading-relaxed italic">
+                        "The design perfectly captured our brand identity and the implementation was flawless. Highly
+                        recommend for anyone looking for high-end creative work."
+                    </p>
+                </div>
+                <div class="mt-8 flex items-center gap-4">
+                    <div class="h-12 w-12 rounded-full bg-center bg-cover border-2 border-primary/30"
+                        data-alt="Portrait of a professional woman smiling"
+                        style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuDvWrpd7NCyPi4yrXe5CqIViW1pyoUqY7tUyyESmuwQWt2UI2gFsKrvdi4C9md9olUhWNv9VmiaOl6JaPqVIQTk7sDcENM5k_D1jypogChCvHJLagmhOlkRFX-29vQwlPR37KfcuDaGktjRwti8deaSMviBzJbJrZ3yxs8fUNo7v8V-k5IXj-4DaaFngKZz3EH7FAkQhhnbKb4N-7GqMDg4A51hSp8zg3-40hOeInfcToo_hVk2ThSSHHNF_kqg_b81Cq5K4qxD2gQ")'>
+                    </div>
+                    <div>
+                        <p class="font-bold text-slate-900 dark:text-white">Sarah Chen</p>
+                        <p class="text-primary text-sm font-medium">Design Lead, Creative Co</p>
+                    </div>
+                </div>
+            </div>
+            <!-- Testimonial Card 3 -->
+            <div class="bg-white dark:bg-primary/5 border border-slate-200 dark:border-primary/20 rounded-xl p-8 flex flex-col justify-between hover:border-primary/50 transition-colors duration-300 testimonial-card"
+                data-anim="fade-up" data-delay="700">
+                <div class="flex flex-col gap-4">
+                    <div class="flex gap-1 text-primary">
+                        <span class="material-symbols-outlined fill-1"
+                            style="font-variation-settings: 'FILL' 1">star</span>
+                        <span class="material-symbols-outlined fill-1"
+                            style="font-variation-settings: 'FILL' 1">star</span>
+                        <span class="material-symbols-outlined fill-1"
+                            style="font-variation-settings: 'FILL' 1">star</span>
+                        <span class="material-symbols-outlined fill-1"
+                            style="font-variation-settings: 'FILL' 1">star</span>
+                        <span class="material-symbols-outlined fill-1"
+                            style="font-variation-settings: 'FILL' 1">star</span>
+                    </div>
+                    <p class="text-slate-700 dark:text-slate-300 text-lg leading-relaxed italic">
+                        "Incredible results and a very smooth communication process throughout the entire development
+                        phase. They really understood our technical needs."
+                    </p>
+                </div>
+                <div class="mt-8 flex items-center gap-4">
+                    <div class="h-12 w-12 rounded-full bg-center bg-cover border-2 border-primary/30"
+                        data-alt="Portrait of a young entrepreneur man"
+                        style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuCT0up6KEJYFm4gNYIBTtrvmEw_mQ4ooXO6Xt194zyfhr4YM9NORjtRIP1_EteAsf3WJMS1eaaSFF1zGgnBNn91d4XZxsVsv-dpKRvgZo6VVBWPoXoScmNQqAaFS6i8zXRHquZDdRiSr-UJ6JkkXOhjirMSJjUiwwPQMM02u2cyU776pMxRjRjfGwROZvX1sxjqIwzOTcqYkcL-qIaBSbthpNypabSXfirQ67KjHw3tnVTSo0PyaVBKrZwZe5XGwRtRejS_2Jcxkyk")'>
+                    </div>
+                    <div>
+                        <p class="font-bold text-slate-900 dark:text-white">James Wilson</p>
+                        <p class="text-primary text-sm font-medium">Founder, Spark Inc</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="mt-16 flex flex-col md:flex-row items-center justify-center gap-8 px-4 py-8 rounded-2xl bg-primary/10 border border-primary/20"
+            data-anim="scale-in" data-delay="300">
+            <div class="flex -space-x-3">
+                <div class="h-10 w-10 rounded-full border-2 border-background-dark bg-cover bg-center"
+                    data-alt="Reviewer avatar placeholder 1"
+                    style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuB45fDDIc-4NmAGwfnQGWmxdzjqccksqXy1PI3e70Q_IIIIOQk0Nsu0Py0RXX9oD3-5J_dyAsVksgEoQcxlNWVGeoVA0s5j941Uq4JeEhn1q9S4KRNrHw25Ij1Wl-BAsy0Enh6YpK1MFY-dZX3Lf2tTfLAeCVJmytKocmHxxrNEQAMS12PkvabMHALh_B0aWyy_6LEoFcyQGZWTQ9DYAuD-I5Yqup2INGA6_UkjORlxgFdx3wH2JzvV-K4qkrhzAuP23Dd5shgrtdg')">
+                </div>
+                <div class="h-10 w-10 rounded-full border-2 border-background-dark bg-cover bg-center"
+                    data-alt="Reviewer avatar placeholder 2"
+                    style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuDEfJipTyGM3-YIUN8cyAVBIm8gmSv1lPduDBDnV0_iHos3Yuf6qt2bBbUGiM5Q1Jgnf59dvlU2wTb85gH1d_wV4aho0Yq7YtZFTrRe9YTTCRI8UBUnQBgqq3ijiX1BOkdHdNN4oNZ44VrLujgH7oLSwZBr7uBQpLc1H5vB0sKD9aDD9-mD-U7ZX3nl6M8YL4E_l1PiQPOwPxfCBAe_yP3xVqeA5W1NzEyOhi24yCSaXiPAtLdMW0ZD3XM8b1jDhcY-lnQ1qE2D5HI')">
+                </div>
+                <div class="h-10 w-10 rounded-full border-2 border-background-dark bg-cover bg-center"
+                    data-alt="Reviewer avatar placeholder 3"
+                    style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuAOcALIbYZENCFR41-zAlxPSzlNURPanyev4K3Beb3Rrkk5xHV5ch56poWs7mW_rnplA_WzM28_8gQtmgShR8ibvPbFh_WA937gFqoqU4bS3hOYbTat18K6iYVyuBj4EzAqxvHq6HPmTDwqHzXfONftz79B0kXlU5PBSMiOIoUOeOkrKLof6kxeOhJ-bC3-k35G78__wUJM4KEeBXdL5ldM3QbTGSMEYSD-WNrVc_L5NEk5bTkrf3h7UBL2jv7hhJCbBVwcMm8FCBY')">
+                </div>
+                <div
+                    class="h-10 w-10 rounded-full border-2 border-background-dark bg-primary flex items-center justify-center text-xs font-bold text-white">
+                    +2k</div>
+            </div>
+            <div class="text-center md:text-left">
+                <p class="text-lg font-medium text-slate-900 dark:text-white">Trusted by 2,000+ companies worldwide</p>
+                <p class="text-slate-500 dark:text-slate-400 text-sm">Join the network of successful businesses today.
+                </p>
+            </div>
+            <button
+                class="bg-primary hover:bg-primary/90 text-white font-bold py-3 px-8 rounded-lg transition-all shadow-lg shadow-primary/20">
+                View All Testimonials
+            </button>
+        </div>
+    </section>
+    <!-- Animation Engine -->
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const animEls = document.querySelectorAll('[data-anim]');
+            const observer = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        const el = entry.target;
+                        const delay = el.dataset.delay || 0;
+                        const duration = el.dataset.duration || '0.8s';
+                        setTimeout(() => {
+                            el.style.animationDuration = duration;
+                            el.classList.add('anim-visible');
+                        }, parseInt(delay));
+                        observer.unobserve(el);
+                    }
+                });
+            }, { threshold: 0.15, rootMargin: '0px 0px -40px 0px' });
+            animEls.forEach(el => observer.observe(el));
+        });
+    </script>
+</body>
+
+</html>

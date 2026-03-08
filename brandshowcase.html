@@ -1,0 +1,344 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="en">
+
+<head>
+    <meta charset="utf-8" />
+    <meta content="width=device-width, initial-scale=1.0" name="viewport" />
+    <title>Portfolio - Trusted by Global Brands</title>
+    <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&amp;display=swap"
+        rel="stylesheet" />
+    <link
+        href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap"
+        rel="stylesheet" />
+    <link
+        href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap"
+        rel="stylesheet" />
+    <script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "primary": "#8c25f4",
+                        "background-light": "#f7f5f8",
+                        "background-dark": "#191022",
+                    },
+                    fontFamily: {
+                        "display": ["Inter"]
+                    },
+                    borderRadius: {
+                        "DEFAULT": "0.25rem",
+                        "lg": "0.5rem",
+                        "xl": "0.75rem",
+                        "full": "9999px"
+                    },
+                },
+            },
+        }
+    </script>
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+        }
+
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+    </style>
+    <style>
+        body {
+            min-height: max(884px, 100dvh);
+        }
+
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(40px);
+            }
+
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        @keyframes fadeInDown {
+            from {
+                opacity: 0;
+                transform: translateY(-40px);
+            }
+
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        @keyframes fadeInLeft {
+            from {
+                opacity: 0;
+                transform: translateX(-50px);
+            }
+
+            to {
+                opacity: 1;
+                transform: translateX(0);
+            }
+        }
+
+        @keyframes fadeInRight {
+            from {
+                opacity: 0;
+                transform: translateX(50px);
+            }
+
+            to {
+                opacity: 1;
+                transform: translateX(0);
+            }
+        }
+
+        @keyframes scaleIn {
+            from {
+                opacity: 0;
+                transform: scale(0.85);
+            }
+
+            to {
+                opacity: 1;
+                transform: scale(1);
+            }
+        }
+
+        @keyframes slideInScale {
+            from {
+                opacity: 0;
+                transform: scale(0.6) translateY(30px);
+            }
+
+            to {
+                opacity: 1;
+                transform: scale(1) translateY(0);
+            }
+        }
+
+        [data-anim] {
+            opacity: 0;
+            transition: none;
+        }
+
+        [data-anim].anim-visible {
+            animation-fill-mode: both;
+            animation-timing-function: cubic-bezier(0.22, 1, 0.36, 1);
+        }
+
+        [data-anim="fade-up"].anim-visible {
+            animation-name: fadeInUp;
+        }
+
+        [data-anim="fade-down"].anim-visible {
+            animation-name: fadeInDown;
+        }
+
+        [data-anim="fade-left"].anim-visible {
+            animation-name: fadeInLeft;
+        }
+
+        [data-anim="fade-right"].anim-visible {
+            animation-name: fadeInRight;
+        }
+
+        [data-anim="scale-in"].anim-visible {
+            animation-name: scaleIn;
+        }
+
+        [data-anim="slide-scale"].anim-visible {
+            animation-name: slideInScale;
+        }
+
+        header {
+            animation: fadeInDown 0.8s cubic-bezier(0.22, 1, 0.36, 1) both;
+        }
+
+        .brand-card {
+            transition: transform 0.4s cubic-bezier(0.22, 1, 0.36, 1), box-shadow 0.4s ease;
+        }
+
+        .brand-card:hover {
+            transform: translateY(-8px) scale(1.03);
+            box-shadow: 0 12px 30px rgba(140, 37, 244, 0.15);
+        }
+    </style>
+</head>
+
+<body class="bg-background-light dark:bg-background-dark text-slate-900 dark:text-slate-100 font-display">
+    <div class="relative flex min-h-screen w-full flex-col overflow-x-hidden">
+        <!-- Header Navigation -->
+        <header
+            class="flex items-center bg-background-light dark:bg-background-dark p-4 justify-between border-b border-primary/10">
+            <div class="text-primary flex size-12 shrink-0 items-center justify-center">
+                <span class="material-symbols-outlined text-3xl">arrow_back</span>
+            </div>
+            <h2
+                class="text-slate-900 dark:text-slate-100 text-lg font-bold leading-tight tracking-[-0.015em] flex-1 text-center">
+                Client Showcase</h2>
+            <div class="flex w-12 items-center justify-end">
+                <button
+                    class="flex items-center justify-center rounded-lg h-12 bg-transparent text-slate-900 dark:text-slate-100">
+                    <span class="material-symbols-outlined">more_vert</span>
+                </button>
+            </div>
+        </header>
+        <!-- Main Content Section -->
+        <main class="flex-1 flex flex-col items-center px-4 py-12 max-w-5xl mx-auto w-full">
+            <div class="mb-4 inline-flex items-center justify-center rounded-full bg-primary/10 px-3 py-1 text-sm font-medium text-primary ring-1 ring-inset ring-primary/20"
+                data-anim="fade-down" data-delay="200">
+                Collaborations
+            </div>
+            <h1 class="text-slate-900 dark:text-slate-100 tracking-tight text-4xl md:text-5xl font-bold leading-tight text-center pb-4"
+                data-anim="fade-up" data-delay="400">
+                Trusted by Global Brands
+            </h1>
+            <p class="text-slate-600 dark:text-slate-400 text-lg font-normal leading-relaxed max-w-2xl text-center mb-12"
+                data-anim="fade-up" data-delay="600">
+                I've had the privilege of collaborating with forward-thinking companies to build impactful digital
+                experiences that scale and inspire.
+            </p>
+            <!-- Brand Grid -->
+            <div class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4 w-full">
+                <!-- Brand Item 1 -->
+                <div class="group flex flex-col items-center justify-center p-8 rounded-xl bg-white dark:bg-primary/5 border border-slate-200 dark:border-primary/10 hover:border-primary/40 transition-colors duration-300 brand-card"
+                    data-anim="slide-scale" data-delay="200">
+                    <div class="w-full h-12 bg-slate-200 dark:bg-primary/20 rounded-lg grayscale opacity-50 group-hover:opacity-100 group-hover:grayscale-0 transition-all"
+                        data-alt="Minimalist corporate logo for a technology company"
+                        style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuCPCwqQjJaruF2AbAz5TAD1kfjurHD-CtsuEnCOtYForzuRw1Adew_G1IiFLuU3d0kmCleRCNRi7C6PPtjFuEEie2fEA1AimHdGaQ4f3ll6em3PUnfjDSRVEzy1QitblYOR6pnL3iIIRokWhVtzumshrKNO2YuXZPHDCcg5aPJe85JsPxvMXo2vgLkEBWR-IRYsBT_k2a9HgDXB4lWRIZvxVFxEW-h-rtTCxquaOku8d8yP1U1X6TRFe6utZzE3jc3hGdoClDPyxLk"); background-size: contain; background-position: center; background-repeat: no-repeat;'>
+                    </div>
+                </div>
+                <!-- Brand Item 2 -->
+                <div class="group flex flex-col items-center justify-center p-8 rounded-xl bg-white dark:bg-primary/5 border border-slate-200 dark:border-primary/10 hover:border-primary/40 transition-colors duration-300 brand-card"
+                    data-anim="slide-scale" data-delay="300">
+                    <div class="w-full h-12 bg-slate-200 dark:bg-primary/20 rounded-lg grayscale opacity-50 group-hover:opacity-100 group-hover:grayscale-0 transition-all"
+                        data-alt="Abstract geometric logo for creative agency"
+                        style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuBzo3DnKWEC6ODE-FWqPIdNgQmZAuTwhkTrffIvDGkVof-Lh_Wg-zGJMLQ9ORg_CCenIZQFRsZrzNMvGiDdpYuEe8XZtnGWBmERIustpPDpfZv0LT5PW0g_5KjdR3MRKFJ1INx_r6mH0Q46jr4vsegX2Y1YMaOBkQCpvUQA3lv9AV280YZgDgEbHvDikD1VNGW1eQo3Nc821t-r0OuVLeqNYQBrQJ1M1hGDGO6dnV32RHiZ3NMPM-m1Dk3WI6xAocTIlXaIY1AA94g"); background-size: contain; background-position: center; background-repeat: no-repeat;'>
+                    </div>
+                </div>
+                <!-- Brand Item 3 -->
+                <div class="group flex flex-col items-center justify-center p-8 rounded-xl bg-white dark:bg-primary/5 border border-slate-200 dark:border-primary/10 hover:border-primary/40 transition-colors duration-300 brand-card"
+                    data-anim="slide-scale" data-delay="400">
+                    <div class="w-full h-12 bg-slate-200 dark:bg-primary/20 rounded-lg grayscale opacity-50 group-hover:opacity-100 group-hover:grayscale-0 transition-all"
+                        data-alt="Modern wordmark logo for fintech startup"
+                        style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuDsifeLscYjPFFT6DYY9YuORgcPP8I4GCUIcOAeNBABRQShR7lstBm6KMTDP1zRIgsNhoNi-W9ZnNK3VpWDTl6sIhh87sWOK6fOL_AkLrQhODwcEAlV19TGcB3HgeIZwtnc8U82mRvRwTrcs1-KGm1RZCatZT8rCzdbLPdZtMKnxTUYcEl1Hl6r3swB_t2YhHTi_XVvQWFZhevH6SCsDe5gCx5dJvXER3_zV_FxR-E7wz_5RZeNOKWmNlujn-_DyR7RtOYCjCaKan4"); background-size: contain; background-position: center; background-repeat: no-repeat;'>
+                    </div>
+                </div>
+                <!-- Brand Item 4 -->
+                <div class="group flex flex-col items-center justify-center p-8 rounded-xl bg-white dark:bg-primary/5 border border-slate-200 dark:border-primary/10 hover:border-primary/40 transition-colors duration-300 brand-card"
+                    data-anim="slide-scale" data-delay="500">
+                    <div class="w-full h-12 bg-slate-200 dark:bg-primary/20 rounded-lg grayscale opacity-50 group-hover:opacity-100 group-hover:grayscale-0 transition-all"
+                        data-alt="Circular emblem logo for global enterprise"
+                        style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuCkBiJFBD_t22X-khQFRG1bbIT8HRm0voBe5gZy2lHkzZhy8QwDGQfrv6k-w_OpBX8bR4m0QOU1O8fEsKDzL5-zdc89tWSZaqHVjaUEFlISm97DPYeR3U7pHBLdiZ_Z6dKrK7uuZmT3JWn0OQNeKmVw4hMlBXPCiDauGVow77R6-6T_Xcsd4VrXvcqhfI9TMltATo2VGPkpLfTM3ymd7OwEcPMx_aJ3I5D9kIHgUG2UnRb-XYc43IYmmmOn4AIIiIJjZr1GhMIMl54"); background-size: contain; background-position: center; background-repeat: no-repeat;'>
+                    </div>
+                </div>
+                <!-- Brand Item 5 -->
+                <div class="group flex flex-col items-center justify-center p-8 rounded-xl bg-white dark:bg-primary/5 border border-slate-200 dark:border-primary/10 hover:border-primary/40 transition-colors duration-300 brand-card"
+                    data-anim="slide-scale" data-delay="600">
+                    <div class="w-full h-12 bg-slate-200 dark:bg-primary/20 rounded-lg grayscale opacity-50 group-hover:opacity-100 group-hover:grayscale-0 transition-all"
+                        data-alt="Sleek italicized logo for automotive brand"
+                        style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuC7DfxEVuPk96SQaHNsXyMpfEOc2eHazv_IAXLVEpmkxge1jAhmRiT4Vcrf09W8t4tz7AbPc97xkjFffTAR8pzOwZf7-KG2i5DqTmcMOUu8Ev0H52lDGRm6BVNoAYGuSF1ICAk1Wk5Rxh5FgQNDchrFHual-CpFksBeQwsG5XhiPcMR4Szt1M-vgcNjGE4J0ml_FR2QzvLftAV_kGpz2evmFwXMNMJNAzIN54bthwbSbcHZKfIRgHN-7jOkT2xcoWC1QbN-N8rthsg"); background-size: contain; background-position: center; background-repeat: no-repeat;'>
+                    </div>
+                </div>
+                <!-- Brand Item 6 -->
+                <div class="group flex flex-col items-center justify-center p-8 rounded-xl bg-white dark:bg-primary/5 border border-slate-200 dark:border-primary/10 hover:border-primary/40 transition-colors duration-300 brand-card"
+                    data-anim="slide-scale" data-delay="700">
+                    <div class="w-full h-12 bg-slate-200 dark:bg-primary/20 rounded-lg grayscale opacity-50 group-hover:opacity-100 group-hover:grayscale-0 transition-all"
+                        data-alt="Bold block logo for construction firm"
+                        style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuBheihTrwSp3UTi0-a1lX6yNzv2f67oWgK2u53NXjWdZ1OiJU1Ncw-S11tY9lFMSTrdaQRrQE0DbwgDKA5-XQqW28taCZjEA8nAQXg92UDDbCzyfp2zOzSQPNAlJplOVE4prbbXP8dXRbek8iwgXXfLtZefGKVVYqGHVVZ932imsbUUHSHDY0aMpWgB9YaIv_QveyEwhI67_6yW6B5TxhvPFVMsU5GibbIUOljgZ_bgKLK1OGV_7E1CbXFi3zuIeArBMVaCnum6ZzI"); background-size: contain; background-position: center; background-repeat: no-repeat;'>
+                    </div>
+                </div>
+                <!-- Brand Item 7 -->
+                <div class="group flex flex-col items-center justify-center p-8 rounded-xl bg-white dark:bg-primary/5 border border-slate-200 dark:border-primary/10 hover:border-primary/40 transition-colors duration-300 brand-card"
+                    data-anim="slide-scale" data-delay="800">
+                    <div class="w-full h-12 bg-slate-200 dark:bg-primary/20 rounded-lg grayscale opacity-50 group-hover:opacity-100 group-hover:grayscale-0 transition-all"
+                        data-alt="Minimalist leaf logo for eco-brand"
+                        style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuCc-XFpF3KfMNuRciagXn_GGi-MoTr6YGIVWZPsTsQ38mcYe1-znCwQdL4k-S8PmOpRr0vSSQeUimvd3loxe-kJw49Vo7Ekdh7tYjNGJoTlZo-QRlOosMmD_KiN03KsHO9tHNW1Avhy1xFftFFTe5vafZyDEOCCKiq6fhLTOGIaDHEfzD_FJTSM6vtzBNplIEUCF98ahYOw_crfIJQdytF0KXdUY9LuTfOq4LfWQTaDa9ip4PgzZjQ-_jWdcT83lZq7pHe7iQgSA0c"); background-size: contain; background-position: center; background-repeat: no-repeat;'>
+                    </div>
+                </div>
+                <!-- Brand Item 8 -->
+                <div class="group flex flex-col items-center justify-center p-8 rounded-xl bg-white dark:bg-primary/5 border border-slate-200 dark:border-primary/10 hover:border-primary/40 transition-colors duration-300 brand-card"
+                    data-anim="slide-scale" data-delay="900">
+                    <div class="w-full h-12 bg-slate-200 dark:bg-primary/20 rounded-lg grayscale opacity-50 group-hover:opacity-100 group-hover:grayscale-0 transition-all"
+                        data-alt="Tech-oriented square logo for software company"
+                        style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuC8dXPlU67sOh-1SL_SwBkiMOKxdWuon5fzXfc9vu4pcTnOvPtyY8BKaPqSPG6xDvP4V-TmNCOVNPhAlDrXhDDVLeHgOCzDB53BheuPrEZJc4ofjK9XgdoROUUaD-OEYKFdl4Z-iW6jm8fL0pC37nFTHzTd9S98F7iIDuTCE3gFee6nN_rls9bwSIu5quSdYxxo_3O_7unvjTlzfKCMURIligVIivq6uIEoTPnP3adLRsiU3vg3W-XtVwKWbaA7nghba8WvpeZORps"); background-size: contain; background-position: center; background-repeat: no-repeat;'>
+                    </div>
+                </div>
+            </div>
+            <!-- Call to Action -->
+            <div class="mt-16 flex flex-col items-center gap-4" data-anim="scale-in" data-delay="400">
+                <p class="text-slate-500 dark:text-slate-400 font-medium">Want to see your project here?</p>
+                <button
+                    class="bg-primary hover:bg-primary/90 text-white font-bold py-3 px-8 rounded-lg shadow-lg shadow-primary/20 transition-all active:scale-95 hover:scale-105">
+                    Start a Project
+                </button>
+            </div>
+        </main>
+        <!-- Bottom Navigation Bar -->
+        <nav
+            class="fixed bottom-0 left-0 right-0 flex border-t border-slate-200 dark:border-primary/20 bg-white/80 dark:bg-background-dark/80 backdrop-blur-lg px-4 pb-3 pt-2 z-50">
+            <a class="flex flex-1 flex-col items-center justify-end gap-1 text-slate-400 dark:text-primary/60 hover:text-primary dark:hover:text-primary transition-colors"
+                href="#">
+                <span class="material-symbols-outlined">home</span>
+                <p class="text-xs font-medium leading-normal tracking-[0.015em]">Home</p>
+            </a>
+            <a class="flex flex-1 flex-col items-center justify-end gap-1 text-primary" href="#">
+                <span class="material-symbols-outlined fill-[1]">work</span>
+                <p class="text-xs font-medium leading-normal tracking-[0.015em]">Work</p>
+            </a>
+            <a class="flex flex-1 flex-col items-center justify-end gap-1 text-slate-400 dark:text-primary/60 hover:text-primary dark:hover:text-primary transition-colors"
+                href="#">
+                <span class="material-symbols-outlined">person</span>
+                <p class="text-xs font-medium leading-normal tracking-[0.015em]">About</p>
+            </a>
+            <a class="flex flex-1 flex-col items-center justify-end gap-1 text-slate-400 dark:text-primary/60 hover:text-primary dark:hover:text-primary transition-colors"
+                href="#">
+                <span class="material-symbols-outlined">mail</span>
+                <p class="text-xs font-medium leading-normal tracking-[0.015em]">Contact</p>
+            </a>
+        </nav>
+        <!-- Spacer for bottom nav -->
+        <div class="h-20"></div>
+    </div>
+    <!-- Animation Engine -->
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const animEls = document.querySelectorAll('[data-anim]');
+            const observer = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        const el = entry.target;
+                        const delay = el.dataset.delay || 0;
+                        const duration = el.dataset.duration || '0.8s';
+                        setTimeout(() => {
+                            el.style.animationDuration = duration;
+                            el.classList.add('anim-visible');
+                        }, parseInt(delay));
+                        observer.unobserve(el);
+                    }
+                });
+            }, { threshold: 0.15, rootMargin: '0px 0px -40px 0px' });
+            animEls.forEach(el => observer.observe(el));
+
+            document.querySelectorAll('a[href^="#"]').forEach(a => {
+                a.addEventListener('click', e => {
+                    const target = document.querySelector(a.getAttribute('href'));
+                    if (target) {
+                        e.preventDefault();
+                        target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+                    }
+                });
+            });
+        });
+    </script>
+</body>
+
+</html>

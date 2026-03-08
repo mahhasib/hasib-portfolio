@@ -1,0 +1,257 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="en">
+
+<head>
+    <meta charset="utf-8" />
+    <meta content="width=device-width, initial-scale=1.0" name="viewport" />
+    <title>Center for Research</title>
+    <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&amp;display=swap"
+        rel="stylesheet" />
+    <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght@100..700,0..1&amp;display=swap"
+        rel="stylesheet" />
+    <link
+        href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap"
+        rel="stylesheet" />
+    <script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "primary": "#8c25f4",
+                        "background-light": "#f7f5f8",
+                        "background-dark": "#191022",
+                    },
+                    fontFamily: {
+                        "display": ["Inter"]
+                    },
+                    borderRadius: { "DEFAULT": "0.25rem", "lg": "0.5rem", "xl": "0.75rem", "full": "9999px" },
+                },
+            },
+        }
+    </script>
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+            min-height: max(884px, 100dvh);
+        }
+
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+
+        /* ===== ANIMATION SYSTEM ===== */
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        @keyframes scaleIn {
+            from {
+                opacity: 0;
+                transform: scale(0.9);
+            }
+
+            to {
+                opacity: 1;
+                transform: scale(1);
+            }
+        }
+
+        [data-anim] {
+            opacity: 0;
+            transition: none;
+        }
+
+        [data-anim].anim-visible {
+            animation-duration: 0.8s;
+            animation-fill-mode: both;
+            animation-timing-function: cubic-bezier(0.22, 1, 0.36, 1);
+        }
+
+        [data-anim="fade-up"].anim-visible {
+            animation-name: fadeInUp;
+        }
+
+        [data-anim="scale-in"].anim-visible {
+            animation-name: scaleIn;
+        }
+
+        .category-card {
+            transition: transform 0.4s cubic-bezier(0.22, 1, 0.36, 1), border-color 0.3s ease;
+        }
+
+        .category-card:hover {
+            transform: translateY(-5px) scale(1.02);
+        }
+    </style>
+</head>
+
+<body class="bg-background-light dark:bg-background-dark text-slate-900 dark:text-slate-100 min-h-screen flex flex-col">
+    <header
+        class="sticky top-0 z-10 bg-background-light/80 dark:bg-background-dark/80 backdrop-blur-md border-b border-primary/10">
+        <div class="flex items-center p-3 justify-start max-w-2xl mx-auto w-full">
+        </div>
+    </header>
+    <main class="flex-1 max-w-2xl mx-auto w-full p-4">
+        <div class="mb-10 text-center" data-anim="fade-up">
+            <h1 class="text-3xl font-extrabold text-slate-900 dark:text-white mb-4">Center for Research</h1>
+            <h2 class="text-primary font-semibold text-sm uppercase tracking-wider mb-1">Knowledge Hub</h2>
+            <p class="text-slate-600 dark:text-slate-400 text-sm">Explore specialized research categories and academic
+                resources.</p>
+        </div>
+        <div class="grid grid-cols-2 gap-4">
+            <!-- Photography -->
+            <div data-anim="scale-in" data-delay="100"
+                class="flex flex-col gap-4 rounded-xl border border-primary/20 bg-primary/5 p-5 items-start transition-all cursor-pointer group category-card">
+                <div
+                    class="flex size-12 items-center justify-center rounded-lg bg-primary/10 text-primary group-hover:bg-primary group-hover:text-white transition-colors">
+                    <span class="material-symbols-outlined text-2xl">photo_camera</span>
+                </div>
+                <h3 class="text-slate-900 dark:text-slate-100 text-base font-bold leading-tight">Photography</h3>
+            </div>
+            <!-- Tour -->
+            <div data-anim="scale-in" data-delay="200"
+                class="flex flex-col gap-4 rounded-xl border border-primary/20 bg-primary/5 p-5 items-start transition-all cursor-pointer group category-card">
+                <div
+                    class="flex size-12 items-center justify-center rounded-lg bg-primary/10 text-primary group-hover:bg-primary group-hover:text-white transition-colors">
+                    <span class="material-symbols-outlined text-2xl">explore</span>
+                </div>
+                <h3 class="text-slate-900 dark:text-slate-100 text-base font-bold leading-tight">Tour</h3>
+            </div>
+            <!-- E-Book -->
+            <div data-anim="scale-in" data-delay="300"
+                class="flex flex-col gap-4 rounded-xl border border-primary/20 bg-primary/5 p-5 items-start transition-all cursor-pointer group category-card">
+                <div
+                    class="flex size-12 items-center justify-center rounded-lg bg-primary/10 text-primary group-hover:bg-primary group-hover:text-white transition-colors">
+                    <span class="material-symbols-outlined text-2xl">menu_book</span>
+                </div>
+                <h3 class="text-slate-900 dark:text-slate-100 text-base font-bold leading-tight">My E-Book</h3>
+            </div>
+            <!-- Notes -->
+            <div data-anim="scale-in" data-delay="400"
+                class="flex flex-col gap-4 rounded-xl border border-primary/20 bg-primary/5 p-5 items-start transition-all cursor-pointer group category-card">
+                <div
+                    class="flex size-12 items-center justify-center rounded-lg bg-primary/10 text-primary group-hover:bg-primary group-hover:text-white transition-colors">
+                    <span class="material-symbols-outlined text-2xl">edit_note</span>
+                </div>
+                <h3 class="text-slate-900 dark:text-slate-100 text-base font-bold leading-tight">My Notes</h3>
+            </div>
+            <!-- Islam -->
+            <div data-anim="scale-in" data-delay="500"
+                class="flex flex-col gap-4 rounded-xl border border-primary/20 bg-primary/5 p-5 items-start transition-all cursor-pointer group category-card">
+                <div
+                    class="flex size-12 items-center justify-center rounded-lg bg-primary/10 text-primary group-hover:bg-primary group-hover:text-white transition-colors">
+                    <span class="material-symbols-outlined text-2xl">mosque</span>
+                </div>
+                <h3 class="text-slate-900 dark:text-slate-100 text-base font-bold leading-tight">Islam</h3>
+            </div>
+            <!-- Biochemistry -->
+            <div data-anim="scale-in" data-delay="600"
+                class="flex flex-col gap-4 rounded-xl border border-primary/20 bg-primary/5 p-5 items-start transition-all cursor-pointer group category-card">
+                <div
+                    class="flex size-12 items-center justify-center rounded-lg bg-primary/10 text-primary group-hover:bg-primary group-hover:text-white transition-colors">
+                    <span class="material-symbols-outlined text-2xl">science</span>
+                </div>
+                <h3 class="text-slate-900 dark:text-slate-100 text-base font-bold leading-tight">Biochemistry</h3>
+            </div>
+            <!-- Documentary -->
+            <div data-anim="scale-in" data-delay="700"
+                class="flex flex-col gap-4 rounded-xl border border-primary/20 bg-primary/5 p-5 items-start transition-all cursor-pointer group category-card">
+                <div
+                    class="flex size-12 items-center justify-center rounded-lg bg-primary/10 text-primary group-hover:bg-primary group-hover:text-white transition-colors">
+                    <span class="material-symbols-outlined text-2xl">movie</span>
+                </div>
+                <h3 class="text-slate-900 dark:text-slate-100 text-base font-bold leading-tight">Documentary</h3>
+            </div>
+            <!-- Thesis -->
+            <div data-anim="scale-in" data-delay="800"
+                class="flex flex-col gap-4 rounded-xl border border-primary/20 bg-primary/5 p-5 items-start transition-all cursor-pointer group category-card">
+                <div
+                    class="flex size-12 items-center justify-center rounded-lg bg-primary/10 text-primary group-hover:bg-primary group-hover:text-white transition-colors">
+                    <span class="material-symbols-outlined text-2xl">school</span>
+                </div>
+                <h3 class="text-slate-900 dark:text-slate-100 text-base font-bold leading-tight">Thesis</h3>
+            </div>
+        </div>
+
+        <!-- Recent Updates Card -->
+        <div class="mt-8 rounded-xl overflow-hidden bg-primary/10 p-6 relative border border-primary/20"
+            data-anim="fade-up" data-delay="900">
+            <div class="relative z-10">
+                <h4 class="text-primary font-bold mb-2 flex items-center gap-2">
+                    <span class="material-symbols-outlined text-lg">history</span>
+                    Recent Updates
+                </h4>
+                <p class="text-slate-600 dark:text-slate-400 text-sm leading-relaxed">The biochemistry section has been
+                    updated with 12 new peer-reviewed journals for your thesis reference.</p>
+            </div>
+            <div class="absolute -right-4 -bottom-4 opacity-10">
+                <span class="material-symbols-outlined text-8xl text-primary">auto_stories</span>
+            </div>
+        </div>
+    </main>
+
+    <!-- Bottom Nav -->
+    <nav class="sticky bottom-0 bg-background-light dark:bg-background-dark border-t border-primary/10 px-4 pb-6 pt-2">
+        <div class="flex max-w-2xl mx-auto w-full items-center justify-between">
+            <a class="flex flex-1 flex-col items-center justify-center gap-1 text-slate-500 dark:text-slate-400 hover:text-primary transition-colors"
+                href="./index.html">
+                <span class="material-symbols-outlined">home</span>
+                <p class="text-[10px] font-medium uppercase tracking-tight">Home</p>
+            </a>
+            <a class="flex flex-1 flex-col items-center justify-center gap-1 text-primary" href="#">
+                <span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1">search</span>
+                <p class="text-[10px] font-medium uppercase tracking-tight">Research</p>
+            </a>
+            <a class="flex flex-1 flex-col items-center justify-center gap-1 text-slate-500 dark:text-slate-400 hover:text-primary transition-colors"
+                href="#">
+                <span class="material-symbols-outlined">library_books</span>
+                <p class="text-[10px] font-medium uppercase tracking-tight">Library</p>
+            </a>
+            <a class="flex flex-1 flex-col items-center justify-center gap-1 text-slate-500 dark:text-slate-400 hover:text-primary transition-colors"
+                href="#">
+                <span class="material-symbols-outlined">person</span>
+                <p class="text-[10px] font-medium uppercase tracking-tight">Profile</p>
+            </a>
+        </div>
+    </nav>
+
+    <!-- Animation Engine Script -->
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const animEls = document.querySelectorAll('[data-anim]');
+
+            const observer = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        const el = entry.target;
+                        const delay = el.dataset.delay || 0;
+
+                        setTimeout(() => {
+                            el.classList.add('anim-visible');
+                        }, parseInt(delay));
+
+                        observer.unobserve(el);
+                    }
+                });
+            }, {
+                threshold: 0.1,
+                rootMargin: '0px 0px -50px 0px'
+            });
+
+            animEls.forEach(el => observer.observe(el));
+        });
+    </script>
+</body>
+
+</html>

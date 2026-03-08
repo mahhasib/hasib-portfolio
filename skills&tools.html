@@ -1,0 +1,394 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="en">
+
+<head>
+    <meta charset="utf-8" />
+    <meta content="width=device-width, initial-scale=1.0" name="viewport" />
+    <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&amp;display=swap"
+        rel="stylesheet" />
+    <link
+        href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap"
+        rel="stylesheet" />
+    <link
+        href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap"
+        rel="stylesheet" />
+    <script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "primary": "#8c25f4",
+                        "background-light": "#f7f5f8",
+                        "background-dark": "#191022",
+                    },
+                    fontFamily: {
+                        "display": ["Inter"]
+                    },
+                    borderRadius: { "DEFAULT": "0.25rem", "lg": "0.5rem", "xl": "0.75rem", "full": "9999px" },
+                },
+            },
+        }
+    </script>
+    <title>Skills &amp; Tools | Portfolio</title>
+    <style>
+        body {
+            min-height: max(884px, 100dvh);
+        }
+
+        /* ===== ANIMATION SYSTEM ===== */
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(40px);
+            }
+
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        @keyframes fadeInDown {
+            from {
+                opacity: 0;
+                transform: translateY(-30px);
+            }
+
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        @keyframes scaleIn {
+            from {
+                opacity: 0;
+                transform: scale(0.85);
+            }
+
+            to {
+                opacity: 1;
+                transform: scale(1);
+            }
+        }
+
+        @keyframes slideInScale {
+            from {
+                opacity: 0;
+                transform: scale(0.6) translateY(30px);
+            }
+
+            to {
+                opacity: 1;
+                transform: scale(1) translateY(0);
+            }
+        }
+
+        /* Scroll reveal base */
+        [data-anim] {
+            opacity: 0;
+            transition: none;
+        }
+
+        [data-anim].anim-visible {
+            animation-fill-mode: both;
+            animation-timing-function: cubic-bezier(0.22, 1, 0.36, 1);
+        }
+
+        [data-anim="fade-up"].anim-visible {
+            animation-name: fadeInUp;
+        }
+
+        [data-anim="fade-down"].anim-visible {
+            animation-name: fadeInDown;
+        }
+
+        [data-anim="scale-in"].anim-visible {
+            animation-name: scaleIn;
+        }
+
+        [data-anim="slide-scale"].anim-visible {
+            animation-name: slideInScale;
+        }
+
+        /* Header entrance */
+        header {
+            animation: fadeInDown 0.8s cubic-bezier(0.22, 1, 0.36, 1) both;
+        }
+
+        /* Tool card hover */
+        .tool-card {
+            transition: transform 0.4s cubic-bezier(0.22, 1, 0.36, 1), box-shadow 0.4s ease;
+        }
+
+        .tool-card:hover {
+            transform: translateY(-6px);
+            box-shadow: 0 8px 25px rgba(140, 37, 244, 0.15);
+        }
+
+        /* Progress bar fill animation */
+        .progress-fill {
+            width: 0;
+            transition: width 1.5s cubic-bezier(0.22, 1, 0.36, 1);
+        }
+    </style>
+</head>
+
+<body class="bg-background-light dark:bg-background-dark font-display text-slate-900 dark:text-slate-100">
+    <div class="relative flex h-auto min-h-screen w-full flex-col overflow-x-hidden">
+        <!-- Header -->
+        <header
+            class="flex items-center bg-background-light dark:bg-background-dark p-4 pb-2 justify-between sticky top-0 z-50 border-b border-primary/10">
+            <div class="flex size-12 shrink-0 items-center justify-center">
+                <span class="material-symbols-outlined text-slate-900 dark:text-slate-100">menu</span>
+            </div>
+            <h2
+                class="text-slate-900 dark:text-slate-100 text-lg font-bold leading-tight tracking-tight flex-1 text-center">
+                Portfolio</h2>
+            <div class="flex w-12 items-center justify-end">
+                <button
+                    class="flex items-center justify-center rounded-lg h-12 bg-transparent text-slate-900 dark:text-slate-100">
+                    <span class="material-symbols-outlined">account_circle</span>
+                </button>
+            </div>
+        </header>
+        <!-- Main Content -->
+        <main class="flex-1 max-w-4xl mx-auto w-full px-4 py-8">
+            <section>
+                <h1 class="text-slate-900 dark:text-slate-100 tracking-tight text-4xl font-bold leading-tight pb-3"
+                    data-anim="fade-up" data-delay="100">
+                    Skills &amp; Tools</h1>
+                <p class="text-slate-600 dark:text-slate-400 text-lg font-normal leading-relaxed pb-8"
+                    data-anim="fade-up" data-delay="200">
+                    A showcase of my technical proficiency and the creative tools I use to bring ideas to life. From
+                    designing high-fidelity interfaces to crafting clean, responsive code.
+                </p>
+                <!-- Core Skills Section -->
+                <div class="mb-10">
+                    <div class="flex items-center gap-2 mb-6" data-anim="fade-up" data-delay="300">
+                        <span class="material-symbols-outlined text-primary">psychology</span>
+                        <h3 class="text-slate-900 dark:text-slate-100 text-xl font-bold">Design Expertise</h3>
+                    </div>
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                        <!-- Skill 1 -->
+                        <div class="bg-primary/5 dark:bg-primary/10 p-6 rounded-xl border border-primary/10"
+                            data-anim="fade-up" data-delay="400">
+                            <div class="flex justify-between items-center mb-4">
+                                <span class="font-semibold text-slate-900 dark:text-slate-100">UI/UX Design</span>
+                                <span class="text-primary font-bold text-sm" data-percent="95">0%</span>
+                            </div>
+                            <div class="w-full bg-slate-200 dark:bg-slate-800 rounded-full h-2">
+                                <div class="bg-primary h-2 rounded-full progress-fill" data-progress="95"></div>
+                            </div>
+                        </div>
+                        <!-- Skill 2 -->
+                        <div class="bg-primary/5 dark:bg-primary/10 p-6 rounded-xl border border-primary/10"
+                            data-anim="fade-up" data-delay="500">
+                            <div class="flex justify-between items-center mb-4">
+                                <span class="font-semibold text-slate-900 dark:text-slate-100">Web Development</span>
+                                <span class="text-primary font-bold text-sm" data-percent="88">0%</span>
+                            </div>
+                            <div class="w-full bg-slate-200 dark:bg-slate-800 rounded-full h-2">
+                                <div class="bg-primary h-2 rounded-full progress-fill" data-progress="88"></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- Tools & Software -->
+                <div class="mb-10">
+                    <div class="flex items-center gap-2 mb-6" data-anim="fade-up" data-delay="600">
+                        <span class="material-symbols-outlined text-primary">construction</span>
+                        <h3 class="text-slate-900 dark:text-slate-100 text-xl font-bold">Tools &amp; Technologies</h3>
+                    </div>
+                    <div class="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 gap-4">
+                        <!-- Tool 1 -->
+                        <div class="flex flex-col items-center p-4 bg-background-light dark:bg-primary/5 rounded-xl border border-slate-200 dark:border-primary/20 transition-colors tool-card"
+                            data-anim="slide-scale" data-delay="700">
+                            <div class="w-12 h-12 flex items-center justify-center text-primary mb-3">
+                                <span class="material-symbols-outlined text-4xl">pentagon</span>
+                            </div>
+                            <span class="text-sm font-medium">Figma</span>
+                        </div>
+                        <!-- Tool 2 -->
+                        <div class="flex flex-col items-center p-4 bg-background-light dark:bg-primary/5 rounded-xl border border-slate-200 dark:border-primary/20 transition-colors tool-card"
+                            data-anim="slide-scale" data-delay="700">
+                            <div class="w-12 h-12 flex items-center justify-center text-primary mb-3">
+                                <span class="material-symbols-outlined text-4xl">grid_view</span>
+                            </div>
+                            <span class="text-sm font-medium">Adobe XD</span>
+                        </div>
+                        <!-- Tool 3 -->
+                        <div class="flex flex-col items-center p-4 bg-background-light dark:bg-primary/5 rounded-xl border border-slate-200 dark:border-primary/20 transition-colors tool-card"
+                            data-anim="slide-scale" data-delay="700">
+                            <div class="w-12 h-12 flex items-center justify-center text-primary mb-3">
+                                <span class="material-symbols-outlined text-4xl">code</span>
+                            </div>
+                            <span class="text-sm font-medium">HTML/CSS/JS</span>
+                        </div>
+                        <!-- Tool 4 -->
+                        <div class="flex flex-col items-center p-4 bg-background-light dark:bg-primary/5 rounded-xl border border-slate-200 dark:border-primary/20 transition-colors tool-card"
+                            data-anim="slide-scale" data-delay="700">
+                            <div class="w-12 h-12 flex items-center justify-center text-primary mb-3">
+                                <span class="material-symbols-outlined text-4xl">frame_inspect</span>
+                            </div>
+                            <span class="text-sm font-medium">Framer</span>
+                        </div>
+                        <!-- Tool 5 -->
+                        <div class="flex flex-col items-center p-4 bg-background-light dark:bg-primary/5 rounded-xl border border-slate-200 dark:border-primary/20 transition-colors tool-card"
+                            data-anim="slide-scale" data-delay="700">
+                            <div class="w-12 h-12 flex items-center justify-center text-primary mb-3">
+                                <span class="material-symbols-outlined text-4xl">brush</span>
+                            </div>
+                            <span class="text-sm font-medium">Photoshop</span>
+                        </div>
+                        <!-- Tool 6 -->
+                        <div class="flex flex-col items-center p-4 bg-background-light dark:bg-primary/5 rounded-xl border border-slate-200 dark:border-primary/20 transition-colors tool-card"
+                            data-anim="slide-scale" data-delay="700">
+                            <div class="w-12 h-12 flex items-center justify-center text-primary mb-3">
+                                <span class="material-symbols-outlined text-4xl">deployed_code</span>
+                            </div>
+                            <span class="text-sm font-medium">React</span>
+                        </div>
+                        <!-- Tool 7 -->
+                        <div class="flex flex-col items-center p-4 bg-background-light dark:bg-primary/5 rounded-xl border border-slate-200 dark:border-primary/20 transition-colors tool-card"
+                            data-anim="slide-scale" data-delay="700">
+                            <div class="w-12 h-12 flex items-center justify-center text-primary mb-3">
+                                <span class="material-symbols-outlined text-4xl">category</span>
+                            </div>
+                            <span class="text-sm font-medium">Tailwind</span>
+                        </div>
+                        <!-- Tool 8 -->
+                        <div class="flex flex-col items-center p-4 bg-background-light dark:bg-primary/5 rounded-xl border border-slate-200 dark:border-primary/20 transition-colors tool-card"
+                            data-anim="slide-scale" data-delay="700">
+                            <div class="w-12 h-12 flex items-center justify-center text-primary mb-3">
+                                <span class="material-symbols-outlined text-4xl">data_object</span>
+                            </div>
+                            <span class="text-sm font-medium">Git</span>
+                        </div>
+                    </div>
+                </div>
+                <!-- Badges / Tags Section -->
+                <div class="mb-16" data-anim="fade-up" data-delay="800">
+                    <h3 class="text-slate-900 dark:text-slate-100 text-lg font-bold mb-4">Other Skills</h3>
+                    <div class="flex flex-wrap gap-2">
+                        <span
+                            class="px-4 py-2 bg-primary/20 dark:bg-primary/30 text-primary dark:text-primary rounded-full text-sm font-semibold">User
+                            Research</span>
+                        <span
+                            class="px-4 py-2 bg-primary/20 dark:bg-primary/30 text-primary dark:text-primary rounded-full text-sm font-semibold">Wireframing</span>
+                        <span
+                            class="px-4 py-2 bg-primary/20 dark:bg-primary/30 text-primary dark:text-primary rounded-full text-sm font-semibold">Prototyping</span>
+                        <span
+                            class="px-4 py-2 bg-primary/20 dark:bg-primary/30 text-primary dark:text-primary rounded-full text-sm font-semibold">Accessibility</span>
+                        <span
+                            class="px-4 py-2 bg-primary/20 dark:bg-primary/30 text-primary dark:text-primary rounded-full text-sm font-semibold">Typography</span>
+                        <span
+                            class="px-4 py-2 bg-primary/20 dark:bg-primary/30 text-primary dark:text-primary rounded-full text-sm font-semibold">SEO
+                            Optimization</span>
+                        <span
+                            class="px-4 py-2 bg-primary/20 dark:bg-primary/30 text-primary dark:text-primary rounded-full text-sm font-semibold">Responsive
+                            Design</span>
+                    </div>
+                </div>
+            </section>
+        </main>
+        <!-- Bottom Navigation -->
+        <nav class="fixed bottom-0 w-full flex flex-col z-50">
+            <div
+                class="flex gap-2 border-t border-primary/10 bg-background-light/80 dark:bg-background-dark/80 backdrop-blur-md px-4 pb-3 pt-2">
+                <a class="flex flex-1 flex-col items-center justify-end gap-1 text-slate-500 dark:text-slate-400"
+                    href="#">
+                    <div class="flex h-8 items-center justify-center">
+                        <span class="material-symbols-outlined">home</span>
+                    </div>
+                    <p class="text-xs font-medium leading-normal tracking-wide">Home</p>
+                </a>
+                <a class="flex flex-1 flex-col items-center justify-end gap-1 text-slate-500 dark:text-slate-400"
+                    href="#">
+                    <div class="flex h-8 items-center justify-center">
+                        <span class="material-symbols-outlined">work</span>
+                    </div>
+                    <p class="text-xs font-medium leading-normal tracking-wide">Projects</p>
+                </a>
+                <a class="flex flex-1 flex-col items-center justify-end gap-1 text-primary" href="#">
+                    <div class="flex h-8 items-center justify-center">
+                        <span class="material-symbols-outlined"
+                            style="font-variation-settings: 'FILL' 1">architecture</span>
+                    </div>
+                    <p class="text-xs font-medium leading-normal tracking-wide">Skills</p>
+                </a>
+                <a class="flex flex-1 flex-col items-center justify-end gap-1 text-slate-500 dark:text-slate-400"
+                    href="#">
+                    <div class="flex h-8 items-center justify-center">
+                        <span class="material-symbols-outlined">mail</span>
+                    </div>
+                    <p class="text-xs font-medium leading-normal tracking-wide">Contact</p>
+                </a>
+            </div>
+        </nav>
+    </div>
+    <!-- Animation Engine -->
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const animEls = document.querySelectorAll('[data-anim]');
+            const observer = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        const el = entry.target;
+                        const delay = el.dataset.delay || 0;
+                        const duration = el.dataset.duration || '0.8s';
+                        setTimeout(() => {
+                            el.style.animationDuration = duration;
+                            el.classList.add('anim-visible');
+                        }, parseInt(delay));
+                        observer.unobserve(el);
+                    }
+                });
+            }, { threshold: 0.15, rootMargin: '0px 0px -40px 0px' });
+            animEls.forEach(el => observer.observe(el));
+
+            // ===== Progress Bar Fill Animation =====
+            const progressBars = document.querySelectorAll('.progress-fill');
+            const progressObserver = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        const bar = entry.target;
+                        const target = bar.dataset.progress;
+                        setTimeout(() => {
+                            bar.style.width = target + '%';
+                        }, 500);
+                        progressObserver.unobserve(bar);
+                    }
+                });
+            }, { threshold: 0.5 });
+            progressBars.forEach(bar => progressObserver.observe(bar));
+
+            // ===== Percentage Counter Animation =====
+            const percentEls = document.querySelectorAll('[data-percent]');
+            const percentObserver = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        const el = entry.target;
+                        const target = parseInt(el.dataset.percent);
+                        const duration = 1500;
+                        const start = performance.now();
+                        const animate = (now) => {
+                            const progress = Math.min((now - start) / duration, 1);
+                            const eased = 1 - Math.pow(1 - progress, 3);
+                            el.textContent = Math.floor(eased * target) + '%';
+                            if (progress < 1) requestAnimationFrame(animate);
+                        };
+                        setTimeout(() => requestAnimationFrame(animate), 500);
+                        percentObserver.unobserve(el);
+                    }
+                });
+            }, { threshold: 0.5 });
+            percentEls.forEach(el => percentObserver.observe(el));
+        });
+    </script>
+</body>
+
+</html>

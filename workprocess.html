@@ -1,0 +1,305 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="en">
+
+<head>
+    <meta charset="utf-8" />
+    <meta content="width=device-width, initial-scale=1.0" name="viewport" />
+    <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&amp;display=swap"
+        rel="stylesheet" />
+    <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght@100..700,0..1&amp;display=swap"
+        rel="stylesheet" />
+    <link
+        href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap"
+        rel="stylesheet" />
+    <script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "primary": "#8c25f4",
+                        "background-light": "#f7f5f8",
+                        "background-dark": "#191022",
+                    },
+                    fontFamily: {
+                        "display": ["Inter", "sans-serif"]
+                    },
+                    borderRadius: {
+                        "DEFAULT": "0.25rem",
+                        "lg": "0.5rem",
+                        "xl": "0.75rem",
+                        "full": "9999px"
+                    },
+                },
+            },
+        }
+    </script>
+    <title>My Working Process</title>
+    <style>
+        body {
+            min-height: max(884px, 100dvh);
+        }
+
+        /* ===== ANIMATION SYSTEM ===== */
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(40px);
+            }
+
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        @keyframes fadeInDown {
+            from {
+                opacity: 0;
+                transform: translateY(-30px);
+            }
+
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        @keyframes fadeInLeft {
+            from {
+                opacity: 0;
+                transform: translateX(-40px);
+            }
+
+            to {
+                opacity: 1;
+                transform: translateX(0);
+            }
+        }
+
+        @keyframes scaleIn {
+            from {
+                opacity: 0;
+                transform: scale(0.85);
+            }
+
+            to {
+                opacity: 1;
+                transform: scale(1);
+            }
+        }
+
+        /* Scroll reveal base */
+        [data-anim] {
+            opacity: 0;
+            transition: none;
+        }
+
+        [data-anim].anim-visible {
+            animation-fill-mode: both;
+            animation-timing-function: cubic-bezier(0.22, 1, 0.36, 1);
+        }
+
+        [data-anim="fade-up"].anim-visible {
+            animation-name: fadeInUp;
+        }
+
+        [data-anim="fade-down"].anim-visible {
+            animation-name: fadeInDown;
+        }
+
+        [data-anim="fade-left"].anim-visible {
+            animation-name: fadeInLeft;
+        }
+
+        [data-anim="scale-in"].anim-visible {
+            animation-name: scaleIn;
+        }
+
+        /* Header entrance */
+        header {
+            animation: fadeInDown 0.8s cubic-bezier(0.22, 1, 0.36, 1) both;
+        }
+    </style>
+</head>
+
+<body class="bg-background-light dark:bg-background-dark font-display text-slate-900 dark:text-slate-100 min-h-screen">
+    <div class="relative flex min-h-screen flex-col overflow-x-hidden">
+        <!-- Header Section -->
+        <header
+            class="flex items-center bg-background-light dark:bg-background-dark p-4 sticky top-0 z-10 border-b border-slate-200 dark:border-primary/20">
+            <div class="flex size-10 shrink-0 items-center justify-center rounded-full bg-primary/10 text-primary">
+                <span class="material-symbols-outlined">arrow_back</span>
+            </div>
+            <h2 class="text-slate-900 dark:text-slate-100 text-lg font-bold leading-tight ml-4">My Process</h2>
+        </header>
+        <!-- Hero Section -->
+        <div class="@container">
+            <div class="@[480px]:px-4 @[480px]:py-6">
+                <div class="bg-cover bg-center flex flex-col justify-end overflow-hidden bg-primary/10 @[480px]:rounded-xl min-h-[240px] relative"
+                    data-anim="scale-in" data-delay="100"
+                    data-alt="Modern workspace with laptop and notebook on a wooden desk"
+                    style='background-image: linear-gradient(180deg, rgba(25, 16, 34, 0) 0%, rgba(25, 16, 34, 0.9) 100%), url("https://lh3.googleusercontent.com/aida-public/AB6AXuD6Qi7pMDlnIS3iuoR0jHjIVQtyYn6KJIcxuU5XH1Cr3P7qv_kTk9tmx2Hcoaz_VTzAUxV0c1dFQhWLlXzGcQUCsZYjzgNbR60B0rY-f_2T0AigK8qijRzuZp1FIVFMYMNQT4DO3XvULgESnY9C__NLFT5f07Xa4cU7t6xzCSNxPkbP4EJ0IK0s6wyfHWLyGLi5fTFknwOHLXIgReZcx90jNvQY-yBULdwUgQ0MbGmambQ3nb0MKSvT27lwTbq8Pocka2Q_GgqInAg");'>
+                    <div class="p-6">
+                        <span
+                            class="bg-primary text-white text-xs font-bold px-2 py-1 rounded uppercase tracking-wider">Methodology</span>
+                        <h1 class="text-white text-3xl font-black leading-tight mt-2">Crafting Excellence</h1>
+                        <p class="text-slate-300 text-sm mt-1">A strategic approach to every digital product.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- Stepper Section -->
+        <main class="flex-1 max-w-3xl mx-auto w-full px-6 py-8">
+            <div class="space-y-0">
+                <!-- Step 1 -->
+                <div class="flex gap-4">
+                    <div class="flex flex-col items-center">
+                        <div
+                            class="flex size-10 shrink-0 items-center justify-center rounded-full bg-primary text-white shadow-lg shadow-primary/30">
+                            <span class="material-symbols-outlined text-xl">search</span>
+                        </div>
+                        <div class="w-0.5 bg-gradient-to-b from-primary to-primary/20 flex-1 my-1"></div>
+                    </div>
+                    <div class="pb-10 pt-1" data-anim="fade-left" data-delay="200">
+                        <span class="text-primary text-xs font-bold uppercase tracking-widest">Step 01</span>
+                        <h3 class="text-slate-900 dark:text-slate-100 text-xl font-bold mt-1">Discovery</h3>
+                        <p class="text-slate-600 dark:text-slate-400 text-base mt-2 leading-relaxed">
+                            Deep dive into project goals, target audience, and market research. This phase ensures we
+                            build the right thing for the right people.
+                        </p>
+                    </div>
+                </div>
+                <!-- Step 2 -->
+                <div class="flex gap-4">
+                    <div class="flex flex-col items-center">
+                        <div
+                            class="flex size-10 shrink-0 items-center justify-center rounded-full bg-primary/20 dark:bg-primary/30 text-primary border border-primary/50">
+                            <span class="material-symbols-outlined text-xl">architecture</span>
+                        </div>
+                        <div class="w-0.5 bg-primary/20 flex-1 my-1"></div>
+                    </div>
+                    <div class="pb-10 pt-1" data-anim="fade-left" data-delay="300">
+                        <span class="text-primary text-xs font-bold uppercase tracking-widest">Step 02</span>
+                        <h3 class="text-slate-900 dark:text-slate-100 text-xl font-bold mt-1">Planning</h3>
+                        <p class="text-slate-600 dark:text-slate-400 text-base mt-2 leading-relaxed">
+                            Defining information architecture, site mapping, and low-fidelity wireframes to establish
+                            the foundation of the user experience.
+                        </p>
+                    </div>
+                </div>
+                <!-- Step 3 -->
+                <div class="flex gap-4">
+                    <div class="flex flex-col items-center">
+                        <div
+                            class="flex size-10 shrink-0 items-center justify-center rounded-full bg-primary/20 dark:bg-primary/30 text-primary border border-primary/50">
+                            <span class="material-symbols-outlined text-xl">palette</span>
+                        </div>
+                        <div class="w-0.5 bg-primary/20 flex-1 my-1"></div>
+                    </div>
+                    <div class="pb-10 pt-1" data-anim="fade-left" data-delay="400">
+                        <span class="text-primary text-xs font-bold uppercase tracking-widest">Step 03</span>
+                        <h3 class="text-slate-900 dark:text-slate-100 text-xl font-bold mt-1">Design</h3>
+                        <p class="text-slate-600 dark:text-slate-400 text-base mt-2 leading-relaxed">
+                            Transforming wireframes into stunning high-fidelity visuals. Creating interactive prototypes
+                            to validate design decisions.
+                        </p>
+                    </div>
+                </div>
+                <!-- Step 4 -->
+                <div class="flex gap-4">
+                    <div class="flex flex-col items-center">
+                        <div
+                            class="flex size-10 shrink-0 items-center justify-center rounded-full bg-primary/20 dark:bg-primary/30 text-primary border border-primary/50">
+                            <span class="material-symbols-outlined text-xl">terminal</span>
+                        </div>
+                        <div class="w-0.5 bg-primary/20 flex-1 my-1"></div>
+                    </div>
+                    <div class="pb-10 pt-1" data-anim="fade-left" data-delay="500">
+                        <span class="text-primary text-xs font-bold uppercase tracking-widest">Step 04</span>
+                        <h3 class="text-slate-900 dark:text-slate-100 text-xl font-bold mt-1">Development</h3>
+                        <p class="text-slate-600 dark:text-slate-400 text-base mt-2 leading-relaxed">
+                            Writing clean, performant code. Building the front-end and back-end logic while ensuring
+                            full responsiveness across all devices.
+                        </p>
+                    </div>
+                </div>
+                <!-- Step 5 -->
+                <div class="flex gap-4">
+                    <div class="flex flex-col items-center">
+                        <div
+                            class="flex size-10 shrink-0 items-center justify-center rounded-full bg-primary/20 dark:bg-primary/30 text-primary border border-primary/50">
+                            <span class="material-symbols-outlined text-xl">rocket_launch</span>
+                        </div>
+                    </div>
+                    <div class="pb-6 pt-1" data-anim="fade-left" data-delay="600">
+                        <span class="text-primary text-xs font-bold uppercase tracking-widest">Step 05</span>
+                        <h3 class="text-slate-900 dark:text-slate-100 text-xl font-bold mt-1">Launch</h3>
+                        <p class="text-slate-600 dark:text-slate-400 text-base mt-2 leading-relaxed">
+                            Rigorous testing, SEO optimization, and final deployment. Post-launch support to ensure
+                            everything runs smoothly.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </main>
+        <!-- CTA Section -->
+        <section class="bg-primary/5 dark:bg-primary/10 py-12 px-6 text-center">
+            <div class="max-w-2xl mx-auto space-y-6" data-anim="fade-up" data-delay="200">
+                <h2 class="text-slate-900 dark:text-slate-100 text-3xl font-bold leading-tight">Ready to collaborate?
+                </h2>
+                <p class="text-slate-600 dark:text-slate-400 text-base">Let's apply this process to your next big idea
+                    and build something remarkable together.</p>
+                <button
+                    class="inline-flex items-center justify-center rounded-lg bg-primary px-8 py-3 text-white font-bold hover:opacity-90 transition-opacity shadow-lg shadow-primary/25">
+                    Start a Project
+                </button>
+            </div>
+        </section>
+        <!-- Bottom Navigation -->
+        <nav
+            class="sticky bottom-0 mt-auto border-t border-slate-200 dark:border-primary/20 bg-background-light dark:bg-background-dark/95 backdrop-blur-sm px-4 pb-4 pt-2 flex justify-around">
+            <a class="flex flex-col items-center gap-1 text-slate-500 dark:text-slate-400" href="#">
+                <span class="material-symbols-outlined">home</span>
+                <p class="text-[10px] font-medium uppercase tracking-tighter">Home</p>
+            </a>
+            <a class="flex flex-col items-center gap-1 text-slate-500 dark:text-slate-400" href="#">
+                <span class="material-symbols-outlined">work</span>
+                <p class="text-[10px] font-medium uppercase tracking-tighter">Work</p>
+            </a>
+            <a class="flex flex-col items-center gap-1 text-primary" href="#">
+                <span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1">settings</span>
+                <p class="text-[10px] font-medium uppercase tracking-tighter">Process</p>
+            </a>
+            <a class="flex flex-col items-center gap-1 text-slate-500 dark:text-slate-400" href="#">
+                <span class="material-symbols-outlined">mail</span>
+                <p class="text-[10px] font-medium uppercase tracking-tighter">Contact</p>
+            </a>
+        </nav>
+    </div>
+    <!-- Animation Engine -->
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const animEls = document.querySelectorAll('[data-anim]');
+            const observer = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        const el = entry.target;
+                        const delay = el.dataset.delay || 0;
+                        const duration = el.dataset.duration || '0.8s';
+                        setTimeout(() => {
+                            el.style.animationDuration = duration;
+                            el.classList.add('anim-visible');
+                        }, parseInt(delay));
+                        observer.unobserve(el);
+                    }
+                });
+            }, { threshold: 0.15, rootMargin: '0px 0px -40px 0px' });
+            animEls.forEach(el => observer.observe(el));
+        });
+    </script>
+</body>
+
+</html>

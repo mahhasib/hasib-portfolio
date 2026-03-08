@@ -1,0 +1,229 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="en">
+
+<head>
+    <meta charset="utf-8" />
+    <meta content="width=device-width, initial-scale=1.0" name="viewport" />
+    <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&amp;display=swap"
+        rel="stylesheet" />
+    <link
+        href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap"
+        rel="stylesheet" />
+    <link
+        href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap"
+        rel="stylesheet" />
+    <script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "primary": "#8c25f4",
+                        "background-light": "#f7f5f8",
+                        "background-dark": "#191022",
+                    },
+                    fontFamily: {
+                        "display": ["Inter", "sans-serif"]
+                    },
+                    borderRadius: {
+                        "DEFAULT": "0.25rem",
+                        "lg": "0.5rem",
+                        "xl": "0.75rem",
+                        "full": "9999px"
+                    },
+                },
+            },
+        }
+    </script>
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+        }
+
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+    </style>
+    <style>
+        body {
+            min-height: max(884px, 100dvh);
+        }
+    </style>
+</head>
+
+<body class="bg-background-light dark:bg-background-dark text-slate-900 dark:text-slate-100 min-h-screen flex flex-col">
+    <!-- Header Section -->
+    <header
+        class="sticky top-0 z-10 bg-background-light/80 dark:bg-background-dark/80 backdrop-blur-md border-b border-primary/10 px-4 py-4">
+        <div class="max-w-4xl mx-auto flex items-center justify-between">
+            <div class="flex items-center gap-3">
+                <div class="bg-primary/20 p-2 rounded-lg text-primary">
+                    <span class="material-symbols-outlined">description</span>
+                </div>
+                <h1 class="text-xl font-bold tracking-tight">My Notes</h1>
+            </div>
+            <button
+                class="bg-primary hover:bg-primary/90 text-white px-4 py-2 rounded-lg flex items-center gap-2 transition-colors font-medium">
+                <span class="material-symbols-outlined text-[20px]">add</span>
+                <span class="hidden sm:inline">New Note</span>
+            </button>
+        </div>
+    </header>
+    <!-- Search and Filters -->
+    <main class="flex-1 max-w-4xl w-full mx-auto px-4 py-6">
+        <div class="mb-6 space-y-4">
+            <div class="relative">
+                <span
+                    class="material-symbols-outlined absolute left-3 top-1/2 -translate-y-1/2 text-slate-400">search</span>
+                <input
+                    class="w-full bg-slate-200/50 dark:bg-primary/10 border-none rounded-xl py-3 pl-11 pr-4 focus:ring-2 focus:ring-primary text-slate-900 dark:text-slate-100 placeholder:text-slate-500 dark:placeholder:text-slate-400"
+                    placeholder="Search your notes..." type="text" />
+            </div>
+            <!-- Category Chips -->
+            <div class="flex gap-2 overflow-x-auto pb-2 no-scrollbar">
+                <button class="whitespace-nowrap px-4 py-1.5 rounded-full bg-primary text-white text-sm font-medium">All
+                    Notes</button>
+                <button
+                    class="whitespace-nowrap px-4 py-1.5 rounded-full bg-slate-200 dark:bg-primary/20 text-slate-700 dark:text-slate-300 text-sm font-medium hover:bg-primary/30 transition-colors">Design
+                    Ideas</button>
+                <button
+                    class="whitespace-nowrap px-4 py-1.5 rounded-full bg-slate-200 dark:bg-primary/20 text-slate-700 dark:text-slate-300 text-sm font-medium hover:bg-primary/30 transition-colors">Case
+                    Studies</button>
+                <button
+                    class="whitespace-nowrap px-4 py-1.5 rounded-full bg-slate-200 dark:bg-primary/20 text-slate-700 dark:text-slate-300 text-sm font-medium hover:bg-primary/30 transition-colors">Resources</button>
+                <button
+                    class="whitespace-nowrap px-4 py-1.5 rounded-full bg-slate-200 dark:bg-primary/20 text-slate-700 dark:text-slate-300 text-sm font-medium hover:bg-primary/30 transition-colors">Personal</button>
+            </div>
+        </div>
+        <!-- Note Cards Grid -->
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-4 @container">
+            <!-- Note Card 1 -->
+            <div
+                class="group bg-white dark:bg-primary/5 border border-slate-200 dark:border-primary/10 rounded-xl p-5 hover:border-primary/40 transition-all flex flex-col h-full">
+                <div class="flex justify-between items-start mb-3">
+                    <span
+                        class="text-xs font-semibold uppercase tracking-wider text-primary bg-primary/10 px-2 py-0.5 rounded">Design
+                        Ideas</span>
+                    <span class="text-xs text-slate-500 dark:text-slate-400">Oct 24, 2024</span>
+                </div>
+                <h3 class="text-lg font-bold mb-2 group-hover:text-primary transition-colors">UI/UX Design Trends 2024
+                </h3>
+                <p class="text-slate-600 dark:text-slate-300 text-sm leading-relaxed flex-1 line-clamp-3">
+                    Exploring the shift towards bento grids and spatial computing interfaces. Focused on depth,
+                    glassmorphism v2, and micro-interactions for immersive experiences...
+                </p>
+                <div
+                    class="mt-4 pt-4 border-t border-slate-100 dark:border-primary/10 flex items-center justify-between">
+                    <div class="flex -space-x-2">
+                        <div
+                            class="w-6 h-6 rounded-full bg-primary/30 border border-background-dark flex items-center justify-center text-[10px]">
+                            JD</div>
+                    </div>
+                    <button class="text-slate-400 hover:text-primary transition-colors">
+                        <span class="material-symbols-outlined">more_horiz</span>
+                    </button>
+                </div>
+            </div>
+            <!-- Note Card 2 -->
+            <div
+                class="group bg-white dark:bg-primary/5 border border-slate-200 dark:border-primary/10 rounded-xl p-5 hover:border-primary/40 transition-all flex flex-col h-full">
+                <div class="flex justify-between items-start mb-3">
+                    <span
+                        class="text-xs font-semibold uppercase tracking-wider text-primary bg-primary/10 px-2 py-0.5 rounded">Personal</span>
+                    <span class="text-xs text-slate-500 dark:text-slate-400">Oct 20, 2024</span>
+                </div>
+                <h3 class="text-lg font-bold mb-2 group-hover:text-primary transition-colors">Color Palette Exploration
+                </h3>
+                <p class="text-slate-600 dark:text-slate-300 text-sm leading-relaxed flex-1 line-clamp-3">
+                    Experimenting with neon purples and deep charcoal backgrounds. The goal is to achieve high contrast
+                    while maintaining readability in dark mode interfaces.
+                </p>
+                <div
+                    class="mt-4 pt-4 border-t border-slate-100 dark:border-primary/10 flex items-center justify-between">
+                    <div class="flex items-center gap-1 text-slate-400">
+                        <span class="material-symbols-outlined text-sm">attachment</span>
+                        <span class="text-xs">2 files</span>
+                    </div>
+                    <button class="text-slate-400 hover:text-primary transition-colors">
+                        <span class="material-symbols-outlined">more_horiz</span>
+                    </button>
+                </div>
+            </div>
+            <!-- Note Card 3 -->
+            <div
+                class="group bg-white dark:bg-primary/5 border border-slate-200 dark:border-primary/10 rounded-xl p-5 hover:border-primary/40 transition-all flex flex-col h-full">
+                <div class="flex justify-between items-start mb-3">
+                    <span
+                        class="text-xs font-semibold uppercase tracking-wider text-primary bg-primary/10 px-2 py-0.5 rounded">Case
+                        Studies</span>
+                    <span class="text-xs text-slate-500 dark:text-slate-400">Oct 15, 2024</span>
+                </div>
+                <h3 class="text-lg font-bold mb-2 group-hover:text-primary transition-colors">Fintech App UX Flow</h3>
+                <p class="text-slate-600 dark:text-slate-300 text-sm leading-relaxed flex-1 line-clamp-3">
+                    User journey mapping for the onboarding process. Identifying friction points in the KYC verification
+                    step and simplifying the document upload flow.
+                </p>
+                <div
+                    class="mt-4 pt-4 border-t border-slate-100 dark:border-primary/10 flex items-center justify-between">
+                    <div class="flex items-center gap-1 text-slate-400">
+                        <span class="material-symbols-outlined text-sm">schedule</span>
+                        <span class="text-xs">Updated 2h ago</span>
+                    </div>
+                    <button class="text-slate-400 hover:text-primary transition-colors">
+                        <span class="material-symbols-outlined">more_horiz</span>
+                    </button>
+                </div>
+            </div>
+            <!-- Note Card 4 -->
+            <div
+                class="group bg-white dark:bg-primary/5 border border-slate-200 dark:border-primary/10 rounded-xl p-5 hover:border-primary/40 transition-all flex flex-col h-full">
+                <div class="flex justify-between items-start mb-3">
+                    <span
+                        class="text-xs font-semibold uppercase tracking-wider text-primary bg-primary/10 px-2 py-0.5 rounded">Resources</span>
+                    <span class="text-xs text-slate-500 dark:text-slate-400">Oct 08, 2024</span>
+                </div>
+                <h3 class="text-lg font-bold mb-2 group-hover:text-primary transition-colors">Figma Plugins List</h3>
+                <p class="text-slate-600 dark:text-slate-300 text-sm leading-relaxed flex-1 line-clamp-3">
+                    A curated list of must-have Figma plugins for workflow automation: Autolayout Master, Stark for
+                    accessibility, and Content Reel for data prototyping.
+                </p>
+                <div
+                    class="mt-4 pt-4 border-t border-slate-100 dark:border-primary/10 flex items-center justify-between">
+                    <div class="flex items-center gap-1 text-slate-400">
+                        <span class="material-symbols-outlined text-sm">star</span>
+                        <span class="text-xs">Pinned</span>
+                    </div>
+                    <button class="text-slate-400 hover:text-primary transition-colors">
+                        <span class="material-symbols-outlined">more_horiz</span>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </main>
+    <!-- Bottom Navigation Bar -->
+    <nav
+        class="sticky bottom-0 bg-white/80 dark:bg-background-dark/80 backdrop-blur-md border-t border-slate-200 dark:border-primary/10 px-6 py-3">
+        <div class="max-w-md mx-auto flex items-center justify-between">
+            <a class="flex flex-col items-center gap-1 text-slate-400 hover:text-primary transition-colors" href="#">
+                <span class="material-symbols-outlined">folder_open</span>
+                <span class="text-[10px] font-medium uppercase tracking-wider">Portfolio</span>
+            </a>
+            <a class="flex flex-col items-center gap-1 text-primary transition-colors" href="#">
+                <span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">description</span>
+                <span class="text-[10px] font-medium uppercase tracking-wider">Notes</span>
+            </a>
+            <a class="flex flex-col items-center gap-1 text-slate-400 hover:text-primary transition-colors" href="#">
+                <span class="material-symbols-outlined">cloud_queue</span>
+                <span class="text-[10px] font-medium uppercase tracking-wider">Files</span>
+            </a>
+            <a class="flex flex-col items-center gap-1 text-slate-400 hover:text-primary transition-colors" href="#">
+                <span class="material-symbols-outlined">account_circle</span>
+                <span class="text-[10px] font-medium uppercase tracking-wider">Profile</span>
+            </a>
+        </div>
+    </nav>
+</body>
+
+</html>

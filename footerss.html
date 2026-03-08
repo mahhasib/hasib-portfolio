@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="en">
+
+<head>
+    <meta charset="utf-8" />
+    <meta content="width=device-width, initial-scale=1.0" name="viewport" />
+    <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@100..900&amp;display=swap" rel="stylesheet" />
+    <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght@100..700,0..1&amp;display=swap"
+        rel="stylesheet" />
+    <link
+        href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap"
+        rel="stylesheet" />
+    <script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "primary": "#8c25f4",
+                        "background-light": "#f7f5f8",
+                        "background-dark": "#191022",
+                    },
+                    fontFamily: {
+                        "display": ["Inter", "sans-serif"]
+                    },
+                    borderRadius: {
+                        "DEFAULT": "0.25rem",
+                        "lg": "0.5rem",
+                        "xl": "0.75rem",
+                        "full": "9999px"
+                    },
+                },
+            },
+        }
+    </script>
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+        }
+    </style>
+    <style>
+        body {
+            min-height: max(884px, 100dvh);
+        }
+    </style>
+</head>
+
+<body class="bg-background-light dark:bg-background-dark text-slate-900 dark:text-slate-100 font-display">
+    <!-- Main Content Spacer to push footer down -->
+    <div class="min-h-[50vh] flex items-center justify-center p-10">
+        <div class="text-center">
+            <h2 class="text-4xl font-bold text-primary mb-4">Portfolio Showcase</h2>
+            <p class="text-slate-600 dark:text-slate-400">Scroll down to see the elegant footer section.</p>
+        </div>
+    </div>
+    <!-- Footer Section -->
+    <footer class="relative w-full bg-slate-100 dark:bg-background-dark border-t border-primary/10">
+        <!-- CTA / Newsletter Section Integration -->
+        <div class="max-w-7xl mx-auto px-6 pt-16 pb-12">
+            <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 items-start">
+                <!-- Brand and About Column -->
+                <div class="lg:col-span-4 flex flex-col gap-6">
+                    <div class="flex items-center gap-2">
+                        <div class="w-10 h-10 bg-primary rounded-lg flex items-center justify-center">
+                            <span class="material-symbols-outlined text-white">deployed_code</span>
+                        </div>
+                        <span
+                            class="text-2xl font-bold tracking-tight text-slate-900 dark:text-white">Alex.Design</span>
+                    </div>
+                    <p class="text-slate-600 dark:text-slate-400 leading-relaxed">
+                        A professional portfolio showcasing modern and elegant design solutions with a focus on user
+                        experience and visual storytelling. Let's build something extraordinary together.
+                    </p>
+                    <div class="flex gap-4">
+                        <a class="w-10 h-10 rounded-full bg-primary/10 hover:bg-primary/20 flex items-center justify-center text-primary transition-colors"
+                            href="#">
+                            <span class="material-symbols-outlined text-[20px]">share</span>
+                        </a>
+                        <a class="w-10 h-10 rounded-full bg-primary/10 hover:bg-primary/20 flex items-center justify-center text-primary transition-colors"
+                            href="#">
+                            <span class="material-symbols-outlined text-[20px]">terminal</span>
+                        </a>
+                        <a class="w-10 h-10 rounded-full bg-primary/10 hover:bg-primary/20 flex items-center justify-center text-primary transition-colors"
+                            href="#">
+                            <span class="material-symbols-outlined text-[20px]">brush</span>
+                        </a>
+                    </div>
+                </div>
+                <!-- Quick Links Column -->
+                <div class="lg:col-span-2 flex flex-col gap-6">
+                    <h3 class="text-sm font-bold uppercase tracking-widest text-primary">Quick Links</h3>
+                    <ul class="flex flex-col gap-4">
+                        <li><a class="text-slate-600 dark:text-slate-400 hover:text-primary dark:hover:text-primary transition-colors"
+                                href="#">Home</a></li>
+                        <li><a class="text-slate-600 dark:text-slate-400 hover:text-primary dark:hover:text-primary transition-colors"
+                                href="#">Work</a></li>
+                        <li><a class="text-slate-600 dark:text-slate-400 hover:text-primary dark:hover:text-primary transition-colors"
+                                href="#">About</a></li>
+                        <li><a class="text-slate-600 dark:text-slate-400 hover:text-primary dark:hover:text-primary transition-colors"
+                                href="#">Contact</a></li>
+                    </ul>
+                </div>
+                <!-- Newsletter Column -->
+                <div class="lg:col-span-6 flex flex-col gap-6">
+                    <div class="bg-primary/5 dark:bg-primary/10 p-8 rounded-2xl border border-primary/20">
+                        <h3 class="text-xl font-bold text-slate-900 dark:text-white mb-2">Subscribe to my newsletter
+                        </h3>
+                        <p class="text-slate-600 dark:text-slate-400 mb-6">Get the latest updates on my design work and
+                            articles directly in your inbox.</p>
+                        <div class="flex flex-col sm:flex-row gap-3">
+                            <div class="flex-1">
+                                <label class="sr-only">Email address</label>
+                                <input
+                                    class="w-full h-12 px-4 rounded-lg bg-white dark:bg-slate-800 border-slate-200 dark:border-slate-700 text-slate-900 dark:text-white focus:ring-2 focus:ring-primary focus:border-transparent outline-none transition-all"
+                                    placeholder="Enter your email" type="email" />
+                            </div>
+                            <button
+                                class="h-12 px-8 bg-primary hover:bg-primary/90 text-white font-bold rounded-lg transition-all flex items-center justify-center gap-2">
+                                <span>Subscribe</span>
+                                <span class="material-symbols-outlined text-sm">send</span>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- Social Media & Icons Bar -->
+            <div class="mt-16 pt-8 border-t border-primary/10">
+                <div class="flex flex-wrap items-center justify-between gap-6">
+                    <div class="flex gap-2">
+                        <div
+                            class="flex flex-col items-center gap-2 px-3 py-2 rounded-xl hover:bg-primary/5 transition-colors">
+                            <div
+                                class="w-10 h-10 rounded-full bg-slate-200 dark:bg-slate-800 flex items-center justify-center">
+                                <span class="material-symbols-outlined text-primary">link</span>
+                            </div>
+                            <p class="text-xs font-medium text-slate-500">LinkedIn</p>
+                        </div>
+                        <div
+                            class="flex flex-col items-center gap-2 px-3 py-2 rounded-xl hover:bg-primary/5 transition-colors">
+                            <div
+                                class="w-10 h-10 rounded-full bg-slate-200 dark:bg-slate-800 flex items-center justify-center">
+                                <span class="material-symbols-outlined text-primary">code</span>
+                            </div>
+                            <p class="text-xs font-medium text-slate-500">GitHub</p>
+                        </div>
+                        <div
+                            class="flex flex-col items-center gap-2 px-3 py-2 rounded-xl hover:bg-primary/5 transition-colors">
+                            <div
+                                class="w-10 h-10 rounded-full bg-slate-200 dark:bg-slate-800 flex items-center justify-center">
+                                <span class="material-symbols-outlined text-primary">close</span>
+                            </div>
+                            <p class="text-xs font-medium text-slate-500">Twitter</p>
+                        </div>
+                        <div
+                            class="flex flex-col items-center gap-2 px-3 py-2 rounded-xl hover:bg-primary/5 transition-colors">
+                            <div
+                                class="w-10 h-10 rounded-full bg-slate-200 dark:bg-slate-800 flex items-center justify-center">
+                                <span class="material-symbols-outlined text-primary">palette</span>
+                            </div>
+                            <p class="text-xs font-medium text-slate-500">Dribbble</p>
+                        </div>
+                    </div>
+                    <div class="flex flex-col items-end gap-1">
+                        <p class="text-sm text-slate-500 dark:text-slate-400">
+                            © 2024 Alex.Design. All rights reserved.
+                        </p>
+                        <p class="text-xs text-slate-400 dark:text-slate-500 flex items-center gap-1">
+                            Made with <span
+                                class="material-symbols-outlined text-[14px] text-red-500 fill-current">favorite</span>
+                            in San Francisco
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+</body>
+
+</html>

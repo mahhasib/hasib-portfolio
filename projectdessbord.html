@@ -1,0 +1,236 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="en">
+
+<head>
+    <meta charset="utf-8" />
+    <meta content="width=device-width, initial-scale=1.0" name="viewport" />
+    <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&amp;display=swap"
+        rel="stylesheet" />
+    <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght@100..700,0..1&amp;display=swap"
+        rel="stylesheet" />
+    <link
+        href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap"
+        rel="stylesheet" />
+    <script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "primary": "#8c25f4",
+                        "background-light": "#f7f5f8",
+                        "background-dark": "#191022",
+                    },
+                    fontFamily: {
+                        "display": ["Inter"]
+                    },
+                    borderRadius: { "DEFAULT": "0.25rem", "lg": "0.5rem", "xl": "0.75rem", "full": "9999px" },
+                },
+            },
+        }
+    </script>
+    <title>Project Case Study - Design Portfolio</title>
+    <style>
+        body {
+            min-height: max(884px, 100dvh);
+        }
+    </style>
+</head>
+
+<body class="bg-background-light dark:bg-background-dark font-display text-slate-900 dark:text-slate-100 antialiased">
+    <div class="relative flex min-h-screen flex-col overflow-x-hidden">
+        <!-- Header / Navigation -->
+        <nav
+            class="sticky top-0 z-50 flex items-center bg-background-light/80 dark:bg-background-dark/80 backdrop-blur-md p-4 justify-between border-b border-primary/10">
+            <a class="text-primary flex items-center gap-2 font-semibold hover:opacity-80 transition-opacity" href="#">
+                <span class="material-symbols-outlined">arrow_back</span>
+                <span>Back to Projects</span>
+            </a>
+            <div class="flex gap-4">
+                <span class="material-symbols-outlined text-primary">share</span>
+                <span class="material-symbols-outlined text-primary">bookmark</span>
+            </div>
+        </nav>
+        <main class="flex-1">
+            <!-- Hero Section -->
+            <div class="@container">
+                <div class="px-0 @[480px]:px-6 @[480px]:py-6">
+                    <div class="w-full bg-center bg-no-repeat bg-cover flex flex-col justify-end overflow-hidden bg-primary/20 @[480px]:rounded-xl min-h-[400px] shadow-2xl shadow-primary/20"
+                        data-alt="Modern eco-friendly e-commerce mobile app interface mockup"
+                        style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuCb4g9vWyGoV3DJeasm9tdJo_ak-OzrqXZno9jlNCW8ZX9g10dS5THMi63S4sK99x-QfrhDxzKqG6YxZX1_pTsMewQO5AERnTW9930Lnoz1ryLDvZKl2SyTqp1flrg1pa2_3plemsrZoQD402alnIKI7mzluUuZpVgZYato9lOG77V8t1td9k6y-Pzmxw_eBJgm0AWztGVgecTvMhjZM_wfIILRZ0DuJSPOB_gCW2Rc2vPPBQ7V6ykJOiWf96Yk9159_rhLuzgr_Jc");'>
+                    </div>
+                </div>
+            </div>
+            <!-- Title and Quick Stats -->
+            <div class="max-w-5xl mx-auto px-6 py-8">
+                <div class="flex flex-col md:flex-row md:items-end justify-between gap-6">
+                    <div>
+                        <div class="flex items-center gap-2 mb-3">
+                            <span
+                                class="px-3 py-1 bg-primary/20 text-primary text-xs font-bold uppercase tracking-wider rounded-full">UX/UI
+                                Design</span>
+                            <span
+                                class="px-3 py-1 bg-primary/20 text-primary text-xs font-bold uppercase tracking-wider rounded-full">Web
+                                App</span>
+                        </div>
+                        <h1
+                            class="text-4xl md:text-6xl font-bold leading-tight tracking-tight text-slate-900 dark:text-slate-100">
+                            Eco-Friendly E-commerce
+                        </h1>
+                    </div>
+                    <div class="flex gap-4">
+                        <button
+                            class="bg-primary hover:bg-primary/90 text-white px-6 py-3 rounded-lg font-semibold transition-colors flex items-center gap-2">
+                            Live Preview <span class="material-symbols-outlined text-sm">open_in_new</span>
+                        </button>
+                    </div>
+                </div>
+                <!-- Meta Info Grid -->
+                <div class="grid grid-cols-2 md:grid-cols-4 gap-8 py-10 my-10 border-y border-primary/10">
+                    <div>
+                        <p class="text-primary text-sm font-bold uppercase mb-1">Role</p>
+                        <p class="text-lg">Lead Product Designer</p>
+                    </div>
+                    <div>
+                        <p class="text-primary text-sm font-bold uppercase mb-1">Duration</p>
+                        <p class="text-lg">3 Months (2023)</p>
+                    </div>
+                    <div>
+                        <p class="text-primary text-sm font-bold uppercase mb-1">Tools</p>
+                        <p class="text-lg">Figma, Framer, Adobe CC</p>
+                    </div>
+                    <div>
+                        <p class="text-primary text-sm font-bold uppercase mb-1">Deliverables</p>
+                        <p class="text-lg">Design System, High-fi Prototypes</p>
+                    </div>
+                </div>
+                <!-- Content Sections -->
+                <div class="grid grid-cols-1 lg:grid-cols-12 gap-12">
+                    <div class="lg:col-span-8 space-y-12">
+                        <!-- Overview -->
+                        <section>
+                            <h3 class="text-2xl font-bold mb-4 text-primary">Overview</h3>
+                            <p class="text-lg leading-relaxed text-slate-600 dark:text-slate-300">
+                                This project aimed to revolutionize the way conscious consumers shop online. The
+                                "Eco-Friendly E-commerce" platform provides a curated marketplace for sustainable goods
+                                while educating users on the carbon footprint of their purchases through real-time data
+                                visualization.
+                            </p>
+                        </section>
+                        <!-- The Challenge -->
+                        <section class="bg-primary/5 p-8 rounded-xl border border-primary/10">
+                            <h3 class="text-2xl font-bold mb-4 flex items-center gap-2">
+                                <span class="material-symbols-outlined text-primary">problem</span>
+                                The Challenge
+                            </h3>
+                            <p class="text-lg leading-relaxed text-slate-600 dark:text-slate-300">
+                                Users often feel overwhelmed by "greenwashing" and find it difficult to verify the true
+                                sustainability of products. The challenge was to create a transparent, trust-based
+                                shopping experience without making the interface feel cluttered or overly academic.
+                            </p>
+                        </section>
+                        <!-- The Solution -->
+                        <section>
+                            <h3 class="text-2xl font-bold mb-4 flex items-center gap-2 text-primary">
+                                <span class="material-symbols-outlined">lightbulb</span>
+                                The Solution
+                            </h3>
+                            <p class="text-lg leading-relaxed text-slate-600 dark:text-slate-300">
+                                We implemented a "Sustainability Scorecard" for every product. This utilized a 5-tier
+                                rating system based on manufacturing, shipping, and material lifecycle. We also designed
+                                a minimal checkout flow that highlights carbon-neutral shipping options by default.
+                            </p>
+                        </section>
+                        <!-- Gallery -->
+                        <section>
+                            <h3 class="text-2xl font-bold mb-6 text-primary">Process &amp; Visuals</h3>
+                            <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+                                <div
+                                    class="rounded-xl overflow-hidden bg-primary/10 border border-primary/5 aspect-video">
+                                    <img alt="Wireframes and sketches of the user flow"
+                                        class="w-full h-full object-cover"
+                                        data-alt="Detailed UX wireframes showing mobile application flow"
+                                        src="https://lh3.googleusercontent.com/aida-public/AB6AXuA8VE4OpBnskzHCaO4v95D8zfkn06F5tJKZ3a5VPWS-0kG_Ct8BF4O8UoXKGgii0S5LWCfbPVjv8XqkhN1RA_juKV7B0uPyc4I9h2a5D9W7Pcrx7SWb4HH48Zg970UJab_0z5vXZN36X1m9KxBGyJN8cyHRDTRs1eEOPbkt-fqTluCldWSn-0LMCdx5u0QRBWgQ0mzSx8jjrEFFWbnJBcXZIkoiwfgVm_msSCKKKS_o5uem6GAsah-AyItH74oJ4WJN2bEDcuRVosA" />
+                                </div>
+                                <div
+                                    class="rounded-xl overflow-hidden bg-primary/10 border border-primary/5 aspect-video">
+                                    <img alt="Final high-fidelity design of the dashboard"
+                                        class="w-full h-full object-cover"
+                                        data-alt="High fidelity dashboard UI with purple accents"
+                                        src="https://lh3.googleusercontent.com/aida-public/AB6AXuAgRGvt-JaccSZREpUqikxFh-zZ8mMkDu8aMrEKRT5olcDpibrfkyiN0CDPbE97e42243pRu6d8mb4ZYuyhoBW-s1L6KiSIyLXKj4c_2Q9BdUGArati122Mwq6p6lnsDlTncVBjUqjN9mrcZ6OYJ6R2PdaabB9n2QFbbEpgU9WmMPTf9kxhUcOWWkSLO5KfvFOqr_oOiWnZj0GqOdEFLx_LNzk_xW3x-S0bZo582vtAcuSb892wxmTqfMqM33zooR_SFQFeQkOefOc" />
+                                </div>
+                                <div
+                                    class="md:col-span-2 rounded-xl overflow-hidden bg-primary/10 border border-primary/5 aspect-[21/9]">
+                                    <img alt="Design system components and color palette"
+                                        class="w-full h-full object-cover"
+                                        data-alt="Design system components and purple color swatches"
+                                        src="https://lh3.googleusercontent.com/aida-public/AB6AXuCdkbUMy9YXZXZxZf1iVI0hd2bPTwRqZS4NUw688pSeFT9dbleWLC_ZH050YkMm-tjNRgICt5kzxHC4c1ALVCjcQmCLa9xPIt-nK1F9iqlqDX54-PI5OPxZ9cZyzFrEk_K9z5eYOQSI9xoOxdxbAiewOizzGU7AS8-mFG_CFp9w2DkCTlJCwf19AX2leMFX__H3juOCuotesFG7tmayArsdL-vreWboZpQGnV1TPuupyb-y8GUK_WqYPQ99jRXVjXV65ZXEVMt7fKw" />
+                                </div>
+                            </div>
+                        </section>
+                    </div>
+                    <!-- Sidebar / Extra Info -->
+                    <aside class="lg:col-span-4 space-y-8">
+                        <div class="sticky top-24 space-y-8">
+                            <div class="p-6 bg-primary/10 rounded-xl border border-primary/20">
+                                <h4 class="font-bold text-lg mb-4">Project Impact</h4>
+                                <ul class="space-y-4">
+                                    <li class="flex gap-3">
+                                        <span class="material-symbols-outlined text-primary">trending_up</span>
+                                        <p class="text-sm">45% increase in user retention compared to beta</p>
+                                    </li>
+                                    <li class="flex gap-3">
+                                        <span class="material-symbols-outlined text-primary">eco</span>
+                                        <p class="text-sm">12k tons of CO2 offset in the first quarter</p>
+                                    </li>
+                                    <li class="flex gap-3">
+                                        <span class="material-symbols-outlined text-primary">star</span>
+                                        <p class="text-sm">4.8 Average rating on App Store</p>
+                                    </li>
+                                </ul>
+                            </div>
+                            <div class="p-6 bg-slate-100 dark:bg-primary/5 rounded-xl border border-primary/5">
+                                <h4 class="font-bold text-lg mb-4">Key Takeaways</h4>
+                                <p class="text-sm text-slate-600 dark:text-slate-400 mb-4 italic">
+                                    "Designing for sustainability isn't about restricting choice, it's about making the
+                                    right choice the easiest one to make."
+                                </p>
+                                <div class="flex items-center gap-3">
+                                    <div class="w-10 h-10 rounded-full bg-primary/20"></div>
+                                    <div>
+                                        <p class="text-xs font-bold">Alex Rivera</p>
+                                        <p class="text-[10px] uppercase text-primary">Client Feedback</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </aside>
+                </div>
+            </div>
+        </main>
+        <!-- Footer Navigation (Bottom Bar) -->
+        <footer
+            class="mt-auto border-t border-primary/10 bg-background-light dark:bg-background-dark px-4 py-3 flex justify-around">
+            <a class="flex flex-col items-center gap-1 text-primary" href="#">
+                <span class="material-symbols-outlined">work</span>
+                <p class="text-[10px] font-medium uppercase tracking-tighter">Work</p>
+            </a>
+            <a class="flex flex-col items-center gap-1 text-slate-500 dark:text-slate-400" href="#">
+                <span class="material-symbols-outlined">person</span>
+                <p class="text-[10px] font-medium uppercase tracking-tighter">About</p>
+            </a>
+            <a class="flex flex-col items-center gap-1 text-slate-500 dark:text-slate-400" href="#">
+                <span class="material-symbols-outlined">layers</span>
+                <p class="text-[10px] font-medium uppercase tracking-tighter">Services</p>
+            </a>
+            <a class="flex flex-col items-center gap-1 text-slate-500 dark:text-slate-400" href="#">
+                <span class="material-symbols-outlined">mail</span>
+                <p class="text-[10px] font-medium uppercase tracking-tighter">Contact</p>
+            </a>
+        </footer>
+    </div>
+</body>
+
+</html>

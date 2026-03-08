@@ -1,0 +1,446 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="en">
+
+<head>
+    <meta charset="utf-8" />
+    <meta content="width=device-width, initial-scale=1.0" name="viewport" />
+    <title>Project Portfolio Section</title>
+    <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&amp;display=swap"
+        rel="stylesheet" />
+    <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght@100..700,0..1&amp;display=swap"
+        rel="stylesheet" />
+    <link
+        href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap"
+        rel="stylesheet" />
+    <script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "primary": "#8c25f4",
+                        "background-light": "#f7f5f8",
+                        "background-dark": "#191022",
+                    },
+                    fontFamily: {
+                        "display": ["Inter", "sans-serif"]
+                    },
+                    borderRadius: {
+                        "DEFAULT": "0.25rem",
+                        "lg": "0.5rem",
+                        "xl": "0.75rem",
+                        "full": "9999px"
+                    },
+                },
+            },
+        }
+    </script>
+    <style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+    </style>
+    <style>
+        body {
+            min-height: max(884px, 100dvh);
+        }
+
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(40px);
+            }
+
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        @keyframes fadeInDown {
+            from {
+                opacity: 0;
+                transform: translateY(-40px);
+            }
+
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        @keyframes fadeInLeft {
+            from {
+                opacity: 0;
+                transform: translateX(-50px);
+            }
+
+            to {
+                opacity: 1;
+                transform: translateX(0);
+            }
+        }
+
+        @keyframes fadeInRight {
+            from {
+                opacity: 0;
+                transform: translateX(50px);
+            }
+
+            to {
+                opacity: 1;
+                transform: translateX(0);
+            }
+        }
+
+        @keyframes scaleIn {
+            from {
+                opacity: 0;
+                transform: scale(0.85);
+            }
+
+            to {
+                opacity: 1;
+                transform: scale(1);
+            }
+        }
+
+        @keyframes slideInScale {
+            from {
+                opacity: 0;
+                transform: scale(0.6) translateY(30px);
+            }
+
+            to {
+                opacity: 1;
+                transform: scale(1) translateY(0);
+            }
+        }
+
+        [data-anim] {
+            opacity: 0;
+            transition: none;
+        }
+
+        [data-anim].anim-visible {
+            animation-fill-mode: both;
+            animation-timing-function: cubic-bezier(0.22, 1, 0.36, 1);
+        }
+
+        [data-anim="fade-up"].anim-visible {
+            animation-name: fadeInUp;
+        }
+
+        [data-anim="fade-down"].anim-visible {
+            animation-name: fadeInDown;
+        }
+
+        [data-anim="fade-left"].anim-visible {
+            animation-name: fadeInLeft;
+        }
+
+        [data-anim="fade-right"].anim-visible {
+            animation-name: fadeInRight;
+        }
+
+        [data-anim="scale-in"].anim-visible {
+            animation-name: scaleIn;
+        }
+
+        [data-anim="slide-scale"].anim-visible {
+            animation-name: slideInScale;
+        }
+
+        header {
+            animation: fadeInDown 0.8s cubic-bezier(0.22, 1, 0.36, 1) both;
+        }
+
+        .project-card {
+            transition: transform 0.45s cubic-bezier(0.22, 1, 0.36, 1), box-shadow 0.45s ease;
+        }
+
+        .project-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 20px 40px rgba(140, 37, 244, 0.12);
+        }
+
+        .nav-link-anim {
+            position: relative;
+        }
+
+        .nav-link-anim::after {
+            content: '';
+            position: absolute;
+            bottom: -4px;
+            left: 0;
+            width: 0;
+            height: 2px;
+            background: #8c25f4;
+            transition: width 0.35s cubic-bezier(0.22, 1, 0.36, 1);
+        }
+
+        .nav-link-anim:hover::after {
+            width: 100%;
+        }
+    </style>
+</head>
+
+<body
+    class="bg-background-light dark:bg-background-dark font-display text-slate-900 dark:text-slate-100 min-h-screen flex flex-col">
+    <!-- Header / Navigation Bar -->
+    <header
+        class="sticky top-0 z-50 bg-background-light/80 dark:bg-background-dark/80 backdrop-blur-md border-b border-primary/10">
+        <div class="max-w-7xl mx-auto px-4 h-16 flex items-center justify-between">
+            <div class="flex items-center gap-2">
+                <span class="material-symbols-outlined text-primary text-3xl">grid_view</span>
+                <h1 class="text-xl font-bold tracking-tight">Portfolio</h1>
+            </div>
+            <nav class="hidden md:flex gap-8">
+                <a class="text-primary font-medium nav-link-anim" href="#">Projects</a>
+                <a class="text-slate-500 dark:text-slate-400 hover:text-primary transition-colors nav-link-anim"
+                    href="#">About</a>
+                <a class="text-slate-500 dark:text-slate-400 hover:text-primary transition-colors nav-link-anim"
+                    href="#">Contact</a>
+            </nav>
+            <button class="p-2 rounded-full bg-primary/10 text-primary">
+                <span class="material-symbols-outlined">person</span>
+            </button>
+        </div>
+    </header>
+    <main class="flex-grow">
+        <!-- Section Header -->
+        <section class="max-w-7xl mx-auto px-4 pt-12 pb-8">
+            <div class="flex flex-col md:flex-row md:items-end justify-between gap-4">
+                <div data-anim="fade-left" data-delay="200">
+                    <h2 class="text-3xl md:text-4xl font-bold mb-2">Project Showcase</h2>
+                    <p class="text-slate-500 dark:text-slate-400 max-w-xl">
+                        Exploring the intersection of design and technology through purposeful digital experiences.
+                    </p>
+                </div>
+                <div class="flex gap-2" data-anim="fade-right" data-delay="400">
+                    <button
+                        class="px-4 py-2 rounded-lg bg-primary text-white font-medium text-sm flex items-center gap-2 hover:scale-105 transition-transform">
+                        Filter Projects <span class="material-symbols-outlined text-sm">tune</span>
+                    </button>
+                </div>
+            </div>
+        </section>
+        <!-- Project Grid -->
+        <section class="max-w-7xl mx-auto px-4 pb-24">
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-2 gap-8">
+                <!-- Card 1 -->
+                <div class="group flex flex-col bg-white dark:bg-primary/5 rounded-xl overflow-hidden border border-primary/10 hover:border-primary/30 transition-all shadow-xl shadow-primary/5 project-card"
+                    data-anim="fade-up" data-delay="200">
+                    <div class="aspect-video relative overflow-hidden">
+                        <img alt="Eco-friendly e-commerce website interface"
+                            class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
+                            data-alt="Modern green and white e-commerce website interface"
+                            src="https://lh3.googleusercontent.com/aida-public/AB6AXuCY4K_9n9akRxh6wRxmH68BjrsijnY66nhSUubaAvyt2wlsPYGoLWPx9uk2b1sfItPetjtKQSJpQDTZlP1hWiKL1wswHLKsjZDIQ0baTaUo3o8BJ-NOCa80_GYT-WEWneUypDf2Lxa5h8yAnLa5XhghI_x9UIHyGYnnWlWxBBmhre9wpTZ_XmP-pYv713BcYc9BwDJNK7dfS4spPVrd1z3RjEQXb49krIcTPOvh_-dxBrlT4Iy51-_PdNLpVDQ0AGydiJZ-oYkU-K4" />
+                        <div class="absolute top-4 left-4 flex gap-2">
+                            <span
+                                class="px-3 py-1 rounded-full bg-black/50 backdrop-blur-md text-white text-xs font-semibold">Web
+                                Design</span>
+                            <span
+                                class="px-3 py-1 rounded-full bg-black/50 backdrop-blur-md text-white text-xs font-semibold">Sustainability</span>
+                        </div>
+                    </div>
+                    <div class="p-6 flex flex-col flex-grow">
+                        <h3 class="text-xl font-bold mb-2 group-hover:text-primary transition-colors">Eco-Friendly
+                            E-commerce</h3>
+                        <p class="text-slate-500 dark:text-slate-400 mb-6 line-clamp-2">
+                            A complete digital overhaul for a zero-waste online marketplace focusing on user conversion
+                            and sustainable UX patterns.
+                        </p>
+                        <div class="mt-auto flex items-center justify-between">
+                            <div class="flex -space-x-2">
+                                <div
+                                    class="w-8 h-8 rounded-full border-2 border-background-dark bg-primary/20 flex items-center justify-center text-[10px] font-bold">
+                                    Figma</div>
+                                <div
+                                    class="w-8 h-8 rounded-full border-2 border-background-dark bg-primary/20 flex items-center justify-center text-[10px] font-bold">
+                                    React</div>
+                            </div>
+                            <a class="inline-flex items-center gap-2 text-primary font-bold hover:gap-3 transition-all"
+                                href="#">
+                                View Case Study <span class="material-symbols-outlined">arrow_forward</span>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+                <!-- Card 2 -->
+                <div class="group flex flex-col bg-white dark:bg-primary/5 rounded-xl overflow-hidden border border-primary/10 hover:border-primary/30 transition-all shadow-xl shadow-primary/5 project-card"
+                    data-anim="fade-up" data-delay="350">
+                    <div class="aspect-video relative overflow-hidden">
+                        <img alt="Quantum analytics dashboard visualization"
+                            class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
+                            data-alt="Dark futuristic data dashboard with purple charts"
+                            src="https://lh3.googleusercontent.com/aida-public/AB6AXuDd2iop2W5-vt3imKC6YCa2g-OPP_cdMvC8SRivVoZm8cYcRd60hLZKV6IeK7knUj5NcT8AjU2dJFcvZ6Pj9TzMeMA2KIYDOvC7siiqqKhmfhPBz0rLXNzNskNHIwDAbpUtZt8SR9PI0Pj8N8gXuXTOGJ5Sx6M2Tyeuqw1aZLxltoIjjQkyNwy43EZlG4h1C20PiUhFXHRKhrZUeKNJAEB-jMf2MivuFRPT2Ht0PwEd1WXXGexJyVqHR_Ip6K2xZhGMnmuw6-DSPGw" />
+                        <div class="absolute top-4 left-4 flex gap-2">
+                            <span
+                                class="px-3 py-1 rounded-full bg-black/50 backdrop-blur-md text-white text-xs font-semibold">SaaS</span>
+                            <span
+                                class="px-3 py-1 rounded-full bg-black/50 backdrop-blur-md text-white text-xs font-semibold">Data
+                                Viz</span>
+                        </div>
+                    </div>
+                    <div class="p-6 flex flex-col flex-grow">
+                        <h3 class="text-xl font-bold mb-2 group-hover:text-primary transition-colors">Quantum Analytics
+                            Dashboard</h3>
+                        <p class="text-slate-500 dark:text-slate-400 mb-6 line-clamp-2">
+                            Visualizing complex quantum computing data through an intuitive and reactive dashboard
+                            interface for research laboratories.
+                        </p>
+                        <div class="mt-auto flex items-center justify-between">
+                            <div class="flex -space-x-2">
+                                <div
+                                    class="w-8 h-8 rounded-full border-2 border-background-dark bg-primary/20 flex items-center justify-center text-[10px] font-bold">
+                                    D3.js</div>
+                                <div
+                                    class="w-8 h-8 rounded-full border-2 border-background-dark bg-primary/20 flex items-center justify-center text-[10px] font-bold">
+                                    Next.js</div>
+                            </div>
+                            <a class="inline-flex items-center gap-2 text-primary font-bold hover:gap-3 transition-all"
+                                href="#">
+                                View Case Study <span class="material-symbols-outlined">arrow_forward</span>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+                <!-- Card 3 -->
+                <div class="group flex flex-col bg-white dark:bg-primary/5 rounded-xl overflow-hidden border border-primary/10 hover:border-primary/30 transition-all shadow-xl shadow-primary/5 project-card"
+                    data-anim="fade-up" data-delay="500">
+                    <div class="aspect-video relative overflow-hidden">
+                        <img alt="Mobile banking app screens"
+                            class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
+                            data-alt="Smartphone screens showing clean fintech app interface"
+                            src="https://lh3.googleusercontent.com/aida-public/AB6AXuBd0gXkoc1VjK6-vapG2pi5YwBW0GPNfPQgpVsbyO4lT6txksCJjwfiIXWklFeO5ZRYaEeQqDAiX1ohHvi6Vj9Rl65FQXkD0_EdSlSYVE0AJdQVGXz21L1ETngJ1LdLxf565j1OvqGNEX8QXcCIzCnX54YMK8MiMBnXBA12u7Z3ImOZT7r7CpUPQ8YShtRGncWcQ1TM9TELqw1QdsU8OnTJx5vPhF5jPXxedhTiFGAWH0e-cRxJk_ZjHuifpm9R_Ed1h3SbW-4r0W0" />
+                        <div class="absolute top-4 left-4 flex gap-2">
+                            <span
+                                class="px-3 py-1 rounded-full bg-black/50 backdrop-blur-md text-white text-xs font-semibold">Mobile</span>
+                            <span
+                                class="px-3 py-1 rounded-full bg-black/50 backdrop-blur-md text-white text-xs font-semibold">Fintech</span>
+                        </div>
+                    </div>
+                    <div class="p-6 flex flex-col flex-grow">
+                        <h3 class="text-xl font-bold mb-2 group-hover:text-primary transition-colors">NeoBank Mobile App
+                        </h3>
+                        <p class="text-slate-500 dark:text-slate-400 mb-6 line-clamp-2">
+                            A secure, user-centric mobile banking experience designed for Gen-Z users with integrated
+                            financial literacy tools.
+                        </p>
+                        <div class="mt-auto flex items-center justify-between">
+                            <div class="flex -space-x-2">
+                                <div
+                                    class="w-8 h-8 rounded-full border-2 border-background-dark bg-primary/20 flex items-center justify-center text-[10px] font-bold">
+                                    Swift</div>
+                                <div
+                                    class="w-8 h-8 rounded-full border-2 border-background-dark bg-primary/20 flex items-center justify-center text-[10px] font-bold">
+                                    UI/UX</div>
+                            </div>
+                            <a class="inline-flex items-center gap-2 text-primary font-bold hover:gap-3 transition-all"
+                                href="#">
+                                View Case Study <span class="material-symbols-outlined">arrow_forward</span>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+                <!-- Card 4 -->
+                <div class="group flex flex-col bg-white dark:bg-primary/5 rounded-xl overflow-hidden border border-primary/10 hover:border-primary/30 transition-all shadow-xl shadow-primary/5 project-card"
+                    data-anim="fade-up" data-delay="650">
+                    <div class="aspect-video relative overflow-hidden">
+                        <img alt="AI creative assistant interface"
+                            class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
+                            data-alt="Abstract AI interface with glowing purple elements"
+                            src="https://lh3.googleusercontent.com/aida-public/AB6AXuBceSvgzHdB1xTQSavUkH04y6ABHlDukg6yrKAFWMKtFHxEnvmcHPI1ihrCHvJ7MDRewxxq483CyNVZBBiFoY9b1jDanA6-kU2Noox69tQCmik7oHpJb3-Ldn0iijytFOzJW_zsrvTdYWlfcxZbzzv7YvEtPJ1Bepf3TX0qAESqDGJMwpj2xQ6hxRMspdcCuhJLZNIbu_Uq5RGlw7BSeQtRpsor9cqRbXvcGYDT1m6XOsVCm8PCkeNt6hJKd5WJeNbiA6cMwk4YPEs" />
+                        <div class="absolute top-4 left-4 flex gap-2">
+                            <span
+                                class="px-3 py-1 rounded-full bg-black/50 backdrop-blur-md text-white text-xs font-semibold">AI/ML</span>
+                            <span
+                                class="px-3 py-1 rounded-full bg-black/50 backdrop-blur-md text-white text-xs font-semibold">Product
+                                Design</span>
+                        </div>
+                    </div>
+                    <div class="p-6 flex flex-col flex-grow">
+                        <h3 class="text-xl font-bold mb-2 group-hover:text-primary transition-colors">Aura Creative AI
+                        </h3>
+                        <p class="text-slate-500 dark:text-slate-400 mb-6 line-clamp-2">
+                            Defining the visual language and interaction model for a next-generation AI tool for
+                            professional designers.
+                        </p>
+                        <div class="mt-auto flex items-center justify-between">
+                            <div class="flex -space-x-2">
+                                <div
+                                    class="w-8 h-8 rounded-full border-2 border-background-dark bg-primary/20 flex items-center justify-center text-[10px] font-bold">
+                                    AI</div>
+                                <div
+                                    class="w-8 h-8 rounded-full border-2 border-background-dark bg-primary/20 flex items-center justify-center text-[10px] font-bold">
+                                    Vue</div>
+                            </div>
+                            <a class="inline-flex items-center gap-2 text-primary font-bold hover:gap-3 transition-all"
+                                href="#">
+                                View Case Study <span class="material-symbols-outlined">arrow_forward</span>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+    <!-- Bottom Navigation Bar (Mobile) -->
+    <footer
+        class="md:hidden sticky bottom-0 z-50 bg-background-light dark:bg-background-dark border-t border-primary/10 pb-safe">
+        <div class="flex justify-around items-center h-16 px-4">
+            <a class="flex flex-col items-center gap-1 text-slate-500 dark:text-slate-400" href="#">
+                <span class="material-symbols-outlined">home</span>
+                <span class="text-[10px] font-medium">Home</span>
+            </a>
+            <a class="flex flex-col items-center gap-1 text-primary" href="#">
+                <span class="material-symbols-outlined fill-1">grid_view</span>
+                <span class="text-[10px] font-medium">Projects</span>
+            </a>
+            <a class="flex flex-col items-center gap-1 text-slate-500 dark:text-slate-400" href="#">
+                <span class="material-symbols-outlined">person</span>
+                <span class="text-[10px] font-medium">About</span>
+            </a>
+            <a class="flex flex-col items-center gap-1 text-slate-500 dark:text-slate-400" href="#">
+                <span class="material-symbols-outlined">mail</span>
+                <span class="text-[10px] font-medium">Contact</span>
+            </a>
+        </div>
+    </footer>
+    <!-- Animation Engine -->
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const animEls = document.querySelectorAll('[data-anim]');
+            const observer = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        const el = entry.target;
+                        const delay = el.dataset.delay || 0;
+                        const duration = el.dataset.duration || '0.8s';
+                        setTimeout(() => {
+                            el.style.animationDuration = duration;
+                            el.classList.add('anim-visible');
+                        }, parseInt(delay));
+                        observer.unobserve(el);
+                    }
+                });
+            }, { threshold: 0.15, rootMargin: '0px 0px -40px 0px' });
+            animEls.forEach(el => observer.observe(el));
+
+            document.querySelectorAll('a[href^="#"]').forEach(a => {
+                a.addEventListener('click', e => {
+                    const target = document.querySelector(a.getAttribute('href'));
+                    if (target) {
+                        e.preventDefault();
+                        target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+                    }
+                });
+            });
+        });
+    </script>
+</body>
+
+</html>
