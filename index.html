@@ -233,6 +233,10 @@
             animation: pulseGlow 3s ease-in-out infinite;
         }
 
+        .pulse-glow-slow {
+            animation: pulseGlow 6s ease-in-out infinite;
+        }
+
         /* Header entrance */
         header {
             animation: fadeInDown 0.8s cubic-bezier(0.22, 1, 0.36, 1) both;
@@ -433,7 +437,7 @@
                         data-anim="scale-in" data-delay="200">
                         <div class="w-full h-full rounded-full bg-slate-800 bg-cover bg-center shadow-2xl"
                             data-alt="Professional portrait of a male designer smiling"
-                            style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuAQ_gDe2TJYINXViX1n2xBSOrM6webV4i3O70dGkHK_OiAwliBHHPGLPwH5YGGr5U-2o5sQC5LHVLiEZz-LsPO8cQ9ctHmtttP9RlO5T9HzioQi6mUCEoGZHRWfrRRdCBJ9w86sHGZz2py_3jSOVDrNwnlq4Zni-a4uSLxIxpxllw28gb_8HEELCyDmPJXxkAJPDbHLMmy-xLYyP9YYxuk7JJcis_zs0aBVeunc6B967NxqmGLP1zl0gVJIRYPLXrOBMPtHm0rxRuw');">
+                            style="background-image: url(./profile\ pic.png);">
                         </div>
                     </div>
                     <div class="flex-1 space-y-6" data-anim="fade-right" data-delay="400">
@@ -1372,14 +1376,22 @@
                             </div>
                             <p class="text-xs font-medium text-slate-500">GitHub</p>
                         </a>
-                        <!--<a href="#"
+                        <!--<a href="https://dribbble.com/mahhasib" target="_blank" rel="noopener noreferrer"
                             class="flex flex-col items-center gap-2 px-3 py-2 rounded-xl hover:bg-primary/5 transition-colors no-underline">
                             <div
                                 class="w-10 h-10 rounded-full bg-slate-200 dark:bg-slate-800 flex items-center justify-center">
                                 <span class="material-symbols-outlined text-primary">palette</span>
                             </div>
-                            <p class="text-xs font-medium text-slate-500">Dribbble</p>
-                        </a>-->
+                            <p class="text-xs font-medium text-slate-500">Dribbble</p>-->
+                        </a>
+                        <a href="https://discord.com/users/mah.hasib" target="_blank" rel="noopener noreferrer"
+                            class="flex flex-col items-center gap-2 px-3 py-2 rounded-xl hover:bg-primary/5 transition-colors no-underline">
+                            <div
+                                class="w-10 h-10 rounded-full bg-slate-200 dark:bg-slate-800 flex items-center justify-center">
+                                <span class="material-symbols-outlined text-primary">forum</span>
+                            </div>
+                            <p class="text-xs font-medium text-slate-500">Discord</p>
+                        </a>
                     </div>
                     <div class="flex flex-col items-center md:items-end gap-1 order-3">
                         <div class="flex gap-8">
@@ -1396,11 +1408,19 @@
                             For viewing my Portfolio
                         </p>
                     </div>
-                    <!-- Responsive Watermark Clock -->
+                    <!-- Kalima & Responsive Watermark Clock -->
                     <div
-                        class="order-1 md:oder-2 flex items-center justify-center pointer-events-none opacity-[0.5] dark:opacity-[0.7] select-none">
+                        class="order-1 md:order-2 flex flex-col items-center justify-center pointer-events-none select-none">
+                        <div class="flex flex-col items-center gap-1 mb-2 text-center" data-anim="slide-scale"
+                            data-delay="1000" data-duration="3s">
+                            <span
+                                class="text-sm md:text-base font-bold text-primary tracking-wide drop-shadow-[0_0_8px_rgba(140,37,244,0.4)]">لَا
+                                إِلَٰهَ إِلَّا ٱللَّٰهُ مُحَمَّدٌ رَسُولُ ٱللَّٰهِ</span>
+                            <span class="text-[9px] md:text-[10px] font-medium italic leading-tight">"There
+                                is no god but Allah, and Muhammad SAW is the messenger of Allah"</span>
+                        </div>
                         <span id="footer-watermark"
-                            class="text-[10px] md:text-xs font-bold whitespace-nowrap tracking-widest uppercase text-primary"></span>
+                            class="text-[10px] md:text-xs font-bold whitespace-nowrap tracking-widest uppercase text-primary opacity-[0.5] dark:opacity-[0.7]"></span>
                     </div>
                 </div>
             </div>
