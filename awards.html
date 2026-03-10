@@ -413,32 +413,220 @@
                 </div>
             </div>
         </main>
-        <!-- Bottom Navigation Bar -->
-        <nav
-            class="fixed bottom-0 left-0 right-0 z-50 border-t border-primary/10 bg-white/80 dark:bg-background-dark/80 backdrop-blur-lg">
-            <div class="flex max-w-5xl mx-auto gap-2 px-4 pb-4 pt-2">
-                <a class="flex flex-1 flex-col items-center justify-center gap-1 text-slate-500 dark:text-slate-400 hover:text-primary transition-colors"
-                    href="#">
-                    <span class="material-symbols-outlined">work</span>
-                    <p class="text-xs font-medium leading-normal tracking-wide">Work</p>
-                </a>
-                <a class="flex flex-1 flex-col items-center justify-center gap-1 text-primary" href="#">
-                    <span class="material-symbols-outlined text-[24px]"
-                        style="font-variation-settings: 'FILL' 1">emoji_events</span>
-                    <p class="text-xs font-bold leading-normal tracking-wide">Awards</p>
-                </a>
-                <a class="flex flex-1 flex-col items-center justify-center gap-1 text-slate-500 dark:text-slate-400 hover:text-primary transition-colors"
-                    href="#">
-                    <span class="material-symbols-outlined">person</span>
-                    <p class="text-xs font-medium leading-normal tracking-wide">About</p>
-                </a>
-                <a class="flex flex-1 flex-col items-center justify-center gap-1 text-slate-500 dark:text-slate-400 hover:text-primary transition-colors"
-                    href="#">
-                    <span class="material-symbols-outlined">mail</span>
-                    <p class="text-xs font-medium leading-normal tracking-wide">Contact</p>
-                </a>
+        <!-- Footer Section -->
+        <footer class="relative w-full bg-slate-100 dark:bg-background-dark border-t border-primary/10">
+            <!-- CTA / Newsletter Section Integration -->
+            <div class="max-w-7xl mx-auto px-6 pt-16 pb-12">
+                <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 items-start">
+                    <!-- Brand and About Column -->
+                    <div class="lg:col-span-4 flex flex-col gap-6" data-anim="fade-up" data-delay="100">
+                        <div class="flex items-center gap-2">
+                            <div class="w-10 h-10 bg-primary rounded-lg flex items-center justify-center">
+                                <span class="text-white text-2xl font-bold leading-none select-none">أ</span>
+                            </div>
+                            <span class="text-2xl font-bold tracking-tight text-slate-900 dark:text-white">MAH.
+                                HaSib</span>
+                        </div>
+                        <p class="text-slate-600 dark:text-slate-400 leading-relaxed">
+                            A professional portfolio showcasing modern and elegant design solutions with a focus on user
+                            experience and visual storytelling. Let's build something extraordinary together.
+                        </p>
+                        <div class="flex gap-4">
+                            <button
+                                class="w-10 h-10 rounded-full bg-primary/10 hover:bg-primary/20 flex items-center justify-center text-primary transition-colors relative group"
+                                onclick="copyToClipboard(this, 'https://altafhossainhasib.vercel.app/')"
+                                title="Copy Link">
+                                <span class="material-symbols-outlined text-[20px]">share</span>
+                                <span
+                                    class="absolute -top-8 left-1/2 -translate-x-1/2 bg-slate-800 text-white text-[10px] px-2 py-1 rounded opacity-0 group-active:opacity-100 transition-opacity pointer-events-none">Copied!</span>
+                            </button>
+                            <!--<a class="w-10 h-10 rounded-full bg-primary/10 hover:bg-primary/20 flex items-center justify-center text-primary transition-colors"
+                            href="#">
+                            <span class="material-symbols-outlined text-[20px]">terminal</span>
+                        </a>
+                        <a class="w-10 h-10 rounded-full bg-primary/10 hover:bg-primary/20 flex items-center justify-center text-primary transition-colors"
+                            href="#">
+                            <span class="material-symbols-outlined text-[20px]">brush</span>
+                        </a>-->
+                        </div>
+                    </div>
+                    <!-- Quick Links Column -->
+                    <div class="lg:col-span-2 flex flex-col gap-6" data-anim="fade-up" data-delay="200">
+                        <h3 class="text-sm font-bold uppercase tracking-widest text-primary">Quick Links</h3>
+                        <ul class="flex flex-col gap-4">
+                            <li><a class="text-slate-600 dark:text-slate-400 hover:text-primary dark:hover:text-primary transition-colors"
+                                    href="#">Home</a></li>
+                            <li><a class="text-slate-600 dark:text-slate-400 hover:text-primary dark:hover:text-primary transition-colors"
+                                    href="./mywork.html">Work</a></li>
+                            <li><a class="text-slate-600 dark:text-slate-400 hover:text-primary dark:hover:text-primary transition-colors"
+                                    href="./abuot.html">About</a></li>
+                            <li><a class="text-slate-600 dark:text-slate-400 hover:text-primary dark:hover:text-primary transition-colors"
+                                    href="./contactfrom.html">Contact</a></li>
+                        </ul>
+                    </div>
+                    <div class="lg:col-span-2 flex flex-col gap-6" data-anim="fade-up" data-delay="300">
+                        <h3 class="text-sm font-bold uppercase tracking-widest text-primary">Resources</h3>
+                        <ul class="flex flex-col gap-4">
+                            <li><a class="text-slate-600 dark:text-slate-400 hover:text-primary dark:hover:text-primary transition-colors"
+                                    href="./blog.html">Design Blog</a></li>
+                            <li><a class="text-slate-600 dark:text-slate-400 hover:text-primary dark:hover:text-primary transition-colors"
+                                    href="./skills&tools.html">Tools</a></li>
+                            <li><a class="text-slate-600 dark:text-slate-400 hover:text-primary dark:hover:text-primary transition-colors"
+                                    href="./barandsworked.html">Brands Collabration</a></li>
+                            <li><a class="text-slate-600 dark:text-slate-400 hover:text-primary dark:hover:text-primary transition-colors"
+                                    href="./cv.html">CV</a></li>
+                        </ul>
+                    </div>
+                    <div class="lg:col-span-2 flex flex-col gap-6" data-anim="fade-up" data-delay="400">
+                        <h3 class="text-sm font-bold uppercase tracking-widest text-primary">Resources</h3>
+                        <ul class="flex flex-col gap-4">
+                            <li><a class="text-slate-600 dark:text-slate-400 hover:text-primary dark:hover:text-primary transition-colors"
+                                    href="./statistics.html">Statistics</a></li>
+                            <li><a class="text-slate-600 dark:text-slate-400 hover:text-primary dark:hover:text-primary transition-colors"
+                                    href="./hero.html">Hero</a></li>
+                            <li><a class="text-slate-600 dark:text-slate-400 hover:text-primary dark:hover:text-primary transition-colors"
+                                    href="./awards.html">Awards</a></li>
+                            <li><a class="text-slate-600 dark:text-slate-400 hover:text-primary dark:hover:text-primary transition-colors"
+                                    href="./faq.html">FAQ</a></li>
+                        </ul>
+                    </div>
+                    <div class="lg:col-span-2 flex flex-col gap-6" data-anim="fade-up" data-delay="500">
+                        <h3 class="text-sm font-bold uppercase tracking-widest text-primary">Contact</h3>
+                        <ul class="flex flex-col gap-4">
+                            <li class="flex items-center gap-3 text-slate-600 dark:text-slate-400">
+                                <span class="material-symbols-outlined text-sm text-primary">mail</span>
+                                <a class="hover:text-primary transition-colors no-underline"
+                                    href="mailto:mah.hasib015@gmail.com">mah.hasib015@gmail.com</a>
+                            </li>
+                            <li class="flex items-center gap-3 text-slate-600 dark:text-slate-400">
+                                <span class="material-symbols-outlined text-sm text-primary">call</span>
+                                <a class="hover:text-primary transition-colors no-underline"
+                                    href="tel:+8801570228111">+8801570228111</a>
+                            </li>
+                            <li class="flex items-center gap-3 text-slate-600 dark:text-slate-400">
+                                <span class="material-symbols-outlined text-sm text-primary">location_on</span>
+                                <span>Siddhirganj, Narayanganj, Dhaka</span>
+                            </li>
+                        </ul>
+                    </div>
+
+                    <!-- Newsletter & Research Section -->
+                    <div class="lg:col-span-12 grid grid-cols-1 md:grid-cols-2 gap-8">
+                        <!-- For new deals -->
+                        <div class="bg-primary/5 dark:bg-primary/10 p-8 rounded-2xl border border-primary/20 flex flex-col justify-between"
+                            data-anim="scale-in" data-delay="600">
+                            <div>
+                                <h3 class="text-xl font-bold text-slate-900 dark:text-white mb-2">For new deals</h3>
+                                <p class="text-slate-600 dark:text-slate-400 mb-6">Get the latest updates on my design
+                                    work
+                                    and
+                                    articles directly in your inbox.</p>
+                            </div>
+                            <div class="flex flex-col sm:flex-row gap-3">
+                                <div class="flex-1">
+                                    <label class="sr-only">Email address</label>
+                                    <input
+                                        class="w-full h-12 px-4 rounded-lg bg-white dark:bg-slate-800 border-slate-200 dark:border-slate-700 text-slate-900 dark:text-white focus:ring-2 focus:ring-primary focus:border-transparent outline-none transition-all"
+                                        placeholder="Enter your email" type="email" />
+                                </div>
+                                <a href="mailto:mah.hasib015@gmail.com?subject=Enquiry%20from%20Portfolio%20(New%20Deals)"
+                                    class="h-12 px-8 bg-primary hover:bg-primary/90 text-white font-bold rounded-lg transition-all flex items-center justify-center gap-2 no-underline">
+                                    <span>Let's Meet</span>
+                                    <span class="material-symbols-outlined text-sm">send</span>
+                                </a>
+                            </div>
+                        </div>
+                        <!-- Center for Research -->
+                        <div class="bg-primary/5 dark:bg-primary/10 p-8 rounded-2xl border border-primary/20 flex flex-col justify-between"
+                            data-anim="scale-in" data-delay="700">
+                            <div>
+                                <h3 class="text-xl font-bold text-slate-900 dark:text-white mb-2">Center for Research
+                                </h3>
+                                <p class="text-slate-600 dark:text-slate-400 mb-6">Exploring the intersection of design,
+                                    technology, and user psychology to build the next generation of digital experiences.
+                                </p>
+                            </div>
+                            <a href="./centerforreseach.html"
+                                class="h-12 w-fit px-8 border border-primary text-primary hover:bg-primary hover:text-white font-bold rounded-lg transition-all flex items-center justify-center gap-2 no-underline">
+                                <span>Explore Lab</span>
+                                <span class="material-symbols-outlined text-sm">science</span>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+                <!-- Social Media & Icons Bar -->
+                <div class="mt-16 pt-8 border-t border-primary/10 relative overflow-hidden" data-anim="fade-up"
+                    data-delay="800">
+                    <div
+                        class="flex flex-col md:flex-row items-center justify-between gap-6 relative z-10 text-center md:text-left">
+                        <div class="flex gap-2 order-2 md:order-1">
+                            <a href="https://www.linkedin.com/in/mahhasib?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app"
+                                target="_blank" rel="noopener noreferrer"
+                                class="flex flex-col items-center gap-2 px-3 py-2 rounded-xl hover:bg-primary/5 transition-colors no-underline">
+                                <div
+                                    class="w-10 h-10 rounded-full bg-slate-200 dark:bg-slate-800 flex items-center justify-center">
+                                    <span class="material-symbols-outlined text-primary">link</span>
+                                </div>
+                                <p class="text-xs font-medium text-slate-500">LinkedIn</p>
+                            </a>
+                            <a href="https://github.com/mahhasib" target="_blank" rel="noopener noreferrer"
+                                class="flex flex-col items-center gap-2 px-3 py-2 rounded-xl hover:bg-primary/5 transition-colors no-underline">
+                                <div
+                                    class="w-10 h-10 rounded-full bg-slate-200 dark:bg-slate-800 flex items-center justify-center">
+                                    <span class="material-symbols-outlined text-primary">code</span>
+                                </div>
+                                <p class="text-xs font-medium text-slate-500">GitHub</p>
+                            </a>
+                            <!--<a href="https://dribbble.com/mahhasib" target="_blank" rel="noopener noreferrer"
+                            class="flex flex-col items-center gap-2 px-3 py-2 rounded-xl hover:bg-primary/5 transition-colors no-underline">
+                            <div
+                                class="w-10 h-10 rounded-full bg-slate-200 dark:bg-slate-800 flex items-center justify-center">
+                                <span class="material-symbols-outlined text-primary">palette</span>
+                            </div>
+                            <p class="text-xs font-medium text-slate-500">Dribbble</p>-->
+                            </a>
+                            <a href="https://discord.com/users/mah.hasib" target="_blank" rel="noopener noreferrer"
+                                class="flex flex-col items-center gap-2 px-3 py-2 rounded-xl hover:bg-primary/5 transition-colors no-underline">
+                                <div
+                                    class="w-10 h-10 rounded-full bg-slate-200 dark:bg-slate-800 flex items-center justify-center">
+                                    <span class="material-symbols-outlined text-primary">forum</span>
+                                </div>
+                                <p class="text-xs font-medium text-slate-500">Discord</p>
+                            </a>
+                        </div>
+                        <div class="flex flex-col items-center md:items-end gap-1 order-3">
+                            <div class="flex gap-8">
+                                <a class="hover:text-slate-300" href="./policy.html">Privacy Policy</a>
+                                <a class="hover:text-slate-300" href="./myservice.html">Terms of Service</a>
+                            </div>
+                            <p class="text-sm text-slate-500 dark:text-slate-400" data-anim="fade-up" data-delay="100">
+                                © 2026 MAH. HaSib. All rights reserved.
+                            </p>
+                            <p class="text-xs text-slate-400 dark:text-slate-500 flex items-center justify-center md:justify-end gap-1"
+                                data-anim="fade-up" data-delay="300">
+                                Thank you very much<span
+                                    class="material-symbols-outlined text-[14px] text-red-500 fill-current">favorite</span>
+                                For viewing my Portfolio
+                            </p>
+                        </div>
+                        <!-- Kalima & Responsive Watermark Clock -->
+                        <div
+                            class="order-1 md:order-2 flex flex-col items-center justify-center pointer-events-none select-none">
+                            <div class="flex flex-col items-center gap-1 mb-2 text-center" data-anim="slide-scale"
+                                data-delay="1000" data-duration="3s">
+                                <span
+                                    class="text-sm md:text-base font-bold text-primary tracking-wide drop-shadow-[0_0_8px_rgba(140,37,244,0.4)]">لَا
+                                    إِلَٰهَ إِلَّا ٱللَّٰهُ مُحَمَّدٌ رَسُولُ ٱللَّٰهِ</span>
+                                <span class="text-[9px] md:text-[10px] font-medium italic leading-tight">"There
+                                    is no god but Allah, and Muhammad SAW is the messenger of Allah"</span>
+                            </div>
+                            <span id="footer-watermark"
+                                class="text-[10px] md:text-xs font-bold whitespace-nowrap tracking-widest uppercase text-primary opacity-[0.5] dark:opacity-[0.7]"></span>
+                        </div>
+                    </div>
+                </div>
             </div>
-        </nav>
+        </footer>
         <style>
             .no-scrollbar::-webkit-scrollbar {
                 display: none;
@@ -504,6 +692,54 @@
                     });
                 });
             });
+
+            // ===== Copy to Clipboard Function =====
+            function copyToClipboard(btn, text) {
+                navigator.clipboard.writeText(text).then(() => {
+                    const icon = btn.querySelector('.material-symbols-outlined');
+                    const originalIcon = icon.textContent;
+                    icon.textContent = 'check';
+                    btn.classList.add('bg-green-500/10', 'text-green-500');
+                    btn.classList.remove('text-primary');
+
+                    setTimeout(() => {
+                        icon.textContent = originalIcon;
+                        btn.classList.remove('bg-green-500/10', 'text-green-500');
+                        btn.classList.add('text-primary');
+                    }, 2000);
+                });
+            }
+
+            // ===== Footer Watermark Clock =====
+            function updateWatermarkClock() {
+                const watermark = document.getElementById('footer-watermark');
+                if (watermark) {
+                    const now = new Date();
+                    const isMobile = window.innerWidth < 768;
+
+                    const options = {
+                        day: '2-digit',
+                        month: isMobile ? 'short' : 'long',
+                        year: 'numeric',
+                        hour: '2-digit',
+                        minute: '2-digit',
+                        second: isMobile ? undefined : '2-digit',
+                        hour12: true
+                    };
+
+                    let formatted = now.toLocaleDateString('en-GB', options);
+                    if (!isMobile) {
+                        formatted = formatted.replace(',', ' |');
+                    } else {
+                        // For mobile, just a simple space
+                        formatted = formatted.replace(',', '');
+                    }
+                    watermark.textContent = formatted;
+                }
+            }
+            updateWatermarkClock();
+            setInterval(updateWatermarkClock, 1000);
+            window.addEventListener('resize', updateWatermarkClock);
         </script>
 </body>
 
