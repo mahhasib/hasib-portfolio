@@ -242,37 +242,19 @@
 
 <body
     class="bg-background-light dark:bg-background-dark text-slate-900 dark:text-slate-100 font-display min-h-screen flex flex-col">
-    <!-- Navigation Header 
-    <header class="sticky top-0 z-50 w-full border-b border-primary/10 bg-background-dark/80 backdrop-blur-md">
-        <div class="mx-auto flex h-16 max-w-7xl items-center justify-between px-4 sm:px-6 lg:px-8">
-            <div class="flex items-center gap-4">
-                <span class="material-symbols-outlined text-primary text-3xl">filter_tilt_shift</span>
-                <h2 class="text-xl font-bold tracking-tight text-slate-100" href="./index.html">MAH. HaSib</h2>
-            </div>
-            <nav class="hidden md:flex items-center gap-8">
-                <a class="text-sm font-medium hover:text-primary transition-colors nav-link-anim"
-                    href="https://mahhasib.vercel.app/">Home</a>
-                <a class="text-sm font-medium hover:text-primary transition-colors nav-link-anim" href="#work">Work</a>
-                <a class="text-sm font-medium hover:text-primary transition-colors nav-link-anim"
-                    href="#services">Services</a>
-                <a class="text-sm font-medium hover:text-primary transition-colors nav-link-anim"
-                    href="#about">About</a>
-                <a class="text-sm font-medium hover:text-primary transition-colors nav-link-anim" href="#blog">Blog</a>
-            </nav>
-            <div class="flex items-center gap-4">
-                <button class="hidden sm:block text-primary text-sm font-bold tracking-wide uppercase">Hire Me</button>
-                <button
-                    class="bg-primary text-white px-5 py-2 rounded-lg text-sm font-bold hover:bg-primary/90 transition-all">Get
-                    Started</button>
-            </div>
-        </div>
-    </header>-->
     <!-- Header / TopAppBar -->
     <header class="sticky top-0 z-50 w-full border-b border-primary/10 bg-background-dark/80 backdrop-blur-md">
         <div class="mx-auto flex h-16 max-w-7xl items-center justify-between px-4 sm:px-6 lg:px-8">
             <div class="flex items-center gap-4">
                 <a href="./index.html" class="flex items-center gap-4 no-underline">
-                    <span class="material-symbols-outlined text-primary text-3xl">filter_tilt_shift</span>
+                    <div
+                        class="w-10 h-10 rounded-lg flex items-center justify-center border border-primary/20 bg-primary/10 periodic-glow-logo relative overflow-hidden group">
+                        <span
+                            class="text-primary text-2xl font-bold leading-none select-none relative z-10 group-hover:scale-110 transition-transform">أ</span>
+                        <div
+                            class="absolute inset-0 bg-gradient-to-t from-primary/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity">
+                        </div>
+                    </div>
                     <h2 class="text-xl font-bold tracking-tight text-slate-100">MAH. HaSib</h2>
                 </a>
                 <!-- Navigation History Buttons (Desktop/Tablet Only) -->
@@ -290,24 +272,67 @@
                 </div>
             </div>
             <nav class="hidden md:flex items-center gap-8">
-                <a class="text-sm font-medium hover:text-primary transition-colors nav-link-anim" href="#home">Home</a>
-                <a class="text-sm font-medium hover:text-primary transition-colors nav-link-anim" href="#work">Work</a>
                 <a class="text-sm font-medium hover:text-primary transition-colors nav-link-anim"
-                    href="#services">Services</a>
+                    href="./index.html">Home</a>
                 <a class="text-sm font-medium hover:text-primary transition-colors nav-link-anim"
-                    href="#about">About</a>
-                <a class="text-sm font-medium hover:text-primary transition-colors nav-link-anim" href="#blog">Blog</a>
+                    href="./mywork.html">Work</a>
+                <a class="text-sm font-medium hover:text-primary transition-colors nav-link-anim"
+                    href="./myservice.html">Services</a>
+                <a class="text-sm font-medium text-primary transition-colors nav-link-anim"
+                    href="./abuot.html">About</a>
+                <a class="text-sm font-medium hover:text-primary transition-colors nav-link-anim"
+                    href="./blog.html">Blog</a>
             </nav>
             <div class="flex items-center gap-4">
                 <a href="mailto:mah.hasib015@gmail.com"
                     class="hidden sm:block text-primary text-sm font-bold tracking-wide uppercase no-underline">Hire
                     Me</a>
                 <a href="./contactfrom.html"
-                    class="bg-primary text-white px-5 py-2 rounded-lg text-sm font-bold hover:bg-primary/90 transition-all no-underline">Get
+                    class="hidden sm:block bg-primary text-white px-5 py-2 rounded-lg text-sm font-bold hover:bg-primary/90 transition-all no-underline">Get
                     Started</a>
+                <!-- Mobile Menu Button -->
+                <button id="mobile-menu-btn" class="md:hidden text-slate-100 hover:text-primary transition-colors">
+                    <span class="material-symbols-outlined text-3xl">menu</span>
+                </button>
             </div>
         </div>
     </header>
+
+    <!-- Mobile Menu Overlay -->
+    <div id="mobile-menu"
+        class="fixed inset-0 z-[60] bg-background-dark/95 backdrop-blur-xl translate-x-full transition-transform duration-300 md:hidden">
+        <div class="flex flex-col h-full p-8">
+            <div class="flex items-center justify-between mb-12">
+                <div class="flex items-center gap-4">
+                    <div
+                        class="w-10 h-10 rounded-lg flex items-center justify-center border border-primary/20 bg-primary/10">
+                        <span class="text-primary text-2xl font-bold">أ</span>
+                    </div>
+                    <span class="text-xl font-bold text-slate-100">MAH. HaSib</span>
+                </div>
+                <button id="close-menu-btn" class="text-slate-100 hover:text-primary transition-colors">
+                    <span class="material-symbols-outlined text-3xl">close</span>
+                </button>
+            </div>
+            <nav class="flex flex-col gap-6">
+                <a class="text-2xl font-bold text-slate-100 hover:text-primary transition-colors no-underline"
+                    href="./index.html">Home</a>
+                <a class="text-2xl font-bold text-slate-100 hover:text-primary transition-colors no-underline"
+                    href="./mywork.html">Work</a>
+                <a class="text-2xl font-bold text-slate-100 hover:text-primary transition-colors no-underline"
+                    href="./myservice.html">Services</a>
+                <a class="text-2xl font-bold text-primary transition-colors no-underline" href="./abuot.html">About</a>
+                <a class="text-2xl font-bold text-slate-100 hover:text-primary transition-colors no-underline"
+                    href="./blog.html">Blog</a>
+            </nav>
+            <div class="mt-auto pt-8 border-t border-white/10 flex flex-col gap-4">
+                <a href="mailto:mah.hasib015@gmail.com"
+                    class="text-primary font-bold uppercase tracking-widest no-underline">Hire Me</a>
+                <a href="./contactfrom.html"
+                    class="bg-primary text-white py-4 rounded-xl font-bold text-center no-underline">Get Started</a>
+            </div>
+        </div>
+    </div>
     <main class="bg-mesh">
         <main class="flex-1 max-w-5xl mx-auto w-full px-4 py-12 space-y-24">
             <!-- Hero Section: Who I Am -->
@@ -877,6 +902,31 @@
             updateWatermarkClock();
             setInterval(updateWatermarkClock, 1000);
             window.addEventListener('resize', updateWatermarkClock);
+
+            // ===== Mobile Menu Toggle =====
+            const mobileMenuBtn = document.getElementById('mobile-menu-btn');
+            const closeMenuBtn = document.getElementById('close-menu-btn');
+            const mobileMenu = document.getElementById('mobile-menu');
+
+            if (mobileMenuBtn && closeMenuBtn && mobileMenu) {
+                mobileMenuBtn.addEventListener('click', () => {
+                    mobileMenu.classList.remove('translate-x-full');
+                    document.body.style.overflow = 'hidden';
+                });
+
+                closeMenuBtn.addEventListener('click', () => {
+                    mobileMenu.classList.add('translate-x-full');
+                    document.body.style.overflow = '';
+                });
+
+                // Close menu when clicking on a link
+                mobileMenu.querySelectorAll('a').forEach(link => {
+                    link.addEventListener('click', () => {
+                        mobileMenu.classList.add('translate-x-full');
+                        document.body.style.overflow = '';
+                    });
+                });
+            }
         </script>
 </body>
 
