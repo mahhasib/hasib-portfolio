@@ -361,13 +361,13 @@
                 </div>
             </div>
             <nav class="hidden md:flex items-center gap-8">
-                <a class="text-sm font-medium hover:text-primary transition-colors nav-link-anim" href="#home">Home</a>
-                <a class="text-sm font-medium hover:text-primary transition-colors nav-link-anim" href="#work">Work</a>
+                <a class="text-sm font-medium text-primary transition-colors nav-link-anim" href="./index.html">Home</a>
+                <a class="text-sm font-medium hover:text-primary transition-colors nav-link-anim" href="./mywork.html">Work</a>
                 <a class="text-sm font-medium hover:text-primary transition-colors nav-link-anim"
-                    href="#services">Services</a>
+                    href="./myservice.html">Services</a>
                 <a class="text-sm font-medium hover:text-primary transition-colors nav-link-anim"
-                    href="#about">About</a>
-                <a class="text-sm font-medium hover:text-primary transition-colors nav-link-anim" href="#blog">Blog</a>
+                    href="./abuot.html">About</a>
+                <a class="text-sm font-medium hover:text-primary transition-colors nav-link-anim" href="./blog.html">Blog</a>
             </nav>
             <div class="flex items-center gap-4">
                 <a href="mailto:mah.hasib015@gmail.com"
@@ -376,9 +376,41 @@
                 <a href="./contactfrom.html"
                     class="hidden sm:block bg-primary text-white px-5 py-2 rounded-lg text-sm font-bold hover:bg-primary/90 transition-all no-underline">Get
                     Started</a>
+                <!-- Mobile Menu Button -->
+                <button id="mobile-menu-btn" class="md:hidden text-slate-100 hover:text-primary transition-colors">
+                    <span class="material-symbols-outlined text-3xl">menu</span>
+                </button>
             </div>
         </div>
     </header>
+
+    <!-- Mobile Menu Overlay -->
+    <div id="mobile-menu" class="fixed inset-0 z-[60] bg-background-dark/95 backdrop-blur-xl translate-x-full transition-transform duration-300 md:hidden">
+        <div class="flex flex-col h-full p-8">
+            <div class="flex items-center justify-between mb-12">
+                <div class="flex items-center gap-4">
+                    <div class="w-10 h-10 rounded-lg flex items-center justify-center border border-primary/20 bg-primary/10">
+                        <span class="text-primary text-2xl font-bold">أ</span>
+                    </div>
+                    <span class="text-xl font-bold text-slate-100">MAH. HaSib</span>
+                </div>
+                <button id="close-menu-btn" class="text-slate-100 hover:text-primary transition-colors">
+                    <span class="material-symbols-outlined text-3xl">close</span>
+                </button>
+            </div>
+            <nav class="flex flex-col gap-6">
+                <a class="text-2xl font-bold text-primary transition-colors no-underline" href="./index.html">Home</a>
+                <a class="text-2xl font-bold text-slate-100 hover:text-primary transition-colors no-underline" href="./mywork.html">Work</a>
+                <a class="text-2xl font-bold text-slate-100 hover:text-primary transition-colors no-underline" href="./myservice.html">Services</a>
+                <a class="text-2xl font-bold text-slate-100 hover:text-primary transition-colors no-underline" href="./abuot.html">About</a>
+                <a class="text-2xl font-bold text-slate-100 hover:text-primary transition-colors no-underline" href="./blog.html">Blog</a>
+            </nav>
+            <div class="mt-auto pt-8 border-t border-white/10 flex flex-col gap-4">
+                <a href="mailto:mah.hasib015@gmail.com" class="text-primary font-bold uppercase tracking-widest no-underline">Hire Me</a>
+                <a href="./contactfrom.html" class="bg-primary text-white py-4 rounded-xl font-bold text-center no-underline">Get Started</a>
+            </div>
+        </div>
+    </div>
     <main class="bg-mesh">
         <!-- Hero Section -->
         <section class="relative px-4 py-20 lg:py-32 overflow-hidden">
@@ -1502,6 +1534,31 @@
                     }
                 });
             });
+
+            // ===== Mobile Menu Toggle =====
+            const mobileMenuBtn = document.getElementById('mobile-menu-btn');
+            const closeMenuBtn = document.getElementById('close-menu-btn');
+            const mobileMenu = document.getElementById('mobile-menu');
+
+            if (mobileMenuBtn && closeMenuBtn && mobileMenu) {
+                mobileMenuBtn.addEventListener('click', () => {
+                    mobileMenu.classList.remove('translate-x-full');
+                    document.body.style.overflow = 'hidden';
+                });
+
+                closeMenuBtn.addEventListener('click', () => {
+                    mobileMenu.classList.add('translate-x-full');
+                    document.body.style.overflow = '';
+                });
+
+                // Close menu when clicking on a link
+                mobileMenu.querySelectorAll('a').forEach(link => {
+                    link.addEventListener('click', () => {
+                        mobileMenu.classList.add('translate-x-full');
+                        document.body.style.overflow = '';
+                    });
+                });
+            }
         });
 
         // ===== Copy to Clipboard Function =====
