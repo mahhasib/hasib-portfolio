@@ -326,6 +326,68 @@
         .periodic-glow-logo {
             animation: logoGlow 30s infinite;
         }
+
+        /* ===== BRAND CARD SMOOTH ANIMATIONS ===== */
+        .brand-card {
+            transition: transform 0.5s cubic-bezier(0.22, 1, 0.36, 1),
+                box-shadow 0.5s cubic-bezier(0.22, 1, 0.36, 1),
+                border-color 0.5s cubic-bezier(0.22, 1, 0.36, 1),
+                background-color 0.5s cubic-bezier(0.22, 1, 0.36, 1);
+        }
+
+        .brand-card:hover {
+            transform: translateY(-10px) scale(1.04);
+            box-shadow: 0 20px 40px -12px rgba(140, 37, 244, 0.3),
+                0 0 20px rgba(140, 37, 244, 0.1);
+        }
+
+        .brand-card img {
+            transition: transform 0.5s cubic-bezier(0.22, 1, 0.36, 1),
+                filter 0.5s cubic-bezier(0.22, 1, 0.36, 1);
+        }
+
+        .brand-card:hover img {
+            transform: scale(1.15);
+        }
+
+        .brand-card span {
+            transition: color 0.4s cubic-bezier(0.22, 1, 0.36, 1),
+                letter-spacing 0.4s cubic-bezier(0.22, 1, 0.36, 1);
+        }
+
+        .brand-card:hover span {
+            letter-spacing: 0.15em;
+        }
+
+        /* Subtle float for brand cards after entry */
+        @keyframes brandFloat {
+
+            0%,
+            100% {
+                transform: translateY(0);
+            }
+
+            50% {
+                transform: translateY(-6px);
+            }
+        }
+
+        .brand-card.anim-visible {
+            animation: slideInScale 0.8s cubic-bezier(0.22, 1, 0.36, 1) both,
+                brandFloat 5s ease-in-out 1.5s infinite;
+        }
+
+        .brand-card:nth-child(2).anim-visible {
+            animation-delay: 0.1s, 1.7s;
+        }
+
+        .brand-card:nth-child(3).anim-visible {
+            animation-delay: 0.2s, 1.9s;
+        }
+
+        .brand-card:nth-child(4).anim-visible {
+            animation-delay: 0.3s, 2.1s;
+        }
     </style>
 </head>
 
@@ -446,17 +508,17 @@
                             I create high-end digital experiences for forward-thinking brands. Let's build something
                             exceptional together that resonates with your audience.
                         </p>
-                        <div class="flex flex-wrap gap-4" data-anim="fade-up" data-delay="700">
+                        <div class="flex flex-wrap gap-2 sm:gap-4" data-anim="fade-up" data-delay="700">
                             <a href="./mywork.html"
-                                class="px-8 py-4 bg-primary text-white font-bold rounded-xl hover:scale-105 transition-transform inline-flex items-center no-underline">View
+                                class="px-4 py-2 sm:px-8 sm:py-4 text-[10px] sm:text-base bg-primary text-white font-bold rounded-xl hover:scale-105 transition-transform inline-flex items-center no-underline">View
                                 Work</a>
                             <a href="./cv.html"
-                                class="px-8 py-4 bg-white/10 text-white font-bold rounded-xl border border-white/20 hover:bg-white/20 transition-all inline-flex items-center gap-2 no-underline">
-                                <span class="material-symbols-outlined text-lg">download</span>
+                                class="px-4 py-2 sm:px-8 sm:py-4 text-[10px] sm:text-base bg-white/10 text-white font-bold rounded-xl border border-white/20 hover:bg-white/20 transition-all inline-flex items-center gap-1 sm:gap-2 no-underline">
+                                <span class="material-symbols-outlined text-sm sm:text-lg">download</span>
                                 Get CV</a>
                             <a href="tel:+8801570228111"
-                                class="px-8 py-4 bg-slate-800 text-white font-bold rounded-xl border border-slate-700 hover:bg-slate-700 transition-colors inline-flex items-center gap-2 no-underline">
-                                <span class="material-symbols-outlined text-lg">call</span>
+                                class="px-4 py-2 sm:px-8 sm:py-4 text-[10px] sm:text-base bg-slate-800 text-white font-bold rounded-xl border border-slate-700 hover:bg-slate-700 transition-colors inline-flex items-center gap-1 sm:gap-2 no-underline">
+                                <span class="material-symbols-outlined text-sm sm:text-lg">call</span>
                                 Contact Me</a>
                         </div>
                     </div>
