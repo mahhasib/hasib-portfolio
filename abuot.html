@@ -237,6 +237,37 @@
         .hobby-card:hover {
             transform: scale(1.05);
         }
+
+        /* ===== SKILL CAROUSEL ANIMATION ===== */
+        .skill-carousel-wrapper {
+            overflow: hidden;
+            width: 100%;
+            position: relative;
+            padding: 10px 0;
+            mask-image: linear-gradient(to right, transparent, black 10%, black 90%, transparent);
+            -webkit-mask-image: linear-gradient(to right, transparent, black 10%, black 90%, transparent);
+        }
+
+        .skill-carousel-track {
+            display: flex;
+            gap: 1rem;
+            width: max-content;
+            animation: skillScroll 25s linear infinite;
+        }
+
+        .skill-carousel-track:hover {
+            animation-play-state: paused;
+        }
+
+        @keyframes skillScroll {
+            0% {
+                transform: translateX(0);
+            }
+
+            100% {
+                transform: translateX(-50%);
+            }
+        }
     </style>
 </head>
 
@@ -421,6 +452,65 @@
                     </div>
                 </div>
             </section>
+            <!-- Skills Section -->
+            <div class="space-y-4 text-center" data-anim="fade-up" data-delay="500">
+                <h3 class="text-xl font-bold flex items-center justify-center gap-2">
+                    <span class="material-symbols-outlined text-primary">psychology</span>
+                    Expertise
+                </h3>
+
+                <!-- Skill Carousel for All Screen Sizes -->
+                <div class="skill-carousel-wrapper">
+                    <div class="skill-carousel-track">
+                        <!-- Original Set -->
+                        <span
+                            class="px-5 py-2 bg-primary/10 border border-primary/20 text-primary rounded-full text-sm font-bold uppercase skill-tag whitespace-nowrap">Graphic
+                            Design</span>
+                        <span
+                            class="px-5 py-2 bg-primary/10 border border-primary/20 text-primary rounded-full text-sm font-bold uppercase skill-tag whitespace-nowrap">Adobe</span>
+                        <span
+                            class="px-5 py-2 bg-primary/10 border border-primary/20 text-primary rounded-full text-sm font-bold uppercase skill-tag whitespace-nowrap">Adobe
+                            Illustrator</span>
+                        <span
+                            class="px-5 py-2 bg-primary/10 border border-primary/20 text-primary rounded-full text-sm font-bold uppercase skill-tag whitespace-nowrap">Figma</span>
+                        <span
+                            class="px-5 py-2 bg-primary/10 border border-primary/20 text-primary rounded-full text-sm font-bold uppercase skill-tag whitespace-nowrap">Adobe
+                            Photoshop</span>
+                        <span
+                            class="px-5 py-2 bg-primary/10 border border-primary/20 text-primary rounded-full text-sm font-bold uppercase skill-tag whitespace-nowrap">HTML</span>
+                        <span
+                            class="px-5 py-2 bg-primary/10 border border-primary/20 text-primary rounded-full text-sm font-bold uppercase skill-tag whitespace-nowrap">CSS</span>
+                        <span
+                            class="px-5 py-2 bg-primary/10 border border-primary/20 text-primary rounded-full text-sm font-bold uppercase skill-tag whitespace-nowrap">CMS</span>
+                        <span
+                            class="px-5 py-2 bg-primary/10 border border-primary/20 text-primary rounded-full text-sm font-bold uppercase skill-tag whitespace-nowrap">Wordpress</span>
+
+                        <!-- Duplicate Set for Seamless Loop -->
+                        <span
+                            class="px-5 py-2 bg-primary/10 border border-primary/20 text-primary rounded-full text-sm font-bold uppercase skill-tag whitespace-nowrap">Graphic
+                            Design</span>
+                        <span
+                            class="px-5 py-2 bg-primary/10 border border-primary/20 text-primary rounded-full text-sm font-bold uppercase skill-tag whitespace-nowrap">Adobe</span>
+                        <span
+                            class="px-5 py-2 bg-primary/10 border border-primary/20 text-primary rounded-full text-sm font-bold uppercase skill-tag whitespace-nowrap">Adobe
+                            Illustrator</span>
+                        <span
+                            class="px-5 py-2 bg-primary/10 border border-primary/20 text-primary rounded-full text-sm font-bold uppercase skill-tag whitespace-nowrap">Figma</span>
+                        <span
+                            class="px-5 py-2 bg-primary/10 border border-primary/20 text-primary rounded-full text-sm font-bold uppercase skill-tag whitespace-nowrap">Adobe
+                            Photoshop</span>
+                        <span
+                            class="px-5 py-2 bg-primary/10 border border-primary/20 text-primary rounded-full text-sm font-bold uppercase skill-tag whitespace-nowrap">HTML</span>
+                        <span
+                            class="px-5 py-2 bg-primary/10 border border-primary/20 text-primary rounded-full text-sm font-bold uppercase skill-tag whitespace-nowrap">CSS</span>
+                        <span
+                            class="px-5 py-2 bg-primary/10 border border-primary/20 text-primary rounded-full text-sm font-bold uppercase skill-tag whitespace-nowrap">CMS</span>
+                        <span
+                            class="px-5 py-2 bg-primary/10 border border-primary/20 text-primary rounded-full text-sm font-bold uppercase skill-tag whitespace-nowrap">Wordpress</span>
+                    </div>
+                </div>
+            </div>
+            </div>
             <!-- Timeline: Experience & Education -->
             <section class="space-y-12">
                 <div class="text-center" data-anim="fade-up" data-delay="100">
@@ -574,14 +664,14 @@
                     <h2 class="text-2xl md:text-3xl font-bold text-white">Let's build something <br />extraordinary
                         together.</h2>
                     <div class="flex flex-col sm:flex-row gap-3 justify-center">
-                        <button
-                            class="bg-white text-primary px-6 py-2.5 rounded-lg font-bold text-base hover:bg-slate-100 transition-all shadow-lg">
+                        <a href="./contactfrom.html"
+                            class="bg-white text-primary px-6 py-2.5 rounded-lg font-bold text-base hover:bg-slate-100 transition-all shadow-lg no-underline">
                             Get in Touch
-                        </button>
-                        <button
-                            class="bg-primary border-2 border-white/30 text-white px-6 py-2.5 rounded-lg font-bold text-base hover:bg-white/10 transition-all">
-                            View Resume
-                        </button>
+                        </a>
+                        <a href="./cv.html"
+                            class="bg-primary border-2 border-white/30 text-white px-6 py-2.5 rounded-lg font-bold text-base hover:bg-white/10 transition-all no-underline">
+                            View CV or Resume
+                        </a>
                     </div>
                 </div>
                 <section class="max-w-3xl mx-auto mt-8" data-anim="fade-up" data-delay="300">

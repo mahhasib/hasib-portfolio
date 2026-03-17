@@ -1247,29 +1247,36 @@
             }
 
             // Enhanced Watermark Clock
+            // Enhanced Watermark Clock
             function updateWatermarkClock() {
-                const clockElement = document.getElementById('footer-watermark');
-                if (!clockElement) return;
+                const watermark = document.getElementById('footer-watermark');
+                if (watermark) {
+                    const now = new Date();
+                    const isMobile = window.innerWidth < 768;
 
-                const now = new Date();
+                    const options = {
+                        day: '2-digit',
+                        month: isMobile ? 'short' : 'long',
+                        year: 'numeric',
+                        hour: '2-digit',
+                        minute: '2-digit',
+                        second: isMobile ? undefined : '2-digit',
+                        hour12: true
+                    };
 
-                // Format: YYYY.MM.DD
-                const year = now.getFullYear();
-                const month = String(now.getMonth() + 1).padStart(2, '0');
-                const day = String(now.getDate()).padStart(2, '0');
-
-                // Format: HH:MM:SS
-                const hours = String(now.getHours()).padStart(2, '0');
-                const minutes = String(now.getMinutes()).padStart(2, '0');
-                const seconds = String(now.getSeconds()).padStart(2, '0');
-
-                // Final format: DB-2024.03.15 :: 14:30:45
-                clockElement.textContent = `SYSTEM-${year}.${month}.${day} :: ${hours}:${minutes}:${seconds}`;
+                    let formatted = now.toLocaleDateString('en-GB', options);
+                    if (!isMobile) {
+                        formatted = formatted.replace(',', ' |');
+                    } else {
+                        // For mobile, just a simple space
+                        formatted = formatted.replace(',', '');
+                    }
+                    watermark.textContent = formatted;
+                }
             }
-
-            // Update immediately and then every second
             updateWatermarkClock();
             setInterval(updateWatermarkClock, 1000);
+            window.addEventListener('resize', updateWatermarkClock);
         </script>
 </body>
 
