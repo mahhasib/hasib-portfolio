@@ -385,477 +385,570 @@
 
 <body class="bg-background-light dark:bg-background-dark text-slate-900 dark:text-slate-100 min-h-screen flex flex-col">
     <!-- Top Navigation -->
-    <header
-        class="sticky top-0 z-50 border-b border-primary/20 bg-background-light/80 dark:bg-background-dark/80 backdrop-blur-md">
-        <div class="max-w-5xl mx-auto flex items-center justify-between p-4">
-            <div class="flex items-center gap-2">
-                <span class="material-symbols-outlined text-primary text-3xl">terminal</span>
-                <h2 class="text-xl font-bold tracking-tight">Portfolio</h2>
+    <!-- Header / TopAppBar -->
+    <header class="sticky top-0 z-50 w-full border-b border-primary/10 bg-background-dark/80 backdrop-blur-md">
+        <div class="mx-auto flex h-16 max-w-7xl items-center justify-between px-4 sm:px-6 lg:px-8">
+            <div class="flex items-center gap-4">
+                <a href="./index.html" class="flex items-center gap-4 no-underline">
+                    <div
+                        class="w-10 h-10 rounded-lg flex items-center justify-center border border-primary/20 bg-primary/10 periodic-glow-logo relative overflow-hidden group">
+                        <span
+                            class="text-primary text-2xl font-bold leading-none select-none relative z-10 group-hover:scale-110 transition-transform">أ</span>
+                        <div
+                            class="absolute inset-0 bg-gradient-to-t from-primary/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity">
+                        </div>
+                    </div>
+                    <h2 class="text-xl font-bold tracking-tight text-slate-100">MAH. HaSib</h2>
+                </a>
+                <!-- Navigation History Buttons (Desktop/Tablet Only) -->
+                <div class="hidden md:flex items-center gap-2 ml-4 border-l border-white/10 pl-4">
+                    <button onclick="window.history.back()"
+                        class="w-8 h-8 flex items-center justify-center rounded-full bg-white/5 hover:bg-white/10 text-slate-300 transition-colors"
+                        title="Go Back">
+                        <span class="material-symbols-outlined text-sm">arrow_back</span>
+                    </button>
+                    <button onclick="window.history.forward()"
+                        class="w-8 h-8 flex items-center justify-center rounded-full bg-white/5 hover:bg-white/10 text-slate-300 transition-colors"
+                        title="Go Forward">
+                        <span class="material-symbols-outlined text-sm">arrow_forward</span>
+                    </button>
+                </div>
             </div>
             <nav class="hidden md:flex items-center gap-8">
-                <a class="text-sm font-medium hover:text-primary transition-colors nav-link-anim" href="#">Home</a>
-                <a class="text-sm font-medium hover:text-primary transition-colors nav-link-anim" href="#">About</a>
-                <a class="text-sm font-medium hover:text-primary transition-colors nav-link-anim" href="#">Projects</a>
-                <a class="text-sm font-bold text-primary border-b-2 border-primary pb-1" href="#">CV</a>
+                <a class="text-sm font-medium text-primary transition-colors nav-link-anim" href="./index.html">Home</a>
+                <a class="text-sm font-medium hover:text-primary transition-colors nav-link-anim"
+                    href="./mywork.html">Work</a>
+                <a class="text-sm font-medium hover:text-primary transition-colors nav-link-anim"
+                    href="./myservice.html">Services</a>
+                <a class="text-sm font-medium hover:text-primary transition-colors nav-link-anim"
+                    href="./abuot.html">About</a>
+                <a class="text-sm font-medium hover:text-primary transition-colors nav-link-anim"
+                    href="./blog.html">Blog</a>
             </nav>
-            <a class="px-5 py-2 bg-primary text-white rounded-full text-sm font-bold hover:bg-primary/90 transition-colors"
-                href="#">Contact</a>
+            <div class="flex items-center gap-4">
+                <a href="mailto:mah.hasib015@gmail.com"
+                    class="hidden sm:block text-primary text-sm font-bold tracking-wide uppercase no-underline">Hire
+                    Me</a>
+                <a href="./contactfrom.html"
+                    class="hidden sm:block bg-primary text-white px-5 py-2 rounded-lg text-sm font-bold hover:bg-primary/90 transition-all no-underline">Get
+                    Started</a>
+                <!-- Mobile Menu Button -->
+                <button id="mobile-menu-btn"
+                    class="md:hidden flex items-center justify-center w-10 h-10 rounded-lg bg-white/5 hover:bg-white/10 border border-white/10 text-slate-100 hover:text-primary active:scale-95 transition-all">
+                    <span class="material-symbols-outlined text-2xl">menu</span>
+                </button>
+            </div>
         </div>
     </header>
-    <main class="flex-1 max-w-5xl mx-auto w-full px-4 py-8">
-        <!-- Hero Carousel -->
-        <div class="hero-carousel" data-anim="scale-in" data-delay="200">
-            <!-- Slide 1: CV -->
-            <div class="hero-slide active" data-slide="0">
-                <div class="relative overflow-hidden rounded-xl bg-primary/10 border border-primary/20">
-                    <div class="absolute inset-0 opacity-20 pointer-events-none"
-                        style="background-image: radial-gradient(circle at 2px 2px, #8c25f4 1px, transparent 0); background-size: 24px 24px;">
-                    </div>
+
+    <!-- Mobile Menu Overlay -->
+    <div id="mobile-menu"
+        class="fixed inset-0 z-[60] bg-background-dark/95 backdrop-blur-xl translate-x-full transition-transform duration-300 md:hidden">
+        <div class="flex flex-col h-full p-8">
+            <div class="flex items-center justify-between mb-12">
+                <div class="flex items-center gap-4">
                     <div
-                        class="relative z-10 p-6 md:p-12 flex flex-col md:flex-row items-center justify-between gap-6 md:gap-8">
-                        <div>
-                            <h1 class="text-3xl md:text-5xl font-bold mb-3 md:mb-4">Curriculum Vitae</h1>
-                            <p class="text-slate-600 dark:text-slate-400 max-w-md text-sm md:text-lg">
-                                A comprehensive overview of my professional journey, educational background, and
-                                technical expertise.
-                            </p>
+                        class="w-10 h-10 rounded-lg flex items-center justify-center border border-primary/20 bg-primary/10">
+                        <span class="text-primary text-2xl font-bold">أ</span>
+                    </div>
+                    <span class="text-xl font-bold text-slate-100">MAH. HaSib</span>
+                </div>
+                <button id="close-menu-btn" class="text-slate-100 hover:text-primary transition-colors">
+                    <span class="material-symbols-outlined text-3xl">close</span>
+                </button>
+            </div>
+            <nav class="flex flex-col gap-6">
+                <a class="text-2xl font-bold text-primary transition-colors no-underline" href="./index.html">Home</a>
+                <a class="text-2xl font-bold text-slate-100 hover:text-primary transition-colors no-underline"
+                    href="./mywork.html">Work</a>
+                <a class="text-2xl font-bold text-slate-100 hover:text-primary transition-colors no-underline"
+                    href="./myservice.html">Services</a>
+                <a class="text-2xl font-bold text-slate-100 hover:text-primary transition-colors no-underline"
+                    href="./abuot.html">About</a>
+                <a class="text-2xl font-bold text-slate-100 hover:text-primary transition-colors no-underline"
+                    href="./blog.html">Blog</a>
+            </nav>
+            <div class="mt-auto pt-8 border-t border-white/10 flex flex-col gap-4">
+                <a href="mailto:mah.hasib015@gmail.com"
+                    class="text-primary font-bold uppercase tracking-widest no-underline">Hire Me</a>
+                <a href="./contactfrom.html"
+                    class="bg-primary text-white py-4 rounded-xl font-bold text-center no-underline">Get Started</a>
+            </div>
+        </div>
+    </div>
+    <main class="bg-mesh">
+        <main class="flex-1 max-w-5xl mx-auto w-full px-4 py-8">
+            <!-- Hero Carousel -->
+            <div class="hero-carousel" data-anim="scale-in" data-delay="200">
+                <!-- Slide 1: CV -->
+                <div class="hero-slide active" data-slide="0">
+                    <div class="relative overflow-hidden rounded-xl bg-primary/10 border border-primary/20">
+                        <div class="absolute inset-0 opacity-20 pointer-events-none"
+                            style="background-image: radial-gradient(circle at 2px 2px, #8c25f4 1px, transparent 0); background-size: 24px 24px;">
                         </div>
-                        <div class="shrink-0">
-                            <a href="CV-Mah-Hasib.pdf" download
-                                class="group flex items-center gap-2 md:gap-3 bg-primary text-white px-4 py-2 md:px-8 md:py-4 rounded-xl font-bold text-sm md:text-lg hover:shadow-lg hover:shadow-primary/30 transition-all active:scale-95 no-underline">
-                                <span class="material-symbols-outlined text-xl md:text-2xl">download</span>
-                                Download Full CV
-                            </a>
+                        <div
+                            class="relative z-10 p-6 md:p-12 flex flex-col md:flex-row items-center justify-between gap-6 md:gap-8">
+                            <div>
+                                <h1 class="text-3xl md:text-5xl font-bold mb-3 md:mb-4">Curriculum Vitae</h1>
+                                <p class="text-slate-600 dark:text-slate-400 max-w-md text-sm md:text-lg">
+                                    A comprehensive overview of my professional journey, educational background, and
+                                    technical expertise.
+                                </p>
+                            </div>
+                            <div class="shrink-0">
+                                <a href="CV-Mah-Hasib.pdf" download
+                                    class="group flex items-center gap-2 md:gap-3 bg-primary text-white px-4 py-2 md:px-8 md:py-4 rounded-xl font-bold text-sm md:text-lg hover:shadow-lg hover:shadow-primary/30 transition-all active:scale-95 no-underline">
+                                    <span class="material-symbols-outlined text-xl md:text-2xl">download</span>
+                                    Download Full CV
+                                </a>
+                            </div>
                         </div>
                     </div>
                 </div>
-            </div>
-            <!-- Slide 2: Resume -->
-            <div class="hero-slide" data-slide="1">
-                <div class="relative overflow-hidden rounded-xl bg-primary/10 border border-primary/20">
-                    <div class="absolute inset-0 opacity-20 pointer-events-none"
-                        style="background-image: radial-gradient(circle at 2px 2px, #8c25f4 1px, transparent 0); background-size: 24px 24px;">
-                    </div>
-                    <div
-                        class="relative z-10 p-6 md:p-12 flex flex-col md:flex-row items-center justify-between gap-6 md:gap-8">
-                        <div>
-                            <h1 class="text-3xl md:text-5xl font-bold mb-3 md:mb-4">Resume</h1>
-                            <p class="text-slate-600 dark:text-slate-400 max-w-md text-sm md:text-lg">
-                                A comprehensive overview of my professional journey, educational background, and
-                                technical expertise.
-                            </p>
+                <!-- Slide 2: Resume -->
+                <div class="hero-slide" data-slide="1">
+                    <div class="relative overflow-hidden rounded-xl bg-primary/10 border border-primary/20">
+                        <div class="absolute inset-0 opacity-20 pointer-events-none"
+                            style="background-image: radial-gradient(circle at 2px 2px, #8c25f4 1px, transparent 0); background-size: 24px 24px;">
                         </div>
-                        <div class="shrink-0">
-                            <a href="CV-Mah-Hasib.pdf" download
-                                class="group flex items-center gap-2 md:gap-3 bg-primary text-white px-4 py-2 md:px-8 md:py-4 rounded-xl font-bold text-sm md:text-lg hover:shadow-lg hover:shadow-primary/30 transition-all active:scale-95 no-underline">
-                                <span class="material-symbols-outlined text-xl md:text-2xl">download</span>
-                                Download Full Resume
-                            </a>
+                        <div
+                            class="relative z-10 p-6 md:p-12 flex flex-col md:flex-row items-center justify-between gap-6 md:gap-8">
+                            <div>
+                                <h1 class="text-3xl md:text-5xl font-bold mb-3 md:mb-4">Resume</h1>
+                                <p class="text-slate-600 dark:text-slate-400 max-w-md text-sm md:text-lg">
+                                    A comprehensive overview of my professional journey, educational background, and
+                                    technical expertise.
+                                </p>
+                            </div>
+                            <div class="shrink-0">
+                                <a href="CV-Mah-Hasib.pdf" download
+                                    class="group flex items-center gap-2 md:gap-3 bg-primary text-white px-4 py-2 md:px-8 md:py-4 rounded-xl font-bold text-sm md:text-lg hover:shadow-lg hover:shadow-primary/30 transition-all active:scale-95 no-underline">
+                                    <span class="material-symbols-outlined text-xl md:text-2xl">download</span>
+                                    Download Full Resume
+                                </a>
+                            </div>
                         </div>
                     </div>
                 </div>
-            </div>
-            <!-- Navigation Arrows 
+                <!-- Navigation Arrows 
             <button class="hero-arrow prev" onclick="heroCarousel.prev()">
                 <span class="material-symbols-outlined">chevron_left</span>
             </button>
             <button class="hero-arrow next" onclick="heroCarousel.next()">
                 <span class="material-symbols-outlined">chevron_right</span>
             </button> -->
-        </div>
-        <!-- Carousel Dots -->
-        <div class="hero-dots" style="margin-top: -2rem; margin-bottom: 2rem;">
-            <button class="hero-dot active" onclick="heroCarousel.goTo(0)"></button>
-            <button class="hero-dot" onclick="heroCarousel.goTo(1)"></button>
-        </div>
-        <div class="grid grid-cols-1 lg:grid-cols-3 gap-12">
-            <!-- Left Column: Preview & Skills -->
-            <div class="lg:col-span-1 space-y-8">
-                <!-- Visual Preview Card -->
-                <div class="bg-white dark:bg-slate-900/50 p-6 rounded-xl border border-primary/10 shadow-sm cv-card"
-                    data-anim="fade-left" data-delay="300">
-                    <h3 class="text-sm font-bold text-primary uppercase tracking-widest mb-4">Document Preview</h3>
-                    <div class="aspect-[1/1.4] bg-slate-200 dark:bg-slate-800 rounded-lg overflow-hidden border border-slate-300 dark:border-slate-700 relative group cursor-pointer"
-                        data-alt="Professional resume document visual representation">
-                        <div class="p-4 space-y-3 opacity-50">
-                            <div class="h-4 w-1/2 bg-slate-400 dark:bg-slate-600 rounded"></div>
-                            <div class="h-2 w-full bg-slate-300 dark:bg-slate-700 rounded"></div>
-                            <div class="h-2 w-full bg-slate-300 dark:bg-slate-700 rounded"></div>
-                            <div class="pt-4 h-4 w-1/3 bg-slate-400 dark:bg-slate-600 rounded"></div>
-                            <div class="h-2 w-full bg-slate-300 dark:bg-slate-700 rounded"></div>
-                            <div class="h-2 w-2/3 bg-slate-300 dark:bg-slate-700 rounded"></div>
-                        </div>
-                        <div
-                            class="absolute inset-0 flex items-center justify-center bg-background-dark/40 opacity-0 group-hover:opacity-100 transition-opacity z-10">
-                            <span class="material-symbols-outlined text-white text-4xl">visibility</span>
-                        </div>
-
-                        <!-- Full Screen Preview Overlay (Visible on Hover) -->
-                        <div
-                            class="fixed inset-0 z-[100] hidden group-hover:flex items-center justify-center bg-black/95 p-4 md:p-10 pointer-events-none">
+            </div>
+            <!-- Carousel Dots -->
+            <div class="hero-dots" style="margin-top: -2rem; margin-bottom: 2rem;">
+                <button class="hero-dot active" onclick="heroCarousel.goTo(0)"></button>
+                <button class="hero-dot" onclick="heroCarousel.goTo(1)"></button>
+            </div>
+            <div class="grid grid-cols-1 lg:grid-cols-3 gap-12">
+                <!-- Left Column: Preview & Skills -->
+                <div class="lg:col-span-1 space-y-8">
+                    <!-- Visual Preview Card -->
+                    <div class="bg-white dark:bg-slate-900/50 p-6 rounded-xl border border-primary/10 shadow-sm cv-card"
+                        data-anim="fade-left" data-delay="300">
+                        <h3 class="text-sm font-bold text-primary uppercase tracking-widest mb-4">Document Preview</h3>
+                        <div class="aspect-[1/1.4] bg-slate-200 dark:bg-slate-800 rounded-lg overflow-hidden border border-slate-300 dark:border-slate-700 relative group cursor-pointer"
+                            data-alt="Professional resume document visual representation">
+                            <div class="p-4 space-y-3 opacity-50">
+                                <div class="h-4 w-1/2 bg-slate-400 dark:bg-slate-600 rounded"></div>
+                                <div class="h-2 w-full bg-slate-300 dark:bg-slate-700 rounded"></div>
+                                <div class="h-2 w-full bg-slate-300 dark:bg-slate-700 rounded"></div>
+                                <div class="pt-4 h-4 w-1/3 bg-slate-400 dark:bg-slate-600 rounded"></div>
+                                <div class="h-2 w-full bg-slate-300 dark:bg-slate-700 rounded"></div>
+                                <div class="h-2 w-2/3 bg-slate-300 dark:bg-slate-700 rounded"></div>
+                            </div>
                             <div
-                                class="relative max-w-4xl w-full h-full flex flex-col items-center justify-center gap-4">
-                                <div class="absolute top-0 right-0 p-4 text-white/50 text-sm font-medium">Hovering
-                                    Preview Mode</div>
-                                <img src="cv_preview_mockup_1772898095582.png" alt="Full Screen CV Preview"
-                                    class="max-w-full max-h-full object-contain shadow-2xl rounded-lg animate-in zoom-in-95 duration-300">
-                                <p class="text-white/70 text-sm backdrop-blur-md bg-white/10 px-4 py-2 rounded-full">
-                                    Move mouse away to close preview</p>
+                                class="absolute inset-0 flex items-center justify-center bg-background-dark/40 opacity-0 group-hover:opacity-100 transition-opacity z-10">
+                                <span class="material-symbols-outlined text-white text-4xl">visibility</span>
+                            </div>
+
+                            <!-- Full Screen Preview Overlay (Visible on Hover) -->
+                            <div
+                                class="fixed inset-0 z-[100] hidden group-hover:flex items-center justify-center bg-black/95 p-4 md:p-10 pointer-events-none">
+                                <div
+                                    class="relative max-w-4xl w-full h-full flex flex-col items-center justify-center gap-4">
+                                    <div class="absolute top-0 right-0 p-4 text-white/50 text-sm font-medium">Hovering
+                                        Preview Mode</div>
+                                    <img src="cv_preview_mockup_1772898095582.png" alt="Full Screen CV Preview"
+                                        class="max-w-full max-h-full object-contain shadow-2xl rounded-lg animate-in zoom-in-95 duration-300">
+                                    <p
+                                        class="text-white/70 text-sm backdrop-blur-md bg-white/10 px-4 py-2 rounded-full">
+                                        Move mouse away to close preview</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Skills Section -->
+                    <div class="space-y-4" data-anim="fade-up" data-delay="500">
+                        <h3 class="text-xl font-bold flex items-center gap-2">
+                            <span class="material-symbols-outlined text-primary">psychology</span>
+                            Expertise
+                        </h3>
+                        <!-- Desktop: normal wrapped grid -->
+                        <div class="skill-grid-desktop flex-wrap gap-2">
+                            <span
+                                class="px-3 py-1 bg-primary/10 border border-primary/20 text-primary rounded-full text-xs font-bold uppercase skill-tag">Graphic
+                                Design</span>
+                            <span
+                                class="px-3 py-1 bg-primary/10 border border-primary/20 text-primary rounded-full text-xs font-bold uppercase skill-tag">Adobe</span>
+                            <span
+                                class="px-3 py-1 bg-primary/10 border border-primary/20 text-primary rounded-full text-xs font-bold uppercase skill-tag">Adobe
+                                Illustrator</span>
+                            <span
+                                class="px-3 py-1 bg-primary/10 border border-primary/20 text-primary rounded-full text-xs font-bold uppercase skill-tag">Figma</span>
+                            <span
+                                class="px-3 py-1 bg-primary/10 border border-primary/20 text-primary rounded-full text-xs font-bold uppercase skill-tag">Adobe
+                                Photoshop</span>
+                            <span
+                                class="px-3 py-1 bg-primary/10 border border-primary/20 text-primary rounded-full text-xs font-bold uppercase skill-tag">HTML</span>
+                            <span
+                                class="px-3 py-1 bg-primary/10 border border-primary/20 text-primary rounded-full text-xs font-bold uppercase skill-tag">CSS</span>
+                            <span
+                                class="px-3 py-1 bg-primary/10 border border-primary/20 text-primary rounded-full text-xs font-bold uppercase skill-tag">CMS</span>
+                        </div>
+                        <!-- Mobile: carousel animation -->
+                        <div class="skill-carousel-wrapper">
+                            <div class="skill-carousel-track">
+                                <span
+                                    class="px-3 py-1 bg-primary/10 border border-primary/20 text-primary rounded-full text-xs font-bold uppercase skill-tag whitespace-nowrap">UI
+                                    Design</span>
+                                <span
+                                    class="px-3 py-1 bg-primary/10 border border-primary/20 text-primary rounded-full text-xs font-bold uppercase skill-tag whitespace-nowrap">React</span>
+                                <span
+                                    class="px-3 py-1 bg-primary/10 border border-primary/20 text-primary rounded-full text-xs font-bold uppercase skill-tag whitespace-nowrap">Tailwind
+                                    CSS</span>
+                                <span
+                                    class="px-3 py-1 bg-primary/10 border border-primary/20 text-primary rounded-full text-xs font-bold uppercase skill-tag whitespace-nowrap">Figma</span>
+                                <span
+                                    class="px-3 py-1 bg-primary/10 border border-primary/20 text-primary rounded-full text-xs font-bold uppercase skill-tag whitespace-nowrap">JavaScript</span>
+                                <span
+                                    class="px-3 py-1 bg-primary/10 border border-primary/20 text-primary rounded-full text-xs font-bold uppercase skill-tag whitespace-nowrap">TypeScript</span>
+                                <span
+                                    class="px-3 py-1 bg-primary/10 border border-primary/20 text-primary rounded-full text-xs font-bold uppercase skill-tag whitespace-nowrap">Project
+                                    Management</span>
+                                <span
+                                    class="px-3 py-1 bg-primary/10 border border-primary/20 text-primary rounded-full text-xs font-bold uppercase skill-tag whitespace-nowrap">Node.js</span>
+                                <!-- Duplicate for seamless loop -->
+                                <span
+                                    class="px-3 py-1 bg-primary/10 border border-primary/20 text-primary rounded-full text-xs font-bold uppercase skill-tag whitespace-nowrap">UI
+                                    Design</span>
+                                <span
+                                    class="px-3 py-1 bg-primary/10 border border-primary/20 text-primary rounded-full text-xs font-bold uppercase skill-tag whitespace-nowrap">React</span>
+                                <span
+                                    class="px-3 py-1 bg-primary/10 border border-primary/20 text-primary rounded-full text-xs font-bold uppercase skill-tag whitespace-nowrap">Tailwind
+                                    CSS</span>
+                                <span
+                                    class="px-3 py-1 bg-primary/10 border border-primary/20 text-primary rounded-full text-xs font-bold uppercase skill-tag whitespace-nowrap">Figma</span>
+                                <span
+                                    class="px-3 py-1 bg-primary/10 border border-primary/20 text-primary rounded-full text-xs font-bold uppercase skill-tag whitespace-nowrap">JavaScript</span>
+                                <span
+                                    class="px-3 py-1 bg-primary/10 border border-primary/20 text-primary rounded-full text-xs font-bold uppercase skill-tag whitespace-nowrap">TypeScript</span>
+                                <span
+                                    class="px-3 py-1 bg-primary/10 border border-primary/20 text-primary rounded-full text-xs font-bold uppercase skill-tag whitespace-nowrap">Project
+                                    Management</span>
+                                <span
+                                    class="px-3 py-1 bg-primary/10 border border-primary/20 text-primary rounded-full text-xs font-bold uppercase skill-tag whitespace-nowrap">Node.js</span>
                             </div>
                         </div>
                     </div>
                 </div>
-                <!-- Skills Section -->
-                <div class="space-y-4" data-anim="fade-up" data-delay="500">
-                    <h3 class="text-xl font-bold flex items-center gap-2">
-                        <span class="material-symbols-outlined text-primary">psychology</span>
-                        Expertise
-                    </h3>
-                    <!-- Desktop: normal wrapped grid -->
-                    <div class="skill-grid-desktop flex-wrap gap-2">
-                        <span
-                            class="px-3 py-1 bg-primary/10 border border-primary/20 text-primary rounded-full text-xs font-bold uppercase skill-tag">UI
-                            Design</span>
-                        <span
-                            class="px-3 py-1 bg-primary/10 border border-primary/20 text-primary rounded-full text-xs font-bold uppercase skill-tag">React</span>
-                        <span
-                            class="px-3 py-1 bg-primary/10 border border-primary/20 text-primary rounded-full text-xs font-bold uppercase skill-tag">Tailwind
-                            CSS</span>
-                        <span
-                            class="px-3 py-1 bg-primary/10 border border-primary/20 text-primary rounded-full text-xs font-bold uppercase skill-tag">Figma</span>
-                        <span
-                            class="px-3 py-1 bg-primary/10 border border-primary/20 text-primary rounded-full text-xs font-bold uppercase skill-tag">JavaScript</span>
-                        <span
-                            class="px-3 py-1 bg-primary/10 border border-primary/20 text-primary rounded-full text-xs font-bold uppercase skill-tag">TypeScript</span>
-                        <span
-                            class="px-3 py-1 bg-primary/10 border border-primary/20 text-primary rounded-full text-xs font-bold uppercase skill-tag">Project
-                            Management</span>
-                        <span
-                            class="px-3 py-1 bg-primary/10 border border-primary/20 text-primary rounded-full text-xs font-bold uppercase skill-tag">Node.js</span>
-                    </div>
-                    <!-- Mobile: carousel animation -->
-                    <div class="skill-carousel-wrapper">
-                        <div class="skill-carousel-track">
+                <!-- Right Column: Experience & Education -->
+                <div class="lg:col-span-2 space-y-6 md:space-y-12">
+                    <!-- Work Experience -->
+                    <section>
+                        <div class="flex items-center gap-2 md:gap-3 mb-4 md:mb-8" data-anim="fade-left"
+                            data-delay="200">
                             <span
-                                class="px-3 py-1 bg-primary/10 border border-primary/20 text-primary rounded-full text-xs font-bold uppercase skill-tag whitespace-nowrap">UI
-                                Design</span>
-                            <span
-                                class="px-3 py-1 bg-primary/10 border border-primary/20 text-primary rounded-full text-xs font-bold uppercase skill-tag whitespace-nowrap">React</span>
-                            <span
-                                class="px-3 py-1 bg-primary/10 border border-primary/20 text-primary rounded-full text-xs font-bold uppercase skill-tag whitespace-nowrap">Tailwind
-                                CSS</span>
-                            <span
-                                class="px-3 py-1 bg-primary/10 border border-primary/20 text-primary rounded-full text-xs font-bold uppercase skill-tag whitespace-nowrap">Figma</span>
-                            <span
-                                class="px-3 py-1 bg-primary/10 border border-primary/20 text-primary rounded-full text-xs font-bold uppercase skill-tag whitespace-nowrap">JavaScript</span>
-                            <span
-                                class="px-3 py-1 bg-primary/10 border border-primary/20 text-primary rounded-full text-xs font-bold uppercase skill-tag whitespace-nowrap">TypeScript</span>
-                            <span
-                                class="px-3 py-1 bg-primary/10 border border-primary/20 text-primary rounded-full text-xs font-bold uppercase skill-tag whitespace-nowrap">Project
-                                Management</span>
-                            <span
-                                class="px-3 py-1 bg-primary/10 border border-primary/20 text-primary rounded-full text-xs font-bold uppercase skill-tag whitespace-nowrap">Node.js</span>
-                            <!-- Duplicate for seamless loop -->
-                            <span
-                                class="px-3 py-1 bg-primary/10 border border-primary/20 text-primary rounded-full text-xs font-bold uppercase skill-tag whitespace-nowrap">UI
-                                Design</span>
-                            <span
-                                class="px-3 py-1 bg-primary/10 border border-primary/20 text-primary rounded-full text-xs font-bold uppercase skill-tag whitespace-nowrap">React</span>
-                            <span
-                                class="px-3 py-1 bg-primary/10 border border-primary/20 text-primary rounded-full text-xs font-bold uppercase skill-tag whitespace-nowrap">Tailwind
-                                CSS</span>
-                            <span
-                                class="px-3 py-1 bg-primary/10 border border-primary/20 text-primary rounded-full text-xs font-bold uppercase skill-tag whitespace-nowrap">Figma</span>
-                            <span
-                                class="px-3 py-1 bg-primary/10 border border-primary/20 text-primary rounded-full text-xs font-bold uppercase skill-tag whitespace-nowrap">JavaScript</span>
-                            <span
-                                class="px-3 py-1 bg-primary/10 border border-primary/20 text-primary rounded-full text-xs font-bold uppercase skill-tag whitespace-nowrap">TypeScript</span>
-                            <span
-                                class="px-3 py-1 bg-primary/10 border border-primary/20 text-primary rounded-full text-xs font-bold uppercase skill-tag whitespace-nowrap">Project
-                                Management</span>
-                            <span
-                                class="px-3 py-1 bg-primary/10 border border-primary/20 text-primary rounded-full text-xs font-bold uppercase skill-tag whitespace-nowrap">Node.js</span>
+                                class="material-symbols-outlined text-primary bg-primary/10 p-1 md:p-2 rounded-lg text-xl md:text-2xl">work</span>
+                            <h2 class="text-lg md:text-2xl font-bold">Graphic Designer
+                                Self-employed</h2>
                         </div>
-                    </div>
+                        <div class="space-y-4 md:space-y-8 border-l-2 border-primary/20 ml-2 md:ml-4 pl-5 md:pl-8">
+                            <!-- Job 1 -->
+                            <div class="relative" data-anim="fade-right" data-delay="300">
+                                <div
+                                    class="absolute -left-[27px] md:-left-[41px] top-1 size-3 md:size-4 rounded-full bg-primary border-3 md:border-4 border-background-dark">
+                                </div>
+                                <div class="flex flex-col md:flex-row md:items-center justify-between mb-1 md:mb-2">
+                                    <h3 class="text-sm md:text-xl font-bold">Senior Product Designer</h3>
+                                    <span
+                                        class="text-xs md:text-sm font-medium text-primary bg-primary/10 px-2 py-0.5 md:px-3 md:py-1 rounded-full">2021
+                                        — Present</span>
+                                </div>
+                                <p
+                                    class="text-xs md:text-base text-slate-500 dark:text-slate-400 font-medium mb-1 md:mb-3">
+                                    TechFlow Solutions Inc.</p>
+                                <p class="text-xs md:text-base text-slate-600 dark:text-slate-300 leading-relaxed">
+                                    Leading the design system initiative and overseeing users.
+                                </p>
+                            </div>
+                        </div>
+                    </section>
+
+                    <!-- UI/UX Designer -->
+                    <section>
+                        <div class="flex items-center gap-2 md:gap-3 mb-4 md:mb-8" data-anim="fade-left"
+                            data-delay="200">
+                            <span
+                                class="material-symbols-outlined text-primary bg-primary/10 p-1 md:p-2 rounded-lg text-xl md:text-2xl">web</span>
+                            <h2 class="text-lg md:text-2xl font-bold">WordPress Developer</h2>
+                        </div>
+                        <div class="space-y-4 md:space-y-8 border-l-2 border-primary/20 ml-2 md:ml-4 pl-5 md:pl-8">
+                            <div class="relative" data-anim="fade-right" data-delay="300">
+                                <div
+                                    class="absolute -left-[27px] md:-left-[41px] top-1 size-3 md:size-4 rounded-full bg-primary border-3 md:border-4 border-background-dark">
+                                </div>
+                                <div class="flex flex-col md:flex-row md:items-center justify-between mb-1 md:mb-2">
+                                    <h3 class="text-sm md:text-xl font-bold">Website Development</h3>
+                                    <span
+                                        class="text-xs md:text-sm font-medium text-primary bg-primary/10 px-2 py-0.5 md:px-3 md:py-1 rounded-full">2025
+                                        — Present</span>
+                                </div>
+                                <p
+                                    class="text-xs md:text-base text-slate-500 dark:text-slate-400 font-medium mb-1 md:mb-3">
+                                    Creative Pixel Agency</p>
+                                <p class="text-xs md:text-base text-slate-600 dark:text-slate-300 leading-relaxed">
+                                    Delivered high-fidelity prototypes and interface designs for 10+ clients.
+                                </p>
+                            </div>
+                        </div>
+                    </section>
+                    <!-- UI/UX Designer -->
+                    <section>
+                        <div class="flex items-center gap-2 md:gap-3 mb-4 md:mb-8" data-anim="fade-left"
+                            data-delay="200">
+                            <span
+                                class="material-symbols-outlined text-primary bg-primary/10 p-1 md:p-2 rounded-lg text-xl md:text-2xl">build</span>
+                            <h2 class="text-lg md:text-2xl font-bold">Brand Identity</h2>
+                        </div>
+                        <div class="space-y-4 md:space-y-8 border-l-2 border-primary/20 ml-2 md:ml-4 pl-5 md:pl-8">
+                            <div class="relative" data-anim="fade-right" data-delay="300">
+                                <div
+                                    class="absolute -left-[27px] md:-left-[41px] top-1 size-3 md:size-4 rounded-full bg-primary border-3 md:border-4 border-background-dark">
+                                </div>
+                                <div class="flex flex-col md:flex-row md:items-center justify-between mb-1 md:mb-2">
+                                    <h3 class="text-sm md:text-xl font-bold">Brand Identity</h3>
+                                    <span
+                                        class="text-xs md:text-sm font-medium text-primary bg-primary/10 px-2 py-0.5 md:px-3 md:py-1 rounded-full">2024
+                                        — Present</span>
+                                </div>
+                                <p
+                                    class="text-xs md:text-base text-slate-500 dark:text-slate-400 font-medium mb-1 md:mb-3">
+                                    Creative Pixel Agency</p>
+                                <p class="text-xs md:text-base text-slate-600 dark:text-slate-300 leading-relaxed">
+                                    work on professional Collabration services.
+                                </p>
+                            </div>
+                        </div>
+                    </section>
+                    <!-- Education -->
+                    <section class="edu-section">
+                        <div class="flex items-center gap-2 md:gap-3 mb-4 md:mb-8 edu-header" data-anim="fade-left"
+                            data-delay="200">
+                            <span
+                                class="material-symbols-outlined text-primary bg-primary/10 p-1 md:p-2 rounded-lg">school</span>
+                            <h2 class="text-lg md:text-2xl font-bold">Education</h2>
+                        </div>
+                        <div
+                            class="space-y-4 md:space-y-8 border-l-2 border-primary/20 ml-2 md:ml-4 pl-5 md:pl-8 edu-timeline">
+                            <div class="relative edu-entry" data-anim="fade-right" data-delay="300">
+                                <div
+                                    class="absolute -left-[27px] md:-left-[41px] top-1 size-3 md:size-4 rounded-full bg-primary border-3 md:border-4 border-background-dark edu-dot">
+                                </div>
+                                <div class="flex flex-col md:flex-row md:items-center justify-between mb-1 md:mb-2">
+                                    <h3 class="text-sm md:text-xl font-bold edu-title">BSc - Biochemistry & Molecular
+                                        Biology</h3>
+                                    <span
+                                        class="text-xs md:text-sm font-medium text-primary bg-primary/10 px-2 py-0.5 md:px-3 md:py-1 rounded-full edu-badge">2022-23
+                                        — Present</span>
+                                </div>
+                                <p class="text-xs md:text-base text-slate-500 dark:text-slate-400 font-medium edu-info">
+                                    National University,Bangladesh
+                                </p>
+                                <p class="text-xs md:text-base text-slate-500 dark:text-slate-400 font-medium edu-info">
+                                    CGPA: Running</p>
+                            </div>
+                            <div class="relative edu-entry" data-anim="fade-right" data-delay="500">
+                                <div
+                                    class="absolute -left-[27px] md:-left-[41px] top-1 size-3 md:size-4 rounded-full bg-slate-400 dark:bg-slate-600 border-3 md:border-4 border-background-dark edu-dot">
+                                </div>
+                                <div class="flex flex-col md:flex-row md:items-center justify-between mb-1 md:mb-2">
+                                    <h3 class="text-sm md:text-xl font-bold edu-title">HSC - Higher Secondary
+                                        Certificate
+                                    </h3>
+                                    <span
+                                        class="text-xs md:text-sm font-medium text-slate-500 bg-slate-500/10 px-2 py-0.5 md:px-3 md:py-1 rounded-full edu-badge">2022
+                                    </span>
+                                </div>
+                                <p class="text-xs md:text-base text-slate-500 dark:text-slate-400 font-medium edu-info">
+                                    Kobi
+                                    Nazrul Govt. College</p>
+                                <p class="text-xs md:text-base text-slate-500 dark:text-slate-400 font-medium edu-info">
+                                    GPA:
+                                    3.86 in Science</p>
+                            </div>
+                            <div class="relative edu-entry" data-anim="fade-right" data-delay="500">
+                                <div
+                                    class="absolute -left-[27px] md:-left-[41px] top-1 size-3 md:size-4 rounded-full bg-slate-400 dark:bg-slate-600 border-3 md:border-4 border-background-dark edu-dot">
+                                </div>
+                                <div class="flex flex-col md:flex-row md:items-center justify-between mb-1 md:mb-2">
+                                    <h3 class="text-sm md:text-xl font-bold edu-title">SSC - Secondary School
+                                        Certificate
+                                    </h3>
+                                    <span
+                                        class="text-xs md:text-sm font-medium text-slate-500 bg-slate-500/10 px-2 py-0.5 md:px-3 md:py-1 rounded-full edu-badge">2020</span>
+                                </div>
+                                <p class="text-xs md:text-base text-slate-500 dark:text-slate-400 font-medium edu-info">
+                                    Mizmizi Paschim Para School &
+                                    College</p>
+                                <p class="text-xs md:text-base text-slate-500 dark:text-slate-400 font-medium edu-info">
+                                    GPA:
+                                    5.00 in Science</p>
+                            </div>
+                            <div class="relative edu-entry" data-anim="fade-right" data-delay="500">
+                                <div
+                                    class="absolute -left-[27px] md:-left-[41px] top-1 size-3 md:size-4 rounded-full bg-slate-400 dark:bg-slate-600 border-3 md:border-4 border-background-dark edu-dot">
+                                </div>
+                                <div class="flex flex-col md:flex-row md:items-center justify-between mb-1 md:mb-2">
+                                    <h3 class="text-sm md:text-xl font-bold edu-title">JSC - Junior Secondary
+                                        Certificate
+                                    </h3>
+                                    <span
+                                        class="text-xs md:text-sm font-medium text-slate-500 bg-slate-500/10 px-2 py-0.5 md:px-3 md:py-1 rounded-full edu-badge">2018</span>
+                                </div>
+                                <p class="text-xs md:text-base text-slate-500 dark:text-slate-400 font-medium edu-info">
+                                    Ghulam Mustafa Model School &
+                                    College</p>
+                                <p class="text-xs md:text-base text-slate-500 dark:text-slate-400 font-medium edu-info">
+                                    GPA:
+                                    4.86</p>
+                            </div>
+                            <div class="relative edu-entry" data-anim="fade-right" data-delay="500">
+                                <div
+                                    class="absolute -left-[27px] md:-left-[41px] top-1 size-3 md:size-4 rounded-full bg-slate-400 dark:bg-slate-600 border-3 md:border-4 border-background-dark edu-dot">
+                                </div>
+                                <div class="flex flex-col md:flex-row md:items-center justify-between mb-1 md:mb-2">
+                                    <h3 class="text-sm md:text-xl font-bold edu-title">PSC</h3>
+                                    <span
+                                        class="text-xs md:text-sm font-medium text-slate-500 bg-slate-500/10 px-2 py-0.5 md:px-3 md:py-1 rounded-full edu-badge">2015</span>
+                                </div>
+                                <p class="text-xs md:text-base text-slate-500 dark:text-slate-400 font-medium edu-info">
+                                    Bangladesh Ideal School & College
+                                </p>
+                                <p class="text-xs md:text-base text-slate-500 dark:text-slate-400 font-medium edu-info">
+                                    GPA:
+                                    4.17
+                                </p>
+                            </div>
+                        </div>
+                    </section>
                 </div>
             </div>
-            <!-- Right Column: Experience & Education -->
-            <div class="lg:col-span-2 space-y-6 md:space-y-12">
-                <!-- Work Experience -->
-                <section>
-                    <div class="flex items-center gap-2 md:gap-3 mb-4 md:mb-8" data-anim="fade-left" data-delay="200">
-                        <span
-                            class="material-symbols-outlined text-primary bg-primary/10 p-1 md:p-2 rounded-lg text-xl md:text-2xl">work</span>
-                        <h2 class="text-lg md:text-2xl font-bold">Graphic Designer
-                            Self-employed</h2>
-                    </div>
-                    <div class="space-y-4 md:space-y-8 border-l-2 border-primary/20 ml-2 md:ml-4 pl-5 md:pl-8">
-                        <!-- Job 1 -->
-                        <div class="relative" data-anim="fade-right" data-delay="300">
-                            <div
-                                class="absolute -left-[27px] md:-left-[41px] top-1 size-3 md:size-4 rounded-full bg-primary border-3 md:border-4 border-background-dark">
-                            </div>
-                            <div class="flex flex-col md:flex-row md:items-center justify-between mb-1 md:mb-2">
-                                <h3 class="text-sm md:text-xl font-bold">Senior Product Designer</h3>
-                                <span
-                                    class="text-xs md:text-sm font-medium text-primary bg-primary/10 px-2 py-0.5 md:px-3 md:py-1 rounded-full">2021
-                                    — Present</span>
-                            </div>
-                            <p class="text-xs md:text-base text-slate-500 dark:text-slate-400 font-medium mb-1 md:mb-3">
-                                TechFlow Solutions Inc.</p>
-                            <p class="text-xs md:text-base text-slate-600 dark:text-slate-300 leading-relaxed">
-                                Leading the design system initiative and overseeing users.
-                            </p>
-                        </div>
-                    </div>
-                </section>
-
-                <!-- UI/UX Designer -->
-                <section>
-                    <div class="flex items-center gap-2 md:gap-3 mb-4 md:mb-8" data-anim="fade-left" data-delay="200">
-                        <span
-                            class="material-symbols-outlined text-primary bg-primary/10 p-1 md:p-2 rounded-lg text-xl md:text-2xl">web</span>
-                        <h2 class="text-lg md:text-2xl font-bold">WordPress Developer</h2>
-                    </div>
-                    <div class="space-y-4 md:space-y-8 border-l-2 border-primary/20 ml-2 md:ml-4 pl-5 md:pl-8">
-                        <div class="relative" data-anim="fade-right" data-delay="300">
-                            <div
-                                class="absolute -left-[27px] md:-left-[41px] top-1 size-3 md:size-4 rounded-full bg-primary border-3 md:border-4 border-background-dark">
-                            </div>
-                            <div class="flex flex-col md:flex-row md:items-center justify-between mb-1 md:mb-2">
-                                <h3 class="text-sm md:text-xl font-bold">Website Development</h3>
-                                <span
-                                    class="text-xs md:text-sm font-medium text-primary bg-primary/10 px-2 py-0.5 md:px-3 md:py-1 rounded-full">2025
-                                    — Present</span>
-                            </div>
-                            <p class="text-xs md:text-base text-slate-500 dark:text-slate-400 font-medium mb-1 md:mb-3">
-                                Creative Pixel Agency</p>
-                            <p class="text-xs md:text-base text-slate-600 dark:text-slate-300 leading-relaxed">
-                                Delivered high-fidelity prototypes and interface designs for 10+ clients.
-                            </p>
-                        </div>
-                    </div>
-                </section>
-                <!-- UI/UX Designer -->
-                <section>
-                    <div class="flex items-center gap-2 md:gap-3 mb-4 md:mb-8" data-anim="fade-left" data-delay="200">
-                        <span
-                            class="material-symbols-outlined text-primary bg-primary/10 p-1 md:p-2 rounded-lg text-xl md:text-2xl">build</span>
-                        <h2 class="text-lg md:text-2xl font-bold">Brand Identity</h2>
-                    </div>
-                    <div class="space-y-4 md:space-y-8 border-l-2 border-primary/20 ml-2 md:ml-4 pl-5 md:pl-8">
-                        <div class="relative" data-anim="fade-right" data-delay="300">
-                            <div
-                                class="absolute -left-[27px] md:-left-[41px] top-1 size-3 md:size-4 rounded-full bg-primary border-3 md:border-4 border-background-dark">
-                            </div>
-                            <div class="flex flex-col md:flex-row md:items-center justify-between mb-1 md:mb-2">
-                                <h3 class="text-sm md:text-xl font-bold">Brand Identity</h3>
-                                <span
-                                    class="text-xs md:text-sm font-medium text-primary bg-primary/10 px-2 py-0.5 md:px-3 md:py-1 rounded-full">2024
-                                    — Present</span>
-                            </div>
-                            <p class="text-xs md:text-base text-slate-500 dark:text-slate-400 font-medium mb-1 md:mb-3">
-                                Creative Pixel Agency</p>
-                            <p class="text-xs md:text-base text-slate-600 dark:text-slate-300 leading-relaxed">
-                                work on professional Collabration services.
-                            </p>
-                        </div>
-                    </div>
-                </section>
-                <!-- Education -->
-                <section class="edu-section">
-                    <div class="flex items-center gap-2 md:gap-3 mb-4 md:mb-8 edu-header" data-anim="fade-left"
-                        data-delay="200">
-                        <span
-                            class="material-symbols-outlined text-primary bg-primary/10 p-1 md:p-2 rounded-lg">school</span>
-                        <h2 class="text-lg md:text-2xl font-bold">Education</h2>
-                    </div>
-                    <div
-                        class="space-y-4 md:space-y-8 border-l-2 border-primary/20 ml-2 md:ml-4 pl-5 md:pl-8 edu-timeline">
-                        <div class="relative edu-entry" data-anim="fade-right" data-delay="300">
-                            <div
-                                class="absolute -left-[27px] md:-left-[41px] top-1 size-3 md:size-4 rounded-full bg-primary border-3 md:border-4 border-background-dark edu-dot">
-                            </div>
-                            <div class="flex flex-col md:flex-row md:items-center justify-between mb-1 md:mb-2">
-                                <h3 class="text-sm md:text-xl font-bold edu-title">BSc - Biochemistry & Molecular
-                                    Biology</h3>
-                                <span
-                                    class="text-xs md:text-sm font-medium text-primary bg-primary/10 px-2 py-0.5 md:px-3 md:py-1 rounded-full edu-badge">2022-23
-                                    — Present</span>
-                            </div>
-                            <p class="text-xs md:text-base text-slate-500 dark:text-slate-400 font-medium edu-info">
-                                National University,Bangladesh
-                            </p>
-                            <p class="text-xs md:text-base text-slate-500 dark:text-slate-400 font-medium edu-info">
-                                CGPA: Running</p>
-                        </div>
-                        <div class="relative edu-entry" data-anim="fade-right" data-delay="500">
-                            <div
-                                class="absolute -left-[27px] md:-left-[41px] top-1 size-3 md:size-4 rounded-full bg-slate-400 dark:bg-slate-600 border-3 md:border-4 border-background-dark edu-dot">
-                            </div>
-                            <div class="flex flex-col md:flex-row md:items-center justify-between mb-1 md:mb-2">
-                                <h3 class="text-sm md:text-xl font-bold edu-title">HSC - Higher Secondary Certificate
-                                </h3>
-                                <span
-                                    class="text-xs md:text-sm font-medium text-slate-500 bg-slate-500/10 px-2 py-0.5 md:px-3 md:py-1 rounded-full edu-badge">2022
-                                </span>
-                            </div>
-                            <p class="text-xs md:text-base text-slate-500 dark:text-slate-400 font-medium edu-info">Kobi
-                                Nazrul Govt. College</p>
-                            <p class="text-xs md:text-base text-slate-500 dark:text-slate-400 font-medium edu-info">GPA:
-                                3.86</p>
-                        </div>
-                        <div class="relative edu-entry" data-anim="fade-right" data-delay="500">
-                            <div
-                                class="absolute -left-[27px] md:-left-[41px] top-1 size-3 md:size-4 rounded-full bg-slate-400 dark:bg-slate-600 border-3 md:border-4 border-background-dark edu-dot">
-                            </div>
-                            <div class="flex flex-col md:flex-row md:items-center justify-between mb-1 md:mb-2">
-                                <h3 class="text-sm md:text-xl font-bold edu-title">SSC - Secondary School Certificate
-                                </h3>
-                                <span
-                                    class="text-xs md:text-sm font-medium text-slate-500 bg-slate-500/10 px-2 py-0.5 md:px-3 md:py-1 rounded-full edu-badge">2020</span>
-                            </div>
-                            <p class="text-xs md:text-base text-slate-500 dark:text-slate-400 font-medium edu-info">
-                                Mizmizi Paschim Para School &
-                                College</p>
-                            <p class="text-xs md:text-base text-slate-500 dark:text-slate-400 font-medium edu-info">GPA:
-                                5.00</p>
-                        </div>
-                        <div class="relative edu-entry" data-anim="fade-right" data-delay="500">
-                            <div
-                                class="absolute -left-[27px] md:-left-[41px] top-1 size-3 md:size-4 rounded-full bg-slate-400 dark:bg-slate-600 border-3 md:border-4 border-background-dark edu-dot">
-                            </div>
-                            <div class="flex flex-col md:flex-row md:items-center justify-between mb-1 md:mb-2">
-                                <h3 class="text-sm md:text-xl font-bold edu-title">JSC - Junior Secondary Certificate
-                                </h3>
-                                <span
-                                    class="text-xs md:text-sm font-medium text-slate-500 bg-slate-500/10 px-2 py-0.5 md:px-3 md:py-1 rounded-full edu-badge">2018</span>
-                            </div>
-                            <p class="text-xs md:text-base text-slate-500 dark:text-slate-400 font-medium edu-info">
-                                Ghulam Mustafa Model School &
-                                College</p>
-                            <p class="text-xs md:text-base text-slate-500 dark:text-slate-400 font-medium edu-info">GPA:
-                                4.86</p>
-                        </div>
-                        <div class="relative edu-entry" data-anim="fade-right" data-delay="500">
-                            <div
-                                class="absolute -left-[27px] md:-left-[41px] top-1 size-3 md:size-4 rounded-full bg-slate-400 dark:bg-slate-600 border-3 md:border-4 border-background-dark edu-dot">
-                            </div>
-                            <div class="flex flex-col md:flex-row md:items-center justify-between mb-1 md:mb-2">
-                                <h3 class="text-sm md:text-xl font-bold edu-title">PSC</h3>
-                                <span
-                                    class="text-xs md:text-sm font-medium text-slate-500 bg-slate-500/10 px-2 py-0.5 md:px-3 md:py-1 rounded-full edu-badge">2015</span>
-                            </div>
-                            <p class="text-xs md:text-base text-slate-500 dark:text-slate-400 font-medium edu-info">
-                                Bangladesh Ideal School & College
-                            </p>
-                            <p class="text-xs md:text-base text-slate-500 dark:text-slate-400 font-medium edu-info">GPA:
-                                4.17
-                            </p>
-                        </div>
-                    </div>
-                </section>
-            </div>
-        </div>
-    </main>
-    <!-- Bottom Navigation Bar (Mobile) -->
-    <div
-        class="md:hidden sticky bottom-0 z-50 flex gap-2 border-t border-primary/20 bg-background-light dark:bg-background-dark px-4 pb-4 pt-2">
-        <a class="flex flex-1 flex-col items-center justify-center gap-1 text-slate-500 dark:text-slate-400" href="#">
-            <span class="material-symbols-outlined">home</span>
-            <p class="text-[10px] font-bold uppercase">Home</p>
-        </a>
-        <a class="flex flex-1 flex-col items-center justify-center gap-1 text-slate-500 dark:text-slate-400" href="#">
-            <span class="material-symbols-outlined">person</span>
-            <p class="text-[10px] font-bold uppercase">About</p>
-        </a>
-        <a class="flex flex-1 flex-col items-center justify-center gap-1 text-slate-500 dark:text-slate-400" href="#">
-            <span class="material-symbols-outlined">folder</span>
-            <p class="text-[10px] font-bold uppercase">Projects</p>
-        </a>
-        <a class="flex flex-1 flex-col items-center justify-center gap-1 text-primary" href="#">
-            <span class="material-symbols-outlined">description</span>
-            <p class="text-[10px] font-bold uppercase">CV</p>
-        </a>
-    </div>
-    <!-- Footer -->
-    <footer class="mt-auto border-t border-primary/10 py-8">
+        </main>
+        <!-- Bottom Navigation Bar (Mobile) -->
         <div
-            class="max-w-5xl mx-auto px-4 flex flex-col md:flex-row justify-between items-center gap-4 text-slate-500 dark:text-slate-400 text-sm">
-            <p>© 2024 Portfolio Design. All rights reserved.</p>
-            <div class="flex gap-6">
-                <a class="hover:text-primary" href="#">LinkedIn</a>
-                <a class="hover:text-primary" href="#">GitHub</a>
-                <a class="hover:text-primary" href="#">Dribbble</a>
-            </div>
+            class="md:hidden sticky bottom-0 z-50 flex gap-2 border-t border-primary/20 bg-background-light dark:bg-background-dark px-4 pb-4 pt-2">
+            <a class="flex flex-1 flex-col items-center justify-center gap-1 text-slate-500 dark:text-slate-400"
+                href="#">
+                <span class="material-symbols-outlined">home</span>
+                <p class="text-[10px] font-bold uppercase">Home</p>
+            </a>
+            <a class="flex flex-1 flex-col items-center justify-center gap-1 text-slate-500 dark:text-slate-400"
+                href="#">
+                <span class="material-symbols-outlined">person</span>
+                <p class="text-[10px] font-bold uppercase">About</p>
+            </a>
+            <a class="flex flex-1 flex-col items-center justify-center gap-1 text-slate-500 dark:text-slate-400"
+                href="#">
+                <span class="material-symbols-outlined">folder</span>
+                <p class="text-[10px] font-bold uppercase">Projects</p>
+            </a>
+            <a class="flex flex-1 flex-col items-center justify-center gap-1 text-primary" href="#">
+                <span class="material-symbols-outlined">description</span>
+                <p class="text-[10px] font-bold uppercase">CV</p>
+            </a>
         </div>
-    </footer>
-    <!-- Animation Engine -->
-    <script>
-        document.addEventListener('DOMContentLoaded', () => {
-            const animEls = document.querySelectorAll('[data-anim]');
-            const observer = new IntersectionObserver((entries) => {
-                entries.forEach(entry => {
-                    if (entry.isIntersecting) {
-                        const el = entry.target;
-                        const delay = el.dataset.delay || 0;
-                        const duration = el.dataset.duration || '0.8s';
-                        setTimeout(() => {
-                            el.style.animationDuration = duration;
-                            el.classList.add('anim-visible');
-                        }, parseInt(delay));
-                        observer.unobserve(el);
-                    }
-                });
-            }, { threshold: 0.15, rootMargin: '0px 0px -40px 0px' });
-            animEls.forEach(el => observer.observe(el));
+        <!-- Footer -->
+        <footer class="mt-auto border-t border-primary/10 py-8">
+            <div
+                class="max-w-5xl mx-auto px-4 flex flex-col md:flex-row justify-between items-center gap-4 text-slate-500 dark:text-slate-400 text-sm">
+                <p>© 2024 Portfolio Design. All rights reserved.</p>
+                <div class="flex gap-6">
+                    <a class="hover:text-primary" href="#">LinkedIn</a>
+                    <a class="hover:text-primary" href="#">GitHub</a>
+                    <a class="hover:text-primary" href="#">Dribbble</a>
+                </div>
+            </div>
+        </footer>
+        <!-- Animation Engine -->
+        <script>
+            document.addEventListener('DOMContentLoaded', () => {
+                const animEls = document.querySelectorAll('[data-anim]');
+                const observer = new IntersectionObserver((entries) => {
+                    entries.forEach(entry => {
+                        if (entry.isIntersecting) {
+                            const el = entry.target;
+                            const delay = el.dataset.delay || 0;
+                            const duration = el.dataset.duration || '0.8s';
+                            setTimeout(() => {
+                                el.style.animationDuration = duration;
+                                el.classList.add('anim-visible');
+                            }, parseInt(delay));
+                            observer.unobserve(el);
+                        }
+                    });
+                }, { threshold: 0.15, rootMargin: '0px 0px -40px 0px' });
+                animEls.forEach(el => observer.observe(el));
 
-            document.querySelectorAll('a[href^="#"]').forEach(a => {
-                a.addEventListener('click', e => {
-                    const target = document.querySelector(a.getAttribute('href'));
-                    if (target) {
-                        e.preventDefault();
-                        target.scrollIntoView({ behavior: 'smooth', block: 'start' });
-                    }
+                document.querySelectorAll('a[href^="#"]').forEach(a => {
+                    a.addEventListener('click', e => {
+                        const target = document.querySelector(a.getAttribute('href'));
+                        if (target) {
+                            e.preventDefault();
+                            target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+                        }
+                    });
                 });
             });
-        });
 
-        // Hero Carousel
-        const heroCarousel = {
-            current: 0,
-            slides: document.querySelectorAll('.hero-slide'),
-            dots: document.querySelectorAll('.hero-dot'),
-            timer: null,
+            // Hero Carousel
+            const heroCarousel = {
+                current: 0,
+                slides: document.querySelectorAll('.hero-slide'),
+                dots: document.querySelectorAll('.hero-dot'),
+                timer: null,
 
-            goTo(index) {
-                this.slides.forEach(s => s.classList.remove('active'));
-                this.dots.forEach(d => d.classList.remove('active'));
-                this.current = index;
-                this.slides[index].classList.add('active');
-                this.dots[index].classList.add('active');
-                this.resetTimer();
-            },
+                goTo(index) {
+                    this.slides.forEach(s => s.classList.remove('active'));
+                    this.dots.forEach(d => d.classList.remove('active'));
+                    this.current = index;
+                    this.slides[index].classList.add('active');
+                    this.dots[index].classList.add('active');
+                    this.resetTimer();
+                },
 
-            next() {
-                this.goTo((this.current + 1) % this.slides.length);
-            },
+                next() {
+                    this.goTo((this.current + 1) % this.slides.length);
+                },
 
-            prev() {
-                this.goTo((this.current - 1 + this.slides.length) % this.slides.length);
-            },
+                prev() {
+                    this.goTo((this.current - 1 + this.slides.length) % this.slides.length);
+                },
 
-            resetTimer() {
-                clearInterval(this.timer);
-                this.timer = setInterval(() => this.next(), 4000);
-            },
+                resetTimer() {
+                    clearInterval(this.timer);
+                    this.timer = setInterval(() => this.next(), 4000);
+                },
 
-            init() {
-                this.timer = setInterval(() => this.next(), 4000);
-            }
-        };
-        heroCarousel.init();
-    </script>
+                init() {
+                    this.timer = setInterval(() => this.next(), 4000);
+                }
+            };
+            heroCarousel.init();
+        </script>
 </body>
 
 </html>
