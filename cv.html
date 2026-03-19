@@ -553,28 +553,32 @@
                                 style="scroll-behavior: smooth;" onscroll="updateDocPreviewDots()">
 
                                 <!-- Slide 1 -->
-                                <div class="w-full h-full flex-shrink-0 snap-center relative group overflow-hidden rounded-lg border border-slate-300 dark:border-slate-700">
+                                <div
+                                    class="w-full h-full flex-shrink-0 snap-center relative group overflow-hidden rounded-lg border border-slate-300 dark:border-slate-700">
                                     <img src="./cv demo.jpeg"
                                         class="absolute inset-0 w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
                                         alt="CV Preview Page 1" />
                                 </div>
 
                                 <!-- Slide 2 -->
-                                <div class="w-full h-full flex-shrink-0 snap-center relative group overflow-hidden rounded-lg border border-slate-300 dark:border-slate-700">
+                                <div
+                                    class="w-full h-full flex-shrink-0 snap-center relative group overflow-hidden rounded-lg border border-slate-300 dark:border-slate-700">
                                     <img src="./resumi demo1.jpeg"
                                         class="absolute inset-0 w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
                                         alt="CV Preview Page 2" />
                                 </div>
 
                                 <!-- Slide 3 -->
-                                <div class="w-full h-full flex-shrink-0 snap-center relative group overflow-hidden rounded-lg border border-slate-300 dark:border-slate-700">
+                                <div
+                                    class="w-full h-full flex-shrink-0 snap-center relative group overflow-hidden rounded-lg border border-slate-300 dark:border-slate-700">
                                     <img src="./resumi demo2.jpeg"
                                         class="absolute inset-0 w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
                                         alt="CV Preview Page 3" />
                                 </div>
 
                                 <!-- Slide 4 -->
-                                <div class="w-full h-full flex-shrink-0 snap-center relative group overflow-hidden rounded-lg border border-slate-300 dark:border-slate-700">
+                                <div
+                                    class="w-full h-full flex-shrink-0 snap-center relative group overflow-hidden rounded-lg border border-slate-300 dark:border-slate-700">
                                     <img src="./resumi demo3.jpeg"
                                         class="absolute inset-0 w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
                                         alt="CV Preview Page 4" />
@@ -859,7 +863,8 @@
                                     class="absolute -left-[27px] md:-left-[41px] top-1 size-3 md:size-4 rounded-full bg-slate-400 dark:bg-slate-600 border-3 md:border-4 border-background-dark edu-dot">
                                 </div>
                                 <div class="flex flex-col md:flex-row md:items-center justify-between mb-1 md:mb-2">
-                                    <h3 class="text-sm md:text-xl font-bold edu-title">PSC</h3>
+                                    <h3 class="text-sm md:text-xl font-bold edu-title">PSC - Primary School Certificate
+                                    </h3>
                                     <span
                                         class="text-xs md:text-sm font-medium text-slate-500 bg-slate-500/10 px-2 py-0.5 md:px-3 md:py-1 rounded-full edu-badge">2015</span>
                                 </div>
@@ -1229,9 +1234,9 @@
                 if (carousel) {
                     const scrollAmount = carousel.clientWidth;
                     let nextScroll = carousel.scrollLeft + scrollAmount;
-                    
+
                     // Smoothly transition between loops with CSS
-                    if (nextScroll >= carousel.scrollWidth - scrollAmount / 2) { 
+                    if (nextScroll >= carousel.scrollWidth - scrollAmount / 2) {
                         carousel.scrollTo({ left: 0, behavior: 'smooth' });
                     } else {
                         carousel.scrollTo({ left: nextScroll, behavior: 'smooth' });
