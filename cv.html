@@ -1149,6 +1149,31 @@
                 }, { threshold: 0.15, rootMargin: '0px 0px -40px 0px' });
                 animEls.forEach(el => observer.observe(el));
 
+                // Mobile Menu Toggle
+                const mobileMenuBtn = document.getElementById('mobile-menu-btn');
+                const closeMenuBtn = document.getElementById('close-menu-btn');
+                const mobileMenu = document.getElementById('mobile-menu');
+
+                if (mobileMenuBtn && closeMenuBtn && mobileMenu) {
+                    mobileMenuBtn.addEventListener('click', () => {
+                        mobileMenu.classList.remove('translate-x-full');
+                        document.body.style.overflow = 'hidden';
+                    });
+
+                    closeMenuBtn.addEventListener('click', () => {
+                        mobileMenu.classList.add('translate-x-full');
+                        document.body.style.overflow = '';
+                    });
+
+                    // Close menu when clicking on a link
+                    mobileMenu.querySelectorAll('a').forEach(link => {
+                        link.addEventListener('click', () => {
+                            mobileMenu.classList.add('translate-x-full');
+                            document.body.style.overflow = '';
+                        });
+                    });
+                }
+
                 document.querySelectorAll('a[href^="#"]').forEach(a => {
                     a.addEventListener('click', e => {
                         const target = document.querySelector(a.getAttribute('href'));
@@ -1159,6 +1184,23 @@
                     });
                 });
             });
+
+            // Copy to Clipboard Function
+            function copyToClipboard(btn, text) {
+                navigator.clipboard.writeText(text).then(() => {
+                    const icon = btn.querySelector('.material-symbols-outlined');
+                    const originalIcon = icon.textContent;
+                    icon.textContent = 'check';
+                    btn.classList.add('bg-green-500/10', 'text-green-500');
+                    btn.classList.remove('text-primary');
+
+                    setTimeout(() => {
+                        icon.textContent = originalIcon;
+                        btn.classList.remove('bg-green-500/10', 'text-green-500');
+                        btn.classList.add('text-primary');
+                    }, 2000);
+                });
+            }
 
             // Hero Carousel
             const heroCarousel = {
