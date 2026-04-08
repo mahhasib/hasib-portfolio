@@ -204,244 +204,582 @@
 
 <body
     class="bg-background-light dark:bg-background-dark font-display text-slate-900 dark:text-slate-100 min-h-screen flex flex-col">
-    <!-- Header Navigation -->
-    <header
-        class="sticky top-0 z-50 bg-background-light/80 dark:bg-background-dark/80 backdrop-blur-md border-b border-primary/10">
-        <div class="max-w-7xl mx-auto flex items-center justify-between p-4">
-            <div class="flex items-center gap-2">
-                <span class="material-symbols-outlined text-primary text-3xl">terminal</span>
-                <h1 class="text-xl font-bold tracking-tight">Portfolio</h1>
+    <!-- Header / TopAppBar -->
+    <header class="sticky top-0 z-50 w-full border-b border-primary/10 bg-background-dark/80 backdrop-blur-md">
+        <div class="mx-auto flex h-16 max-w-7xl items-center justify-between px-4 sm:px-6 lg:px-8">
+            <div class="flex items-center gap-4">
+                <a href="./index.html" class="flex items-center gap-4 no-underline">
+                    <div
+                        class="w-10 h-10 rounded-lg flex items-center justify-center border border-primary/20 bg-primary/10 periodic-glow-logo relative overflow-hidden group">
+                        <span
+                            class="text-primary text-2xl font-bold leading-none select-none relative z-10 group-hover:scale-110 transition-transform">أ</span>
+                        <div
+                            class="absolute inset-0 bg-gradient-to-t from-primary/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity">
+                        </div>
+                    </div>
+                    <h2 class="text-xl font-bold tracking-tight text-slate-100">MAH. HaSib</h2>
+                </a>
+                <!-- Navigation History Buttons (Desktop/Tablet Only) -->
+                <div class="hidden md:flex items-center gap-2 ml-4 border-l border-white/10 pl-4">
+                    <button onclick="window.history.back()"
+                        class="w-8 h-8 flex items-center justify-center rounded-full bg-white/5 hover:bg-white/10 text-slate-300 transition-colors"
+                        title="Go Back">
+                        <span class="material-symbols-outlined text-sm">arrow_back</span>
+                    </button>
+                    <button onclick="window.history.forward()"
+                        class="w-8 h-8 flex items-center justify-center rounded-full bg-white/5 hover:bg-white/10 text-slate-300 transition-colors"
+                        title="Go Forward">
+                        <span class="material-symbols-outlined text-sm">arrow_forward</span>
+                    </button>
+                </div>
             </div>
             <nav class="hidden md:flex items-center gap-8">
-                <a class="text-sm font-medium hover:text-primary transition-colors nav-link-anim" href="#">Home</a>
-                <a class="text-sm font-medium hover:text-primary transition-colors nav-link-anim" href="#">Work</a>
-                <a class="text-sm font-medium hover:text-primary transition-colors nav-link-anim" href="#">About</a>
-                <a class="text-sm font-medium hover:text-primary transition-colors nav-link-anim" href="#">Contact</a>
+                <a class="text-sm font-medium hover:text-primary transition-colors nav-link-anim"
+                    href="./index.html">Home</a>
+                <a class="text-sm font-medium hover:text-primary transition-colors nav-link-anim"
+                    href="./mywork.html">Work</a>
+                <a class="text-sm font-medium hover:text-primary transition-colors nav-link-anim"
+                    href="./myservice.html">Services</a>
+                <a class="text-sm font-medium text-primary transition-colors nav-link-anim"
+                    href="./barandsworked.html">Brands</a>
+                <a class="text-sm font-medium hover:text-primary transition-colors nav-link-anim"
+                    href="./blog.html">Blog</a>
             </nav>
-            <button
-                class="bg-primary hover:bg-primary/90 text-white px-5 py-2 rounded-full text-sm font-semibold transition-all shadow-lg shadow-primary/20">
-                Let's Talk
-            </button>
+            <div class="flex items-center gap-4">
+                <a href="mailto:mah.hasib015@gmail.com"
+                    class="hidden sm:block text-primary text-sm font-bold tracking-wide uppercase no-underline">Hire
+                    Me</a>
+                <a href="./contactfrom.html"
+                    class="hidden sm:block bg-primary text-white px-5 py-2 rounded-lg text-sm font-bold hover:bg-primary/90 transition-all no-underline">Get
+                    Started</a>
+                <!-- Mobile Menu Button -->
+                <button id="mobile-menu-btn"
+                    class="md:hidden flex items-center justify-center w-10 h-10 rounded-lg bg-white/5 hover:bg-white/10 border border-white/10 text-slate-100 hover:text-primary active:scale-95 transition-all">
+                    <span class="material-symbols-outlined text-2xl">menu</span>
+                </button>
+            </div>
         </div>
     </header>
-    <main class="flex-grow">
-        <!-- Hero Branding Section -->
-        <section class="py-20 px-4 text-center">
-            <div class="max-w-3xl mx-auto">
-                <span
-                    class="inline-block px-4 py-1.5 mb-6 text-xs font-bold uppercase tracking-widest text-primary bg-primary/10 rounded-full border border-primary/20"
-                    data-anim="fade-down" data-delay="200">
-                    My Network
-                </span>
-                <h2 class="text-4xl md:text-5xl font-bold leading-tight mb-6" data-anim="fade-up" data-delay="400">
-                    Brands I've Worked With
-                </h2>
-                <p class="text-slate-600 dark:text-slate-400 text-lg max-w-2xl mx-auto" data-anim="fade-up"
-                    data-delay="600">
-                    Collaborating with global industry leaders and disruptive startups to build high-impact digital
-                    experiences.
-                </p>
+
+    <!-- Mobile Menu Overlay -->
+    <div id="mobile-menu"
+        class="fixed inset-0 z-[60] bg-background-dark/95 backdrop-blur-xl translate-x-full transition-transform duration-300 md:hidden">
+        <div class="flex flex-col h-full p-8">
+            <div class="flex items-center justify-between mb-12">
+                <div class="flex items-center gap-4">
+                    <div
+                        class="w-10 h-10 rounded-lg flex items-center justify-center border border-primary/20 bg-primary/10">
+                        <span class="text-primary text-2xl font-bold">أ</span>
+                    </div>
+                    <span class="text-xl font-bold text-slate-100">MAH. HaSib</span>
+                </div>
+                <button id="close-menu-btn" class="text-slate-100 hover:text-primary transition-colors">
+                    <span class="material-symbols-outlined text-3xl">close</span>
+                </button>
             </div>
-            <!-- Logos Grid -->
-            <div class="max-w-6xl mx-auto mt-16">
-                <div class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4 md:gap-8">
-                    <!-- Brand Item 1 -->
-                    <div class="group flex flex-col items-center justify-center p-8 bg-primary/5 dark:bg-primary/10 rounded-xl border border-primary/10 hover:border-primary/40 transition-all cursor-pointer brand-card"
-                        data-anim="slide-scale" data-delay="200">
-                        <img alt="Partner Brand 1 Logo" class="h-10 logo-grayscale mb-4"
-                            data-alt="Corporate minimalist logo for tech company"
-                            src="https://lh3.googleusercontent.com/aida-public/AB6AXuADt8ArZyDUa_0rovNrpzwtHnOJM_oVg813WPClneCDuNycHK1ARjDt9xiVtnfoJukq2Xhk3fZmuf6wOWd6JWOejMZW8CsQlA0vyWKjX3ZU4G_BfSWjmHKQJebLX5y_atQ_q-CMGpI4H8LZ4ODacTs9ubheHtTprpElpxVDtZSKUKYAK0Mjcb4YwPdHLt5nVPeTXyhH-QENGeoeFG51ge62kZ2rqUfgWnySypcWj-F31MIrlLuSWXxWK-z7fz0XzSfK0DcRb4ysBK4" />
-                        <span
-                            class="text-xs font-bold uppercase tracking-widest text-slate-500 group-hover:text-primary transition-colors">TechFlow
-                            Solutions</span>
-                    </div>
-                    <!-- Brand Item 2 -->
-                    <div class="group flex flex-col items-center justify-center p-8 bg-primary/5 dark:bg-primary/10 rounded-xl border border-primary/10 hover:border-primary/40 transition-all cursor-pointer brand-card"
-                        data-anim="slide-scale" data-delay="300">
-                        <img alt="Partner Brand 2 Logo" class="h-10 logo-grayscale mb-4"
-                            data-alt="Abstract geometric brand mark for startup"
-                            src="https://lh3.googleusercontent.com/aida-public/AB6AXuBFCj98dwqMmqJJrrMdiM8PLkHVuTntm6xVnK-eQFPfeTi9VwYh7Weoux8dwkH98wIn5MorutOGPp_Ajb85pIh6X46HZTHIF_4zfgcRCyie1npSdd786TcGcJxkzOk-zWNmApEOcmfkczM-TKX6Lbd_SISgvXLx-kDafmKMNiAWbQXoFOvAA-_71hCBOvVYumCExEyyFFvPQBCOhKKNHUboYHPzYWzUvqREsxBsp1lqdIwWcSPAYPTPsQu0QXpUqcEoKZ2l4dHwRZM" />
-                        <span
-                            class="text-xs font-bold uppercase tracking-widest text-slate-500 group-hover:text-primary transition-colors">Innovate
-                            AI</span>
-                    </div>
-                    <!-- Brand Item 3 -->
-                    <div class="group flex flex-col items-center justify-center p-8 bg-primary/5 dark:bg-primary/10 rounded-xl border border-primary/10 hover:border-primary/40 transition-all cursor-pointer brand-card"
-                        data-anim="slide-scale" data-delay="400">
-                        <img alt="Partner Brand 3 Logo" class="h-10 logo-grayscale mb-4"
-                            data-alt="Modern wordmark logo for fintech brand"
-                            src="https://lh3.googleusercontent.com/aida-public/AB6AXuDu3-DZDFODYwsKJa3iXZkg-zIXs9pUkOHqOdZLGon0lqE46s4CkCIgfMAzH4gIoYWOO3VG0rfHE-0mSvwTR9ZPAIsPTJOVrh0tNiHnmYNqXcv2J8q2Qho2X3lTuhewuck2ctxd26OR-mhH7qrVujA0wHp8EXcx7heyVkAKakaHRBzhiWX886kbz-cKQb8zoonxaW4hr4Ad5neU0hYqsHN18ZO20yJRCp6BGpHiZSRsxlUI2Hn8aJ2jvJX3060itp5sVg3b4xw6p34" />
-                        <span
-                            class="text-xs font-bold uppercase tracking-widest text-slate-500 group-hover:text-primary transition-colors">Nexus
-                            Fintech</span>
-                    </div>
-                    <!-- Brand Item 4 -->
-                    <div class="group flex flex-col items-center justify-center p-8 bg-primary/5 dark:bg-primary/10 rounded-xl border border-primary/10 hover:border-primary/40 transition-all cursor-pointer brand-card"
-                        data-anim="slide-scale" data-delay="500">
-                        <img alt="Partner Brand 4 Logo" class="h-10 logo-grayscale mb-4"
-                            data-alt="Sleek circular logo for design agency"
-                            src="https://lh3.googleusercontent.com/aida-public/AB6AXuC6O2TGC4UWbMh1t-RfVZRDMYsm_hcd31N2R0EbbaoeuRqzKxDjrZn4jV7iligCP7kh2tG8dy31_N1DwCDtwsVtPCDVR_Mc8-alxpUYkzYpVhjmP81CkZaXnTr3HKO-Bu9tM6szUyrYwWFC_C8T6uVnCjuziYCoPTCZV2poHxyeeB_0fjkGT0AC5FKpMdcqDYpQLU22VgQDdsF0hBxLwCEhtqFSGdaNslIl4HF5P81mF73v7ouLVD65KjwU_iH4vYuTapcUK-GPqK8" />
-                        <span
-                            class="text-xs font-bold uppercase tracking-widest text-slate-500 group-hover:text-primary transition-colors">Studio
-                            Prime</span>
-                    </div>
-                    <!-- Brand Item 5 -->
-                    <div class="group flex flex-col items-center justify-center p-8 bg-primary/5 dark:bg-primary/10 rounded-xl border border-primary/10 hover:border-primary/40 transition-all cursor-pointer brand-card"
-                        data-anim="slide-scale" data-delay="600">
-                        <img alt="Partner Brand 5 Logo" class="h-10 logo-grayscale mb-4"
-                            data-alt="Minimalist script logo for luxury brand"
-                            src="https://lh3.googleusercontent.com/aida-public/AB6AXuCWhnU1KfReFcoBy2Q2DesP43WxM8rPv3NqMpZN5GZfaVUiZMBFV3H1bl8Kquxal5h9ZtSoQ1II9ww4ZXNnMX-w53Dispap8ETUGLDjs_OpfD4ZXqB8HubZKMZm5Gax0wTIfKBuC6bXnwzC28PFv04-V5NIEMETeNKWFCerowtFNez2PC2bLlIjhaF-GWuL_rmsHKbbWxkdSLN370VzuaR_6FFvyrQjwVR64JEdR3-Y0EQqqSMX0cr67kvRMHmDYbs4u71HLbd5bxo" />
-                        <span
-                            class="text-xs font-bold uppercase tracking-widest text-slate-500 group-hover:text-primary transition-colors">Vogue
-                            & Co.</span>
-                    </div>
-                    <!-- Brand Item 6 -->
-                    <div class="group flex flex-col items-center justify-center p-8 bg-primary/5 dark:bg-primary/10 rounded-xl border border-primary/10 hover:border-primary/40 transition-all cursor-pointer brand-card"
-                        data-anim="slide-scale" data-delay="700">
-                        <img alt="Partner Brand 6 Logo" class="h-10 logo-grayscale mb-4"
-                            data-alt="Bold blocky logo for software company"
-                            src="https://lh3.googleusercontent.com/aida-public/AB6AXuAVYM71uPf3GO1qpqNvIsNgF2smriYsnroMfcJ2bJmYv5gFjDRO1u2u3hGMPiyvJQwPrPahFINyHv0pbD22tJpGbMHl4sfgrOSL9AkHZKSKLwBZamEGUFBugjtlwiPEp7_-6OUXYOvlVXVcZ-dKXlfhxA8BRjCLpTNsEsb7gqJcrR-J8Wl1Lt_xSPaiVHYH4HR6SelZAgr0kce_ypdkeC5yJFzY8hF-Zl72smTnRjl8BbErrr-3x5FY-b84ONw7TkiaWwYKCIWmzdo" />
-                        <span
-                            class="text-xs font-bold uppercase tracking-widest text-slate-500 group-hover:text-primary transition-colors">Core
-                            Systems</span>
-                    </div>
-                    <!-- Brand Item 7 -->
-                    <div class="group flex flex-col items-center justify-center p-8 bg-primary/5 dark:bg-primary/10 rounded-xl border border-primary/10 hover:border-primary/40 transition-all cursor-pointer brand-card"
-                        data-anim="slide-scale" data-delay="800">
-                        <img alt="Partner Brand 7 Logo" class="h-10 logo-grayscale mb-4"
-                            data-alt="Elegant thin line logo for lifestyle brand"
-                            src="https://lh3.googleusercontent.com/aida-public/AB6AXuBwIqMByIE4pvubSe1afgSfJxtKzJWGmamPbqUFukyocfeclR_dwe8Rn4KrNqd7_Gk9qDfB-xyrBGGvJL3xZXoPpNVO_6NjRz50gnxwptX4gAbpVrhUm4i6iuUL_vDE40GZ4ptyjfL3kBcfo45N5YFJCs5DikGeWMyt5HA2BIKVQXIpji8YmPrJPwCim3WdtnF2lGoAOqSGwQpfXHCLtWnQ0Z7YAF1n3yKnWWCiqYQQ3mKsCUR5cgTYwDhJ7O6LXhv0Xux-EQPCNDA" />
-                        <span
-                            class="text-xs font-bold uppercase tracking-widest text-slate-500 group-hover:text-primary transition-colors">Lifestyle
-                            Lab</span>
-                    </div>
-                    <!-- Brand Item 8 -->
-                    <div class="group flex flex-col items-center justify-center p-8 bg-primary/5 dark:bg-primary/10 rounded-xl border border-primary/10 hover:border-primary/40 transition-all cursor-pointer brand-card"
-                        data-anim="slide-scale" data-delay="900">
-                        <img alt="Partner Brand 8 Logo" class="h-10 logo-grayscale mb-4"
-                            data-alt="Futuristic tech logo with sharp edges"
-                            src="https://lh3.googleusercontent.com/aida-public/AB6AXuBzkIFyKkJCndWcgGaLUoeTu56HpaIJTZK6joAyEcYFIYjvPsm3_AoXYGlP_aopR9-AfMkv81QQwx2k-3CddlV_vZhS--pL5qxg2B7vNtXTBxqIGyKxoDaB3Mkjr_7PlD9fJ0obsdYWUNJyqkic6C5vzmDL35_5By6gKHNqMynMKaCSPK3TeBRPvuWbbgYu1yMDKyPtXy5ZmvxhRb3kUkf2uvnV2X5xrEkE0MG9EeosjWNGgqwYUMxak1_LBZawscQFqGKogaLGArE" />
-                        <span
-                            class="text-xs font-bold uppercase tracking-widest text-slate-500 group-hover:text-primary transition-colors">Vertex
-                            Horizons</span>
-                    </div>
-                </div>
+            <nav class="flex flex-col gap-6">
+                <a class="text-2xl font-bold text-slate-100 hover:text-primary transition-colors no-underline"
+                    href="./index.html">Home</a>
+                <a class="text-2xl font-bold text-slate-100 hover:text-primary transition-colors no-underline"
+                    href="./mywork.html">Work</a>
+                <a class="text-2xl font-bold text-slate-100 hover:text-primary transition-colors no-underline"
+                    href="./myservice.html">Services</a>
+                <a class="text-2xl font-bold text-primary transition-colors no-underline" href="./abuot.html">About</a>
+                <a class="text-2xl font-bold text-slate-100 hover:text-primary transition-colors no-underline"
+                    href="./blog.html">Blog</a>
+            </nav>
+            <div class="mt-auto pt-8 border-t border-white/10 flex flex-col gap-4">
+                <a href="mailto:mah.hasib015@gmail.com"
+                    class="text-primary font-bold uppercase tracking-widest no-underline">Hire Me</a>
+                <a href="./contactfrom.html"
+                    class="bg-primary text-white py-4 rounded-xl font-bold text-center no-underline">Get Started</a>
             </div>
-        </section>
-        <!-- Stats Section -->
-        <section class="py-12 bg-primary/5 dark:bg-primary/10">
-            <div class="max-w-7xl mx-auto px-4 grid grid-cols-2 lg:grid-cols-4 gap-8 text-center">
-                <div class="stat-card" data-anim="fade-up" data-delay="200">
-                    <p class="text-3xl font-bold text-primary" data-counter="50" data-suffix="+">0</p>
-                    <p class="text-sm text-slate-500 uppercase tracking-widest mt-1">Happy Clients</p>
-                </div>
-                <div class="stat-card" data-anim="fade-up" data-delay="350">
-                    <p class="text-3xl font-bold text-primary" data-counter="120" data-suffix="+">0</p>
-                    <p class="text-sm text-slate-500 uppercase tracking-widest mt-1">Projects Delivered</p>
-                </div>
-                <div class="stat-card" data-anim="fade-up" data-delay="500">
-                    <p class="text-3xl font-bold text-primary" data-counter="12" data-suffix="">0</p>
-                    <p class="text-sm text-slate-500 uppercase tracking-widest mt-1">Awards Won</p>
-                </div>
-                <div class="stat-card" data-anim="fade-up" data-delay="650">
-                    <p class="text-3xl font-bold text-primary" data-counter="98" data-suffix="%">0</p>
-                    <p class="text-sm text-slate-500 uppercase tracking-widest mt-1">Satisfaction Rate</p>
-                </div>
-            </div>
-        </section>
+        </div>
+    </div>
+    <main class="flex-grow bg-mesh">
+                <!-- Hero Branding Section -->
+                <section class="py-20 px-4 text-center">
+                    <div class="max-w-3xl mx-auto">
+                        <span
+                            class="inline-block px-4 py-1.5 mb-6 text-xs font-bold uppercase tracking-widest text-primary bg-primary/10 rounded-full border border-primary/20"
+                            data-anim="fade-down" data-delay="200">
+                            My Network
+                        </span>
+                        <h2 class="text-4xl md:text-5xl font-bold leading-tight mb-6" data-anim="fade-up"
+                            data-delay="400">
+                            Brands I've Worked With
+                        </h2>
+                        <p class="text-slate-600 dark:text-slate-400 text-lg max-w-2xl mx-auto" data-anim="fade-up"
+                            data-delay="600">
+                            Collaborating with global industry leaders and disruptive startups to build high-impact
+                            digital
+                            experiences.
+                        </p>
+                    </div>
+                    <!-- Logos Grid -->
+                    <div class="max-w-6xl mx-auto mt-16">
+                        <div class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4 md:gap-8">
+                            <!-- Brand Item 1 -->
+                            <div class="group flex flex-col items-center justify-center p-8 bg-primary/5 dark:bg-primary/10 rounded-xl border border-primary/10 hover:border-primary/40 transition-all cursor-pointer brand-card"
+                                data-anim="slide-scale" data-delay="200">
+                                <img alt="Partner Brand 1 Logo" class="h-10 logo-grayscale mb-4"
+                                    data-alt="Corporate minimalist logo for tech company"
+                                    src="https://lh3.googleusercontent.com/aida-public/AB6AXuADt8ArZyDUa_0rovNrpzwtHnOJM_oVg813WPClneCDuNycHK1ARjDt9xiVtnfoJukq2Xhk3fZmuf6wOWd6JWOejMZW8CsQlA0vyWKjX3ZU4G_BfSWjmHKQJebLX5y_atQ_q-CMGpI4H8LZ4ODacTs9ubheHtTprpElpxVDtZSKUKYAK0Mjcb4YwPdHLt5nVPeTXyhH-QENGeoeFG51ge62kZ2rqUfgWnySypcWj-F31MIrlLuSWXxWK-z7fz0XzSfK0DcRb4ysBK4" />
+                                <span
+                                    class="text-xs font-bold uppercase tracking-widest text-slate-500 group-hover:text-primary transition-colors">TechFlow
+                                    Solutions</span>
+                            </div>
+                            <!-- Brand Item 2 -->
+                            <div class="group flex flex-col items-center justify-center p-8 bg-primary/5 dark:bg-primary/10 rounded-xl border border-primary/10 hover:border-primary/40 transition-all cursor-pointer brand-card"
+                                data-anim="slide-scale" data-delay="300">
+                                <img alt="Partner Brand 2 Logo" class="h-10 logo-grayscale mb-4"
+                                    data-alt="Abstract geometric brand mark for startup"
+                                    src="https://lh3.googleusercontent.com/aida-public/AB6AXuBFCj98dwqMmqJJrrMdiM8PLkHVuTntm6xVnK-eQFPfeTi9VwYh7Weoux8dwkH98wIn5MorutOGPp_Ajb85pIh6X46HZTHIF_4zfgcRCyie1npSdd786TcGcJxkzOk-zWNmApEOcmfkczM-TKX6Lbd_SISgvXLx-kDafmKMNiAWbQXoFOvAA-_71hCBOvVYumCExEyyFFvPQBCOhKKNHUboYHPzYWzUvqREsxBsp1lqdIwWcSPAYPTPsQu0QXpUqcEoKZ2l4dHwRZM" />
+                                <span
+                                    class="text-xs font-bold uppercase tracking-widest text-slate-500 group-hover:text-primary transition-colors">Innovate
+                                    AI</span>
+                            </div>
+                            <!-- Brand Item 3 -->
+                            <div class="group flex flex-col items-center justify-center p-8 bg-primary/5 dark:bg-primary/10 rounded-xl border border-primary/10 hover:border-primary/40 transition-all cursor-pointer brand-card"
+                                data-anim="slide-scale" data-delay="400">
+                                <img alt="Partner Brand 3 Logo" class="h-10 logo-grayscale mb-4"
+                                    data-alt="Modern wordmark logo for fintech brand"
+                                    src="https://lh3.googleusercontent.com/aida-public/AB6AXuDu3-DZDFODYwsKJa3iXZkg-zIXs9pUkOHqOdZLGon0lqE46s4CkCIgfMAzH4gIoYWOO3VG0rfHE-0mSvwTR9ZPAIsPTJOVrh0tNiHnmYNqXcv2J8q2Qho2X3lTuhewuck2ctxd26OR-mhH7qrVujA0wHp8EXcx7heyVkAKakaHRBzhiWX886kbz-cKQb8zoonxaW4hr4Ad5neU0hYqsHN18ZO20yJRCp6BGpHiZSRsxlUI2Hn8aJ2jvJX3060itp5sVg3b4xw6p34" />
+                                <span
+                                    class="text-xs font-bold uppercase tracking-widest text-slate-500 group-hover:text-primary transition-colors">Nexus
+                                    Fintech</span>
+                            </div>
+                            <!-- Brand Item 4 -->
+                            <div class="group flex flex-col items-center justify-center p-8 bg-primary/5 dark:bg-primary/10 rounded-xl border border-primary/10 hover:border-primary/40 transition-all cursor-pointer brand-card"
+                                data-anim="slide-scale" data-delay="500">
+                                <img alt="Partner Brand 4 Logo" class="h-10 logo-grayscale mb-4"
+                                    data-alt="Sleek circular logo for design agency"
+                                    src="https://lh3.googleusercontent.com/aida-public/AB6AXuC6O2TGC4UWbMh1t-RfVZRDMYsm_hcd31N2R0EbbaoeuRqzKxDjrZn4jV7iligCP7kh2tG8dy31_N1DwCDtwsVtPCDVR_Mc8-alxpUYkzYpVhjmP81CkZaXnTr3HKO-Bu9tM6szUyrYwWFC_C8T6uVnCjuziYCoPTCZV2poHxyeeB_0fjkGT0AC5FKpMdcqDYpQLU22VgQDdsF0hBxLwCEhtqFSGdaNslIl4HF5P81mF73v7ouLVD65KjwU_iH4vYuTapcUK-GPqK8" />
+                                <span
+                                    class="text-xs font-bold uppercase tracking-widest text-slate-500 group-hover:text-primary transition-colors">Studio
+                                    Prime</span>
+                            </div>
+                            <!-- Brand Item 5 -->
+                            <div class="group flex flex-col items-center justify-center p-8 bg-primary/5 dark:bg-primary/10 rounded-xl border border-primary/10 hover:border-primary/40 transition-all cursor-pointer brand-card"
+                                data-anim="slide-scale" data-delay="600">
+                                <img alt="Partner Brand 5 Logo" class="h-10 logo-grayscale mb-4"
+                                    data-alt="Minimalist script logo for luxury brand"
+                                    src="https://lh3.googleusercontent.com/aida-public/AB6AXuCWhnU1KfReFcoBy2Q2DesP43WxM8rPv3NqMpZN5GZfaVUiZMBFV3H1bl8Kquxal5h9ZtSoQ1II9ww4ZXNnMX-w53Dispap8ETUGLDjs_OpfD4ZXqB8HubZKMZm5Gax0wTIfKBuC6bXnwzC28PFv04-V5NIEMETeNKWFCerowtFNez2PC2bLlIjhaF-GWuL_rmsHKbbWxkdSLN370VzuaR_6FFvyrQjwVR64JEdR3-Y0EQqqSMX0cr67kvRMHmDYbs4u71HLbd5bxo" />
+                                <span
+                                    class="text-xs font-bold uppercase tracking-widest text-slate-500 group-hover:text-primary transition-colors">Vogue
+                                    & Co.</span>
+                            </div>
+                            <!-- Brand Item 6 -->
+                            <div class="group flex flex-col items-center justify-center p-8 bg-primary/5 dark:bg-primary/10 rounded-xl border border-primary/10 hover:border-primary/40 transition-all cursor-pointer brand-card"
+                                data-anim="slide-scale" data-delay="700">
+                                <img alt="Partner Brand 6 Logo" class="h-10 logo-grayscale mb-4"
+                                    data-alt="Bold blocky logo for software company"
+                                    src="https://lh3.googleusercontent.com/aida-public/AB6AXuAVYM71uPf3GO1qpqNvIsNgF2smriYsnroMfcJ2bJmYv5gFjDRO1u2u3hGMPiyvJQwPrPahFINyHv0pbD22tJpGbMHl4sfgrOSL9AkHZKSKLwBZamEGUFBugjtlwiPEp7_-6OUXYOvlVXVcZ-dKXlfhxA8BRjCLpTNsEsb7gqJcrR-J8Wl1Lt_xSPaiVHYH4HR6SelZAgr0kce_ypdkeC5yJFzY8hF-Zl72smTnRjl8BbErrr-3x5FY-b84ONw7TkiaWwYKCIWmzdo" />
+                                <span
+                                    class="text-xs font-bold uppercase tracking-widest text-slate-500 group-hover:text-primary transition-colors">Core
+                                    Systems</span>
+                            </div>
+                            <!-- Brand Item 7 -->
+                            <div class="group flex flex-col items-center justify-center p-8 bg-primary/5 dark:bg-primary/10 rounded-xl border border-primary/10 hover:border-primary/40 transition-all cursor-pointer brand-card"
+                                data-anim="slide-scale" data-delay="800">
+                                <img alt="Partner Brand 7 Logo" class="h-10 logo-grayscale mb-4"
+                                    data-alt="Elegant thin line logo for lifestyle brand"
+                                    src="https://lh3.googleusercontent.com/aida-public/AB6AXuBwIqMByIE4pvubSe1afgSfJxtKzJWGmamPbqUFukyocfeclR_dwe8Rn4KrNqd7_Gk9qDfB-xyrBGGvJL3xZXoPpNVO_6NjRz50gnxwptX4gAbpVrhUm4i6iuUL_vDE40GZ4ptyjfL3kBcfo45N5YFJCs5DikGeWMyt5HA2BIKVQXIpji8YmPrJPwCim3WdtnF2lGoAOqSGwQpfXHCLtWnQ0Z7YAF1n3yKnWWCiqYQQ3mKsCUR5cgTYwDhJ7O6LXhv0Xux-EQPCNDA" />
+                                <span
+                                    class="text-xs font-bold uppercase tracking-widest text-slate-500 group-hover:text-primary transition-colors">Lifestyle
+                                    Lab</span>
+                            </div>
+                            <!-- Brand Item 8 -->
+                            <div class="group flex flex-col items-center justify-center p-8 bg-primary/5 dark:bg-primary/10 rounded-xl border border-primary/10 hover:border-primary/40 transition-all cursor-pointer brand-card"
+                                data-anim="slide-scale" data-delay="900">
+                                <img alt="Partner Brand 8 Logo" class="h-10 logo-grayscale mb-4"
+                                    data-alt="Futuristic tech logo with sharp edges"
+                                    src="https://lh3.googleusercontent.com/aida-public/AB6AXuBzkIFyKkJCndWcgGaLUoeTu56HpaIJTZK6joAyEcYFIYjvPsm3_AoXYGlP_aopR9-AfMkv81QQwx2k-3CddlV_vZhS--pL5qxg2B7vNtXTBxqIGyKxoDaB3Mkjr_7PlD9fJ0obsdYWUNJyqkic6C5vzmDL35_5By6gKHNqMynMKaCSPK3TeBRPvuWbbgYu1yMDKyPtXy5ZmvxhRb3kUkf2uvnV2X5xrEkE0MG9EeosjWNGgqwYUMxak1_LBZawscQFqGKogaLGArE" />
+                                <span
+                                    class="text-xs font-bold uppercase tracking-widest text-slate-500 group-hover:text-primary transition-colors">Vertex
+                                    Horizons</span>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+                <!-- Stats Section -->
+                <section class="py-12 bg-primary/5 dark:bg-primary/10">
+                    <div class="max-w-7xl mx-auto px-4 grid grid-cols-2 lg:grid-cols-4 gap-8 text-center">
+                        <div class="stat-card" data-anim="fade-up" data-delay="200">
+                            <p class="text-3xl font-bold text-primary" data-counter="50" data-suffix="+">0</p>
+                            <p class="text-sm text-slate-500 uppercase tracking-widest mt-1">Happy Clients</p>
+                        </div>
+                        <div class="stat-card" data-anim="fade-up" data-delay="350">
+                            <p class="text-3xl font-bold text-primary" data-counter="120" data-suffix="+">0</p>
+                            <p class="text-sm text-slate-500 uppercase tracking-widest mt-1">Projects Delivered</p>
+                        </div>
+                        <div class="stat-card" data-anim="fade-up" data-delay="500">
+                            <p class="text-3xl font-bold text-primary" data-counter="12" data-suffix="">0</p>
+                            <p class="text-sm text-slate-500 uppercase tracking-widest mt-1">Awards Won</p>
+                        </div>
+                        <div class="stat-card" data-anim="fade-up" data-delay="650">
+                            <p class="text-3xl font-bold text-primary" data-counter="98" data-suffix="%">0</p>
+                            <p class="text-sm text-slate-500 uppercase tracking-widest mt-1">Satisfaction Rate</p>
+                        </div>
+                    </div>
+                </section>
     </main>
     <!-- Bottom Navigation Bar -->
-    <nav
-        class="fixed bottom-0 left-0 right-0 z-50 md:hidden bg-background-light dark:bg-background-dark border-t border-primary/10">
-        <div class="flex items-center justify-around p-2 pb-safe">
-            <a class="flex flex-col items-center gap-1 p-2 text-primary" href="#">
-                <span class="material-symbols-outlined">home</span>
-                <span class="text-[10px] font-medium uppercase tracking-tighter">Home</span>
-            </a>
-            <a class="flex flex-col items-center gap-1 p-2 text-slate-500 dark:text-slate-400" href="#">
-                <span class="material-symbols-outlined">work</span>
-                <span class="text-[10px] font-medium uppercase tracking-tighter">Work</span>
-            </a>
-            <a class="flex flex-col items-center gap-1 p-2 text-slate-500 dark:text-slate-400" href="#">
-                <span class="material-symbols-outlined">person</span>
-                <span class="text-[10px] font-medium uppercase tracking-tighter">About</span>
-            </a>
-            <a class="flex flex-col items-center gap-1 p-2 text-slate-500 dark:text-slate-400" href="#">
-                <span class="material-symbols-outlined">mail</span>
-                <span class="text-[10px] font-medium uppercase tracking-tighter">Contact</span>
-            </a>
-        </div>
-    </nav>
-    <!-- Footer for Desktop -->
-    <footer class="hidden md:block py-12 px-4 border-t border-primary/10">
-        <div class="max-w-7xl mx-auto flex flex-col md:flex-row justify-between items-center gap-8">
-            <div class="flex items-center gap-2">
-                <span class="material-symbols-outlined text-primary">terminal</span>
-                <span class="font-bold">Portfolio © 2024</span>
-            </div>
-            <div class="flex gap-6 text-slate-500 dark:text-slate-400">
-                <a class="hover:text-primary transition-colors" href="#">LinkedIn</a>
-                <a class="hover:text-primary transition-colors" href="#">Dribbble</a>
-                <a class="hover:text-primary transition-colors" href="#">GitHub</a>
-                <a class="hover:text-primary transition-colors" href="#">Twitter</a>
-            </div>
-        </div>
-    </footer>
-    <!-- Spacer for Mobile Nav -->
-    <div class="h-20 md:hidden"></div>
-    <!-- Animation Engine -->
-    <script>
-        document.addEventListener('DOMContentLoaded', () => {
-            const animEls = document.querySelectorAll('[data-anim]');
-            const observer = new IntersectionObserver((entries) => {
-                entries.forEach(entry => {
-                    if (entry.isIntersecting) {
-                        const el = entry.target;
-                        const delay = el.dataset.delay || 0;
-                        const duration = el.dataset.duration || '0.8s';
-                        setTimeout(() => {
-                            el.style.animationDuration = duration;
-                            el.classList.add('anim-visible');
-                        }, parseInt(delay));
-                        observer.unobserve(el);
-                    }
-                });
-            }, { threshold: 0.15, rootMargin: '0px 0px -40px 0px' });
-            animEls.forEach(el => observer.observe(el));
+            <nav
+                class="fixed bottom-0 left-0 right-0 z-50 md:hidden bg-background-light dark:bg-background-dark border-t border-primary/10">
+                <div class="flex items-center justify-around p-2 pb-safe">
+                    <a class="flex flex-col items-center gap-1 p-2 text-primary" href="#">
+                        <span class="material-symbols-outlined">home</span>
+                        <span class="text-[10px] font-medium uppercase tracking-tighter">Home</span>
+                    </a>
+                    <a class="flex flex-col items-center gap-1 p-2 text-slate-500 dark:text-slate-400" href="#">
+                        <span class="material-symbols-outlined">work</span>
+                        <span class="text-[10px] font-medium uppercase tracking-tighter">Work</span>
+                    </a>
+                    <a class="flex flex-col items-center gap-1 p-2 text-slate-500 dark:text-slate-400" href="#">
+                        <span class="material-symbols-outlined">person</span>
+                        <span class="text-[10px] font-medium uppercase tracking-tighter">About</span>
+                    </a>
+                    <a class="flex flex-col items-center gap-1 p-2 text-slate-500 dark:text-slate-400" href="#">
+                        <span class="material-symbols-outlined">mail</span>
+                        <span class="text-[10px] font-medium uppercase tracking-tighter">Contact</span>
+                    </a>
+                </div>
+            </nav>
+            <!-- Footer Section -->
+            <footer class="relative w-full bg-slate-100 dark:bg-background-dark border-t border-primary/10">
+                <!-- CTA / Newsletter Section Integration -->
+                <div class="max-w-7xl mx-auto px-6 pt-16 pb-12">
+                    <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 items-start">
+                        <!-- Brand and About Column -->
+                        <div class="lg:col-span-4 flex flex-col gap-6" data-anim="fade-up" data-delay="100">
+                            <div class="flex items-center gap-2">
+                                <div class="w-10 h-10 bg-primary rounded-lg flex items-center justify-center">
+                                    <span class="text-white text-2xl font-bold leading-none select-none">أ</span>
+                                </div>
+                                <span class="text-2xl font-bold tracking-tight text-slate-900 dark:text-white">MAH.
+                                    HaSib</span>
+                            </div>
+                            <p class="text-slate-600 dark:text-slate-400 leading-relaxed">
+                                A professional portfolio showcasing modern and elegant design solutions with a focus on
+                                user
+                                experience and visual storytelling. Let's build something extraordinary together.
+                            </p>
+                            <div class="flex gap-4">
+                                <button
+                                    class="w-10 h-10 rounded-full bg-primary/10 hover:bg-primary/20 flex items-center justify-center text-primary transition-colors relative group"
+                                    onclick="copyToClipboard(this, 'https://altafhossainhasib.vercel.app/')"
+                                    title="Copy Link">
+                                    <span class="material-symbols-outlined text-[20px]">share</span>
+                                    <span
+                                        class="absolute -top-8 left-1/2 -translate-x-1/2 bg-slate-800 text-white text-[10px] px-2 py-1 rounded opacity-0 group-active:opacity-100 transition-opacity pointer-events-none">Copied!</span>
+                                </button>
+                                <button
+                                    class="w-10 h-10 rounded-full bg-primary/10 hover:bg-primary/20 flex items-center justify-center text-primary transition-colors relative group"
+                                    onclick="copyToClipboard(this, 'https://vercel.com/hasibs-projects-ae1ae095')"
+                                    title="Copy Link">
+                                    <span class="material-symbols-outlined text-[20px]">code</span>
+                                    <span
+                                        class="absolute -top-8 left-1/2 -translate-x-1/2 bg-slate-800 text-white text-[10px] px-2 py-1 rounded opacity-0 group-active:opacity-100 transition-opacity pointer-events-none">Copied!</span>
+                                </button>
+                                <!--<a class="w-10 h-10 rounded-full bg-primary/10 hover:bg-primary/20 flex items-center justify-center text-primary transition-colors"
+                            href="#">
+                            <span class="material-symbols-outlined text-[20px]">terminal</span>
+                        </a>
+                        <a class="w-10 h-10 rounded-full bg-primary/10 hover:bg-primary/20 flex items-center justify-center text-primary transition-colors"
+                            href="#">
+                            <span class="material-symbols-outlined text-[20px]">brush</span>
+                        </a>-->
+                            </div>
+                        </div>
+                        <!-- Footer Links Wrapper -->
+                        <div class="lg:col-span-8 grid grid-cols-2 lg:grid-cols-4 gap-8 lg:gap-12 items-start">
+                            <!-- Quick Links Column -->
+                            <div class="flex flex-col gap-6" data-anim="fade-up" data-delay="200">
+                                <h3 class="text-sm font-bold uppercase tracking-widest text-primary">Quick Links</h3>
+                                <ul class="flex flex-col gap-4">
+                                    <li><a class="flex items-center gap-2 text-slate-600 dark:text-slate-400 hover:text-primary dark:hover:text-primary transition-colors no-underline"
+                                            href="#"><span
+                                                class="material-symbols-outlined text-[18px]">home</span>Home</a>
+                                    </li>
+                                    <li><a class="flex items-center gap-2 text-slate-600 dark:text-slate-400 hover:text-primary dark:hover:text-primary transition-colors no-underline"
+                                            href="./mywork.html"><span
+                                                class="material-symbols-outlined text-[18px]">work</span>Work</a></li>
+                                    <li><a class="flex items-center gap-2 text-slate-600 dark:text-slate-400 hover:text-primary dark:hover:text-primary transition-colors no-underline"
+                                            href="./abuot.html"><span
+                                                class="material-symbols-outlined text-[18px]">person</span>About</a>
+                                    </li>
+                                    <li><a class="flex items-center gap-2 text-slate-600 dark:text-slate-400 hover:text-primary dark:hover:text-primary transition-colors no-underline"
+                                            href="./contactfrom.html"><span
+                                                class="material-symbols-outlined text-[18px]">contact_mail</span>Contact</a>
+                                    </li>
+                                </ul>
+                            </div>
+                            <div class="flex flex-col gap-6" data-anim="fade-up" data-delay="300">
+                                <h3 class="text-sm font-bold uppercase tracking-widest text-primary">Resources </h3>
+                                <ul class="flex flex-col gap-4">
+                                    <li><a class="flex items-center gap-2 text-slate-600 dark:text-slate-400 hover:text-primary dark:hover:text-primary transition-colors no-underline"
+                                            href="./blog.html"><span
+                                                class="material-symbols-outlined text-[18px]">article</span>Design
+                                            Blog</a></li>
+                                    <li><a class="flex items-center gap-2 text-slate-600 dark:text-slate-400 hover:text-primary dark:hover:text-primary transition-colors no-underline"
+                                            href="./skills&tools.html"><span
+                                                class="material-symbols-outlined text-[18px]">handyman</span>Tools</a>
+                                    </li>
+                                    <li><a class="flex items-center gap-2 text-slate-600 dark:text-slate-400 hover:text-primary dark:hover:text-primary transition-colors no-underline"
+                                            href="./barandsworked.html"><span
+                                                class="material-symbols-outlined text-[18px]">handshake</span>Brands
+                                            Collabration</a></li>
+                                    <li><a class="flex items-center gap-2 text-slate-600 dark:text-slate-400 hover:text-primary dark:hover:text-primary transition-colors no-underline"
+                                            href="./cv.html"><span
+                                                class="material-symbols-outlined text-[18px]">description</span>CV</a>
+                                    </li>
+                                </ul>
+                            </div>
+                            <div class="flex flex-col gap-6" data-anim="fade-up" data-delay="400">
+                                <h3 class="text-sm font-bold uppercase tracking-widest text-primary">Resources</h3>
+                                <ul class="flex flex-col gap-4">
+                                    <li><a class="flex items-center gap-2 text-slate-600 dark:text-slate-400 hover:text-primary dark:hover:text-primary transition-colors no-underline"
+                                            href="./statistics.html"><span
+                                                class="material-symbols-outlined text-[18px]">bar_chart</span>Statistics</a>
+                                    </li>
+                                    <li><a class="flex items-center gap-2 text-slate-600 dark:text-slate-400 hover:text-primary dark:hover:text-primary transition-colors no-underline"
+                                            href="./hero.html"><span
+                                                class="material-symbols-outlined text-[18px]">star</span>Hero</a></li>
+                                    <li><a class="flex items-center gap-2 text-slate-600 dark:text-slate-400 hover:text-primary dark:hover:text-primary transition-colors no-underline"
+                                            href="./awards.html"><span
+                                                class="material-symbols-outlined text-[18px]">emoji_events</span>Awards</a>
+                                    </li>
+                                    <li><a class="flex items-center gap-2 text-slate-600 dark:text-slate-400 hover:text-primary dark:hover:text-primary transition-colors no-underline"
+                                            href="./faq.html"><span
+                                                class="material-symbols-outlined text-[18px]">help</span>FAQ</a></li>
+                                </ul>
+                            </div>
+                            <div class="flex flex-col gap-6" data-anim="fade-up" data-delay="500">
+                                <h3 class="text-sm font-bold uppercase tracking-widest text-primary">Contact</h3>
+                                <ul class="flex flex-col gap-4">
+                                    <li class="flex items-start gap-3 text-slate-600 dark:text-slate-400">
+                                        <span
+                                            class="material-symbols-outlined text-sm text-primary shrink-0 mt-1">mail</span>
+                                        <a class="hover:text-primary transition-colors no-underline break-all"
+                                            href="mailto:mah.hasib015@gmail.com">mah.hasib015@gmail.com</a>
+                                    </li>
+                                    <li class="flex items-start gap-3 text-slate-600 dark:text-slate-400">
+                                        <span
+                                            class="material-symbols-outlined text-sm text-primary shrink-0 mt-1">call</span>
+                                        <a class="hover:text-primary transition-colors no-underline break-words"
+                                            href="tel:+8801570228111">+8801570228111</a>
+                                    </li>
+                                    <li class="flex items-start gap-3 text-slate-600 dark:text-slate-400">
+                                        <span
+                                            class="material-symbols-outlined text-sm text-primary shrink-0 mt-1">location_on</span>
+                                        <span class="break-words">Siddhirganj, Narayanganj, Dhaka</span>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
 
-            const counterEls = document.querySelectorAll('[data-counter]');
-            const counterObserver = new IntersectionObserver((entries) => {
-                entries.forEach(entry => {
-                    if (entry.isIntersecting) {
-                        const el = entry.target;
-                        const target = parseInt(el.dataset.counter);
-                        const suffix = el.dataset.suffix || '';
-                        const duration = 2000;
-                        const start = performance.now();
-                        const animate = (now) => {
-                            const progress = Math.min((now - start) / duration, 1);
-                            const eased = 1 - Math.pow(1 - progress, 3);
-                            el.textContent = Math.floor(eased * target) + suffix;
-                            if (progress < 1) requestAnimationFrame(animate);
+                        <!-- Newsletter & Research Section -->
+                        <div class="lg:col-span-12 grid grid-cols-1 md:grid-cols-2 gap-8">
+                            <!-- For new deals -->
+                            <div class="bg-primary/5 dark:bg-primary/10 p-8 rounded-2xl border border-primary/20 flex flex-col justify-between"
+                                data-anim="scale-in" data-delay="600">
+                                <div>
+                                    <h3 class="text-xl font-bold text-slate-900 dark:text-white mb-2">For new deals</h3>
+                                    <p class="text-slate-600 dark:text-slate-400 mb-6">Get the latest updates on my
+                                        design work
+                                        and
+                                        articles directly in your inbox.</p>
+                                </div>
+                                <div class="flex flex-col sm:flex-row gap-3">
+                                    <div class="flex-1">
+                                        <label class="sr-only">Email address</label>
+                                        <input
+                                            class="w-full h-12 px-4 rounded-lg bg-white dark:bg-slate-800 border-slate-200 dark:border-slate-700 text-slate-900 dark:text-white focus:ring-2 focus:ring-primary focus:border-transparent outline-none transition-all"
+                                            placeholder="Enter your email" type="email" />
+                                    </div>
+                                    <a href="mailto:mah.hasib015@gmail.com?subject=Enquiry%20from%20Portfolio%20(New%20Deals)"
+                                        class="h-12 px-8 bg-primary hover:bg-primary/90 text-white font-bold rounded-lg transition-all flex items-center justify-center gap-2 no-underline">
+                                        <span>Let's Meet</span>
+                                        <span class="material-symbols-outlined text-sm">send</span>
+                                    </a>
+                                </div>
+                            </div>
+                            <!-- Center for Research -->
+                            <div class="bg-primary/5 dark:bg-primary/10 p-8 rounded-2xl border border-primary/20 flex flex-col justify-between"
+                                data-anim="scale-in" data-delay="700">
+                                <div>
+                                    <h3 class="text-xl font-bold text-slate-900 dark:text-white mb-2">Center for
+                                        Research</h3>
+                                    <p class="text-slate-600 dark:text-slate-400 mb-6">Exploring the intersection of
+                                        design,
+                                        technology, and user psychology to build the next generation of digital
+                                        experiences.</p>
+                                </div>
+                                <a href="./centerforreseach.html"
+                                    class="h-12 w-fit px-8 border border-primary text-primary hover:bg-primary hover:text-white font-bold rounded-lg transition-all flex items-center justify-center gap-2 no-underline">
+                                    <span>Explore Lab</span>
+                                    <span class="material-symbols-outlined text-sm">science</span>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Social Media & Icons Bar -->
+                    <div class="mt-16 pt-8 border-t border-primary/10 relative overflow-hidden" data-anim="fade-up"
+                        data-delay="800">
+                        <div
+                            class="flex flex-col md:flex-row items-center justify-between gap-6 relative z-10 text-center md:text-left">
+                            <div class="flex gap-2 order-2 md:order-1">
+                                <a href="https://www.linkedin.com/in/mahhasib?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app"
+                                    target="_blank" rel="noopener noreferrer"
+                                    class="flex flex-col items-center gap-2 px-3 py-2 rounded-xl hover:bg-primary/5 transition-colors no-underline">
+                                    <div
+                                        class="w-10 h-10 rounded-full bg-slate-200 dark:bg-slate-800 flex items-center justify-center">
+                                        <span class="material-symbols-outlined text-primary">link</span>
+                                    </div>
+                                    <p class="text-xs font-medium text-slate-500">LinkedIn</p>
+                                </a>
+                                <a href="https://github.com/mahhasib" target="_blank" rel="noopener noreferrer"
+                                    class="flex flex-col items-center gap-2 px-3 py-2 rounded-xl hover:bg-primary/5 transition-colors no-underline">
+                                    <div
+                                        class="w-10 h-10 rounded-full bg-slate-200 dark:bg-slate-800 flex items-center justify-center">
+                                        <span class="material-symbols-outlined text-primary">code</span>
+                                    </div>
+                                    <p class="text-xs font-medium text-slate-500">GitHub</p>
+                                </a>
+                                <!--<a href="https://dribbble.com/mahhasib" target="_blank" rel="noopener noreferrer"
+                            class="flex flex-col items-center gap-2 px-3 py-2 rounded-xl hover:bg-primary/5 transition-colors no-underline">
+                            <div
+                                class="w-10 h-10 rounded-full bg-slate-200 dark:bg-slate-800 flex items-center justify-center">
+                                <span class="material-symbols-outlined text-primary">palette</span>
+                            </div>
+                            <p class="text-xs font-medium text-slate-500">Dribbble</p>-->
+                                </a>
+                                <a href="https://discord.com/users/mah.hasib" target="_blank" rel="noopener noreferrer"
+                                    class="flex flex-col items-center gap-2 px-3 py-2 rounded-xl hover:bg-primary/5 transition-colors no-underline">
+                                    <div
+                                        class="w-10 h-10 rounded-full bg-slate-200 dark:bg-slate-800 flex items-center justify-center">
+                                        <span class="material-symbols-outlined text-primary">forum</span>
+                                    </div>
+                                    <p class="text-xs font-medium text-slate-500">Discord</p>
+                                </a>
+                            </div>
+                            <div class="flex flex-col items-center md:items-end gap-1 order-3">
+                                <div class="flex gap-8">
+                                    <a class="hover:text-slate-300" href="./policy.html">Privacy Policy</a>
+                                    <a class="hover:text-slate-300" href="./myservice.html">Terms of Service</a>
+                                </div>
+                                <p class="text-sm text-slate-500 dark:text-slate-400" data-anim="fade-up"
+                                    data-delay="100">
+                                    © 2026 MAH. HaSib. All rights reserved.
+                                </p>
+                                <p class="text-xs text-slate-400 dark:text-slate-500 flex items-center justify-center md:justify-end gap-1"
+                                    data-anim="fade-up" data-delay="300">
+                                    Thank you very much<span
+                                        class="material-symbols-outlined text-[14px] text-red-500 fill-current">favorite</span>
+                                    For viewing my Portfolio
+                                </p>
+                            </div>
+                            <!-- Kalima & Responsive Watermark Clock -->
+                            <div
+                                class="order-1 md:order-2 flex flex-col items-center justify-center pointer-events-none select-none">
+                                <div class="flex flex-col items-center gap-1 mb-2 text-center" data-anim="slide-scale"
+                                    data-delay="1000" data-duration="3s">
+                                    <span
+                                        class="text-sm md:text-base font-bold text-primary tracking-wide drop-shadow-[0_0_8px_rgba(140,37,244,0.4)]">لَا
+                                        إِلَٰهَ إِلَّا ٱللَّٰهُ مُحَمَّدٌ رَسُولُ ٱللَّٰهِ</span>
+                                    <span class="text-[9px] md:text-[10px] font-medium italic leading-tight">"There
+                                        is no god but Allah, and Muhammad SAW is the messenger of Allah"</span>
+                                </div>
+                                <span id="footer-watermark"
+                                    class="text-[10px] md:text-xs font-bold whitespace-nowrap tracking-widest uppercase text-primary opacity-[0.5] dark:opacity-[0.7]"></span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </footer>
+            <script>
+                document.addEventListener('DOMContentLoaded', () => {
+                    const animEls = document.querySelectorAll('[data-anim]');
+                    const observer = new IntersectionObserver((entries) => {
+                        entries.forEach(entry => {
+                            if (entry.isIntersecting) {
+                                const el = entry.target;
+                                const delay = el.dataset.delay || 0;
+                                const duration = el.dataset.duration || '0.8s';
+                                setTimeout(() => {
+                                    el.style.animationDuration = duration;
+                                    el.classList.add('anim-visible');
+                                }, parseInt(delay));
+                                observer.unobserve(el);
+                            }
+                        });
+                    }, { threshold: 0.15, rootMargin: '0px 0px -40px 0px' });
+                    animEls.forEach(el => observer.observe(el));
+
+                    const counterEls = document.querySelectorAll('[data-counter]');
+                    const counterObserver = new IntersectionObserver((entries) => {
+                        entries.forEach(entry => {
+                            if (entry.isIntersecting) {
+                                const el = entry.target;
+                                const target = parseInt(el.dataset.counter);
+                                const suffix = el.dataset.suffix || '';
+                                const duration = 2000;
+                                const start = performance.now();
+                                const animate = (now) => {
+                                    const progress = Math.min((now - start) / duration, 1);
+                                    const eased = 1 - Math.pow(1 - progress, 3);
+                                    el.textContent = Math.floor(eased * target) + suffix;
+                                    if (progress < 1) requestAnimationFrame(animate);
+                                };
+                                requestAnimationFrame(animate);
+                                counterObserver.unobserve(el);
+                            }
+                        });
+                    }, { threshold: 0.5 });
+                    counterEls.forEach(el => counterObserver.observe(el));
+
+                    document.querySelectorAll('a[href^="#"]').forEach(a => {
+                        a.addEventListener('click', e => {
+                            const target = document.querySelector(a.getAttribute('href'));
+                            if (target) {
+                                e.preventDefault();
+                                target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+                            }
+                        });
+                    });
+                });
+
+                // ===== Footer Watermark Clock =====
+                function updateWatermarkClock() {
+                    const watermark = document.getElementById('footer-watermark');
+                    if (watermark) {
+                        const now = new Date();
+                        const isMobile = window.innerWidth < 768;
+
+                        const options = {
+                            day: '2-digit',
+                            month: isMobile ? 'short' : 'long',
+                            year: 'numeric',
+                            hour: '2-digit',
+                            minute: '2-digit',
+                            second: isMobile ? undefined : '2-digit',
+                            hour12: true
                         };
-                        requestAnimationFrame(animate);
-                        counterObserver.unobserve(el);
-                    }
-                });
-            }, { threshold: 0.5 });
-            counterEls.forEach(el => counterObserver.observe(el));
 
-            document.querySelectorAll('a[href^="#"]').forEach(a => {
-                a.addEventListener('click', e => {
-                    const target = document.querySelector(a.getAttribute('href'));
-                    if (target) {
-                        e.preventDefault();
-                        target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+                        let formatted = now.toLocaleDateString('en-GB', options);
+                        if (!isMobile) {
+                            formatted = formatted.replace(',', ' |');
+                        } else {
+                            formatted = formatted.replace(',', '');
+                        }
+                        watermark.textContent = formatted;
                     }
-                });
-            });
-        });
-    </script>
+                }
+                updateWatermarkClock();
+                setInterval(updateWatermarkClock, 1000);
+                window.addEventListener('resize', updateWatermarkClock);
+            </script>
 </body>
 
 </html>
